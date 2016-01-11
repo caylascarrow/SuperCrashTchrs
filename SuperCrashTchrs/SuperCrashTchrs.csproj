@@ -54,6 +54,46 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ScreenControl.cs" />
+    <Compile Include="Screens\BattleArena.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\BattleArena.Designer.cs">
+      <DependentUpon>BattleArena.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\CharacterSelection.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\CharacterSelection.Designer.cs">
+      <DependentUpon>CharacterSelection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\MainScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\MainScreen.Designer.cs">
+      <DependentUpon>MainScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\ModeSelection.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\ModeSelection.Designer.cs">
+      <DependentUpon>ModeSelection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\MultiEndScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\MultiEndScreen.Designer.cs">
+      <DependentUpon>MultiEndScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\TallyScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\TallyScreen.Designer.cs">
+      <DependentUpon>TallyScreen.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -63,6 +103,18 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Screens\BattleArena.resx">
+      <DependentUpon>BattleArena.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\MainScreen.resx">
+      <DependentUpon>MainScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\ModeSelection.resx">
+      <DependentUpon>ModeSelection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\MultiEndScreen.resx">
+      <DependentUpon>MultiEndScreen.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
