@@ -15,8 +15,8 @@ namespace SuperCrashTchrs.Screens
         public static List<int> highScores = new List<int>();
 
         // screen and user control values
-        public static int controlWidth = 1000;
-        public static int controlHeight = 600;
+        public static int controlWidth = 800;
+        public static int controlHeight = 800;
         
         public static int screenWidth = Screen.PrimaryScreen.WorkingArea.Width;
         public static int screenHeight = Screen.PrimaryScreen.WorkingArea.Height;
@@ -57,18 +57,18 @@ namespace SuperCrashTchrs.Screens
                 case "BattleArena":
                     ns = new BattleArena();
                     break;
-                ////case "InstructionScreen":
-                ////    ns = new InstructionScreen();
-                ////    break;
-                ////case "MenuScreen":
-                ////    ns = new MenuScreen();
-                ////    break;
-                ////case "OptionScreen":
-                ////    ns = new OptionScreen();
-                ////    break;
-                ////case "ScoreScreen":
-                ////    ns = new ScoreScreen();
-                ////    break;
+                case "ModeSelection":
+                    ns = new ModeSelection();
+                    break;
+                case "CharacterSelection":
+                    ns = new CharacterSelection();
+                    break;
+                case "MultiEndScreen":
+                    ns = new MultiEndScreen();
+                    break;
+                case "TallyScreen":
+                    ns = new TallyScreen();
+                    break;
 
             }
 

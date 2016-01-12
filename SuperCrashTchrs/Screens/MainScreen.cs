@@ -20,7 +20,7 @@ namespace SuperCrashTchrs.Screens
 
         private void playButton_Click(object sender, EventArgs e)
         {
-            ScreenControl.changeScreen(this, "BattleArena");
+            ScreenControl.changeScreen(this, "ModeSelection");
         }
     }
 }
