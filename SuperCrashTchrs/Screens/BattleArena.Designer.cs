@@ -36,6 +36,15 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
+            this.p1HP = new System.Windows.Forms.Label();
+            this.p2HP = new System.Windows.Forms.Label();
+            this.HPlabel1 = new System.Windows.Forms.Label();
+            this.HPlabel2 = new System.Windows.Forms.Label();
+            this.battleStatusOutput = new System.Windows.Forms.Label();
+            this.p1Image = new System.Windows.Forms.PictureBox();
+            this.p2Image = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.p1Image)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.p2Image)).BeginInit();
             this.SuspendLayout();
             // 
             // p1Blue
@@ -128,11 +137,80 @@
             this.button6.Text = "move2";
             this.button6.UseVisualStyleBackColor = false;
             // 
+            // p1HP
+            // 
+            this.p1HP.BackColor = System.Drawing.Color.Lime;
+            this.p1HP.Location = new System.Drawing.Point(86, 588);
+            this.p1HP.Name = "p1HP";
+            this.p1HP.Size = new System.Drawing.Size(200, 10);
+            this.p1HP.TabIndex = 8;
+            // 
+            // p2HP
+            // 
+            this.p2HP.BackColor = System.Drawing.Color.Lime;
+            this.p2HP.Location = new System.Drawing.Point(476, 588);
+            this.p2HP.Name = "p2HP";
+            this.p2HP.Size = new System.Drawing.Size(200, 10);
+            this.p2HP.TabIndex = 9;
+            // 
+            // HPlabel1
+            // 
+            this.HPlabel1.AutoSize = true;
+            this.HPlabel1.Location = new System.Drawing.Point(55, 588);
+            this.HPlabel1.Name = "HPlabel1";
+            this.HPlabel1.Size = new System.Drawing.Size(25, 13);
+            this.HPlabel1.TabIndex = 10;
+            this.HPlabel1.Text = "HP:";
+            // 
+            // HPlabel2
+            // 
+            this.HPlabel2.AutoSize = true;
+            this.HPlabel2.Location = new System.Drawing.Point(433, 588);
+            this.HPlabel2.Name = "HPlabel2";
+            this.HPlabel2.Size = new System.Drawing.Size(25, 13);
+            this.HPlabel2.TabIndex = 11;
+            this.HPlabel2.Text = "HP:";
+            // 
+            // battleStatusOutput
+            // 
+            this.battleStatusOutput.AutoSize = true;
+            this.battleStatusOutput.Font = new System.Drawing.Font("Magneto", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.battleStatusOutput.Location = new System.Drawing.Point(194, 37);
+            this.battleStatusOutput.Name = "battleStatusOutput";
+            this.battleStatusOutput.Size = new System.Drawing.Size(356, 32);
+            this.battleStatusOutput.TabIndex = 12;
+            this.battleStatusOutput.Text = "Pikachu used Thunder!";
+            // 
+            // p1Image
+            // 
+            this.p1Image.BackColor = System.Drawing.Color.Black;
+            this.p1Image.Location = new System.Drawing.Point(113, 280);
+            this.p1Image.Name = "p1Image";
+            this.p1Image.Size = new System.Drawing.Size(116, 138);
+            this.p1Image.TabIndex = 13;
+            this.p1Image.TabStop = false;
+            // 
+            // p2Image
+            // 
+            this.p2Image.BackColor = System.Drawing.Color.Black;
+            this.p2Image.Location = new System.Drawing.Point(529, 250);
+            this.p2Image.Name = "p2Image";
+            this.p2Image.Size = new System.Drawing.Size(147, 168);
+            this.p2Image.TabIndex = 14;
+            this.p2Image.TabStop = false;
+            // 
             // BattleArena
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.Controls.Add(this.p2Image);
+            this.Controls.Add(this.p1Image);
+            this.Controls.Add(this.battleStatusOutput);
+            this.Controls.Add(this.HPlabel2);
+            this.Controls.Add(this.HPlabel1);
+            this.Controls.Add(this.p2HP);
+            this.Controls.Add(this.p1HP);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button5);
@@ -143,7 +221,10 @@
             this.Controls.Add(this.p1Blue);
             this.Name = "BattleArena";
             this.Size = new System.Drawing.Size(800, 800);
+            ((System.ComponentModel.ISupportInitialize)(this.p1Image)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.p2Image)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -157,5 +238,12 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Label p1HP;
+        private System.Windows.Forms.Label p2HP;
+        private System.Windows.Forms.Label HPlabel1;
+        private System.Windows.Forms.Label HPlabel2;
+        private System.Windows.Forms.Label battleStatusOutput;
+        private System.Windows.Forms.PictureBox p1Image;
+        private System.Windows.Forms.PictureBox p2Image;
     }
 }

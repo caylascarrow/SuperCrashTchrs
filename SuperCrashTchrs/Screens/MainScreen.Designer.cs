@@ -29,26 +29,42 @@
         private void InitializeComponent()
         {
             this.playButton = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // playButton
             // 
-            this.playButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.playButton.Location = new System.Drawing.Point(56, 107);
+            this.playButton.BackColor = System.Drawing.Color.Red;
+            this.playButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.playButton.Font = new System.Drawing.Font("AR DESTINE", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.playButton.Location = new System.Drawing.Point(304, 673);
             this.playButton.Name = "playButton";
-            this.playButton.Size = new System.Drawing.Size(75, 23);
+            this.playButton.Size = new System.Drawing.Size(200, 50);
             this.playButton.TabIndex = 0;
-            this.playButton.Text = "button1";
+            this.playButton.Text = "PLAY!";
             this.playButton.UseVisualStyleBackColor = false;
             this.playButton.Click += new System.EventHandler(this.playButton_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Red;
+            this.pictureBox1.Location = new System.Drawing.Point(335, 329);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(139, 135);
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // MainScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.playButton);
             this.Name = "MainScreen";
+            this.Size = new System.Drawing.Size(800, 800);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -56,5 +72,6 @@
         #endregion
 
         private System.Windows.Forms.Button playButton;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
