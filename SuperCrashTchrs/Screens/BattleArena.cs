@@ -29,6 +29,40 @@ namespace SuperCrashTchrs.Screens
         bool p2move3 = false;
         bool p2move4 = false;
 
+        #region Player Stats
+        //Bond
+        int BondHP = 150;
+        int BondAtk = 125;
+        int BondDef = 75;
+        int BondSpd = 150;
+        //Bradshaw
+        int BradHP = 150;
+        int BradAtk = 75;
+        int BradDef = 125;
+        int BradSpd = 125;
+        //Leitch
+        int LeitchHP = 200;
+        int LeitchAtk = 75;
+        int LeitchDef = 150;
+        int LeitchSpd = 50;
+        //McCutcheon
+        int CutchHP = 100;
+        int CutchAtk = 150;
+        int CutchDef = 100;
+        int CutchSpd = 125;
+        //Ortelli
+        int OrtHP = 175;
+        int OrtAtk = 100;
+        int OrtDef = 125;
+        int OrtSpd = 75;
+        //Steel
+        int SteelHP = 150;
+        int SteelAtk = 75;
+        int SteelDef = 175;
+        int SteelSpd = 75;
+
+        #endregion
+
         #endregion
 
         private void BattleArena_KeyDown(object sender, KeyEventArgs e)
