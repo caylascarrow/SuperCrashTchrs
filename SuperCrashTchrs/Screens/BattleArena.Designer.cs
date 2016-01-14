@@ -221,6 +221,7 @@
             this.Controls.Add(this.p1Blue);
             this.Name = "BattleArena";
             this.Size = new System.Drawing.Size(800, 800);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.BattleArena_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.p1Image)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.p2Image)).EndInit();
             this.ResumeLayout(false);
