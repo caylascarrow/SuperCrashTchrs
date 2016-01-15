@@ -140,5 +140,25 @@ namespace SuperCrashTchrs.Screens
             damage = 0;
             return damage;
         }
+
+        public double attackBot()
+        {
+
+        }
+
+        public double clarinetSqueak()
+        {
+
+        }
+
+        public double complainBout()
+        {
+
+        }
+
+        public double criteriaChart()
+        {
+
+        }
     }
 }
