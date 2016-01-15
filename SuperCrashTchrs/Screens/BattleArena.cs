@@ -1,4 +1,6 @@
-﻿using System;
+﻿///Super Crash Teachers Battle Arena
+///By Cayla, Hannah, Justin
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -45,7 +47,7 @@ namespace SuperCrashTchrs.Screens
         int LeitchAtk = 75;
         int LeitchDef = 150;
         int LeitchSpd = 50;
-        int LeitchSleep = false;
+        int LeitchSleep = 0;
         //McCutcheon
         int CutchHP = 100;
         int CutchAtk = 150;
@@ -56,7 +58,7 @@ namespace SuperCrashTchrs.Screens
         int OrtAtk = 100;
         int OrtDef = 125;
         int OrtSpd = 75;
-        int OrtSleep = false;
+        int OrtSleep = 0;
         //Steel
         int SteelHP = 150;
         int SteelAtk = 75;
@@ -129,6 +131,13 @@ namespace SuperCrashTchrs.Screens
                 default:
                     break;
             }
+        }
+
+        public double damageCalc(int userPower, int userAtk, int opponentDef)
+        {
+            double damage;
+            damage = 0;
+            return damage;
         }
     }
 }
