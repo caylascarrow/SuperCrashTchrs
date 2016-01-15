@@ -46,20 +46,20 @@ namespace SuperCrashTchrs.Screens
         int LeitchDef = 150;
         int LeitchSpd = 50;
         //McCutcheon
-        int CutchHP = 100;
-        int CutchAtk = 150;
-        int CutchDef = 100;
-        int CutchSpd = 125;
+        int cutchHP = 100;
+        int cutchAtk = 150;
+        int cutchDef = 100;
+        int cutchSpd = 125;
         //Ortelli
-        int OrtHP = 175;
-        int OrtAtk = 100;
-        int OrtDef = 125;
-        int OrtSpd = 75;
+        int ortHP = 175;
+        int ortAtk = 100;
+        int ortDef = 125;
+        int ortSpd = 75;
         //Steel
-        int SteelHP = 150;
-        int SteelAtk = 75;
-        int SteelDef = 175;
-        int SteelSpd = 75;
+        int steelHP = 150;
+        int steelAtk = 75;
+        int steelDef = 175;
+        int steelSpd = 75;
 
         #endregion
 
