@@ -45,6 +45,7 @@ namespace SuperCrashTchrs.Screens
         int LeitchAtk = 75;
         int LeitchDef = 150;
         int LeitchSpd = 50;
+        int LeitchSleep = false;
         //McCutcheon
         int CutchHP = 100;
         int CutchAtk = 150;
@@ -55,6 +56,7 @@ namespace SuperCrashTchrs.Screens
         int OrtAtk = 100;
         int OrtDef = 125;
         int OrtSpd = 75;
+        int OrtSleep = false;
         //Steel
         int SteelHP = 150;
         int SteelAtk = 75;
