@@ -1,5 +1,6 @@
 ﻿///Super Crash Teachers Battle Arena
 ///By Cayla, Hannah, Justin
+///WOW!!! ;)
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -33,37 +34,37 @@ namespace SuperCrashTchrs.Screens
 
         #region Player Stats
         //Bond
-        int BondHP = 150;
-        int BondAtk = 125;
-        int BondDef = 75;
-        int BondSpd = 150;
+        int bondHP = 150;
+        int bondAtk = 125;
+        int bondDef = 75;
+        int bondSpd = 150;
         //Bradshaw
-        int BradHP = 150;
-        int BradAtk = 75;
-        int BradDef = 125;
-        int BradSpd = 125;
+        int bradHP = 150;
+        int bradAtk = 75;
+        int bradDef = 125;
+        int bradSpd = 125;
         //Leitch
-        int LeitchHP = 200;
-        int LeitchAtk = 75;
-        int LeitchDef = 150;
-        int LeitchSpd = 50;
-        int LeitchSleep = 0;
+        int leitchHP = 200;
+        int leitchAtk = 75;
+        int leitchDef = 150;
+        int leitchSpd = 50;
+        int leitchSleep = 0;
         //McCutcheon
-        int CutchHP = 100;
-        int CutchAtk = 150;
-        int CutchDef = 100;
-        int CutchSpd = 125;
+        int cutchHP = 100;
+        int cutchAtk = 150;
+        int cutchDef = 100;
+        int cutchSpd = 125;
         //Ortelli
-        int OrtHP = 175;
-        int OrtAtk = 100;
-        int OrtDef = 125;
-        int OrtSpd = 75;
-        int OrtSleep = 0;
+        int ortHP = 175;
+        int ortAtk = 100;
+        int ortDef = 125;
+        int ortSpd = 75;
+        int ortSleep = 0;
         //Steel
-        int SteelHP = 150;
-        int SteelAtk = 75;
-        int SteelDef = 175;
-        int SteelSpd = 75;
+        int steelHP = 150;
+        int steelAtk = 75;
+        int steelDef = 175;
+        int steelSpd = 75;
 
         #endregion
 
