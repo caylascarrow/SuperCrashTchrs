@@ -151,12 +151,41 @@ namespace SuperCrashTchrs.Screens
 
         }
 
-        public double complainBout()
+        public double ComplainBout() //Cayla is programming
         {
 
         }
 
         public double criteriaChart()
+        {
+
+        }
+
+        public double Dissection()//Cayla is programming
+        {
+
+        }
+        public double DunkOn()//Cayla is programming
+        {
+
+        }
+        public double FullBandFF()//Cayla is programming
+        {
+
+        }
+        public double MadExperiment()//Cayla is programming
+        {
+
+        }
+        public double PinkPaper()//Cayla is programming
+        {
+
+        }
+        public double TalkAboutFamily()//Cayla is programming
+        {
+
+        }
+        public double VideoFriday()//Cayla is programming
         {
 
         }
