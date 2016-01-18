@@ -193,9 +193,9 @@
             // p2Image
             // 
             this.p2Image.BackColor = System.Drawing.Color.Black;
-            this.p2Image.Location = new System.Drawing.Point(529, 250);
+            this.p2Image.Location = new System.Drawing.Point(478, 171);
             this.p2Image.Name = "p2Image";
-            this.p2Image.Size = new System.Drawing.Size(147, 168);
+            this.p2Image.Size = new System.Drawing.Size(236, 356);
             this.p2Image.TabIndex = 14;
             this.p2Image.TabStop = false;
             // 

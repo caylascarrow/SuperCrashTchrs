@@ -1,6 +1,7 @@
 ﻿///Super Crash Teachers Battle Arena
 ///By Cayla, Hannah, Justin
 ///WOW!!! ;)
+/// ding dangs guys this is cool
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -243,23 +244,95 @@ namespace SuperCrashTchrs.Screens
         }
         public double FullBandFF()//Cayla is programming
         {
+            if (ortSleep = 0)
+            {
+                //know if player's move continues out sucessfully
+                int accuracyHit;//make random number between 0-100? or 0-10?
 
+                if (accuracyHit > 10)
+                {
+                    //show animation
+                    //play sound(s)
+                    //calculate damage opponent takes
+                    //calculate amount of HP opponent has left
+                    //display opponent's new HP
+                    if (//opponent's HP not deplenished
+                    )
+                    {
+                        //set to opponent's turn
+                    }
+                    else
+                    {
+                        //go to game over screen
+                    }
+                }
+            else
+            {
+                //switch to opponent's turn
+            }
         }
         public double MadExperiment()//Cayla is programming
         {
+            //know if player's move continues out sucessfully
+            int accuracyHit;//make random number between 0-100? or 0-10?
 
+            if (accuracyHit > 30)
+            {
+                //show animation
+                //play sound(s)
+                //calculate damage opponent takes
+                //calculate amount of HP opponent has left
+                //display opponent's new HP
+                if (//opponent's HP not deplenished
+                    )
+                {
+                    //set to opponent's turn
+                }
+                else
+                {
+                    //go to game over screen
+                }
+            }
+            else
+            {
+                //opponent's turn
+            }
         }
         public double PinkPaper()//Cayla is programming
         {
+            int accuracyHit;//make random number between 0-100? or 0-10?
 
+            if (accuracyHit > 20)
+            {
+                //show animation/ slight difference in images
+                //play sound(s)
+                //calculate damage opponent takes
+                //multiply by 0.5
+                //use half the damage as addition to player's health
+                //calculate amount of HP opponent has left
+                //display opponent's and player's new HP
+                if (//opponent's HP not deplenished
+                    )
+                {
+                    //set to opponent's turn
+                }
+                else
+                {
+                    //go to game over screen
+                }
+            }
+            else
+            {
+                //opponent's turn
+            }
         }
         public double TalkAboutFamily()//Cayla is programming
         {
-
+            //increase player's current defence by one stage
         }
         public double VideoFriday()//Cayla is programming
         {
-
+            //add 1/2 of Bradshaw's max HP to HP remaining
         }
     }
 }
