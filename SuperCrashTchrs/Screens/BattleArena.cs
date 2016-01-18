@@ -153,7 +153,31 @@ namespace SuperCrashTchrs.Screens
 
         public double ComplainBout() //Cayla is programming
         {
+            //know if player's move continues out sucessfully
+            int accuracyHit;//make random number between 0-100? or 0-10?
 
+            if (accuracyHit > 10)
+            {
+                //show animation
+                //play sound(s)
+                //calculate damage opponent takes
+                //calculate amount of HP opponent has left
+                //display opponent's new HP
+                if (//opponent's HP not deplenished
+                    )
+                {
+                    //set to opponent's turn
+                }
+                else
+                {
+                    //go to game over screen
+                }
+
+            }
+            else
+            {
+                //set to opponent's turn
+            }
         }
 
         public double criteriaChart()
@@ -163,11 +187,59 @@ namespace SuperCrashTchrs.Screens
 
         public double Dissection()//Cayla is programming
         {
+            //know if player's move continues out sucessfully
+            int accuracyHit;//make random number between 0-100? or 0-10?
 
+            if (accuracyHit > 5)
+            {
+                //show animation
+                //play sound(s)
+                //calculate damage opponent takes
+                //calculate amount of HP opponent has left
+                //display opponent's new HP
+                if (//opponent's HP not deplenished
+                    )
+                {
+                    //set to opponent's turn
+                }
+                else
+                {
+                    //go to game over screen
+                }
+
+            }
+            else
+            {
+                //set to opponent's turn
+            }
         }
         public double DunkOn()//Cayla is programming
         {
+            //know if player's move continues out sucessfully
+            int accuracyHit;//make random number between 0-100? or 0-10?
 
+            if (accuracyHit > 30)
+            {
+                //show animation
+                //play sound(s)
+                //calculate damage opponent takes
+                //calculate amount of HP opponent has left
+                //display opponent's new HP
+                if (//opponent's HP not deplenished
+                    )
+                {
+                    //set to opponent's turn
+                }
+                else
+                {
+                    //go to game over screen
+                }
+
+            }
+            else
+            {
+                //set to opponent's turn
+            }
         }
         public double FullBandFF()//Cayla is programming
         {
