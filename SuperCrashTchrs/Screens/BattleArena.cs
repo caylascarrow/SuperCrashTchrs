@@ -20,6 +20,7 @@ namespace SuperCrashTchrs.Screens
             InitializeComponent();
         }
 
+        public static Random randNum = new Random();
         #region Global Variables
 
         bool p1move1 = false;
@@ -31,6 +32,9 @@ namespace SuperCrashTchrs.Screens
         bool p2move2 = false;
         bool p2move3 = false;
         bool p2move4 = false;
+
+        bool p1moveSelect = false;
+        bool p2moveSelect = false;
 
         #region Player Stats
         //Bond
@@ -76,24 +80,28 @@ namespace SuperCrashTchrs.Screens
             {
                 //player 1
                 case Keys.N:
+                      p1moveSelect = true;
                       p1move1 = true;
                     p1move2 = false;
                     p1move3 = false;
                     p1move4 = false;
                     break;
                 case Keys.B:
+                      p1moveSelect = true;
                     p1move1 = false;
                       p1move2 = true;
                     p1move3 = false;
                     p1move4 = false;
                     break;
                 case Keys.M:
+                      p1moveSelect = true;
                     p1move1 = false;
                     p1move2 = false;
                       p1move3 = true;
                     p1move4 = false;
                     break;
                 case Keys.Space:
+                      p1moveSelect = true;
                     p1move1 = false;
                     p1move2 = false;
                     p1move3 = false;
@@ -106,24 +114,28 @@ namespace SuperCrashTchrs.Screens
             {
                 //player 2
                 case Keys.V:
+                      p2moveSelect = true;
                       p2move1 = true;
                     p2move2 = false;
                     p2move3 = false;
                     p2move4 = false;
                     break;
                 case Keys.C:
+                      p2moveSelect = true;
                     p2move1 = false;
                       p2move2 = true;
                     p2move3 = false;
                     p2move4 = false;
                     break;
                 case Keys.X:
+                      p2moveSelect = true;
                     p2move1 = false;
                     p2move2 = false;
                       p2move3 = true;
                     p2move4 = false;
                     break;
                 case Keys.Z:
+                      p2moveSelect = true;
                     p2move1 = false;
                     p2move2 = false;
                     p2move3 = false;
@@ -134,21 +146,31 @@ namespace SuperCrashTchrs.Screens
             }
         }
 
-        public double damageCalc(int userPower, int userAtk, int opponentDef)
-        {
-            double damage;
-            damage = 0;
-            return damage;
-        }
+
+        //public double damageCalc(int userPower, int userAtk, int opponentDef)
+        //{
+        //    double damage;
+        //    damage = 0;
+        //    return damage;
+        //}
 
         public double attackBot()
         {
 
         }
 
-        public double clarinetSqueak()
+        public int clarinetSqueak(int opponentDef) //Justin got this
         {
+            opponentDef = opponentDef - 25;
+            //print to text "Defence was lowered by 1 stage"
+            
+            if (opponentDef <= 0)
+            {
+                opponentDef = 1;
+                //print to text "defence cannot go any lower"
+            }
 
+            return opponentDef;
         }
 
         public double ComplainBout() //Cayla is programming
@@ -185,12 +207,17 @@ namespace SuperCrashTchrs.Screens
 
         }
 
+        public double defenderBot() //Justin got this
+        {
+
+        }
+
         public double Dissection()//Cayla is programming
         {
             //know if player's move continues out sucessfully
-            int accuracyHit;//make random number between 0-100? or 0-10?
+            int accuracyHit = randNum.Next(1,101);
 
-            if (accuracyHit > 5)
+            if (accuracyHit <= 95)
             {
                 //show animation
                 //play sound(s)
@@ -213,6 +240,38 @@ namespace SuperCrashTchrs.Screens
                 //set to opponent's turn
             }
         }
+
+        public double Dodgeball(double playerAtk, double opponentDef, double opponentHP) //Justin got this
+        {
+            //know if player's move continues out sucessfully
+            int accuracyHit = randNum.Next(1,101);
+            double damage;
+
+            if (accuracyHit <= 90)
+            {
+                //show animation
+                //play sound(s)
+                damage = (((42 * playerAtk * 100 / opponentDef) / 50) + 2) 
+                    * randNum.Next(1,101) / 100;
+                opponentHP = opponentHP - damage;
+                
+                if (//opponent's HP not deplenished
+                    )
+                {
+                    //set to opponent's turn
+                }
+                else
+                {
+                    //go to game over screen
+                }
+
+            }
+            else
+            {
+                //set to opponent's turn
+            }
+        }
+
         public double DunkOn()//Cayla is programming
         {
             //know if player's move continues out sucessfully
@@ -241,19 +300,72 @@ namespace SuperCrashTchrs.Screens
                 //set to opponent's turn
             }
         }
+
+        public double essayQuestion() //Justin got this
+        {
+            //know if player's move continues out sucessfully
+            int accuracyHit;//make random number between 0-100? or 0-10?
+
+            if (accuracyHit > 30)
+            {
+                //show animation
+                //play sound(s)
+                //calculate damage opponent takes
+                //calculate amount of HP opponent has left
+                //display opponent's new HP
+                if (//opponent's HP not deplenished
+                    )
+                {
+                    //set to opponent's turn
+                }
+                else
+                {
+                    //go to game over screen
+                }
+
+            }
+            else
+            {
+                //set to opponent's turn
+            }
+        }
+
         public double FullBandFF()//Cayla is programming
         {
 
         }
+
+        public double historicWar() //Justin got this
+        {
+
+        }
+
         public double MadExperiment()//Cayla is programming
         {
 
         }
+
+        public double MultiQuestion() //Justin got this
+        {
+
+        }
+
         public double PinkPaper()//Cayla is programming
         {
 
         }
+
+        public double quadraticAttack() //Justin got this
+        {
+
+        }
+
         public double TalkAboutFamily()//Cayla is programming
+        {
+
+        }
+
+        public double tuning() //Justin got this
         {
 
         }
