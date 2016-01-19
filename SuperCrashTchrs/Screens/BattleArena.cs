@@ -160,9 +160,9 @@ namespace SuperCrashTchrs.Screens
         //    return damage;
         //}
 
-        public double attackBot()
+        public double AttackBot() //Hannah has this one
         {
-
+            
         }
 
         public int clarinetSqueak(int opponentDef) //Justin got this
@@ -249,6 +249,15 @@ namespace SuperCrashTchrs.Screens
             }
         }
 
+        public double Documentary() //Hannah McSwag
+        {
+            //little text message description
+            //restore leitch's HP to full
+            leitchHP = 200;
+            return leitchHP;
+            //display HP at full
+        }
+
         public double Dodgeball(double playerAtk, double opponentDef, double opponentHP) //Justin got this
         {
             //know if player's move continues out sucessfully
@@ -309,6 +318,11 @@ namespace SuperCrashTchrs.Screens
             }
         }
 
+        public double EqualSign() //Hannah ftw
+        {
+
+        }
+
         public double essayQuestion() //Justin got this
         {
             //know if player's move continues out sucessfully
@@ -352,23 +366,24 @@ namespace SuperCrashTchrs.Screens
                     //calculate damage opponent takes
                     //calculate amount of HP opponent has left
                     //display opponent's new HP
-                    if (/*opponent's HP not deplenished*/)
+                    if (//opponent's HP not deplenished
                     {
 
                     }
-                        //set to opponent's turn
-                    else
                     {
                         //go to game over screen
                     }
-                }
-                else
-            {
-                //switch to opponent's turn
-            }
-            }
+            else
+                    {
+                        //switch to opponent's turn
+                    }
         }
-        
+
+        public double HealthClass()
+        {
+
+        }
+
         public double MadExperiment()//Cayla is programming
         {
             //know if player's move continues out sucessfully
@@ -397,8 +412,14 @@ namespace SuperCrashTchrs.Screens
             }
         }
 
+        public double MelodiousPassage()
+        {
+
+        }
+
         public double MultiQuestion() //Justin got this
         {
+            ]
 
         }
 
@@ -431,7 +452,12 @@ namespace SuperCrashTchrs.Screens
             }
         }
 
-        public double quadraticAttack() //Justin got this
+        public int PushUps()
+        {
+
+        }
+
+        public double QuadraticAttack() //Justin got this
         {
 
         }
@@ -441,7 +467,12 @@ namespace SuperCrashTchrs.Screens
             //increase player's current defence by one stage
         }
 
-        public double tuning() //Justin got this
+        public int TextbookBarricade()
+        {
+
+        }
+
+        public double Tuning() //Justin got this
         {
             ortHP = ortHP + 88;
             if (ortHP < 175)
