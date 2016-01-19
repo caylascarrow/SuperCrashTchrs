@@ -441,6 +441,11 @@ namespace SuperCrashTchrs.Screens
         }
         public int VideoFriday()//Cayla is programming
         {
+
+        }
+
+        private void moveSelectTimer_Tick(object sender, EventArgs e)
+        {
             //add 1/2 of Bradshaw's max HP to HP remaining
         }
     }
