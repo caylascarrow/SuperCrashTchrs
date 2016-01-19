@@ -366,7 +366,7 @@ namespace SuperCrashTchrs.Screens
         public double MadExperiment()//Cayla is programming
         {
             //know if player's move continues out sucessfully
-            int accuracyHit;//make random number between 0-100? or 0-10?
+            int accuracyHit = randNum.Next(1,101);
 
             if (accuracyHit > 30)
             {
@@ -398,7 +398,7 @@ namespace SuperCrashTchrs.Screens
 
         public double PinkPaper()//Cayla is programming
         {
-            int accuracyHit;//make random number between 0-100? or 0-10?
+            int accuracyHit = randNum.Next(1, 101);
 
             if (accuracyHit > 20)
             {
@@ -430,7 +430,7 @@ namespace SuperCrashTchrs.Screens
 
         }
 
-        public double TalkAboutFamily()//Cayla is programming
+        public int TalkAboutFamily()//Cayla is programming
         {
             //increase player's current defence by one stage
         }
@@ -439,7 +439,7 @@ namespace SuperCrashTchrs.Screens
         {
 
         }
-        public double VideoFriday()//Cayla is programming
+        public int VideoFriday()//Cayla is programming
         {
             //add 1/2 of Bradshaw's max HP to HP remaining
         }
