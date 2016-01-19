@@ -206,9 +206,24 @@ namespace SuperCrashTchrs.Screens
             }
         }
 
-        public double criteriaChart()
+        public double criteriaChart() //Hannah ftw
         {
-
+            //display message
+            //increase Bond's attack by 25
+            bondAtk += 25;
+            //increase Bond's speed by 25
+            bondSpd += 25;
+            if (bondAtk > 250 || bondSpd > 250)
+            {
+                bondAtk = 250;
+                bondSpd = 250;
+                return bondAtk;
+                return bondSpd;
+            } else
+            {
+                return bondAtk;
+                return bondSpd;
+            }
         }
 
         public double defenderBot() //Justin got this
@@ -418,7 +433,7 @@ namespace SuperCrashTchrs.Screens
 
         public double MultiQuestion() //Justin got this
         {
-            ]
+            
 
         }
 
@@ -453,7 +468,20 @@ namespace SuperCrashTchrs.Screens
 
         public int PushUps()
         {
-
+            //display status message
+            //add 25 to mccutcheons attack stat
+            cutchAtk += 25;
+            //make sure it doesn't exceed
+            if (cutchAtk > 250)
+            {
+                //set to max attack stat
+                cutchAtk = 250;
+                return cutchAtk;
+                //display message 
+            }
+            else {
+                return cutchAtk;
+            }
         }
 
         public double QuadraticAttack() //Justin got this
