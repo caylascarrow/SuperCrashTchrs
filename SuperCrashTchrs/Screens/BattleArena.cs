@@ -143,6 +143,7 @@ namespace SuperCrashTchrs.Screens
 
         public double attackBot()
         {
+            ]
 
         }
 
