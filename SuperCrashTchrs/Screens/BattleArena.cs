@@ -175,10 +175,12 @@ namespace SuperCrashTchrs.Screens
             return opponentDef;
         }
 
-        public double ComplainBout() //Cayla is programming
+        public double ComplainAbout() //Cayla is programming
         {
             //know if player's move continues out sucessfully
             int accuracyHit = randNum.Next(1, 101);
+
+            //
 
             if (accuracyHit > 10)
             {
@@ -339,7 +341,7 @@ namespace SuperCrashTchrs.Screens
             if (ortSleep = 0)
             {
                 //know if player's move continues out sucessfully
-                int accuracyHit = randNum.Next(1,101);
+                int accuracyHit = randNum.Next(1, 101);
 
                 if (accuracyHit > 10)
                 {
@@ -348,19 +350,21 @@ namespace SuperCrashTchrs.Screens
                     //calculate damage opponent takes
                     //calculate amount of HP opponent has left
                     //display opponent's new HP
-                    if (//opponent's HP not deplenished
+                    if ( //opponent's HP not deplenished
                     )
                     {
                         //set to opponent's turn
-        }
+                    }
+
                     else
                     {
                         //go to game over screen
                     }
                 }
-            else
-            {
-                //switch to opponent's turn
+                else
+                {
+                    //switch to opponent's turn
+                }
             }
         }
         public double MadExperiment()//Cayla is programming
@@ -441,12 +445,12 @@ namespace SuperCrashTchrs.Screens
         }
         public int VideoFriday()//Cayla is programming
         {
-
+            //add 1/2 of Bradshaw's max HP to HP remaining
         }
 
         private void moveSelectTimer_Tick(object sender, EventArgs e)
         {
-            //add 1/2 of Bradshaw's max HP to HP remaining
+          
         }
     }
 }
