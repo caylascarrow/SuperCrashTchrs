@@ -1,6 +1,5 @@
 ﻿///Super Crash Teachers Battle Arena
 ///By Cayla, Hannah, Justin
-///WOW!!! ;)
 /// ding dangs guys this is cool
 using System;
 using System.Collections.Generic;
@@ -19,9 +18,12 @@ namespace SuperCrashTchrs.Screens
         public BattleArena()
         {
             InitializeComponent();
+            moveSelectTimer.Enabled = true;
         }
 
+
         public static Random randNum = new Random();
+
 
         #region Global Variables
 
@@ -37,6 +39,8 @@ namespace SuperCrashTchrs.Screens
 
         bool p1moveSelect = false;
         bool p2moveSelect = false;
+
+        string p1character, p2character;
 
         #region Player Stats
         //Bond
@@ -156,7 +160,7 @@ namespace SuperCrashTchrs.Screens
         //    return damage;
         //}
 
-        public double attackBot()
+        public double AttackBot() //Hannah has this one
         {
 
         }
@@ -247,6 +251,15 @@ namespace SuperCrashTchrs.Screens
             }
         }
 
+        public double Documentary() //Hannah McSwag
+        {
+            //little text message description
+            //restore leitch's HP to full
+            leitchHP = 200;
+            return leitchHP;
+            //display HP at full
+        }
+
         public double Dodgeball(double playerAtk, double opponentDef, double opponentHP) //Justin got this
         {
             //know if player's move continues out sucessfully
@@ -307,6 +320,11 @@ namespace SuperCrashTchrs.Screens
             }
         }
 
+        public double EqualSign() //Hannah ftw
+        {
+
+        }
+
         public double essayQuestion() //Justin got this
         {
             //know if player's move continues out sucessfully
@@ -353,19 +371,23 @@ namespace SuperCrashTchrs.Screens
                     if ( //opponent's HP not deplenished
                     )
                     {
-                        //set to opponent's turn
-                    }
+
+        }
 
                     else
                     {
                         //go to game over screen
                     }
-                }
-                else
-                {
-                    //switch to opponent's turn
-                }
+            else
+            {
+                //switch to opponent's turn
             }
+        }
+
+        public double HealthClass()
+        {
+
+        }
         }
         public double MadExperiment()//Cayla is programming
         {
@@ -395,8 +417,14 @@ namespace SuperCrashTchrs.Screens
             }
         }
 
+        public double MelodiousPassage()
+        {
+
+        }
+
         public double MultiQuestion() //Justin got this
         {
+            ]
 
         }
 
@@ -429,7 +457,12 @@ namespace SuperCrashTchrs.Screens
             }
         }
 
-        public double quadraticAttack() //Justin got this
+        public int PushUps()
+        {
+
+        }
+
+        public double QuadraticAttack() //Justin got this
         {
 
         }
@@ -439,18 +472,31 @@ namespace SuperCrashTchrs.Screens
             //increase player's current defence by one stage
         }
 
-        public double tuning() //Justin got this
+        public int TextbookBarricade()
         {
 
         }
-        public int VideoFriday()//Cayla is programming
+
+        public double Tuning() //Justin got this
+        {
+            ortHP = ortHP + 88;
+            if (ortHP < 175)
+        {
+            //add 1/2 of Bradshaw's max HP to HP remaining
         {
             //add 1/2 of Bradshaw's max HP to HP remaining
         }
 
         private void moveSelectTimer_Tick(object sender, EventArgs e)
         {
-          
+            if (p1moveSelect == true && p2moveSelect == true)
+            {
+
+            }
+            else 
+            {
+
+            }
         }
     }
 }
