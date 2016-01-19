@@ -1,6 +1,5 @@
 ﻿///Super Crash Teachers Battle Arena
 ///By Cayla, Hannah, Justin
-///WOW!!! ;)
 /// ding dangs guys this is cool
 using System;
 using System.Collections.Generic;
@@ -19,9 +18,12 @@ namespace SuperCrashTchrs.Screens
         public BattleArena()
         {
             InitializeComponent();
+            moveSelectTimer.Enabled = true;
         }
 
+
         public static Random randNum = new Random();
+
 
         #region Global Variables
 
@@ -37,6 +39,8 @@ namespace SuperCrashTchrs.Screens
 
         bool p1moveSelect = false;
         bool p2moveSelect = false;
+
+        string p1character, p2character;
 
         #region Player Stats
         //Bond
@@ -377,20 +381,17 @@ namespace SuperCrashTchrs.Screens
                     //calculate damage opponent takes
                     //calculate amount of HP opponent has left
                     //display opponent's new HP
-                    if () //opponent's HP not deplenished
+                    if (//opponent's HP not deplenished
                     {
-                        //set to opponent's turn
+
                     }
-                    else if ()
                     {
                         //go to game over screen
                     }
-                    else
+            else
                     {
                         //switch to opponent's turn
                     }
-                }
-            }
         }
 
         public double HealthClass()
@@ -501,16 +502,27 @@ namespace SuperCrashTchrs.Screens
 
         public double Tuning() //Justin got this
         {
-
+            ortHP = ortHP + 88;
+            if (ortHP < 175)
+            {
+                ortHP = 175;
+            }
         }
-        public int VideoFriday()//Cayla is programming
-        {
 
+        {
+            //add 1/2 of Bradshaw's max HP to HP remaining
         }
 
         private void moveSelectTimer_Tick(object sender, EventArgs e)
         {
-            //add 1/2 of Bradshaw's max HP to HP remaining
+            if (p1moveSelect == true && p2moveSelect == true)
+            {
+
+            }
+            else 
+            {
+
+            }
         }
     }
 }
