@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.p1Blue = new System.Windows.Forms.Button();
             this.p1Yellow = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -43,6 +44,7 @@
             this.battleStatusOutput = new System.Windows.Forms.Label();
             this.p1Image = new System.Windows.Forms.PictureBox();
             this.p2Image = new System.Windows.Forms.PictureBox();
+            this.moveSelectTimer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.p1Image)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.p2Image)).BeginInit();
             this.SuspendLayout();
@@ -199,6 +201,11 @@
             this.p2Image.TabIndex = 14;
             this.p2Image.TabStop = false;
             // 
+            // moveSelectTimer
+            // 
+            this.moveSelectTimer.Interval = 17;
+            this.moveSelectTimer.Tick += new System.EventHandler(this.moveSelectTimer_Tick);
+            // 
             // BattleArena
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -246,5 +253,6 @@
         private System.Windows.Forms.Label battleStatusOutput;
         private System.Windows.Forms.PictureBox p1Image;
         private System.Windows.Forms.PictureBox p2Image;
+        private System.Windows.Forms.Timer moveSelectTimer;
     }
 }

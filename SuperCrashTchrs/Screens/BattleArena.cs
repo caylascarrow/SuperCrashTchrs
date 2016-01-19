@@ -20,7 +20,8 @@ namespace SuperCrashTchrs.Screens
             InitializeComponent();
         }
 
-        public static Random randNum = new Random();
+        public static Random randNum = new Random();
+
         #region Global Variables
 
         bool p1move1 = false;
@@ -370,6 +371,11 @@ namespace SuperCrashTchrs.Screens
 
         }
         public double VideoFriday()//Cayla is programming
+        {
+
+        }
+
+        private void moveSelectTimer_Tick(object sender, EventArgs e)
         {
 
         }
