@@ -619,9 +619,7 @@ namespace SuperCrashTchrs.Screens
                 }
             }
         }
-        
-
-
+      
         private void moveSelectTimer_Tick(object sender, EventArgs e)
         {
             if (p1moveSelect == true && p2moveSelect == true)
@@ -1060,7 +1058,13 @@ namespace SuperCrashTchrs.Screens
                 }
                 else if (p1Spd == p2Spd)
                 {
+                    if (randNum.Next(1,3) == 1)
+                    {
                         #region p1 First Speed Tie
+                        if (p1move1 == true)
+                        {
+                            switch (p1character)
+                            {
                                 case "Bond":
                                     //CriteraChart
                                     break;
@@ -1269,6 +1273,11 @@ namespace SuperCrashTchrs.Screens
                             }
                         }
                         # endregion
+            }
+                        
+                    
+                    else 
+                    {
                         #region p2 First Speed Tie
                         if (p2move1 == true)
                         {
@@ -1483,6 +1492,10 @@ namespace SuperCrashTchrs.Screens
                             }
                         }
                         #endregion                                              
+                    }
+                }
+                
+            }
             else
             {
 

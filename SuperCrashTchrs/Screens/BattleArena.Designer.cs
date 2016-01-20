@@ -37,8 +37,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
-            this.p1HP = new System.Windows.Forms.Label();
-            this.p2HP = new System.Windows.Forms.Label();
+            this.p1HPBar = new System.Windows.Forms.Label();
+            this.p2HPBar = new System.Windows.Forms.Label();
             this.HPlabel1 = new System.Windows.Forms.Label();
             this.HPlabel2 = new System.Windows.Forms.Label();
             this.battleStatusOutput = new System.Windows.Forms.Label();
@@ -139,21 +139,21 @@
             this.button6.Text = "move2";
             this.button6.UseVisualStyleBackColor = false;
             // 
-            // p1HP
+            // p1HPBar
             // 
-            this.p1HP.BackColor = System.Drawing.Color.Lime;
-            this.p1HP.Location = new System.Drawing.Point(86, 588);
-            this.p1HP.Name = "p1HP";
-            this.p1HP.Size = new System.Drawing.Size(200, 10);
-            this.p1HP.TabIndex = 8;
+            this.p1HPBar.BackColor = System.Drawing.Color.Lime;
+            this.p1HPBar.Location = new System.Drawing.Point(86, 588);
+            this.p1HPBar.Name = "p1HPBar";
+            this.p1HPBar.Size = new System.Drawing.Size(200, 10);
+            this.p1HPBar.TabIndex = 8;
             // 
-            // p2HP
+            // p2HPBar
             // 
-            this.p2HP.BackColor = System.Drawing.Color.Lime;
-            this.p2HP.Location = new System.Drawing.Point(476, 588);
-            this.p2HP.Name = "p2HP";
-            this.p2HP.Size = new System.Drawing.Size(200, 10);
-            this.p2HP.TabIndex = 9;
+            this.p2HPBar.BackColor = System.Drawing.Color.Lime;
+            this.p2HPBar.Location = new System.Drawing.Point(476, 588);
+            this.p2HPBar.Name = "p2HPBar";
+            this.p2HPBar.Size = new System.Drawing.Size(200, 10);
+            this.p2HPBar.TabIndex = 9;
             // 
             // HPlabel1
             // 
@@ -216,8 +216,8 @@
             this.Controls.Add(this.battleStatusOutput);
             this.Controls.Add(this.HPlabel2);
             this.Controls.Add(this.HPlabel1);
-            this.Controls.Add(this.p2HP);
-            this.Controls.Add(this.p1HP);
+            this.Controls.Add(this.p2HPBar);
+            this.Controls.Add(this.p1HPBar);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button5);
@@ -246,8 +246,8 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Label p1HP;
-        private System.Windows.Forms.Label p2HP;
+        private System.Windows.Forms.Label p1HPBar;
+        private System.Windows.Forms.Label p2HPBar;
         private System.Windows.Forms.Label HPlabel1;
         private System.Windows.Forms.Label HPlabel2;
         private System.Windows.Forms.Label battleStatusOutput;
