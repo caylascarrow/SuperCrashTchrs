@@ -476,7 +476,7 @@ namespace SuperCrashTchrs.Screens
 
         public double EqualSign() //Hannah ftw
         {
-            double splitHP = (steelHP + ) / 2;
+            
 
         }
 
