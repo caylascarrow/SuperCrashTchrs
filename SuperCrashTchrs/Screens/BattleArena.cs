@@ -490,6 +490,7 @@ namespace SuperCrashTchrs.Screens
             if (p1moveSelect == true && p2moveSelect == true)
             {
 
+
             }
             else 
             {
