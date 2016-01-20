@@ -162,7 +162,7 @@ namespace SuperCrashTchrs.Screens
 
         public double AttackBot() //Hannah has this one
         {
-            
+
         }
 
         public int clarinetSqueak(int opponentDef) //Justin got this
@@ -179,10 +179,12 @@ namespace SuperCrashTchrs.Screens
             return opponentDef;
         }
 
-        public double ComplainBout() //Cayla is programming
+        public double ComplainAbout() //Cayla is programming
         {
             //know if player's move continues out sucessfully
             int accuracyHit = randNum.Next(1, 101);
+
+            //
 
             if (accuracyHit > 10)
             {
@@ -210,9 +212,24 @@ namespace SuperCrashTchrs.Screens
             }
         }
 
-        public double criteriaChart()
+        public double criteriaChart() //Hannah ftw
         {
-
+            //display message
+            //increase Bond's attack by 25
+            bondAtk += 25;
+            //increase Bond's speed by 25
+            bondSpd += 25;
+            if (bondAtk > 250 || bondSpd > 250)
+            {
+                bondAtk = 250;
+                bondSpd = 250;
+                return bondAtk;
+                return bondSpd;
+            } else
+            {
+                return bondAtk;
+                return bondSpd;
+            }
         }
 
         public double defenderBot() //Justin got this
@@ -357,7 +374,7 @@ namespace SuperCrashTchrs.Screens
             if (ortSleep = 0)
             {
                 //know if player's move continues out sucessfully
-                int accuracyHit = randNum.Next(1,101);
+                int accuracyHit = randNum.Next(1, 101);
 
                 if (accuracyHit > 10)
                 {
@@ -366,24 +383,27 @@ namespace SuperCrashTchrs.Screens
                     //calculate damage opponent takes
                     //calculate amount of HP opponent has left
                     //display opponent's new HP
-                    if (//opponent's HP not deplenished
+                    if ( //opponent's HP not deplenished
+                    )
                     {
 
-                    }
+        }
+
+                    else
                     {
                         //go to game over screen
                     }
             else
-                    {
-                        //switch to opponent's turn
-                    }
+            {
+                //switch to opponent's turn
+            }
         }
 
         public double HealthClass()
         {
 
         }
-
+        }
         public double MadExperiment()//Cayla is programming
         {
             //know if player's move continues out sucessfully
@@ -419,7 +439,7 @@ namespace SuperCrashTchrs.Screens
 
         public double MultiQuestion() //Justin got this
         {
-            ]
+            
 
         }
 
@@ -454,7 +474,20 @@ namespace SuperCrashTchrs.Screens
 
         public int PushUps()
         {
-
+            //display status message
+            //add 25 to mccutcheons attack stat
+            cutchAtk += 25;
+            //make sure it doesn't exceed
+            if (cutchAtk > 250)
+            {
+                //set to max attack stat
+                cutchAtk = 250;
+                return cutchAtk;
+                //display message 
+            }
+            else {
+                return cutchAtk;
+            }
         }
 
         public double QuadraticAttack() //Justin got this
@@ -476,11 +509,8 @@ namespace SuperCrashTchrs.Screens
         {
             ortHP = ortHP + 88;
             if (ortHP < 175)
-            {
-                ortHP = 175;
-            }
-        }
-
+        {
+            //add 1/2 of Bradshaw's max HP to HP remaining
         {
             //add 1/2 of Bradshaw's max HP to HP remaining
         }
