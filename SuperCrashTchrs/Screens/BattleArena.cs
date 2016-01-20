@@ -15,23 +15,13 @@ namespace SuperCrashTchrs.Screens
 {
     public partial class BattleArena : UserControl
     {
-        public BattleArena()
-        {
-            InitializeComponent();
-            moveSelectTimer.Enabled = true;
-        }
-
-
-        public static Random randNum = new Random();
-
-
         #region Global Variables
 
         bool p1move1 = false;
         bool p1move2 = false;
         bool p1move3 = false;
         bool p1move4 = false;
-        
+
         bool p2move1 = false;
         bool p2move2 = false;
         bool p2move3 = false;
@@ -41,8 +31,10 @@ namespace SuperCrashTchrs.Screens
         bool p2moveSelect = false;
 
         string p1character, p2character;
+        int p1HP, p1Atk, p1Def, p1Spd, p2HP, p2Atk, p2Def, p2Spd;
 
         #region Player Stats
+        //Should these be constants?
         //Bond
         int bondHP = 150;
         int bondAtk = 125;
@@ -79,6 +71,104 @@ namespace SuperCrashTchrs.Screens
         #endregion
 
         #endregion
+
+        public BattleArena()
+        {
+            InitializeComponent();
+            moveSelectTimer.Enabled = true;
+            p1character = "Bond";
+            p2character = "Brad";
+
+            #region Stat Switchs 
+            switch (p1character)
+            {
+                case "Bond":
+                    p1HP = bondHP;
+                    p1Atk = bondAtk;
+                    p1Def = bondDef;
+                    p1Spd = bondSpd;
+                    break;
+                case "Brad":
+                    p1HP = bradHP;
+                    p1Atk = bradAtk;
+                    p1Def = bradDef;
+                    p1Spd = bradSpd;
+                    break;
+                case "Leitch":
+                    p1HP = leitchHP;
+                    p1Atk = leitchAtk;
+                    p1Def = leitchDef;
+                    p1Spd = leitchSpd;
+                    break;
+                case "Cutch":
+                    p1HP = cutchHP;
+                    p1Atk = cutchAtk;
+                    p1Def = cutchDef;
+                    p1Spd = cutchSpd;
+                    break;
+                case "Ort":
+                    p1HP = ortHP;
+                    p1Atk = ortAtk;
+                    p1Def = ortDef;
+                    p1Spd = ortSpd;
+                    break;
+                case "Steel":
+                    p1HP = steelHP;
+                    p1Atk = steelAtk;
+                    p1Def = steelDef;
+                    p1Spd = steelSpd;
+                    break;
+                default:
+                    break;
+            }
+            switch (p2character)
+            {
+                case "Bond":
+                    p2HP = bondHP;
+                    p2Atk = bondAtk;
+                    p2Def = bondDef;
+                    p2Spd = bondSpd;
+                    break;
+                case "Brad":
+                    p2HP = bradHP;
+                    p2Atk = bradAtk;
+                    p2Def = bradDef;
+                    p2Spd = bradSpd;
+                    break;
+                case "Leitch":
+                    p2HP = leitchHP;
+                    p2Atk = leitchAtk;
+                    p2Def = leitchDef;
+                    p2Spd = leitchSpd;
+                    break;
+                case "Cutch":
+                    p2HP = cutchHP;
+                    p2Atk = cutchAtk;
+                    p2Def = cutchDef;
+                    p2Spd = cutchSpd;
+                    break;
+                case "Ort":
+                    p2HP = ortHP;
+                    p2Atk = ortAtk;
+                    p2Def = ortDef;
+                    p2Spd = ortSpd;
+                    break;
+                case "Steel":
+                    p2HP = steelHP;
+                    p2Atk = steelAtk;
+                    p2Def = steelDef;
+                    p2Spd = steelSpd;
+                    break;
+                default:
+                    break;
+            }
+            #endregion
+        }
+        
+        public static Random randNum = new Random();
+
+
+      
 
         private void BattleArena_KeyDown(object sender, KeyEventArgs e)
         {
@@ -518,8 +608,7 @@ namespace SuperCrashTchrs.Screens
         {
             if (p1moveSelect == true && p2moveSelect == true)
             {
-
-
+                
             }
             else 
             {
