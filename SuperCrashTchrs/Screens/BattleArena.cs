@@ -631,7 +631,14 @@ namespace SuperCrashTchrs.Screens
                 }
                 else if (p1Spd == p2Spd)
                 {
-
+                    if (randNum.Next(1,3) == 1)
+                    {
+                        //p1 goes first
+                    }
+                    else
+                    {
+                        //p2 goes first
+                    }
                 }
             }
             else 
