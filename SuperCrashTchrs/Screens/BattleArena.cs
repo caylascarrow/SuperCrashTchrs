@@ -32,7 +32,7 @@ namespace SuperCrashTchrs.Screens
         bool p2moveSelect = false;
 
         string p1character, p2character;
-        int p1hp, p1Atk, p1Def, p1Spd, p2hp, p2Atk, p2Def, p2Spd;
+        int p1hp, p1Atk, p1Def, p1Spd, p1Sprite, p2hp, p2Atk, p2Def, p2Spd, p2Sprite;
         int sleepTime = 1000;
 
         #region Player Stats
@@ -89,36 +89,42 @@ namespace SuperCrashTchrs.Screens
                     p1Atk = bondAtk;
                     p1Def = bondDef;
                     p1Spd = bondSpd;
+                    p1Sprite = bondSprite;
                     break;
                 case "Brad":
                     p1hp = bradHP;
                     p1Atk = bradAtk;
                     p1Def = bradDef;
                     p1Spd = bradSpd;
+                    p1Sprite = bradSprite;
                     break;
                 case "Leitch":
                     p1hp = leitchHP;
                     p1Atk = leitchAtk;
                     p1Def = leitchDef;
                     p1Spd = leitchSpd;
+                    p1Sprite = leitchSprite;
                     break;
                 case "Cutch":
                     p1hp = cutchHP;
                     p1Atk = cutchAtk;
                     p1Def = cutchDef;
                     p1Spd = cutchSpd;
+                    p1Sprite = cutchSprite;
                     break;
                 case "Ort":
                     p1hp = ortHP;
                     p1Atk = ortAtk;
                     p1Def = ortDef;
                     p1Spd = ortSpd;
+                    p1Sprite = ortSprite;
                     break;
                 case "Steel":
                     p1hp = steelHP;
                     p1Atk = steelAtk;
                     p1Def = steelDef;
                     p1Spd = steelSpd;
+                    p1Sprite = steelSprtie;
                     break;
                 default:
                     break;
@@ -243,22 +249,23 @@ namespace SuperCrashTchrs.Screens
                     break;
             }
         }
-
-
-        //public double damageCalc(int userPower, int userAtk, int opponentDef)
-        //{
-        //    double damage;
-        //    damage = 0;
-        //    return damage;
-        //}
-
+        
         public double AttackBot() //Hannah has this one
         {
 
         }
 
-        public int ClarinetSqueak(int opponentDef) //Justin got this
+        public void ClarinetSqueak() //Justin got this
         {
+            int opponentDef = 0;
+            if (p1character == "Ort")
+            {
+                opponentDef = p2Def;
+            }
+            else if (p2character == "Ort")
+            {
+                opponentDef = p1Def;
+            }
             battleStatusOutput.Text = "Ortelli used Clairinet Squeak!";
             Thread.Sleep(sleepTime);
             opponentDef -= 25;
@@ -272,7 +279,14 @@ namespace SuperCrashTchrs.Screens
                 Thread.Sleep(sleepTime);
             }
 
-            return opponentDef;
+            if (p1character == "Ort")
+            {
+                p2Def = opponentDef;
+            }
+            else if (p2character == "Ort")
+            {
+                p1Def = opponentDef;
+            }
         }
 
         public double ComplainAbout(double playerAtk, double opponentDef, double opponentHP) //Cayla is programming
@@ -309,9 +323,10 @@ namespace SuperCrashTchrs.Screens
             }
         }
 
-        public void CriteriaChart() //Hannah ftw
+        public void CriteriaChart() //All DONE
         {
-            int userAtk, userSpd;
+            int userAtk = 0; 
+            int userSpd = 0;
             if (p1character == "Bond")
             {
                 userAtk = p1Atk;
@@ -321,12 +336,7 @@ namespace SuperCrashTchrs.Screens
             {
                 userAtk = p2Atk;
                 userSpd = p2Spd;
-            }
-            else
-            {
-                userAtk = 0;
-                userSpd = 0;
-            }
+            }            
             battleStatusOutput.Text = "Bond used Critera Chart!";
             Thread.Sleep(sleepTime);
 
@@ -515,33 +525,45 @@ namespace SuperCrashTchrs.Screens
 
         }
 
-        public double essayQuestion() //Justin got this
+        public void EssayQuestion() //Justin got this
         {
-            //know if player's move continues out sucessfully
-            int accuracyHit;//make random number between 0-100? or 0-10?
-
-            if (accuracyHit > 30)
+            int opponentSpd = 0;
+            if (p1character == "Leitch")
             {
-                //show animation
-                //play sound(s)
-                //calculate damage opponent takes
-                //calculate amount of HP opponent has left
-                //display opponent's new HP
-                if (//opponent's HP not deplenished
-                    )
+                opponentSpd = p2Spd;
+            }
+            else if (p2character == "Leitch")
+            {
+                opponentSpd = p1Spd;
+            }
+            battleStatusOutput.Text = "Leitch Used Multiple Choice Question!";
+            Thread.Sleep(sleepTime);
+            //accuracy
+            if (randNum.Next(1, 101) <= 80)
+            {
+                opponentSpd -= 50;
+                battleStatusOutput.Text = "The Opponents Speed was lowered!";
+                Thread.Sleep(sleepTime);
+
+                if (opponentSpd <= 0)
                 {
-                    //set to opponent's turn
+                    opponentSpd = 1;
+                    battleStatusOutput.Text = "The Opponents Speed can't go any lower!";
+                    Thread.Sleep(sleepTime);
                 }
                 else
                 {
-                    //go to game over screen
-                    ScreenControl.changeScreen(this, "MultiEndScreen");
+                    battleStatusOutput.Text = "But it missed!";
+                    Thread.Sleep(sleepTime);
                 }
-
             }
-            else
+            if (p1character == "Leitch")
             {
-                //set to opponent's turn
+                p2Spd = opponentSpd;
+            }
+            else if (p2character == "Leitch")
+            {
+                p1Spd = opponentSpd;
             }
         }
 
@@ -633,21 +655,9 @@ namespace SuperCrashTchrs.Screens
 
         }
 
-        public int MultiQuestion(int opponentSpd) //Justin got this
+        public void MultiQuestion() //Justin got this
         {            
-            //check accuracy
-            if (randNum.Next(1,101) <= 80)
-            {
-                opponentSpd -= 50;
-                if (opponentSpd <= 0)
-                {
-                    opponentSpd = 0;
-                }
-            }
-            else
-            {
-                //move missed
-            }
+            
         }
 
         public double PinkPaper(double playerAtk, double playerHP, double opponentDef, double opponentHP)//Cayla is programming
@@ -807,7 +817,7 @@ namespace SuperCrashTchrs.Screens
                                 //ComplainBout
                                 break;
                             case "Leitch":
-                                //EssayQuestion
+                                EssayQuestion();
                                 break;
                             case "Cutch":
                                 //DunkOn
