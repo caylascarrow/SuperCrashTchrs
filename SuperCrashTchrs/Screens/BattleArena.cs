@@ -1,6 +1,6 @@
 ﻿///Super Crash Teachers Battle Arena
 ///By Cayla, Hannah, Justin
-/// ding dangs guys this is cool
+/// 25 January 2016
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -31,7 +31,7 @@ namespace SuperCrashTchrs.Screens
         bool p2moveSelect = false;
 
         string p1character, p2character;
-        int p1hp, p1Atk, p1Def, p1Spd, p2hp, p2Atk, p2Def, p2Spd;
+        int p1HP, p1Atk, p1Def, p1Spd, p2HP, p2Atk, p2Def, p2Spd;
 
         #region Player Stats
         //Should these be constants?
@@ -83,37 +83,37 @@ namespace SuperCrashTchrs.Screens
             switch (p1character)
             {
                 case "Bond":
-                    p1hp = bondHP;
+                    p1HP = bondHP;
                     p1Atk = bondAtk;
                     p1Def = bondDef;
                     p1Spd = bondSpd;
                     break;
                 case "Brad":
-                    p1hp = bradHP;
+                    p1HP = bradHP;
                     p1Atk = bradAtk;
                     p1Def = bradDef;
                     p1Spd = bradSpd;
                     break;
                 case "Leitch":
-                    p1hp = leitchHP;
+                    p1HP = leitchHP;
                     p1Atk = leitchAtk;
                     p1Def = leitchDef;
                     p1Spd = leitchSpd;
                     break;
                 case "Cutch":
-                    p1hp = cutchHP;
+                    p1HP = cutchHP;
                     p1Atk = cutchAtk;
                     p1Def = cutchDef;
                     p1Spd = cutchSpd;
                     break;
                 case "Ort":
-                    p1hp = ortHP;
+                    p1HP = ortHP;
                     p1Atk = ortAtk;
                     p1Def = ortDef;
                     p1Spd = ortSpd;
                     break;
                 case "Steel":
-                    p1hp = steelHP;
+                    p1HP = steelHP;
                     p1Atk = steelAtk;
                     p1Def = steelDef;
                     p1Spd = steelSpd;
@@ -124,37 +124,37 @@ namespace SuperCrashTchrs.Screens
             switch (p2character)
             {
                 case "Bond":
-                    p2hp = bondHP;
+                    p2HP = bondHP;
                     p2Atk = bondAtk;
                     p2Def = bondDef;
                     p2Spd = bondSpd;
                     break;
                 case "Brad":
-                    p2hp = bradHP;
+                    p2HP = bradHP;
                     p2Atk = bradAtk;
                     p2Def = bradDef;
                     p2Spd = bradSpd;
                     break;
                 case "Leitch":
-                    p2hp = leitchHP;
+                    p2HP = leitchHP;
                     p2Atk = leitchAtk;
                     p2Def = leitchDef;
                     p2Spd = leitchSpd;
                     break;
                 case "Cutch":
-                    p2hp = cutchHP;
+                    p2HP = cutchHP;
                     p2Atk = cutchAtk;
                     p2Def = cutchDef;
                     p2Spd = cutchSpd;
                     break;
                 case "Ort":
-                    p2hp = ortHP;
+                    p2HP = ortHP;
                     p2Atk = ortAtk;
                     p2Def = ortDef;
                     p2Spd = ortSpd;
                     break;
                 case "Steel":
-                    p2hp = steelHP;
+                    p2HP = steelHP;
                     p2Atk = steelAtk;
                     p2Def = steelDef;
                     p2Spd = steelSpd;
@@ -347,6 +347,7 @@ namespace SuperCrashTchrs.Screens
                 else
                 {
                     //go to game over screen
+                    ScreenControl.changeScreen(this, "MultiEndScreen");
                 }
 
             }
@@ -416,6 +417,7 @@ namespace SuperCrashTchrs.Screens
                 else
                 {
                     //go to game over screen
+                    ScreenControl.changeScreen(this, "MultiEndScreen");
                 }
 
             }
@@ -480,6 +482,7 @@ namespace SuperCrashTchrs.Screens
                     else
                     {
                         //go to game over screen
+                        ScreenControl.changeScreen(this, "MultiEndScreen");
                     }
                 }
             }
@@ -513,6 +516,7 @@ namespace SuperCrashTchrs.Screens
                 else
                 {
                     //go to game over screen
+                    ScreenControl.changeScreen(this, "MultiEndScreen");
                 }
             }
             else
@@ -552,6 +556,7 @@ namespace SuperCrashTchrs.Screens
                 else
                 {
                     //go to game over screen
+                    ScreenControl.changeScreen(this, "MultiEndScreen");
                 }
             }
             else
@@ -598,19 +603,19 @@ namespace SuperCrashTchrs.Screens
             //player one uses move
             if (p1character == "Ort")
             {
-                p1hp = p1hp + 88;
-                if (p1hp < 175)
+                p1HP = p1HP + 88;
+                if (p1HP < 175)
                 {
-                    p1hp = 175;
+                    p1HP = 175;
                 }
             }
             //player 2 uses move
             if (p2character == "Ort")
             {
-                p2hp = p2hp + 88;
-                if (p2hp < 175)
+                p2HP = p2HP + 88;
+                if (p2HP < 175)
                 {
-                    p2hp = 175;
+                    p2HP = 175;
                 }
             }
         }
@@ -1055,14 +1060,7 @@ namespace SuperCrashTchrs.Screens
                 }
                 else if (p1Spd == p2Spd)
                 {
-                    if (randNum.Next(1,3) == 1)
-                    {
                         #region p1 First Speed Tie
-                        //p1 goes first
-                        if (p1move1 == true)
-                        {
-                            switch (p1character)
-                            {
                                 case "Bond":
                                     //CriteraChart
                                     break;
@@ -1164,7 +1162,7 @@ namespace SuperCrashTchrs.Screens
                             }
                         }
 #endregion
-
+                  
                         #region p2 Second Speed Tie
                         if (p2move1 == true)
                         {
@@ -1242,8 +1240,8 @@ namespace SuperCrashTchrs.Screens
                                     break;
                                 default:
                                     break;
-                            }
-                        }
+                }
+            }
                         if (p2move4 == true)
                         {
                             switch (p2character)
@@ -1271,9 +1269,6 @@ namespace SuperCrashTchrs.Screens
                             }
                         }
                         # endregion
-                    }
-                    else
-                    {
                         #region p2 First Speed Tie
                         if (p2move1 == true)
                         {
@@ -1488,10 +1483,7 @@ namespace SuperCrashTchrs.Screens
                             }
                         }
                         #endregion                                              
-                    }
-                }
-            }
-            else 
+            else
             {
 
             }
