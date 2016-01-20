@@ -595,10 +595,23 @@ namespace SuperCrashTchrs.Screens
 
         public double Tuning() //Justin got this
         {
-            ortHP = ortHP + 88;
-            if (ortHP < 175)
+            //player one uses move
+            if (p1character == "Ort")
             {
-                ortHP = 175;
+                p1HP = p1HP + 88;
+                if (p1HP < 175)
+                {
+                    p1HP = 175;
+                }
+            }
+            //player 2 uses move
+            if (p2character == "Ort")
+            {
+                p2HP = p2HP + 88;
+                if (p2HP < 175)
+                {
+                    p2HP = 175;
+                }
             }
         }
         
