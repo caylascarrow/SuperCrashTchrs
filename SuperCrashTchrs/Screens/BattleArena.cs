@@ -31,7 +31,7 @@ namespace SuperCrashTchrs.Screens
         bool p2moveSelect = false;
 
         string p1character, p2character;
-        int p1HP, p1Atk, p1Def, p1Spd, p2HP, p2Atk, p2Def, p2Spd;
+        int p1hp, p1Atk, p1Def, p1Spd, p2hp, p2Atk, p2Def, p2Spd;
 
         #region Player Stats
         //Should these be constants?
@@ -83,37 +83,37 @@ namespace SuperCrashTchrs.Screens
             switch (p1character)
             {
                 case "Bond":
-                    p1HP = bondHP;
+                    p1hp = bondHP;
                     p1Atk = bondAtk;
                     p1Def = bondDef;
                     p1Spd = bondSpd;
                     break;
                 case "Brad":
-                    p1HP = bradHP;
+                    p1hp = bradHP;
                     p1Atk = bradAtk;
                     p1Def = bradDef;
                     p1Spd = bradSpd;
                     break;
                 case "Leitch":
-                    p1HP = leitchHP;
+                    p1hp = leitchHP;
                     p1Atk = leitchAtk;
                     p1Def = leitchDef;
                     p1Spd = leitchSpd;
                     break;
                 case "Cutch":
-                    p1HP = cutchHP;
+                    p1hp = cutchHP;
                     p1Atk = cutchAtk;
                     p1Def = cutchDef;
                     p1Spd = cutchSpd;
                     break;
                 case "Ort":
-                    p1HP = ortHP;
+                    p1hp = ortHP;
                     p1Atk = ortAtk;
                     p1Def = ortDef;
                     p1Spd = ortSpd;
                     break;
                 case "Steel":
-                    p1HP = steelHP;
+                    p1hp = steelHP;
                     p1Atk = steelAtk;
                     p1Def = steelDef;
                     p1Spd = steelSpd;
@@ -124,37 +124,37 @@ namespace SuperCrashTchrs.Screens
             switch (p2character)
             {
                 case "Bond":
-                    p2HP = bondHP;
+                    p2hp = bondHP;
                     p2Atk = bondAtk;
                     p2Def = bondDef;
                     p2Spd = bondSpd;
                     break;
                 case "Brad":
-                    p2HP = bradHP;
+                    p2hp = bradHP;
                     p2Atk = bradAtk;
                     p2Def = bradDef;
                     p2Spd = bradSpd;
                     break;
                 case "Leitch":
-                    p2HP = leitchHP;
+                    p2hp = leitchHP;
                     p2Atk = leitchAtk;
                     p2Def = leitchDef;
                     p2Spd = leitchSpd;
                     break;
                 case "Cutch":
-                    p2HP = cutchHP;
+                    p2hp = cutchHP;
                     p2Atk = cutchAtk;
                     p2Def = cutchDef;
                     p2Spd = cutchSpd;
                     break;
                 case "Ort":
-                    p2HP = ortHP;
+                    p2hp = ortHP;
                     p2Atk = ortAtk;
                     p2Def = ortDef;
                     p2Spd = ortSpd;
                     break;
                 case "Steel":
-                    p2HP = steelHP;
+                    p2hp = steelHP;
                     p2Atk = steelAtk;
                     p2Def = steelDef;
                     p2Spd = steelSpd;
@@ -327,8 +327,11 @@ namespace SuperCrashTchrs.Screens
 
         }
 
-        public double Dissection()//Cayla is programming
+        public double Dissection(double playerAtk, double opponentDef, double opponentHP)//Cayla is programming
         {
+            //local variables called
+            double damage;
+
             //know if player's move continues out sucessfully
             int accuracyHit = randNum.Next(1,101);
 
@@ -337,7 +340,12 @@ namespace SuperCrashTchrs.Screens
                 //show animation
                 //play sound(s)
                 //calculate damage opponent takes
+                damage = (((42 * playerAtk * 30 / opponentDef) / 50) + 2)
+                  * randNum.Next(1, 101) / 100;
+
                 //calculate amount of HP opponent has left
+                opponentHP = opponentHP - damage;
+                
                 //display opponent's new HP
                 if (//opponent's HP not deplenished
                     )
@@ -359,11 +367,22 @@ namespace SuperCrashTchrs.Screens
 
         public double Documentary() //Hannah McSwag
         {
-            //little text message description
-            //restore leitch's HP to full
-            leitchHP = 200;
-            return leitchHP;
-            //display HP at full
+            //check if leitch is asleep
+            if (leitchSleep != 0)
+            {
+                //if asleep pass the turn
+                leitchSleep--;
+                return leitchSleep;
+                //display sleep message
+            }
+            else //leitch is awake
+            {
+                //little text message description
+                //restore leitch's HP to full
+                leitchHP = 200;
+                return leitchHP;
+                //display HP at full
+            }
         }
 
         public double Dodgeball(double playerAtk, double opponentDef, double opponentHP) //Justin got this
@@ -429,6 +448,7 @@ namespace SuperCrashTchrs.Screens
 
         public double EqualSign() //Hannah ftw
         {
+            double splitHP = (steelHP + ) / 2;
 
         }
 
@@ -497,8 +517,11 @@ namespace SuperCrashTchrs.Screens
 
         }
 
-        public double MadExperiment()//Cayla is programming
+        public double MadExperiment(double playerAtk, double opponentDef, double opponentHP)//Cayla is programming
         {
+            //local variables called
+            double damage;
+
             //know if player's move continues out sucessfully
             int accuracyHit = randNum.Next(1,101);
 
@@ -507,7 +530,11 @@ namespace SuperCrashTchrs.Screens
                 //show animation
                 //play sound(s)
                 //calculate damage opponent takes
+                damage = (((42 * playerAtk * 100 / opponentDef) / 50) + 2)
+                  * randNum.Next(1, 101) / 100;
                 //calculate amount of HP opponent has left
+                opponentHP = opponentHP - damage;
+                
                 //display opponent's new HP
                 if (/*opponent's HP not deplenished*/)
                 {
@@ -590,7 +617,20 @@ namespace SuperCrashTchrs.Screens
 
         public int TalkAboutFamily()//Cayla is programming
         {
+            //message displayed
             //increase player's current defence by one stage
+            bondDef += 25;
+            
+            if(bondDef >200)
+                {
+                //set to max defence
+                bondDef = 200;
+                return bondDef;
+            }
+            else
+            {
+                return bondDef;
+            }
         }
 
         public int TextbookBarricade()
@@ -603,19 +643,19 @@ namespace SuperCrashTchrs.Screens
             //player one uses move
             if (p1character == "Ort")
             {
-                p1HP = p1HP + 88;
-                if (p1HP < 175)
+                p1hp = p1hp + 88;
+                if (p1hp < 175)
                 {
-                    p1HP = 175;
+                    p1hp = 175;
                 }
             }
             //player 2 uses move
             if (p2character == "Ort")
             {
-                p2HP = p2HP + 88;
-                if (p2HP < 175)
+                p2hp = p2hp + 88;
+                if (p2hp < 175)
                 {
-                    p2HP = 175;
+                    p2hp = 175;
                 }
             }
         }
@@ -651,7 +691,7 @@ namespace SuperCrashTchrs.Screens
                                 break;
                             default:
                                 break;
-                        }
+                }
                     }
                     if (p1move2 == true)
                     {
@@ -1384,7 +1424,7 @@ namespace SuperCrashTchrs.Screens
                             }
                         }
                         # endregion
-
+                  
                         #region p1 Second Speed Tie
                         //p1 goes first
                         if (p1move1 == true)
@@ -1489,8 +1529,8 @@ namespace SuperCrashTchrs.Screens
                                     break;
                                 default:
                                     break;
-                            }
-                        }
+                }
+            }
                         #endregion                                              
                     }
                 }
