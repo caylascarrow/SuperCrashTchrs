@@ -266,11 +266,22 @@ namespace SuperCrashTchrs.Screens
 
         public double Documentary() //Hannah McSwag
         {
-            //little text message description
-            //restore leitch's HP to full
-            leitchHP = 200;
-            return leitchHP;
-            //display HP at full
+            //check if leitch is asleep
+            if (leitchSleep != 0)
+            {
+                //if asleep pass the turn
+                leitchSleep--;
+                return leitchSleep;
+                //display sleep message
+            }
+            else //leitch is awake
+            {
+                //little text message description
+                //restore leitch's HP to full
+                leitchHP = 200;
+                return leitchHP;
+                //display HP at full
+            }
         }
 
         public double Dodgeball(double playerAtk, double opponentDef, double opponentHP) //Justin got this
@@ -335,6 +346,7 @@ namespace SuperCrashTchrs.Screens
 
         public double EqualSign() //Hannah ftw
         {
+            double splitHP = (steelHP + ) / 2;
 
         }
 
