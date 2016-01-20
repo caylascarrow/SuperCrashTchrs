@@ -371,7 +371,7 @@ namespace SuperCrashTchrs.Screens
 
         public double FullBandFF()//Cayla is programming
         {
-            if (ortSleep = 0)
+            if (ortSleep == 0)
             {
                 //know if player's move continues out sucessfully
                 int accuracyHit = randNum.Next(1, 101);
@@ -383,16 +383,16 @@ namespace SuperCrashTchrs.Screens
                     //calculate damage opponent takes
                     //calculate amount of HP opponent has left
                     //display opponent's new HP
-                    if ( //opponent's HP not deplenished
-                    )
+                    if ( /*opponent's HP not deplenished*/)
                     {
 
-        }
-
+                    }
                     else
                     {
                         //go to game over screen
                     }
+                }
+            }
             else
             {
                 //switch to opponent's turn
@@ -403,7 +403,7 @@ namespace SuperCrashTchrs.Screens
         {
 
         }
-        }
+
         public double MadExperiment()//Cayla is programming
         {
             //know if player's move continues out sucessfully
@@ -416,8 +416,7 @@ namespace SuperCrashTchrs.Screens
                 //calculate damage opponent takes
                 //calculate amount of HP opponent has left
                 //display opponent's new HP
-                if (//opponent's HP not deplenished
-                    )
+                if (/*opponent's HP not deplenished*/)
                 {
                     //set to opponent's turn
                 }
@@ -456,8 +455,7 @@ namespace SuperCrashTchrs.Screens
                 //use half the damage as addition to player's health
                 //calculate amount of HP opponent has left
                 //display opponent's and player's new HP
-                if (//opponent's HP not deplenished
-                    )
+                if (/*opponent's HP not deplenished*/)
                 {
                     //set to opponent's turn
                 }
@@ -509,11 +507,12 @@ namespace SuperCrashTchrs.Screens
         {
             ortHP = ortHP + 88;
             if (ortHP < 175)
-        {
-            //add 1/2 of Bradshaw's max HP to HP remaining
-        {
-            //add 1/2 of Bradshaw's max HP to HP remaining
+            {
+                ortHP = 175;
+            }
         }
+        
+
 
         private void moveSelectTimer_Tick(object sender, EventArgs e)
         {
