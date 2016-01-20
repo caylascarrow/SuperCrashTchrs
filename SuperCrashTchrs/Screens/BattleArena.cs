@@ -1,6 +1,6 @@
 ﻿///Super Crash Teachers Battle Arena
 ///By Cayla, Hannah, Justin
-/// ding dangs guys this is cool
+/// 25 January 2016
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,23 +15,13 @@ namespace SuperCrashTchrs.Screens
 {
     public partial class BattleArena : UserControl
     {
-        public BattleArena()
-        {
-            InitializeComponent();
-            moveSelectTimer.Enabled = true;
-        }
-
-
-        public static Random randNum = new Random();
-
-
         #region Global Variables
 
         bool p1move1 = false;
         bool p1move2 = false;
         bool p1move3 = false;
         bool p1move4 = false;
-        
+
         bool p2move1 = false;
         bool p2move2 = false;
         bool p2move3 = false;
@@ -41,8 +31,10 @@ namespace SuperCrashTchrs.Screens
         bool p2moveSelect = false;
 
         string p1character, p2character;
+        int p1HP, p1Atk, p1Def, p1Spd, p2HP, p2Atk, p2Def, p2Spd;
 
         #region Player Stats
+        //Should these be constants?
         //Bond
         int bondHP = 150;
         int bondAtk = 125;
@@ -79,6 +71,104 @@ namespace SuperCrashTchrs.Screens
         #endregion
 
         #endregion
+
+        public BattleArena()
+        {
+            InitializeComponent();
+            moveSelectTimer.Enabled = true;
+            p1character = "Bond";
+            p2character = "Brad";
+
+            #region Stat Switchs 
+            switch (p1character)
+            {
+                case "Bond":
+                    p1HP = bondHP;
+                    p1Atk = bondAtk;
+                    p1Def = bondDef;
+                    p1Spd = bondSpd;
+                    break;
+                case "Brad":
+                    p1HP = bradHP;
+                    p1Atk = bradAtk;
+                    p1Def = bradDef;
+                    p1Spd = bradSpd;
+                    break;
+                case "Leitch":
+                    p1HP = leitchHP;
+                    p1Atk = leitchAtk;
+                    p1Def = leitchDef;
+                    p1Spd = leitchSpd;
+                    break;
+                case "Cutch":
+                    p1HP = cutchHP;
+                    p1Atk = cutchAtk;
+                    p1Def = cutchDef;
+                    p1Spd = cutchSpd;
+                    break;
+                case "Ort":
+                    p1HP = ortHP;
+                    p1Atk = ortAtk;
+                    p1Def = ortDef;
+                    p1Spd = ortSpd;
+                    break;
+                case "Steel":
+                    p1HP = steelHP;
+                    p1Atk = steelAtk;
+                    p1Def = steelDef;
+                    p1Spd = steelSpd;
+                    break;
+                default:
+                    break;
+            }
+            switch (p2character)
+            {
+                case "Bond":
+                    p2HP = bondHP;
+                    p2Atk = bondAtk;
+                    p2Def = bondDef;
+                    p2Spd = bondSpd;
+                    break;
+                case "Brad":
+                    p2HP = bradHP;
+                    p2Atk = bradAtk;
+                    p2Def = bradDef;
+                    p2Spd = bradSpd;
+                    break;
+                case "Leitch":
+                    p2HP = leitchHP;
+                    p2Atk = leitchAtk;
+                    p2Def = leitchDef;
+                    p2Spd = leitchSpd;
+                    break;
+                case "Cutch":
+                    p2HP = cutchHP;
+                    p2Atk = cutchAtk;
+                    p2Def = cutchDef;
+                    p2Spd = cutchSpd;
+                    break;
+                case "Ort":
+                    p2HP = ortHP;
+                    p2Atk = ortAtk;
+                    p2Def = ortDef;
+                    p2Spd = ortSpd;
+                    break;
+                case "Steel":
+                    p2HP = steelHP;
+                    p2Atk = steelAtk;
+                    p2Def = steelDef;
+                    p2Spd = steelSpd;
+                    break;
+                default:
+                    break;
+            }
+            #endregion
+        }
+        
+        public static Random randNum = new Random();
+
+
+      
 
         private void BattleArena_KeyDown(object sender, KeyEventArgs e)
         {
@@ -162,7 +252,7 @@ namespace SuperCrashTchrs.Screens
 
         public double AttackBot() //Hannah has this one
         {
-            
+
         }
 
         public int clarinetSqueak(int opponentDef) //Justin got this
@@ -179,10 +269,12 @@ namespace SuperCrashTchrs.Screens
             return opponentDef;
         }
 
-        public double ComplainBout() //Cayla is programming
+        public double ComplainAbout() //Cayla is programming
         {
             //know if player's move continues out sucessfully
             int accuracyHit = randNum.Next(1, 101);
+
+            //
 
             if (accuracyHit > 10)
             {
@@ -255,6 +347,7 @@ namespace SuperCrashTchrs.Screens
                 else
                 {
                     //go to game over screen
+                    ScreenControl.changeScreen(this, "MultiEndScreen");
                 }
 
             }
@@ -335,6 +428,7 @@ namespace SuperCrashTchrs.Screens
                 else
                 {
                     //go to game over screen
+                    ScreenControl.changeScreen(this, "MultiEndScreen");
                 }
 
             }
@@ -381,10 +475,10 @@ namespace SuperCrashTchrs.Screens
 
         public double FullBandFF()//Cayla is programming
         {
-            if (ortSleep = 0)
+            if (ortSleep == 0)
             {
                 //know if player's move continues out sucessfully
-                int accuracyHit = randNum.Next(1,101);
+                int accuracyHit = randNum.Next(1, 101);
 
                 if (accuracyHit > 10)
                 {
@@ -393,17 +487,21 @@ namespace SuperCrashTchrs.Screens
                     //calculate damage opponent takes
                     //calculate amount of HP opponent has left
                     //display opponent's new HP
-                    if (//opponent's HP not deplenished
+                    if ( /*opponent's HP not deplenished*/)
                     {
 
                     }
+                    else
                     {
                         //go to game over screen
+                        ScreenControl.changeScreen(this, "MultiEndScreen");
                     }
+                }
+            }
             else
-                    {
-                        //switch to opponent's turn
-                    }
+            {
+                //switch to opponent's turn
+            }
         }
 
         public double HealthClass()
@@ -423,14 +521,14 @@ namespace SuperCrashTchrs.Screens
                 //calculate damage opponent takes
                 //calculate amount of HP opponent has left
                 //display opponent's new HP
-                if (//opponent's HP not deplenished
-                    )
+                if (/*opponent's HP not deplenished*/)
                 {
                     //set to opponent's turn
                 }
                 else
                 {
                     //go to game over screen
+                    ScreenControl.changeScreen(this, "MultiEndScreen");
                 }
             }
             else
@@ -463,14 +561,14 @@ namespace SuperCrashTchrs.Screens
                 //use half the damage as addition to player's health
                 //calculate amount of HP opponent has left
                 //display opponent's and player's new HP
-                if (//opponent's HP not deplenished
-                    )
+                if (/*opponent's HP not deplenished*/)
                 {
                     //set to opponent's turn
                 }
                 else
                 {
                     //go to game over screen
+                    ScreenControl.changeScreen(this, "MultiEndScreen");
                 }
             }
             else
@@ -514,24 +612,890 @@ namespace SuperCrashTchrs.Screens
 
         public double Tuning() //Justin got this
         {
-            ortHP = ortHP + 88;
-            if (ortHP < 175)
+            //player one uses move
+            if (p1character == "Ort")
             {
-                ortHP = 175;
+                p1HP = p1HP + 88;
+                if (p1HP < 175)
+                {
+                    p1HP = 175;
+                }
+            }
+            //player 2 uses move
+            if (p2character == "Ort")
+            {
+                p2HP = p2HP + 88;
+                if (p2HP < 175)
+                {
+                    p2HP = 175;
+                }
             }
         }
+        
 
-        {
-            //add 1/2 of Bradshaw's max HP to HP remaining
-        }
 
         private void moveSelectTimer_Tick(object sender, EventArgs e)
         {
             if (p1moveSelect == true && p2moveSelect == true)
             {
+                if (p1Spd > p2Spd)
+                {
+                    #region p1 Goes First
+                    if (p1move1 == true)
+                    {
+                        switch (p1character)
+                        {
+                            case "Bond":
+                                //CriteraChart
+                                break;
+                            case "Brad":
+                                //AttackBot
+                                break;
+                            case "Leitch":
+                                //Documentary
+                                break;
+                            case "Cutch":
+                                //DODGEBALL
+                                break;
+                            case "Ort":
+                                //ClairinetSqueak
+                                break;
+                            case "Steel":
+                                //EqualSign
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                    if (p1move2 == true)
+                    {
+                        switch (p1character)
+                        {
+                            case "Bond":
+                                //Dissection
+                                break;
+                            case "Brad":
+                                //ComplainBout
+                                break;
+                            case "Leitch":
+                                //EssayQuestion
+                                break;
+                            case "Cutch":
+                                //DunkOn
+                                break;
+                            case "Ort":
+                                //FullBandFF
+                                break;
+                            case "Steel":
+                                //PinkPaper
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                    if (p1move3 == true)
+                    {
+                        switch (p1character)
+                        {
+                            case "Bond":
+                                //MadExperiment
+                                break;
+                            case "Brad":
+                                //DefenderBot
+                                break;
+                            case "Leitch":
+                                //HistoricWar
+                                break;
+                            case "Cutch":
+                                //PushUps
+                                break;
+                            case "Ort":
+                                //MelodiousPassage
+                                break;
+                            case "Steel":
+                                //QuadraticAttack
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                    if (p1move4 == true)
+                    {
+                        switch (p1character)
+                        {
+                            case "Bond":
+                                //TalkBoutFamily
+                                break;
+                            case "Brad":
+                                //VideoFriday
+                                break;
+                            case "Leitch":
+                                //MCQuestion
+                                break;
+                            case "Cutch":
+                                //HealthClass
+                                break;
+                            case "Ort":
+                                //Tuning
+                                break;
+                            case "Steel":
+                                //TextbookBarricade
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                    # endregion
 
+                    #region p2 Goes Second
+                    if (p2move1 == true)
+                    {
+                        switch (p2character)
+                        {
+                            case "Bond":
+                                //CriteraChart
+                                break;
+                            case "Brad":
+                                //AttackBot
+                                break;
+                            case "Leitch":
+                                //Documentary
+                                break;
+                            case "Cutch":
+                                //DODGEBALL
+                                break;
+                            case "Ort":
+                                //ClairinetSqueak
+                                break;
+                            case "Steel":
+                                //EqualSign
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                    if (p2move2 == true)
+                    {
+                        switch (p2character)
+                        {
+                            case "Bond":
+                                //Dissection
+                                break;
+                            case "Brad":
+                                //ComplainBout
+                                break;
+                            case "Leitch":
+                                //EssayQuestion
+                                break;
+                            case "Cutch":
+                                //DunkOn
+                                break;
+                            case "Ort":
+                                //FullBandFF
+                                break;
+                            case "Steel":
+                                //PinkPaper
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                    if (p2move3 == true)
+                    {
+                        switch (p2character)
+                        {
+                            case "Bond":
+                                //MadExperiment
+                                break;
+                            case "Brad":
+                                //DefenderBot
+                                break;
+                            case "Leitch":
+                                //HistoricWar
+                                break;
+                            case "Cutch":
+                                //PushUps
+                                break;
+                            case "Ort":
+                                //MelodiousPassage
+                                break;
+                            case "Steel":
+                                //QuadraticAttack
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                    if (p2move4 == true)
+                    {
+                        switch (p2character)
+                        {
+                            case "Bond":
+                                //TalkBoutFamily
+                                break;
+                            case "Brad":
+                                //VideoFriday
+                                break;
+                            case "Leitch":
+                                //MCQuestion
+                                break;
+                            case "Cutch":
+                                //HealthClass
+                                break;
+                            case "Ort":
+                                //Tuning
+                                break;
+                            case "Steel":
+                                //TextbookBarricade
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                    # endregion
+                }
+                else if (p1Spd < p2Spd)
+                {
+                    #region p2 Goes First
+                    if (p2move1 == true)
+                    {
+                        switch (p2character)
+                        {
+                            case "Bond":
+                                //CriteraChart
+                                break;
+                            case "Brad":
+                                //AttackBot
+                                break;
+                            case "Leitch":
+                                //Documentary
+                                break;
+                            case "Cutch":
+                                //DODGEBALL
+                                break;
+                            case "Ort":
+                                //ClairinetSqueak
+                                break;
+                            case "Steel":
+                                //EqualSign
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                    if (p2move2 == true)
+                    {
+                        switch (p2character)
+                        {
+                            case "Bond":
+                                //Dissection
+                                break;
+                            case "Brad":
+                                //ComplainBout
+                                break;
+                            case "Leitch":
+                                //EssayQuestion
+                                break;
+                            case "Cutch":
+                                //DunkOn
+                                break;
+                            case "Ort":
+                                //FullBandFF
+                                break;
+                            case "Steel":
+                                //PinkPaper
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                    if (p2move3 == true)
+                    {
+                        switch (p2character)
+                        {
+                            case "Bond":
+                                //MadExperiment
+                                break;
+                            case "Brad":
+                                //DefenderBot
+                                break;
+                            case "Leitch":
+                                //HistoricWar
+                                break;
+                            case "Cutch":
+                                //PushUps
+                                break;
+                            case "Ort":
+                                //MelodiousPassage
+                                break;
+                            case "Steel":
+                                //QuadraticAttack
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                    if (p2move4 == true)
+                    {
+                        switch (p2character)
+                        {
+                            case "Bond":
+                                //TalkBoutFamily
+                                break;
+                            case "Brad":
+                                //VideoFriday
+                                break;
+                            case "Leitch":
+                                //MCQuestion
+                                break;
+                            case "Cutch":
+                                //HealthClass
+                                break;
+                            case "Ort":
+                                //Tuning
+                                break;
+                            case "Steel":
+                                //TextbookBarricade
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                    # endregion
+
+                    #region p1 Goes Second
+                    if (p1move1 == true)
+                    {
+                        switch (p1character)
+                        {
+                            case "Bond":
+                                //CriteraChart
+                                break;
+                            case "Brad":
+                                //AttackBot
+                                break;
+                            case "Leitch":
+                                //Documentary
+                                break;
+                            case "Cutch":
+                                //DODGEBALL
+                                break;
+                            case "Ort":
+                                //ClairinetSqueak
+                                break;
+                            case "Steel":
+                                //EqualSign
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                    if (p1move2 == true)
+                    {
+                        switch (p1character)
+                        {
+                            case "Bond":
+                                //Dissection
+                                break;
+                            case "Brad":
+                                //ComplainBout
+                                break;
+                            case "Leitch":
+                                //EssayQuestion
+                                break;
+                            case "Cutch":
+                                //DunkOn
+                                break;
+                            case "Ort":
+                                //FullBandFF
+                                break;
+                            case "Steel":
+                                //PinkPaper
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                    if (p1move3 == true)
+                    {
+                        switch (p1character)
+                        {
+                            case "Bond":
+                                //MadExperiment
+                                break;
+                            case "Brad":
+                                //DefenderBot
+                                break;
+                            case "Leitch":
+                                //HistoricWar
+                                break;
+                            case "Cutch":
+                                //PushUps
+                                break;
+                            case "Ort":
+                                //MelodiousPassage
+                                break;
+                            case "Steel":
+                                //QuadraticAttack
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                    if (p1move4 == true)
+                    {
+                        switch (p1character)
+                        {
+                            case "Bond":
+                                //TalkBoutFamily
+                                break;
+                            case "Brad":
+                                //VideoFriday
+                                break;
+                            case "Leitch":
+                                //MCQuestion
+                                break;
+                            case "Cutch":
+                                //HealthClass
+                                break;
+                            case "Ort":
+                                //Tuning
+                                break;
+                            case "Steel":
+                                //TextbookBarricade
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                    # endregion
+                }
+                else if (p1Spd == p2Spd)
+                {
+                        #region p1 First Speed Tie
+                                case "Bond":
+                                    //CriteraChart
+                                    break;
+                                case "Brad":
+                                    //AttackBot
+                                    break;
+                                case "Leitch":
+                                    //Documentary
+                                    break;
+                                case "Cutch":
+                                    //DODGEBALL
+                                    break;
+                                case "Ort":
+                                    //ClairinetSqueak
+                                    break;
+                                case "Steel":
+                                    //EqualSign
+                                    break;
+                                default:
+                                    break;
+                            }
+                        }
+                        if (p1move2 == true)
+                        {
+                            switch (p1character)
+                            {
+                                case "Bond":
+                                    //Dissection
+                                    break;
+                                case "Brad":
+                                    //ComplainBout
+                                    break;
+                                case "Leitch":
+                                    //EssayQuestion
+                                    break;
+                                case "Cutch":
+                                    //DunkOn
+                                    break;
+                                case "Ort":
+                                    //FullBandFF
+                                    break;
+                                case "Steel":
+                                    //PinkPaper
+                                    break;
+                                default:
+                                    break;
+                            }
+                        }
+                        if (p1move3 == true)
+                        {
+                            switch (p1character)
+                            {
+                                case "Bond":
+                                    //MadExperiment
+                                    break;
+                                case "Brad":
+                                    //DefenderBot
+                                    break;
+                                case "Leitch":
+                                    //HistoricWar
+                                    break;
+                                case "Cutch":
+                                    //PushUps
+                                    break;
+                                case "Ort":
+                                    //MelodiousPassage
+                                    break;
+                                case "Steel":
+                                    //QuadraticAttack
+                                    break;
+                                default:
+                                    break;
+                            }
+                        }
+                        if (p1move4 == true)
+                        {
+                            switch (p1character)
+                            {
+                                case "Bond":
+                                    //TalkBoutFamily
+                                    break;
+                                case "Brad":
+                                    //VideoFriday
+                                    break;
+                                case "Leitch":
+                                    //MCQuestion
+                                    break;
+                                case "Cutch":
+                                    //HealthClass
+                                    break;
+                                case "Ort":
+                                    //Tuning
+                                    break;
+                                case "Steel":
+                                    //TextbookBarricade
+                                    break;
+                                default:
+                                    break;
+                            }
+                        }
+#endregion
+                  
+                        #region p2 Second Speed Tie
+                        if (p2move1 == true)
+                        {
+                            switch (p2character)
+                            {
+                                case "Bond":
+                                    //CriteraChart
+                                    break;
+                                case "Brad":
+                                    //AttackBot
+                                    break;
+                                case "Leitch":
+                                    //Documentary
+                                    break;
+                                case "Cutch":
+                                    //DODGEBALL
+                                    break;
+                                case "Ort":
+                                    //ClairinetSqueak
+                                    break;
+                                case "Steel":
+                                    //EqualSign
+                                    break;
+                                default:
+                                    break;
+                            }
+                        }
+                        if (p2move2 == true)
+                        {
+                            switch (p2character)
+                            {
+                                case "Bond":
+                                    //Dissection
+                                    break;
+                                case "Brad":
+                                    //ComplainBout
+                                    break;
+                                case "Leitch":
+                                    //EssayQuestion
+                                    break;
+                                case "Cutch":
+                                    //DunkOn
+                                    break;
+                                case "Ort":
+                                    //FullBandFF
+                                    break;
+                                case "Steel":
+                                    //PinkPaper
+                                    break;
+                                default:
+                                    break;
+                            }
+                        }
+                        if (p2move3 == true)
+                        {
+                            switch (p2character)
+                            {
+                                case "Bond":
+                                    //MadExperiment
+                                    break;
+                                case "Brad":
+                                    //DefenderBot
+                                    break;
+                                case "Leitch":
+                                    //HistoricWar
+                                    break;
+                                case "Cutch":
+                                    //PushUps
+                                    break;
+                                case "Ort":
+                                    //MelodiousPassage
+                                    break;
+                                case "Steel":
+                                    //QuadraticAttack
+                                    break;
+                                default:
+                                    break;
+                }
             }
-            else 
+                        if (p2move4 == true)
+                        {
+                            switch (p2character)
+                            {
+                                case "Bond":
+                                    //TalkBoutFamily
+                                    break;
+                                case "Brad":
+                                    //VideoFriday
+                                    break;
+                                case "Leitch":
+                                    //MCQuestion
+                                    break;
+                                case "Cutch":
+                                    //HealthClass
+                                    break;
+                                case "Ort":
+                                    //Tuning
+                                    break;
+                                case "Steel":
+                                    //TextbookBarricade
+                                    break;
+                                default:
+                                    break;
+                            }
+                        }
+                        # endregion
+                        #region p2 First Speed Tie
+                        if (p2move1 == true)
+                        {
+                            switch (p2character)
+                            {
+                                case "Bond":
+                                    //CriteraChart
+                                    break;
+                                case "Brad":
+                                    //AttackBot
+                                    break;
+                                case "Leitch":
+                                    //Documentary
+                                    break;
+                                case "Cutch":
+                                    //DODGEBALL
+                                    break;
+                                case "Ort":
+                                    //ClairinetSqueak
+                                    break;
+                                case "Steel":
+                                    //EqualSign
+                                    break;
+                                default:
+                                    break;
+                            }
+                        }
+                        if (p2move2 == true)
+                        {
+                            switch (p2character)
+                            {
+                                case "Bond":
+                                    //Dissection
+                                    break;
+                                case "Brad":
+                                    //ComplainBout
+                                    break;
+                                case "Leitch":
+                                    //EssayQuestion
+                                    break;
+                                case "Cutch":
+                                    //DunkOn
+                                    break;
+                                case "Ort":
+                                    //FullBandFF
+                                    break;
+                                case "Steel":
+                                    //PinkPaper
+                                    break;
+                                default:
+                                    break;
+                            }
+                        }
+                        if (p2move3 == true)
+                        {
+                            switch (p2character)
+                            {
+                                case "Bond":
+                                    //MadExperiment
+                                    break;
+                                case "Brad":
+                                    //DefenderBot
+                                    break;
+                                case "Leitch":
+                                    //HistoricWar
+                                    break;
+                                case "Cutch":
+                                    //PushUps
+                                    break;
+                                case "Ort":
+                                    //MelodiousPassage
+                                    break;
+                                case "Steel":
+                                    //QuadraticAttack
+                                    break;
+                                default:
+                                    break;
+                            }
+                        }
+                        if (p2move4 == true)
+                        {
+                            switch (p2character)
+                            {
+                                case "Bond":
+                                    //TalkBoutFamily
+                                    break;
+                                case "Brad":
+                                    //VideoFriday
+                                    break;
+                                case "Leitch":
+                                    //MCQuestion
+                                    break;
+                                case "Cutch":
+                                    //HealthClass
+                                    break;
+                                case "Ort":
+                                    //Tuning
+                                    break;
+                                case "Steel":
+                                    //TextbookBarricade
+                                    break;
+                                default:
+                                    break;
+                            }
+                        }
+                        # endregion
+
+                        #region p1 Second Speed Tie
+                        //p1 goes first
+                        if (p1move1 == true)
+                        {
+                            switch (p1character)
+                            {
+                                case "Bond":
+                                    //CriteraChart
+                                    break;
+                                case "Brad":
+                                    //AttackBot
+                                    break;
+                                case "Leitch":
+                                    //Documentary
+                                    break;
+                                case "Cutch":
+                                    //DODGEBALL
+                                    break;
+                                case "Ort":
+                                    //ClairinetSqueak
+                                    break;
+                                case "Steel":
+                                    //EqualSign
+                                    break;
+                                default:
+                                    break;
+                            }
+                        }
+                        if (p1move2 == true)
+                        {
+                            switch (p1character)
+                            {
+                                case "Bond":
+                                    //Dissection
+                                    break;
+                                case "Brad":
+                                    //ComplainBout
+                                    break;
+                                case "Leitch":
+                                    //EssayQuestion
+                                    break;
+                                case "Cutch":
+                                    //DunkOn
+                                    break;
+                                case "Ort":
+                                    //FullBandFF
+                                    break;
+                                case "Steel":
+                                    //PinkPaper
+                                    break;
+                                default:
+                                    break;
+                            }
+                        }
+                        if (p1move3 == true)
+                        {
+                            switch (p1character)
+                            {
+                                case "Bond":
+                                    //MadExperiment
+                                    break;
+                                case "Brad":
+                                    //DefenderBot
+                                    break;
+                                case "Leitch":
+                                    //HistoricWar
+                                    break;
+                                case "Cutch":
+                                    //PushUps
+                                    break;
+                                case "Ort":
+                                    //MelodiousPassage
+                                    break;
+                                case "Steel":
+                                    //QuadraticAttack
+                                    break;
+                                default:
+                                    break;
+                            }
+                        }
+                        if (p1move4 == true)
+                        {
+                            switch (p1character)
+                            {
+                                case "Bond":
+                                    //TalkBoutFamily
+                                    break;
+                                case "Brad":
+                                    //VideoFriday
+                                    break;
+                                case "Leitch":
+                                    //MCQuestion
+                                    break;
+                                case "Cutch":
+                                    //HealthClass
+                                    break;
+                                case "Ort":
+                                    //Tuning
+                                    break;
+                                case "Steel":
+                                    //TextbookBarricade
+                                    break;
+                                default:
+                                    break;
+                            }
+                        }
+                        #endregion                                              
+            else
             {
 
             }
