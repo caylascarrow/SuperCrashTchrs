@@ -31,7 +31,7 @@ namespace SuperCrashTchrs.Screens
         bool p2moveSelect = false;
 
         string p1character, p2character;
-        int p1HP, p1Atk, p1Def, p1Spd, p2HP, p2Atk, p2Def, p2Spd;
+        int p1hp, p1Atk, p1Def, p1Spd, p2hp, p2Atk, p2Def, p2Spd;
 
         #region Player Stats
         //Should these be constants?
@@ -83,37 +83,37 @@ namespace SuperCrashTchrs.Screens
             switch (p1character)
             {
                 case "Bond":
-                    p1HP = bondHP;
+                    p1hp = bondHP;
                     p1Atk = bondAtk;
                     p1Def = bondDef;
                     p1Spd = bondSpd;
                     break;
                 case "Brad":
-                    p1HP = bradHP;
+                    p1hp = bradHP;
                     p1Atk = bradAtk;
                     p1Def = bradDef;
                     p1Spd = bradSpd;
                     break;
                 case "Leitch":
-                    p1HP = leitchHP;
+                    p1hp = leitchHP;
                     p1Atk = leitchAtk;
                     p1Def = leitchDef;
                     p1Spd = leitchSpd;
                     break;
                 case "Cutch":
-                    p1HP = cutchHP;
+                    p1hp = cutchHP;
                     p1Atk = cutchAtk;
                     p1Def = cutchDef;
                     p1Spd = cutchSpd;
                     break;
                 case "Ort":
-                    p1HP = ortHP;
+                    p1hp = ortHP;
                     p1Atk = ortAtk;
                     p1Def = ortDef;
                     p1Spd = ortSpd;
                     break;
                 case "Steel":
-                    p1HP = steelHP;
+                    p1hp = steelHP;
                     p1Atk = steelAtk;
                     p1Def = steelDef;
                     p1Spd = steelSpd;
@@ -124,37 +124,37 @@ namespace SuperCrashTchrs.Screens
             switch (p2character)
             {
                 case "Bond":
-                    p2HP = bondHP;
+                    p2hp = bondHP;
                     p2Atk = bondAtk;
                     p2Def = bondDef;
                     p2Spd = bondSpd;
                     break;
                 case "Brad":
-                    p2HP = bradHP;
+                    p2hp = bradHP;
                     p2Atk = bradAtk;
                     p2Def = bradDef;
                     p2Spd = bradSpd;
                     break;
                 case "Leitch":
-                    p2HP = leitchHP;
+                    p2hp = leitchHP;
                     p2Atk = leitchAtk;
                     p2Def = leitchDef;
                     p2Spd = leitchSpd;
                     break;
                 case "Cutch":
-                    p2HP = cutchHP;
+                    p2hp = cutchHP;
                     p2Atk = cutchAtk;
                     p2Def = cutchDef;
                     p2Spd = cutchSpd;
                     break;
                 case "Ort":
-                    p2HP = ortHP;
+                    p2hp = ortHP;
                     p2Atk = ortAtk;
                     p2Def = ortDef;
                     p2Spd = ortSpd;
                     break;
                 case "Steel":
-                    p2HP = steelHP;
+                    p2hp = steelHP;
                     p2Atk = steelAtk;
                     p2Def = steelDef;
                     p2Spd = steelSpd;
@@ -598,19 +598,19 @@ namespace SuperCrashTchrs.Screens
             //player one uses move
             if (p1character == "Ort")
             {
-                p1HP = p1HP + 88;
-                if (p1HP < 175)
+                p1hp = p1hp + 88;
+                if (p1hp < 175)
                 {
-                    p1HP = 175;
+                    p1hp = 175;
                 }
             }
             //player 2 uses move
             if (p2character == "Ort")
             {
-                p2HP = p2HP + 88;
-                if (p2HP < 175)
+                p2hp = p2hp + 88;
+                if (p2hp < 175)
                 {
-                    p2HP = 175;
+                    p2hp = 175;
                 }
             }
         }
@@ -634,6 +634,13 @@ namespace SuperCrashTchrs.Screens
                     if (randNum.Next(1,3) == 1)
                     {
                         //p1 goes first
+                        if (p1move1 == true)
+                        {
+                            switch (p1character)
+                            {
+
+                            }
+                        }
                     }
                     else
                     {
