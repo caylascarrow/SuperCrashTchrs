@@ -1,6 +1,6 @@
 ﻿///Super Crash Teachers Battle Arena
 ///By Cayla, Hannah, Justin
-/// ding dangs guys this is cool
+/// 25 January 2016
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -347,6 +347,7 @@ namespace SuperCrashTchrs.Screens
                 else
                 {
                     //go to game over screen
+                    ScreenControl.changeScreen(this, "MultiEndScreen");
                 }
 
             }
@@ -416,6 +417,7 @@ namespace SuperCrashTchrs.Screens
                 else
                 {
                     //go to game over screen
+                    ScreenControl.changeScreen(this, "MultiEndScreen");
                 }
 
             }
@@ -480,6 +482,7 @@ namespace SuperCrashTchrs.Screens
                     else
                     {
                         //go to game over screen
+                        ScreenControl.changeScreen(this, "MultiEndScreen");
                     }
                 }
             }
@@ -513,6 +516,7 @@ namespace SuperCrashTchrs.Screens
                 else
                 {
                     //go to game over screen
+                    ScreenControl.changeScreen(this, "MultiEndScreen");
                 }
             }
             else
@@ -552,6 +556,7 @@ namespace SuperCrashTchrs.Screens
                 else
                 {
                     //go to game over screen
+                    ScreenControl.changeScreen(this, "MultiEndScreen");
                 }
             }
             else
@@ -631,10 +636,10 @@ namespace SuperCrashTchrs.Screens
                 }
                 else if (p1Spd == p2Spd)
                 {
-
+                  
                 }
             }
-            else 
+            else
             {
 
             }
