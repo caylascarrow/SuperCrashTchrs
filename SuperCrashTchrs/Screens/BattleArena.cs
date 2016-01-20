@@ -621,7 +621,18 @@ namespace SuperCrashTchrs.Screens
         {
             if (p1moveSelect == true && p2moveSelect == true)
             {
-                
+                if (p1Spd > p2Spd)
+                {
+                    //p1 goes first 
+                }
+                else if (p1Spd < p2Spd)
+                {
+                    //p2 goes first
+                }
+                else if (p1Spd == p2Spd)
+                {
+
+                }
             }
             else 
             {
