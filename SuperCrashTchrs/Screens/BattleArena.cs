@@ -287,7 +287,7 @@ namespace SuperCrashTchrs.Screens
                 //show animation
                 //play sound(s)
                 //calculate damage opponent takes
-                damage = (((42 * playerAtk * 30 / opponentDef) / 50) + 2)
+                damage = (((42 * playerAtk * 75 / opponentDef) / 50) + 2)
                 * randNum.Next(1, 101) / 100;
                 //calculate amount of HP opponent has left
                 opponentHP = opponentHP - damage;
@@ -309,23 +309,55 @@ namespace SuperCrashTchrs.Screens
             }
         }
 
-        public double criteriaChart() //Hannah ftw
+        public void CriteriaChart() //Hannah ftw
         {
-            //display message
-            //increase Bond's attack by 25
-            bondAtk += 25;
-            //increase Bond's speed by 25
-            bondSpd += 25;
-            if (bondAtk > 250 || bondSpd > 250)
+            int userAtk, userSpd;
+            if (p1character == "Bond")
             {
-                bondAtk = 250;
-                bondSpd = 250;
-                return bondAtk;
-                return bondSpd;
-            } else
+                userAtk = p1Atk;
+                userSpd = p1Spd;
+            }
+            else if (p2character == "Bond")
             {
-                return bondAtk;
-                return bondSpd;
+                userAtk = p2Atk;
+                userSpd = p2Spd;
+            }
+            else
+            {
+                userAtk = 0;
+                userSpd = 0;
+            }
+            battleStatusOutput.Text = "Bond used Critera Chart!";
+            Thread.Sleep(sleepTime);
+
+            userAtk += 25;
+            battleStatusOutput.Text = "Bonds Attack rose!";
+            Thread.Sleep(sleepTime);
+            if (userAtk > 250)
+            {
+                userAtk = 250;
+                battleStatusOutput.Text = "Bonds Attack can't go any higher!";
+                Thread.Sleep(sleepTime);
+            }
+
+            userSpd += 25;
+            battleStatusOutput.Text = "Bonds Speed rose!";
+            Thread.Sleep(sleepTime);
+            if (userSpd > 250)
+            {
+                userSpd = 250;
+                battleStatusOutput.Text = "Bonds Speed can't go any higher!";
+                Thread.Sleep(sleepTime);
+            }            
+            if (p1character == "Bond")
+            {
+                p1Atk = userAtk;
+                p1Spd = userSpd;
+            }
+            else if (p2character == "Bond")
+            {
+                userAtk = p2Atk;
+                userSpd = p2Spd;
             }
         }
 
@@ -450,7 +482,7 @@ namespace SuperCrashTchrs.Screens
                 //show animation
                 //play sound(s)
                 //calculate damage opponent takes
-                damage = (((42 * playerAtk * 30 / opponentDef) / 50) + 2)
+                damage = (((42 * playerAtk * 90 / opponentDef) / 50) + 2)
                  * randNum.Next(1, 101) / 100;
 
                 //calculate amount of HP opponent has left
@@ -470,7 +502,7 @@ namespace SuperCrashTchrs.Screens
             }
             else
             {
-                //set to opponent's turn
+                //send move failed message
             }
         }
 
@@ -510,10 +542,12 @@ namespace SuperCrashTchrs.Screens
             }
         }
 
-        public double FullBandFF()//Cayla is programming
+        public double FullBandFF(double playerAtk, double opponentDef, double opponentHP)//Cayla is programming
         {
             if (ortSleep == 0)
             {
+                //local variables called
+                double damage;
                 //know if player's move continues out sucessfully
                 int accuracyHit = randNum.Next(1, 101);
 
@@ -522,11 +556,14 @@ namespace SuperCrashTchrs.Screens
                     //show animation
                     //play sound(s)
                     //calculate damage opponent takes
+                    damage = (((42 * playerAtk * 120 / opponentDef) / 50) + 2)
+                    * randNum.Next(1, 101) / 100;
                     //calculate amount of HP opponent has left
+                    opponentHP = opponentHP - damage;
                     //display opponent's new HP
-                    if ( /*opponent's HP not deplenished*/)
+                    if (opponentHP > 0)
                     {
-
+                        return opponentHP;
                     }
                     else
                     {
@@ -534,10 +571,14 @@ namespace SuperCrashTchrs.Screens
                         ScreenControl.changeScreen(this, "MultiEndScreen");
                     }
                 }
+                else
+                {
+                    //send move failed message
+                }
             }
             else
             {
-                //switch to opponent's turn
+                //send ortelli is too tired message
             }
         }
 
@@ -560,11 +601,11 @@ namespace SuperCrashTchrs.Screens
                 //play sound(s)
                 //calculate damage opponent takes
                 damage = (((42 * playerAtk * 100 / opponentDef) / 50) + 2)
-                  * randNum.Next(1, 101) / 100;
+                * randNum.Next(1, 101) / 100;
                 //calculate amount of HP opponent has left
                 opponentHP = opponentHP - damage;
-                
                
+                //check if opponent has been defeated
                 if (opponentHP > 0)
                 {
                     //display opponent's new HP
@@ -580,7 +621,7 @@ namespace SuperCrashTchrs.Screens
             }
             else
             {
-                //opponent's turn
+                //send move failed message 
             }
         }
 
@@ -606,8 +647,11 @@ namespace SuperCrashTchrs.Screens
             }
         }
 
-        public double PinkPaper()//Cayla is programming
+        public double PinkPaper(double playerAtk, double playerHP, double opponentDef, double opponentHP)//Cayla is programming
         {
+            // local variables called
+            double damage;
+            double playerHpUp;
             int accuracyHit = randNum.Next(1, 101);
 
             if (accuracyHit > 20)
@@ -615,13 +659,22 @@ namespace SuperCrashTchrs.Screens
                 //show animation/ slight difference in images
                 //play sound(s)
                 //calculate damage opponent takes
+                damage = (((42 * playerAtk * 50 / opponentDef) / 50) + 2)
+               * randNum.Next(1, 101) / 100;
+
                 //multiply by 0.5
+                playerHpUp = damage * 0.5;
+
                 //use half the damage as addition to player's health
+                playerHP = playerHpUp + damage;
+
                 //calculate amount of HP opponent has left
+                opponentHP = opponentHP - damage;
+
                 //display opponent's and player's new HP
-                if (/*opponent's HP not deplenished*/)
+                if (opponentHP > 0)
                 {
-                    //set to opponent's turn
+                    return opponentHP;
                 }
                 else
                 {
@@ -631,7 +684,7 @@ namespace SuperCrashTchrs.Screens
             }
             else
             {
-                //opponent's turn
+                //send move failed message
             }
         }
 
@@ -690,13 +743,13 @@ namespace SuperCrashTchrs.Screens
             }
             return playerHP;    
         }
-      
+
         public int VideoFriday(int playerHP)//Cayla's programming
-        {            
+        {
             playerHP += 75;
             if (playerHP > 150)
             {
-                playerHP = 150;          
+                playerHP = 150;
             }
             return playerHP;
         }
@@ -716,7 +769,7 @@ namespace SuperCrashTchrs.Screens
                         switch (p1character)
                         {
                             case "Bond":
-                                //CriteraChart
+                                CriteriaChart();
                                 break;
                             case "Brad":
                                 //AttackBot
