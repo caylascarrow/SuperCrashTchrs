@@ -1098,7 +1098,7 @@ namespace SuperCrashTchrs.Screens
                 }
                 else if (p1Spd == p2Spd)
                 {
-                    if (randNum.Next(1,3) == 1)
+                    if (randNum.Next(1, 3) == 1)
                     {
                         #region p1 First Speed Tie
                         if (p1move1 == true)
@@ -1205,8 +1205,8 @@ namespace SuperCrashTchrs.Screens
                                     break;
                             }
                         }
-#endregion
-                  
+                        #endregion
+
                         #region p2 Second Speed Tie
                         if (p2move1 == true)
                         {
@@ -1284,117 +1284,6 @@ namespace SuperCrashTchrs.Screens
                                     break;
                                 default:
                                     break;
-                }
-            }
-                        if (p2move4 == true)
-                        {
-                            switch (p2character)
-                            {
-                                case "Bond":
-                                    //TalkBoutFamily
-                                    break;
-                                case "Brad":
-                                    //VideoFriday
-                                    break;
-                                case "Leitch":
-                                    //MCQuestion
-                                    break;
-                                case "Cutch":
-                                    //HealthClass
-                                    break;
-                                case "Ort":
-                                    //Tuning
-                                    break;
-                                case "Steel":
-                                    //TextbookBarricade
-                                    break;
-                                default:
-                                    break;
-                            }
-                        }
-                        # endregion
-            }
-                        
-                    
-                    else 
-                    {
-                        #region p2 First Speed Tie
-                        if (p2move1 == true)
-                        {
-                            switch (p2character)
-                            {
-                                case "Bond":
-                                    //CriteraChart
-                                    break;
-                                case "Brad":
-                                    //AttackBot
-                                    break;
-                                case "Leitch":
-                                    //Documentary
-                                    break;
-                                case "Cutch":
-                                    //DODGEBALL
-                                    break;
-                                case "Ort":
-                                    //ClairinetSqueak
-                                    break;
-                                case "Steel":
-                                    //EqualSign
-                                    break;
-                                default:
-                                    break;
-                            }
-                        }
-                        if (p2move2 == true)
-                        {
-                            switch (p2character)
-                            {
-                                case "Bond":
-                                    //Dissection
-                                    break;
-                                case "Brad":
-                                    //ComplainBout
-                                    break;
-                                case "Leitch":
-                                    //EssayQuestion
-                                    break;
-                                case "Cutch":
-                                    //DunkOn
-                                    break;
-                                case "Ort":
-                                    //FullBandFF
-                                    break;
-                                case "Steel":
-                                    //PinkPaper
-                                    break;
-                                default:
-                                    break;
-                            }
-                        }
-                        if (p2move3 == true)
-                        {
-                            switch (p2character)
-                            {
-                                case "Bond":
-                                    //MadExperiment
-                                    break;
-                                case "Brad":
-                                    //DefenderBot
-                                    break;
-                                case "Leitch":
-                                    //HistoricWar
-                                    break;
-                                case "Cutch":
-                                    //PushUps
-                                    break;
-                                case "Ort":
-                                    //MelodiousPassage
-                                    break;
-                                case "Steel":
-                                    //QuadraticAttack
-                                    break;
-                                default:
-                                    break;
                             }
                         }
                         if (p2move4 == true)
@@ -1424,117 +1313,228 @@ namespace SuperCrashTchrs.Screens
                             }
                         }
                         # endregion
-                  
-                        #region p1 Second Speed Tie
-                        //p1 goes first
-                        if (p1move1 == true)
+
+
+
+                        else
                         {
-                            switch (p1character)
+                            #region p2 First Speed Tie
+                            if (p2move1 == true)
                             {
-                                case "Bond":
-                                    //CriteraChart
-                                    break;
-                                case "Brad":
-                                    //AttackBot
-                                    break;
-                                case "Leitch":
-                                    //Documentary
-                                    break;
-                                case "Cutch":
-                                    //DODGEBALL
-                                    break;
-                                case "Ort":
-                                    //ClairinetSqueak
-                                    break;
-                                case "Steel":
-                                    //EqualSign
-                                    break;
-                                default:
-                                    break;
+                                switch (p2character)
+                                {
+                                    case "Bond":
+                                        //CriteraChart
+                                        break;
+                                    case "Brad":
+                                        //AttackBot
+                                        break;
+                                    case "Leitch":
+                                        //Documentary
+                                        break;
+                                    case "Cutch":
+                                        //DODGEBALL
+                                        break;
+                                    case "Ort":
+                                        //ClairinetSqueak
+                                        break;
+                                    case "Steel":
+                                        //EqualSign
+                                        break;
+                                    default:
+                                        break;
+                                }
                             }
-                        }
-                        if (p1move2 == true)
-                        {
-                            switch (p1character)
+                            if (p2move2 == true)
                             {
-                                case "Bond":
-                                    //Dissection
-                                    break;
-                                case "Brad":
-                                    //ComplainBout
-                                    break;
-                                case "Leitch":
-                                    //EssayQuestion
-                                    break;
-                                case "Cutch":
-                                    //DunkOn
-                                    break;
-                                case "Ort":
-                                    //FullBandFF
-                                    break;
-                                case "Steel":
-                                    //PinkPaper
-                                    break;
-                                default:
-                                    break;
+                                switch (p2character)
+                                {
+                                    case "Bond":
+                                        //Dissection
+                                        break;
+                                    case "Brad":
+                                        //ComplainBout
+                                        break;
+                                    case "Leitch":
+                                        //EssayQuestion
+                                        break;
+                                    case "Cutch":
+                                        //DunkOn
+                                        break;
+                                    case "Ort":
+                                        //FullBandFF
+                                        break;
+                                    case "Steel":
+                                        //PinkPaper
+                                        break;
+                                    default:
+                                        break;
+                                }
                             }
-                        }
-                        if (p1move3 == true)
-                        {
-                            switch (p1character)
+                            if (p2move3 == true)
                             {
-                                case "Bond":
-                                    //MadExperiment
-                                    break;
-                                case "Brad":
-                                    //DefenderBot
-                                    break;
-                                case "Leitch":
-                                    //HistoricWar
-                                    break;
-                                case "Cutch":
-                                    //PushUps
-                                    break;
-                                case "Ort":
-                                    //MelodiousPassage
-                                    break;
-                                case "Steel":
-                                    //QuadraticAttack
-                                    break;
-                                default:
-                                    break;
+                                switch (p2character)
+                                {
+                                    case "Bond":
+                                        //MadExperiment
+                                        break;
+                                    case "Brad":
+                                        //DefenderBot
+                                        break;
+                                    case "Leitch":
+                                        //HistoricWar
+                                        break;
+                                    case "Cutch":
+                                        //PushUps
+                                        break;
+                                    case "Ort":
+                                        //MelodiousPassage
+                                        break;
+                                    case "Steel":
+                                        //QuadraticAttack
+                                        break;
+                                    default:
+                                        break;
+                                }
                             }
-                        }
-                        if (p1move4 == true)
-                        {
-                            switch (p1character)
+                            if (p2move4 == true)
                             {
-                                case "Bond":
-                                    //TalkBoutFamily
-                                    break;
-                                case "Brad":
-                                    //VideoFriday
-                                    break;
-                                case "Leitch":
-                                    //MCQuestion
-                                    break;
-                                case "Cutch":
-                                    //HealthClass
-                                    break;
-                                case "Ort":
-                                    //Tuning
-                                    break;
-                                case "Steel":
-                                    //TextbookBarricade
-                                    break;
-                                default:
-                                    break;
-                }
-            }
-                        #endregion                                              
+                                switch (p2character)
+                                {
+                                    case "Bond":
+                                        //TalkBoutFamily
+                                        break;
+                                    case "Brad":
+                                        //VideoFriday
+                                        break;
+                                    case "Leitch":
+                                        //MCQuestion
+                                        break;
+                                    case "Cutch":
+                                        //HealthClass
+                                        break;
+                                    case "Ort":
+                                        //Tuning
+                                        break;
+                                    case "Steel":
+                                        //TextbookBarricade
+                                        break;
+                                    default:
+                                        break;
+                                }
+                            }
+                            # endregion
+
+                            #region p1 Second Speed Tie
+                            //p1 goes first
+                            if (p1move1 == true)
+                            {
+                                switch (p1character)
+                                {
+                                    case "Bond":
+                                        //CriteraChart
+                                        break;
+                                    case "Brad":
+                                        //AttackBot
+                                        break;
+                                    case "Leitch":
+                                        //Documentary
+                                        break;
+                                    case "Cutch":
+                                        //DODGEBALL
+                                        break;
+                                    case "Ort":
+                                        //ClairinetSqueak
+                                        break;
+                                    case "Steel":
+                                        //EqualSign
+                                        break;
+                                    default:
+                                        break;
+                                }
+                            }
+                            if (p1move2 == true)
+                            {
+                                switch (p1character)
+                                {
+                                    case "Bond":
+                                        //Dissection
+                                        break;
+                                    case "Brad":
+                                        //ComplainBout
+                                        break;
+                                    case "Leitch":
+                                        //EssayQuestion
+                                        break;
+                                    case "Cutch":
+                                        //DunkOn
+                                        break;
+                                    case "Ort":
+                                        //FullBandFF
+                                        break;
+                                    case "Steel":
+                                        //PinkPaper
+                                        break;
+                                    default:
+                                        break;
+                                }
+                            }
+                            if (p1move3 == true)
+                            {
+                                switch (p1character)
+                                {
+                                    case "Bond":
+                                        //MadExperiment
+                                        break;
+                                    case "Brad":
+                                        //DefenderBot
+                                        break;
+                                    case "Leitch":
+                                        //HistoricWar
+                                        break;
+                                    case "Cutch":
+                                        //PushUps
+                                        break;
+                                    case "Ort":
+                                        //MelodiousPassage
+                                        break;
+                                    case "Steel":
+                                        //QuadraticAttack
+                                        break;
+                                    default:
+                                        break;
+                                }
+                            }
+                            if (p1move4 == true)
+                            {
+                                switch (p1character)
+                                {
+                                    case "Bond":
+                                        //TalkBoutFamily
+                                        break;
+                                    case "Brad":
+                                        //VideoFriday
+                                        break;
+                                    case "Leitch":
+                                        //MCQuestion
+                                        break;
+                                    case "Cutch":
+                                        //HealthClass
+                                        break;
+                                    case "Ort":
+                                        //Tuning
+                                        break;
+                                    case "Steel":
+                                        //TextbookBarricade
+                                        break;
+                                    default:
+                                        break;
+                                }
+                            }
+                            #endregion
+                        }
                     }
-                }
-                
+                } 
             }
             else
             {
