@@ -37,7 +37,7 @@
             // 
             this.playButton.BackColor = System.Drawing.Color.Red;
             this.playButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.playButton.Font = new System.Drawing.Font("AR DESTINE", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.playButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.playButton.Location = new System.Drawing.Point(304, 673);
             this.playButton.Name = "playButton";
             this.playButton.Size = new System.Drawing.Size(200, 50);
@@ -49,9 +49,9 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Red;
-            this.pictureBox1.Location = new System.Drawing.Point(335, 329);
+            this.pictureBox1.Location = new System.Drawing.Point(24, 46);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(139, 135);
+            this.pictureBox1.Size = new System.Drawing.Size(753, 358);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
