@@ -287,7 +287,7 @@ namespace SuperCrashTchrs.Screens
                 //show animation
                 //play sound(s)
                 //calculate damage opponent takes
-                damage = (((42 * playerAtk * 30 / opponentDef) / 50) + 2)
+                damage = (((42 * playerAtk * 75 / opponentDef) / 50) + 2)
                 * randNum.Next(1, 101) / 100;
                 //calculate amount of HP opponent has left
                 opponentHP = opponentHP - damage;
@@ -478,7 +478,7 @@ namespace SuperCrashTchrs.Screens
                 //show animation
                 //play sound(s)
                 //calculate damage opponent takes
-                damage = (((42 * playerAtk * 30 / opponentDef) / 50) + 2)
+                damage = (((42 * playerAtk * 90 / opponentDef) / 50) + 2)
                  * randNum.Next(1, 101) / 100;
 
                 //calculate amount of HP opponent has left
@@ -498,13 +498,13 @@ namespace SuperCrashTchrs.Screens
             }
             else
             {
-                //set to opponent's turn
+                //send move failed message
             }
         }
 
         public double EqualSign() //Hannah ftw
         {
-            double splitHP = (steelHP + ) / 2;
+            
 
         }
 
@@ -550,10 +550,12 @@ namespace SuperCrashTchrs.Screens
             }
         }
 
-        public double FullBandFF()//Cayla is programming
+        public double FullBandFF(double playerAtk, double opponentDef, double opponentHP)//Cayla is programming
         {
             if (ortSleep == 0)
             {
+                //local variables called
+                double damage;
                 //know if player's move continues out sucessfully
                 int accuracyHit = randNum.Next(1, 101);
 
@@ -562,11 +564,14 @@ namespace SuperCrashTchrs.Screens
                     //show animation
                     //play sound(s)
                     //calculate damage opponent takes
+                    damage = (((42 * playerAtk * 120 / opponentDef) / 50) + 2)
+                    * randNum.Next(1, 101) / 100;
                     //calculate amount of HP opponent has left
+                    opponentHP = opponentHP - damage;
                     //display opponent's new HP
-                    if ( /*opponent's HP not deplenished*/)
+                    if (opponentHP > 0)
                     {
-
+                        return opponentHP;
                     }
                     else
                     {
@@ -574,10 +579,14 @@ namespace SuperCrashTchrs.Screens
                         ScreenControl.changeScreen(this, "MultiEndScreen");
                     }
                 }
+                else
+                {
+                    //send move failed message
+                }
             }
             else
             {
-                //switch to opponent's turn
+                //send ortelli is too tired message
             }
         }
 
@@ -600,11 +609,11 @@ namespace SuperCrashTchrs.Screens
                 //play sound(s)
                 //calculate damage opponent takes
                 damage = (((42 * playerAtk * 100 / opponentDef) / 50) + 2)
-                  * randNum.Next(1, 101) / 100;
+                * randNum.Next(1, 101) / 100;
                 //calculate amount of HP opponent has left
                 opponentHP = opponentHP - damage;
-                
                
+                //check if opponent has been defeated
                 if (opponentHP > 0)
                 {
                     //display opponent's new HP
@@ -620,7 +629,7 @@ namespace SuperCrashTchrs.Screens
             }
             else
             {
-                //opponent's turn
+                //send move failed message 
             }
         }
 
@@ -634,8 +643,11 @@ namespace SuperCrashTchrs.Screens
             
         }
 
-        public double PinkPaper()//Cayla is programming
+        public double PinkPaper(double playerAtk, double playerHP, double opponentDef, double opponentHP)//Cayla is programming
         {
+            // local variables called
+            double damage;
+            double playerHpUp;
             int accuracyHit = randNum.Next(1, 101);
 
             if (accuracyHit > 20)
@@ -643,13 +655,22 @@ namespace SuperCrashTchrs.Screens
                 //show animation/ slight difference in images
                 //play sound(s)
                 //calculate damage opponent takes
+                damage = (((42 * playerAtk * 50 / opponentDef) / 50) + 2)
+               * randNum.Next(1, 101) / 100;
+
                 //multiply by 0.5
+                playerHpUp = damage * 0.5;
+
                 //use half the damage as addition to player's health
+                playerHP = playerHpUp + damage;
+
                 //calculate amount of HP opponent has left
+                opponentHP = opponentHP - damage;
+
                 //display opponent's and player's new HP
-                if (/*opponent's HP not deplenished*/)
+                if (opponentHP > 0)
                 {
-                    //set to opponent's turn
+                    return opponentHP;
                 }
                 else
                 {
@@ -659,7 +680,7 @@ namespace SuperCrashTchrs.Screens
             }
             else
             {
-                //opponent's turn
+                //send move failed message
             }
         }
 
@@ -718,13 +739,13 @@ namespace SuperCrashTchrs.Screens
             }
             return playerHP;    
         }
-      
+
         public int VideoFriday(int playerHP)//Cayla's programming
-        {            
+        {
             playerHP += 75;
             if (playerHP > 150)
             {
-                playerHP = 150;          
+                playerHP = 150;
             }
             return playerHP;
         }
