@@ -32,7 +32,7 @@ namespace SuperCrashTchrs.Screens
         bool p2moveSelect = false;
 
         string p1character, p2character;
-        int p1hp, p1Atk, p1Def, p1Spd, p2hp, p2Atk, p2Def, p2Spd;
+        int p1hp, p1Atk, p1Def, p1Spd, p1Sprite, p2hp, p2Atk, p2Def, p2Spd, p2Sprite;
         int sleepTime = 1000;
 
         #region Player Stats
@@ -89,36 +89,42 @@ namespace SuperCrashTchrs.Screens
                     p1Atk = bondAtk;
                     p1Def = bondDef;
                     p1Spd = bondSpd;
+                    p1Sprite = bondSprite;
                     break;
                 case "Brad":
                     p1hp = bradHP;
                     p1Atk = bradAtk;
                     p1Def = bradDef;
                     p1Spd = bradSpd;
+                    p1Sprite = bradSprite;
                     break;
                 case "Leitch":
                     p1hp = leitchHP;
                     p1Atk = leitchAtk;
                     p1Def = leitchDef;
                     p1Spd = leitchSpd;
+                    p1Sprite = leitchSprite;
                     break;
                 case "Cutch":
                     p1hp = cutchHP;
                     p1Atk = cutchAtk;
                     p1Def = cutchDef;
                     p1Spd = cutchSpd;
+                    p1Sprite = cutchSprite;
                     break;
                 case "Ort":
                     p1hp = ortHP;
                     p1Atk = ortAtk;
                     p1Def = ortDef;
                     p1Spd = ortSpd;
+                    p1Sprite = ortSprite;
                     break;
                 case "Steel":
                     p1hp = steelHP;
                     p1Atk = steelAtk;
                     p1Def = steelDef;
                     p1Spd = steelSpd;
+                    p1Sprite = steelSprtie;
                     break;
                 default:
                     break;
