@@ -11,9 +11,10 @@ namespace SuperCrashTchrs.Screens
 {
     class ScreenControl
     {
-        //wow 
         // high score values
         public static List<int> highScores = new List<int>();
+
+        //player selection and stats
 
         // screen and user control values
         public static int controlWidth = 800;

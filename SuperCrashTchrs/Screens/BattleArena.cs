@@ -287,8 +287,8 @@ namespace SuperCrashTchrs.Screens
                 opponentHP = opponentHP - damage;
                 //display opponent's new HP
                 if (opponentHP > 0)
-                { 
-                    //set to opponent's turn
+                {
+                    return opponentHP;
                 }
                 else
                 {
@@ -299,7 +299,7 @@ namespace SuperCrashTchrs.Screens
             }
             else
             {
-                //set to opponent's turn
+                //send move failed message
             }
         }
 
@@ -351,8 +351,6 @@ namespace SuperCrashTchrs.Screens
                 {
                     //display opponent's HP
                     return opponentHP;
-
-                    //set to opponent's turn
                 }
                 else
                 {
@@ -363,7 +361,7 @@ namespace SuperCrashTchrs.Screens
             }
             else
             {
-                //set to opponent's turn
+              //output attack failed message
             }
         }
 
@@ -434,8 +432,10 @@ namespace SuperCrashTchrs.Screens
             }
         }
 
-        public double DunkOn()//Cayla is programming
+        public double DunkOn(double playerAtk, double opponentDef, double opponentHP)//Cayla is programming
         {
+            //local variables created
+            double damage;
             //know if player's move continues out sucessfully
             int accuracyHit = randNum.Next(1,101);
 
@@ -444,12 +444,16 @@ namespace SuperCrashTchrs.Screens
                 //show animation
                 //play sound(s)
                 //calculate damage opponent takes
+                damage = (((42 * playerAtk * 30 / opponentDef) / 50) + 2)
+                 * randNum.Next(1, 101) / 100;
+
                 //calculate amount of HP opponent has left
+                opponentHP = opponentHP - damage;
+
                 //display opponent's new HP
-                if (//opponent's HP not deplenished
-                    )
+                if (opponentHP > 0)
                 {
-                    //set to opponent's turn
+                    return opponentHP;
                 }
                 else
                 {
@@ -648,7 +652,7 @@ namespace SuperCrashTchrs.Screens
 
         }
 
-        public int TalkAboutFamily()//Cayla is programming
+        public int TalkAboutFamily(int bondDef)//Cayla is programming
         {
             //message displayed
             //increase player's current defence by one stage
@@ -681,7 +685,7 @@ namespace SuperCrashTchrs.Screens
             return playerHP;    
         }
       
-        public int VideoFriday(int playerHP)
+        public int VideoFriday(int playerHP)//Cayla's programming
         {            
             playerHP += 69;
             if (playerHP > 138)
@@ -794,6 +798,7 @@ namespace SuperCrashTchrs.Screens
                         {
                             case "Bond":
                                 //TalkBoutFamily
+                                TalkAboutFamily(p1Def);
                                 break;
                             case "Brad":
                                 VideoFriday(p1hp);
