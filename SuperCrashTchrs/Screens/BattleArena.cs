@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace SuperCrashTchrs.Screens
 {
@@ -32,6 +33,7 @@ namespace SuperCrashTchrs.Screens
 
         string p1character, p2character;
         int p1hp, p1Atk, p1Def, p1Spd, p2hp, p2Atk, p2Def, p2Spd;
+        int sleepTime = 1000;
 
         #region Player Stats
         //Should these be constants?
@@ -255,15 +257,19 @@ namespace SuperCrashTchrs.Screens
 
         }
 
-        public int clarinetSqueak(int opponentDef) //Justin got this
+        public int ClarinetSqueak(int opponentDef) //Justin got this
         {
-            opponentDef = opponentDef - 25;
-            //print to text "Defence was lowered by 1 stage"
+            battleStatusOutput.Text = "Ortelli used Clairinet Squeak!";
+            Thread.Sleep(sleepTime);
+            opponentDef -= 25;
+            battleStatusOutput.Text = "The opponents defence was lowered!";
+            Thread.Sleep(sleepTime);
             
             if (opponentDef <= 0)
-        {
+            {
                 opponentDef = 1;
-                //print to text "defence cannot go any lower"
+                battleStatusOutput.Text = "The opponents defence cannot go any lower!";
+                Thread.Sleep(sleepTime);
             }
 
             return opponentDef;
@@ -386,18 +392,21 @@ namespace SuperCrashTchrs.Screens
         }
 
         public double Dodgeball(double playerAtk, double playerDef, double opponentDef, double opponentHP) //Justin got this
-        {
-            //know if player's move continues out sucessfully
+        {     
             int accuracyHit = randNum.Next(1,101);
             double damage;
-
+            //check accuracy
             if (accuracyHit <= 90)
             {
                 //show animation
-                //play sound(s)
+                
                 damage = (((42 * playerAtk * 100 / opponentDef) / 50) + 2) 
                     * randNum.Next(1,101) / 100;
                 opponentHP -= damage;
+                //for (int i = 100/*oponents HPbar length*/; i == opponentHP; i--)
+                //{
+                //    p1HPBar.Size = (i, 10);
+                //}
                 //lower user atk
                 playerAtk -= 25;
                 if (playerAtk <= 0)
@@ -410,14 +419,11 @@ namespace SuperCrashTchrs.Screens
                 {
                     playerDef = 1;
                 }
-                //for (int i = 100/*oponents HPbar length*/; i == opponentHP; i--)
-                //{
-                //    p1HPBar.length = i;
-                //}
+                
 
-                if (/*opponents HP > 0*/)
+                if (opponentHP > 0)
                 {
-                    //set to opponent's turn
+                    
                 }
                 else
                 {
@@ -687,10 +693,10 @@ namespace SuperCrashTchrs.Screens
       
         public int VideoFriday(int playerHP)//Cayla's programming
         {            
-            playerHP += 69;
-            if (playerHP > 138)
+            playerHP += 75;
+            if (playerHP > 150)
             {
-                playerHP = 138;          
+                playerHP = 150;          
             }
             return playerHP;
         }
@@ -704,7 +710,7 @@ namespace SuperCrashTchrs.Screens
                 {
                     ///make these the master copies
                     #region p1 Goes First
-                    #region move1
+                    #region move 1
                     if (p1move1 == true)
                     {
                         switch (p1character)
@@ -719,10 +725,10 @@ namespace SuperCrashTchrs.Screens
                                 //Documentary
                                 break;
                             case "Cutch":
-                                //DODGEBALL
+                                Dodgeball(p1Atk, p1Def, p2Def, p2hp);
                                 break;
                             case "Ort":
-                                //ClairinetSqueak
+                                ClarinetSqueak(p2Def);
                                 break;
                             case "Steel":
                                 //EqualSign
