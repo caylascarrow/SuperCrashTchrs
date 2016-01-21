@@ -309,9 +309,10 @@ namespace SuperCrashTchrs.Screens
             }
         }
 
-        public void CriteriaChart() //Hannah ftw
+        public void CriteriaChart() //All DONE
         {
-            int userAtk, userSpd;
+            int userAtk = 0; 
+            int userSpd = 0;
             if (p1character == "Bond")
             {
                 userAtk = p1Atk;
@@ -321,12 +322,7 @@ namespace SuperCrashTchrs.Screens
             {
                 userAtk = p2Atk;
                 userSpd = p2Spd;
-            }
-            else
-            {
-                userAtk = 0;
-                userSpd = 0;
-            }
+            }            
             battleStatusOutput.Text = "Bond used Critera Chart!";
             Thread.Sleep(sleepTime);
 
@@ -512,33 +508,45 @@ namespace SuperCrashTchrs.Screens
 
         }
 
-        public double essayQuestion() //Justin got this
+        public void EssayQuestion() //Justin got this
         {
-            //know if player's move continues out sucessfully
-            int accuracyHit;//make random number between 0-100? or 0-10?
-
-            if (accuracyHit > 30)
+            int opponentSpd = 0;
+            if (p1character == "Leitch")
             {
-                //show animation
-                //play sound(s)
-                //calculate damage opponent takes
-                //calculate amount of HP opponent has left
-                //display opponent's new HP
-                if (//opponent's HP not deplenished
-                    )
+                opponentSpd = p2Spd;
+            }
+            else if (p2character == "Leitch")
+            {
+                opponentSpd = p1Spd;
+            }
+            battleStatusOutput.Text = "Leitch Used Multiple Choice Question!";
+            Thread.Sleep(sleepTime);
+            //accuracy
+            if (randNum.Next(1, 101) <= 80)
+            {
+                opponentSpd -= 50;
+                battleStatusOutput.Text = "The Opponents Speed was lowered!";
+                Thread.Sleep(sleepTime);
+
+                if (opponentSpd <= 0)
                 {
-                    //set to opponent's turn
+                    opponentSpd = 1;
+                    battleStatusOutput.Text = "The Opponents Speed can't go any lower!";
+                    Thread.Sleep(sleepTime);
                 }
                 else
                 {
-                    //go to game over screen
-                    ScreenControl.changeScreen(this, "MultiEndScreen");
+                    battleStatusOutput.Text = "But it missed!";
+                    Thread.Sleep(sleepTime);
                 }
-
             }
-            else
+            if (p1character == "Leitch")
             {
-                //set to opponent's turn
+                p2Spd = opponentSpd;
+            }
+            else if (p2character == "Leitch")
+            {
+                p1Spd = opponentSpd;
             }
         }
 
@@ -621,21 +629,9 @@ namespace SuperCrashTchrs.Screens
 
         }
 
-        public int MultiQuestion(int opponentSpd) //Justin got this
+        public void MultiQuestion() //Justin got this
         {            
-            //check accuracy
-            if (randNum.Next(1,101) <= 80)
-            {
-                opponentSpd -= 50;
-                if (opponentSpd <= 0)
-                {
-                    opponentSpd = 0;
-                }
-            }
-            else
-            {
-                //move missed
-            }
+            
         }
 
         public double PinkPaper()//Cayla is programming
@@ -783,7 +779,7 @@ namespace SuperCrashTchrs.Screens
                                 //ComplainBout
                                 break;
                             case "Leitch":
-                                //EssayQuestion
+                                EssayQuestion();
                                 break;
                             case "Cutch":
                                 //DunkOn
