@@ -269,24 +269,25 @@ namespace SuperCrashTchrs.Screens
             return opponentDef;
         }
 
-        public double ComplainAbout() //Cayla is programming
+        public double ComplainAbout(double playerAtk, double opponentDef, double opponentHP) //Cayla is programming
         {
+            //local variables called
+            double damage;
             //know if player's move continues out sucessfully
             int accuracyHit = randNum.Next(1, 101);
-
-            //
 
             if (accuracyHit > 10)
             {
                 //show animation
                 //play sound(s)
                 //calculate damage opponent takes
-                
+                damage = (((42 * playerAtk * 30 / opponentDef) / 50) + 2)
+                * randNum.Next(1, 101) / 100;
                 //calculate amount of HP opponent has left
+                opponentHP = opponentHP - damage;
                 //display opponent's new HP
-                if (//opponent's HP not deplenished
-                    )
-                {
+                if (opponentHP > 0)
+                { 
                     //set to opponent's turn
                 }
                 else
@@ -345,11 +346,12 @@ namespace SuperCrashTchrs.Screens
 
                 //calculate amount of HP opponent has left
                 opponentHP = opponentHP - damage;
-                
-                //display opponent's new HP
-                if (//opponent's HP not deplenished
-                    )
+
+                if (opponentHP > 0)
                 {
+                    //display opponent's HP
+                    return opponentHP;
+
                     //set to opponent's turn
                 }
                 else
@@ -535,9 +537,12 @@ namespace SuperCrashTchrs.Screens
                 //calculate amount of HP opponent has left
                 opponentHP = opponentHP - damage;
                 
-                //display opponent's new HP
-                if (/*opponent's HP not deplenished*/)
+               
+                if (opponentHP > 0)
                 {
+                    //display opponent's new HP
+                    return opponentHP;
+
                     //set to opponent's turn
                 }
                 else
@@ -621,10 +626,10 @@ namespace SuperCrashTchrs.Screens
             //increase player's current defence by one stage
             bondDef += 25;
             
-            if(bondDef >200)
+            if(bondDef >250)
                 {
                 //set to max defence
-                bondDef = 200;
+                bondDef = 250;
                 return bondDef;
             }
             else
@@ -660,6 +665,29 @@ namespace SuperCrashTchrs.Screens
             }
         }
       
+        public int VideoFriday()
+        {
+            //add half of max HP on to current HP
+            bradHP = bradHP + 69;
+            //make sure HP does not exceed the max HP for that character
+            if (bradHP > 138)
+            {
+                bradHP = 138;
+                //display new HP
+                return bradHP;
+
+                //go to next player's turn
+            }
+            else
+            {
+                //display new HP
+                return bradHP;
+
+                //go to next player's turn
+            }
+
+        }
+
         private void moveSelectTimer_Tick(object sender, EventArgs e)
         {
             if (p1moveSelect == true && p2moveSelect == true)
