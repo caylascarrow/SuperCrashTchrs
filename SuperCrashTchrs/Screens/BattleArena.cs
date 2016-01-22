@@ -219,7 +219,7 @@ namespace SuperCrashTchrs.Screens
             }
         }
         
-        public void AttackBot() //Hannah has this one
+        public void AttackBot()//DONE
         {
             int playerAtk = 1;
             int opponentDef = 1;
@@ -284,7 +284,7 @@ namespace SuperCrashTchrs.Screens
             }
         }
 
-        public void ClarinetSqueak() //Justin got this
+        public void ClarinetSqueak()//DONE
         {
             int opponentDef = 0;
             if (p1character == "Ort")
@@ -318,7 +318,7 @@ namespace SuperCrashTchrs.Screens
             }
         }
 
-        public void ComplainAbout() //Cayla is programming
+        public void ComplainAbout()//DONE
         {
             int playerAtk = 1;
             int opponentDef = 1;
@@ -368,7 +368,7 @@ namespace SuperCrashTchrs.Screens
             }
         }
 
-        public void CriteriaChart() //All DONE
+        public void CriteriaChart()//DONE
         {
             int userAtk = 0; 
             int userSpd = 0;
@@ -416,7 +416,7 @@ namespace SuperCrashTchrs.Screens
             }
         }
 
-        public void DefenderBot() //Justin got this
+        public void DefenderBot()//kinda done
         {
             int playerDef = 0;
             if (p1character == "Brad")
@@ -450,7 +450,7 @@ namespace SuperCrashTchrs.Screens
             }
         }
 
-        public void Dissection()//Cayla is programming
+        public void Dissection()//DONE
         {
             int playerAtk = 1;
             int opponentDef = 1;
@@ -511,7 +511,7 @@ namespace SuperCrashTchrs.Screens
             }
         }
 
-        public double Documentary() //Hannah McSwag
+        public void Documentary()//not done
         {
             //check if leitch is asleep
             if (leitchSleep != 0)
@@ -531,7 +531,7 @@ namespace SuperCrashTchrs.Screens
             }
         }
 
-        public double Dodgeball(double playerAtk, double playerDef, double opponentDef, double opponentHP) //Justin got this
+        public void Dodgeball()//not done
         {     
             int accuracyHit = randNum.Next(1,101);
             double damage;
@@ -578,7 +578,7 @@ namespace SuperCrashTchrs.Screens
             }
         }
 
-        public double DunkOn(double playerAtk, double opponentDef, double opponentHP)//Cayla is programming
+        public void DunkOn()//not done
         {
             //local variables created
             double damage;
@@ -614,7 +614,7 @@ namespace SuperCrashTchrs.Screens
             }
         }
 
-        public double EqualSign() //Hannah ftw
+        public void EqualSign()//not done
         {
             if (p1character == "Steel")
             {
@@ -623,7 +623,7 @@ namespace SuperCrashTchrs.Screens
 
         }
 
-        public void EssayQuestion() //Justin got this
+        public void EssayQuestion()//DONE
         {
             int opponentSpd = 0;
             if (p1character == "Leitch")
@@ -665,7 +665,7 @@ namespace SuperCrashTchrs.Screens
             }
         }
 
-        public double FullBandFF(double playerAtk, double opponentDef, double opponentHP)//Cayla is programming
+        public void FullBandFF()//not done
         {
             if (ortSleep == 0)
             {
@@ -705,12 +705,12 @@ namespace SuperCrashTchrs.Screens
             }
         }
 
-        public double HealthClass()
+        public void HealthClass()//not done
         {
 
         }
 
-        public void MadExperiment()//Cayla is programming
+        public void MadExperiment()//DONE
         {
             int playerAtk = 1;
             int opponentDef = 1;
@@ -760,17 +760,17 @@ namespace SuperCrashTchrs.Screens
             }
         }
 
-        public double MelodiousPassage()
+        public void MelodiousPassage()//not done
         {
 
         }
 
-        public void MultiQuestion() //Justin got this
+        public void MultiQuestion() //not done
         {            
             
         }
 
-        public double PinkPaper(double playerAtk, double playerHP, double opponentDef, double opponentHP)//Cayla is programming
+        public void PinkPaper()//not done
         {
             // local variables called
             double damage;
@@ -811,30 +811,17 @@ namespace SuperCrashTchrs.Screens
             }
         }
 
-        public int PushUps()
+        public void PushUps()//not done
         {
-            //display status message
-            //add 25 to mccutcheons attack stat
-            cutchAtk += 25;
-            //make sure it doesn't exceed
-            if (cutchAtk > 250)
-            {
-                //set to max attack stat
-                cutchAtk = 250;
-                return cutchAtk;
-                //display message 
-            }
-            else {
-                return cutchAtk;
-            }
+            
         }
 
-        public double QuadraticAttack() //Justin got this
+        public void QuadraticAttack() //not done
         {
 
         }
 
-        public void TalkAboutFamily()//Cayla is programming
+        public void TalkAboutFamily()//DONE
         {
             int playerHP = 0;
             int playerDef = 0;
@@ -881,12 +868,41 @@ namespace SuperCrashTchrs.Screens
             }
         }
 
-        public void TextbookBarricade()
+        public void TextbookBarricade()//DONE
         {
+            int playerDef = 0;
+            if (p1character == "Steel")
+            {
+                playerDef = p1Def;
+            }
+            else if (p2character == "Steel")
+            {
+                playerDef = p2Def;
+            }
+            battleStatusOutput.Text = "Steel used Textbook Barricade!";
+            Thread.Sleep(sleepTime);
+            playerDef -= 25;
+            battleStatusOutput.Text = "Steels Defence was raised!";
+            Thread.Sleep(sleepTime);
 
+            if (playerDef <= 0)
+            {
+                playerDef = 1;
+                battleStatusOutput.Text = "Steels Defence can't go any higher!";
+                Thread.Sleep(sleepTime);
+            }
+
+            if (p1character == "Steel")
+            {
+                p1Def = playerDef;
+            }
+            else if (p2character == "Steel")
+            {
+                p2Def = playerDef;
+            }
         }
 
-        public void Tuning() //Justin got this
+        public void Tuning() //DONE
         {
             int playerHP = 0;
             if (p1character == "Ort")
@@ -917,7 +933,7 @@ namespace SuperCrashTchrs.Screens
             }    
         }
 
-        public void VideoFriday()//Cayla's programming
+        public void VideoFriday()//DONE
         {
             int playerHP = 0;
             if(p1character == "Brad")
