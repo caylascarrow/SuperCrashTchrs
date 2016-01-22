@@ -763,7 +763,7 @@ namespace SuperCrashTchrs.Screens
 
         }
 
-        public void MultiQuestion() //not done
+        public void MultiQuestion()//not done
         {            
             
         }
@@ -814,7 +814,7 @@ namespace SuperCrashTchrs.Screens
             
         }
 
-        public void QuadraticAttack() //not done
+        public void QuadraticAttack()//not done
         {
 
         }
@@ -900,7 +900,7 @@ namespace SuperCrashTchrs.Screens
             }
         }
 
-        public void Tuning() //DONE
+        public void Tuning()//DONE
         {
             int playerHP = 0;
             if (p1character == "Ort")
@@ -987,7 +987,7 @@ namespace SuperCrashTchrs.Screens
                                 //Documentary
                                 break;
                             case "Cutch":
-                                Dodgeball(p1Atk, p1Def, p2Def, p2hp);
+                                Dodgeball();
                                 break;
                             case "Ort":
                                 ClarinetSqueak();
