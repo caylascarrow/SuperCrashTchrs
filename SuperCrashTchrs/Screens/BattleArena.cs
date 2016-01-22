@@ -249,22 +249,23 @@ namespace SuperCrashTchrs.Screens
                     break;
             }
         }
-
-
-        //public double damageCalc(int userPower, int userAtk, int opponentDef)
-        //{
-        //    double damage;
-        //    damage = 0;
-        //    return damage;
-        //}
-
+        
         public double AttackBot() //Hannah has this one
         {
 
         }
 
-        public int ClarinetSqueak(int opponentDef) //Justin got this
+        public void ClarinetSqueak() //Justin got this
         {
+            int opponentDef = 0;
+            if (p1character == "Ort")
+            {
+                opponentDef = p2Def;
+            }
+            else if (p2character == "Ort")
+            {
+                opponentDef = p1Def;
+            }
             battleStatusOutput.Text = "Ortelli used Clairinet Squeak!";
             Thread.Sleep(sleepTime);
             opponentDef -= 25;
@@ -278,7 +279,14 @@ namespace SuperCrashTchrs.Screens
                 Thread.Sleep(sleepTime);
             }
 
-            return opponentDef;
+            if (p1character == "Ort")
+            {
+                p2Def = opponentDef;
+            }
+            else if (p2character == "Ort")
+            {
+                p1Def = opponentDef;
+            }
         }
 
         public double ComplainAbout(double playerAtk, double opponentDef, double opponentHP) //Cayla is programming
