@@ -17,43 +17,49 @@ namespace SuperCrashTchrs.Screens
         #region Player Stats
         //Should these be constants?
         //Bond
-        int bondHP = 150;
-        int bondAtk = 125;
-        int bondDef = 75;
-        int bondSpd = 150;
-        string bondImg = "";
+        public static int bondHP = 150;
+        public static int bondAtk = 125;
+        public static int bondDef = 75;
+        public static int bondSpd = 150;
+         public static string bondImg1 = "";
+        public static string bondImg2 = "";
         //Bradshaw
-        int bradHP = 150;
-        int bradAtk = 75;
-        int bradDef = 125;
-        int bradSpd = 125;
-        string bradImg = "";
+        public static int bradHP = 150;
+        public static int bradAtk = 75;
+        public static int bradDef = 125;
+        public static int bradSpd = 125;
+        public static string bradImg1 = "";
+        public static string bradImg2 = "";
         //Leitch
-        int leitchHP = 200;
-        int leitchAtk = 75;
-        int leitchDef = 150;
-        int leitchSpd = 50;
-        int leitchSleep = 0;
-        string leitchImg = "";
+        public static int leitchHP = 200;
+        public static int leitchAtk = 75;
+        public static int leitchDef = 150;
+        public static int leitchSpd = 50;
+        public static int leitchSleep = 0;
+        public static string leitchImg1 = "";
+        public static string leitchImg2 = "";
         //McCutcheon
-        int cutchHP = 100;
-        int cutchAtk = 150;
-        int cutchDef = 100;
-        int cutchSpd = 125;
-        string cutchImg = "";
+        public static int cutchHP = 100;
+        public static int cutchAtk = 150;
+        public static int cutchDef = 100;
+        public static int cutchSpd = 125;
+        public static string cutchImg1 = "";
+        public static string cutchImg2 = "";
         //Ortelli
-        int ortHP = 175;
-        int ortAtk = 100;
-        int ortDef = 125;
-        int ortSpd = 75;
-        int ortSleep = 0;
-        string ortImg = "";
+        public static int ortHP = 175;
+        public static int ortAtk = 100;
+        public static int ortDef = 125;
+        public static int ortSpd = 75;
+        public static int ortSleep = 0;
+        public static string ortImg1 = "";
+        public static string ortImg2 = "";
         //Steel
-        int steelHP = 150;
-        int steelAtk = 75;
-        int steelDef = 175;
-        int steelSpd = 75;
-        string steelImg = "";
+        public static int steelHP = 150;
+        public static int steelAtk = 75;
+        public static int steelDef = 175;
+        public static int steelSpd = 75;
+        public static string steelImg1 = "";
+        public static string steelImg2 = "";
         #endregion
 
         // screen and user control values

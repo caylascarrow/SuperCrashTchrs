@@ -35,43 +35,6 @@ namespace SuperCrashTchrs.Screens
         int p1hp, p1Atk, p1Def, p1Spd, p2hp, p2Atk, p2Def, p2Spd;
         int sleepTime = 1000;
 
-        #region Player Stats
-        //Should these be constants?
-        //Bond
-        int bondHP = 150;
-        int bondAtk = 125;
-        int bondDef = 75;
-        int bondSpd = 150;
-        //Bradshaw
-        int bradHP = 150;
-        int bradAtk = 75;
-        int bradDef = 125;
-        int bradSpd = 125;
-        //Leitch
-        int leitchHP = 200;
-        int leitchAtk = 75;
-        int leitchDef = 150;
-        int leitchSpd = 50;
-        int leitchSleep = 0;
-        //McCutcheon
-        int cutchHP = 100;
-        int cutchAtk = 150;
-        int cutchDef = 100;
-        int cutchSpd = 125;
-        //Ortelli
-        int ortHP = 175;
-        int ortAtk = 100;
-        int ortDef = 125;
-        int ortSpd = 75;
-        int ortSleep = 0;
-        //Steel
-        int steelHP = 150;
-        int steelAtk = 75;
-        int steelDef = 175;
-        int steelSpd = 75;
-
-        #endregion
-
         #endregion
 
         public BattleArena()
@@ -85,45 +48,45 @@ namespace SuperCrashTchrs.Screens
             switch (p1character)
             {
                 case "Bond":
-                    p1hp = bondHP;
-                    p1Atk = bondAtk;
-                    p1Def = bondDef;
-                    p1Spd = bondSpd;
-                    p1Sprite.Image = /*add bond's image name here*/;
+                    p1hp = (ScreenControl.bondHP);
+                    p1Atk = (ScreenControl.bondAtk);
+                    p1Def = (ScreenControl.bondDef);
+                    p1Spd = (ScreenControl.bondSpd);
+                    p1Sprite.Image = /*add bond's image name here*/ ;
                     break;
                 case "Brad":
-                    p1hp = bradHP;
-                    p1Atk = bradAtk;
-                    p1Def = bradDef;
-                    p1Spd = bradSpd;
+                    p1hp = (ScreenControl.bradHP);
+                    p1Atk = (ScreenControl.bradAtk);
+                    p1Def = (ScreenControl.bradDef);
+                    p1Spd = (ScreenControl.bradSpd);
                     p1Sprite.Image = /*add brad's image name here*/;
                     break;
                 case "Leitch":
-                    p1hp = leitchHP;
-                    p1Atk = leitchAtk;
-                    p1Def = leitchDef;
-                    p1Spd = leitchSpd;
+                    p1hp = (ScreenControl.leitchHP);
+                    p1Atk = (ScreenControl.leitchAtk);
+                    p1Def = (ScreenControl.leitchDef);
+                    p1Spd = (ScreenControl.leitchSpd);
                     p1Sprite.Image = /*add leitch's image name here*/;
                     break;
                 case "Cutch":
-                    p1hp = cutchHP;
-                    p1Atk = cutchAtk;
-                    p1Def = cutchDef;
-                    p1Spd = cutchSpd;
+                    p1hp = (ScreenControl.cutchHP);
+                    p1Atk = (ScreenControl.cutchAtk);
+                    p1Def = (ScreenControl.cutchDef);
+                    p1Spd = (ScreenControl.cutchSpd);
                     p1Sprite.Image = /*add cutch's image name here*/;
                     break;
                 case "Ort":
-                    p1hp = ortHP;
-                    p1Atk = ortAtk;
-                    p1Def = ortDef;
-                    p1Spd = ortSpd;
+                    p1hp = (ScreenControl.ortHP);
+                    p1Atk = (ScreenControl.ortAtk);
+                    p1Def = (ScreenControl.ortDef);
+                    p1Spd = (ScreenControl.ortSpd);
                     p1Sprite.Image = /*add ortelli's image name here*/;
                     break;
                 case "Steel":
-                    p1hp = steelHP;
-                    p1Atk = steelAtk;
-                    p1Def = steelDef;
-                    p1Spd = steelSpd;
+                    p1hp = (ScreenControl.steelHP);
+                    p1Atk = (ScreenControl.steelAtk);
+                    p1Def = (ScreenControl.steelDef);
+                    p1Spd = (ScreenControl.steelSpd);
                     p1Sprite.Image = /*add steel's image name here*/;
                     break;
                 default:
@@ -132,45 +95,45 @@ namespace SuperCrashTchrs.Screens
             switch (p2character)
             {
                 case "Bond":
-                    p2hp = bondHP;
-                    p2Atk = bondAtk;
-                    p2Def = bondDef;
-                    p2Spd = bondSpd;
+                    p2hp = (ScreenControl.bondHP);
+                    p2Atk = (ScreenControl.bondAtk);
+                    p2Def = (ScreenControl.bondDef);
+                    p2Spd = (ScreenControl.bondSpd);
                     p2Sprite.Image = /*add bond's image name here*/;
                     break;
                 case "Brad":
-                    p2hp = bradHP;
-                    p2Atk = bradAtk;
-                    p2Def = bradDef;
-                    p2Spd = bradSpd;
+                    p2hp = (ScreenControl.bradHP);
+                    p2Atk = (ScreenControl.bradAtk);
+                    p2Def = (ScreenControl.bradDef);
+                    p2Spd = (ScreenControl.bradSpd);
                     p2Sprite.Image = /*add brad's image name here*/;
                     break;
                 case "Leitch":
-                    p2hp = leitchHP;
-                    p2Atk = leitchAtk;
-                    p2Def = leitchDef;
-                    p2Spd = leitchSpd;
+                    p2hp = (ScreenControl.leitchHP);
+                    p2Atk = (ScreenControl.leitchAtk);
+                    p2Def = (ScreenControl.leitchDef);
+                    p2Spd = (ScreenControl.leitchSpd);
                     p2Sprite.Image = /*add leitch's image name here*/;
                     break;
                 case "Cutch":
-                    p2hp = cutchHP;
-                    p2Atk = cutchAtk;
-                    p2Def = cutchDef;
-                    p2Spd = cutchSpd;
+                    p2hp = (ScreenControl.cutchHP);
+                    p2Atk = (ScreenControl.cutchAtk);
+                    p2Def = (ScreenControl.cutchDef);
+                    p2Spd = (ScreenControl.cutchSpd);
                     p2Sprite.Image = /*add cutch's image name here*/;
                     break;
                 case "Ort":
-                    p2hp = ortHP;
-                    p2Atk = ortAtk;
-                    p2Def = ortDef;
-                    p2Spd = ortSpd;
+                    p2hp = (ScreenControl.ortHP);
+                    p2Atk = (ScreenControl.ortAtk);
+                    p2Def = (ScreenControl.ortDef);
+                    p2Spd = (ScreenControl.ortSpd);
                     p2Sprite.Image = /*add ortelli's image name here*/;
                     break;
                 case "Steel":
-                    p2hp = steelHP;
-                    p2Atk = steelAtk;
-                    p2Def = steelDef;
-                    p2Spd = steelSpd;
+                    p2hp = (ScreenControl.steelHP);
+                    p2Atk = (ScreenControl.steelAtk);
+                    p2Def = (ScreenControl.steelDef);
+                    p2Spd = (ScreenControl.steelSpd);
                     p2Sprite.Image = /*add steel's image name here*/;
                     break;
                 default:
