@@ -28,8 +28,6 @@ namespace SuperCrashTchrs.Screens
         bool p2move3 = false;
         bool p2move4 = false;
 
-        bool p1moveSelect = false;
-        bool p2moveSelect = false;
 
         string p1character, p2character;
         int p1hp, p1Atk, p1Def, p1Spd, p2hp, p2Atk, p2Def, p2Spd;
@@ -852,7 +850,7 @@ namespace SuperCrashTchrs.Screens
 
         private void moveSelectTimer_Tick(object sender, EventArgs e)
         {
-            if (p1moveSelect == true && p2moveSelect == true)
+            if ((ScreenControl.p1moveSelect) == true && (ScreenControl.p2moveSelect) == true)
             {
                 moveSelectTimer.Enabled = false;
                 if (p1Spd > p2Spd)

@@ -14,6 +14,9 @@ namespace SuperCrashTchrs.Screens
         // high score values
         public static List<int> highScores = new List<int>();
 
+        //global variables
+        public static bool p1moveSelect = false;
+       public static bool p2moveSelect = false;
         #region Player Stats
         //Should these be constants?
         //Bond
