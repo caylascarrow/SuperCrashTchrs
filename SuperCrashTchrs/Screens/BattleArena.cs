@@ -32,7 +32,7 @@ namespace SuperCrashTchrs.Screens
         bool p2moveSelect = false;
 
         string p1character, p2character;
-        int p1hp, p1Atk, p1Def, p1Spd, p1Sprite, p2hp, p2Atk, p2Def, p2Spd, p2Sprite;
+        int p1hp, p1Atk, p1Def, p1Spd, p2hp, p2Atk, p2Def, p2Spd;
         int sleepTime = 1000;
 
         #region Player Stats
@@ -89,42 +89,42 @@ namespace SuperCrashTchrs.Screens
                     p1Atk = bondAtk;
                     p1Def = bondDef;
                     p1Spd = bondSpd;
-                    p1Sprite = bondSprite;
+                    p1Sprite.Image = /*add bond's image name here*/;
                     break;
                 case "Brad":
                     p1hp = bradHP;
                     p1Atk = bradAtk;
                     p1Def = bradDef;
                     p1Spd = bradSpd;
-                    p1Sprite = bradSprite;
+                    p1Sprite.Image = /*add brad's image name here*/;
                     break;
                 case "Leitch":
                     p1hp = leitchHP;
                     p1Atk = leitchAtk;
                     p1Def = leitchDef;
                     p1Spd = leitchSpd;
-                    p1Sprite = leitchSprite;
+                    p1Sprite.Image = /*add leitch's image name here*/;
                     break;
                 case "Cutch":
                     p1hp = cutchHP;
                     p1Atk = cutchAtk;
                     p1Def = cutchDef;
                     p1Spd = cutchSpd;
-                    p1Sprite = cutchSprite;
+                    p1Sprite.Image = /*add cutch's image name here*/;
                     break;
                 case "Ort":
                     p1hp = ortHP;
                     p1Atk = ortAtk;
                     p1Def = ortDef;
                     p1Spd = ortSpd;
-                    p1Sprite = ortSprite;
+                    p1Sprite.Image = /*add ortelli's image name here*/;
                     break;
                 case "Steel":
                     p1hp = steelHP;
                     p1Atk = steelAtk;
                     p1Def = steelDef;
                     p1Spd = steelSpd;
-                    p1Sprite = steelSprtie;
+                    p1Sprite.Image = /*add steel's image name here*/;
                     break;
                 default:
                     break;
@@ -136,36 +136,42 @@ namespace SuperCrashTchrs.Screens
                     p2Atk = bondAtk;
                     p2Def = bondDef;
                     p2Spd = bondSpd;
+                    p2Sprite.Image = /*add bond's image name here*/;
                     break;
                 case "Brad":
                     p2hp = bradHP;
                     p2Atk = bradAtk;
                     p2Def = bradDef;
                     p2Spd = bradSpd;
+                    p2Sprite.Image = /*add brad's image name here*/;
                     break;
                 case "Leitch":
                     p2hp = leitchHP;
                     p2Atk = leitchAtk;
                     p2Def = leitchDef;
                     p2Spd = leitchSpd;
+                    p2Sprite.Image = /*add leitch's image name here*/;
                     break;
                 case "Cutch":
                     p2hp = cutchHP;
                     p2Atk = cutchAtk;
                     p2Def = cutchDef;
                     p2Spd = cutchSpd;
+                    p2Sprite.Image = /*add cutch's image name here*/;
                     break;
                 case "Ort":
                     p2hp = ortHP;
                     p2Atk = ortAtk;
                     p2Def = ortDef;
                     p2Spd = ortSpd;
+                    p2Sprite.Image = /*add ortelli's image name here*/;
                     break;
                 case "Steel":
                     p2hp = steelHP;
                     p2Atk = steelAtk;
                     p2Def = steelDef;
                     p2Spd = steelSpd;
+                    p2Sprite.Image = /*add steel's image name here*/;
                     break;
                 default:
                     break;

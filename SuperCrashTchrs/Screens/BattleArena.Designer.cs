@@ -42,11 +42,11 @@
             this.HPlabel1 = new System.Windows.Forms.Label();
             this.HPlabel2 = new System.Windows.Forms.Label();
             this.battleStatusOutput = new System.Windows.Forms.Label();
-            this.p1Image = new System.Windows.Forms.PictureBox();
-            this.p2Image = new System.Windows.Forms.PictureBox();
+            this.p1Sprite = new System.Windows.Forms.PictureBox();
+            this.p2Sprite = new System.Windows.Forms.PictureBox();
             this.moveSelectTimer = new System.Windows.Forms.Timer(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.p1Image)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p2Image)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.p1Sprite)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.p2Sprite)).BeginInit();
             this.SuspendLayout();
             // 
             // p1Blue
@@ -183,23 +183,23 @@
             this.battleStatusOutput.TabIndex = 12;
             this.battleStatusOutput.Text = "Pikachu used Thunder!";
             // 
-            // p1Image
+            // p1Sprite
             // 
-            this.p1Image.BackColor = System.Drawing.Color.Black;
-            this.p1Image.Location = new System.Drawing.Point(113, 280);
-            this.p1Image.Name = "p1Image";
-            this.p1Image.Size = new System.Drawing.Size(116, 138);
-            this.p1Image.TabIndex = 13;
-            this.p1Image.TabStop = false;
+            this.p1Sprite.BackColor = System.Drawing.Color.Black;
+            this.p1Sprite.Location = new System.Drawing.Point(89, 171);
+            this.p1Sprite.Name = "p1Sprite";
+            this.p1Sprite.Size = new System.Drawing.Size(236, 356);
+            this.p1Sprite.TabIndex = 13;
+            this.p1Sprite.TabStop = false;
             // 
-            // p2Image
+            // p2Sprite
             // 
-            this.p2Image.BackColor = System.Drawing.Color.Black;
-            this.p2Image.Location = new System.Drawing.Point(478, 171);
-            this.p2Image.Name = "p2Image";
-            this.p2Image.Size = new System.Drawing.Size(236, 356);
-            this.p2Image.TabIndex = 14;
-            this.p2Image.TabStop = false;
+            this.p2Sprite.BackColor = System.Drawing.Color.Black;
+            this.p2Sprite.Location = new System.Drawing.Point(478, 171);
+            this.p2Sprite.Name = "p2Sprite";
+            this.p2Sprite.Size = new System.Drawing.Size(236, 356);
+            this.p2Sprite.TabIndex = 14;
+            this.p2Sprite.TabStop = false;
             // 
             // moveSelectTimer
             // 
@@ -211,8 +211,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.Controls.Add(this.p2Image);
-            this.Controls.Add(this.p1Image);
+            this.Controls.Add(this.p2Sprite);
+            this.Controls.Add(this.p1Sprite);
             this.Controls.Add(this.battleStatusOutput);
             this.Controls.Add(this.HPlabel2);
             this.Controls.Add(this.HPlabel1);
@@ -229,8 +229,8 @@
             this.Name = "BattleArena";
             this.Size = new System.Drawing.Size(800, 800);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.BattleArena_KeyDown);
-            ((System.ComponentModel.ISupportInitialize)(this.p1Image)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.p2Image)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.p1Sprite)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.p2Sprite)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -251,8 +251,8 @@
         private System.Windows.Forms.Label HPlabel1;
         private System.Windows.Forms.Label HPlabel2;
         private System.Windows.Forms.Label battleStatusOutput;
-        private System.Windows.Forms.PictureBox p1Image;
-        private System.Windows.Forms.PictureBox p2Image;
+        private System.Windows.Forms.PictureBox p1Sprite;
+        private System.Windows.Forms.PictureBox p2Sprite;
         private System.Windows.Forms.Timer moveSelectTimer;
     }
 }

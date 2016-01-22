@@ -108,6 +108,9 @@
     <EmbeddedResource Include="Screens\BattleArena.resx">
       <DependentUpon>BattleArena.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Screens\CharacterSelection.resx">
+      <DependentUpon>CharacterSelection.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Screens\MainScreen.resx">
       <DependentUpon>MainScreen.cs</DependentUpon>
     </EmbeddedResource>
