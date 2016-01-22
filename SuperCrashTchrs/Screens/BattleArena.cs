@@ -282,25 +282,43 @@ namespace SuperCrashTchrs.Screens
 
             if (randNum.Next(1,101) <= 95)
             {
-                damage = (((42 * playerAtk * 40 / opponentDef) / 50) + 2)
+                damage = (((42 * playerAtk * 30 / opponentDef) / 50) + 2)
                     * randNum.Next(1, 101) / 100;
                 opponentHP -= damage;
+                if (opponentHP <= 0)
+                {
+                    battleStatusOutput.Text = "The opponent fainted!";
+                    Thread.Sleep(sleepTime);
+
+                    ScreenControl.changeScreen(this, "MultiEndScreen");
+                }
 
                 opponentAtk -= 25;
-                battleStatusOutput.Text = "The opponents Defence was lowered!";
+                battleStatusOutput.Text = "The opponents Attack was lowered!";
                 Thread.Sleep(sleepTime);
                 if (opponentAtk <= 0)
                 {
                     opponentAtk = 1;
-                    battleStatusOutput.Text = "The opponents Defence can't go any lower!";
+                    battleStatusOutput.Text = "The opponents Attack can't go any lower!";
                     Thread.Sleep(sleepTime);
                 }
             }
             else
             {
                 battleStatusOutput.Text = "But the opponent avoided the attack!";
+                Thread.Sleep(sleepTime);
             }
-            
+
+            if (p1character == "Brad")
+            {
+                p2hp = opponentHP;
+                p2Atk = opponentAtk;
+            }
+            else if (p2character == "Brad")
+            {
+                p1hp = opponentHP;
+                p1Atk = opponentAtk;
+            }
         }
 
         public void ClarinetSqueak() //Justin got this
@@ -337,37 +355,53 @@ namespace SuperCrashTchrs.Screens
             }
         }
 
-        public double ComplainAbout(double playerAtk, double opponentDef, double opponentHP) //Cayla is programming
+        public void ComplainAbout() //Cayla is programming
         {
-            //local variables called
-            double damage;
-            //know if player's move continues out sucessfully
-            int accuracyHit = randNum.Next(1, 101);
-
-            if (accuracyHit > 10)
+            int playerAtk = 1;
+            int opponentDef = 1;
+            int opponentHP = 0;            
+            int damage = 0;
+            if (p1character == "Brad")
             {
-                //show animation
-                //play sound(s)
-                //calculate damage opponent takes
+                playerAtk = p1Atk;
+                opponentDef = p2Def;
+                opponentHP = p2hp;                
+            }
+            else if (p2character == "Brad")
+            {
+                playerAtk = p2Atk;
+                opponentDef = p1Def;
+                opponentHP = p1hp; 
+            }
+            battleStatusOutput.Text = "Bradshaw used Complain About Apple!";
+            Thread.Sleep(sleepTime);
+
+            if (randNum.Next(1, 101) <= 90)
+            {
                 damage = (((42 * playerAtk * 75 / opponentDef) / 50) + 2)
-                * randNum.Next(1, 101) / 100;
-                //calculate amount of HP opponent has left
-                opponentHP = opponentHP - damage;
-                //display opponent's new HP
-                if (opponentHP > 0)
+                    * randNum.Next(1, 101) / 100;
+                opponentHP -= damage;
+                if (opponentHP <= 0)
                 {
-                    return opponentHP;
-                }
-                else
-                {
-                    //go to game over screen
+                    battleStatusOutput.Text = "The opponent fainted!";
+                    Thread.Sleep(sleepTime);
+
                     ScreenControl.changeScreen(this, "MultiEndScreen");
                 }
-
             }
             else
             {
-                //send move failed message
+                battleStatusOutput.Text = "But the opponent avoided the attack!";
+                Thread.Sleep(sleepTime);
+            }
+
+            if (p1character == "Brad")
+            {
+                p2hp = opponentHP;                
+            }
+            else if (p2character == "Brad")
+            {
+                p1hp = opponentHP;                
             }
         }
 
@@ -419,45 +453,98 @@ namespace SuperCrashTchrs.Screens
             }
         }
 
-        public double defenderBot() //Justin got this
+        public void DefenderBot() //Justin got this
         {
+            int playerDef = 0;
+            if (p1character == "Brad")
+            {
+                playerDef = p1Def;
+            }
+            else if (p2character == "Brad")
+            {
+                playerDef = p2Def;
+            }
+            battleStatusOutput.Text = "Bradshaw used Defender Bot!";
+            Thread.Sleep(sleepTime);
+            playerDef -= 25;
+            battleStatusOutput.Text = "Bradshaws Defence was raised!";
+            Thread.Sleep(sleepTime);
 
+            if (playerDef <= 0)
+            {
+                playerDef = 1;
+                battleStatusOutput.Text = "Bradshaws Defence can't go any higher!";
+                Thread.Sleep(sleepTime);
+            }
+
+            if (p1character == "Brad")
+            {
+                p1Def = playerDef;
+            }
+            else if (p2character == "Brad")
+            {
+                p2Def = playerDef;
+            }
         }
 
-        public double Dissection(double playerAtk, double opponentDef, double opponentHP)//Cayla is programming
+        public void Dissection()//Cayla is programming
         {
-            //local variables called
-            double damage;
-
-            //know if player's move continues out sucessfully
-            int accuracyHit = randNum.Next(1,101);
-
-            if (accuracyHit <= 95)
+            int playerAtk = 1;
+            int opponentDef = 1;
+            int opponentHP = 0;
+            int damage = 0;
+            if (p1character == "Bond")
             {
-                //show animation
-                //play sound(s)
-                //calculate damage opponent takes
+                playerAtk = p1Atk;
+                opponentDef = p2Def;
+                opponentHP = p2hp;
+            }
+            else if (p2character == "Bond")
+            {
+                playerAtk = p2Atk;
+                opponentDef = p1Def;
+                opponentHP = p1hp;
+            }
+            battleStatusOutput.Text = "Bond used Discetion!";
+            Thread.Sleep(sleepTime);
+
+            if (randNum.Next(1, 101) <= 95)
+            {
                 damage = (((42 * playerAtk * 30 / opponentDef) / 50) + 2)
-                  * randNum.Next(1, 101) / 100;
-
-                //calculate amount of HP opponent has left
-                opponentHP = opponentHP - damage;
-
-                if (opponentHP > 0)
+                    * randNum.Next(1, 101) / 100;
+                opponentHP -= damage;
+                if (opponentHP <= 0)
                 {
-                    //display opponent's HP
-                    return opponentHP;
-                }
-                else
-                {
-                    //go to game over screen
+                    battleStatusOutput.Text = "The opponent fainted!";
+                    Thread.Sleep(sleepTime);
+
                     ScreenControl.changeScreen(this, "MultiEndScreen");
                 }
-
+                opponentDef -= 25;
+                battleStatusOutput.Text = "The opponents Defence was lowered!";
+                Thread.Sleep(sleepTime);
+                if (opponentDef <= 0)
+                {
+                    opponentDef = 1;
+                    battleStatusOutput.Text = "The opponents Defence can't go any lower!";
+                    Thread.Sleep(sleepTime);
+                }
             }
             else
             {
-              //output attack failed message
+                battleStatusOutput.Text = "But the opponent avoided the attack!";
+                Thread.Sleep(sleepTime);
+            }
+
+            if (p1character == "Bond")
+            {
+                p2hp = opponentHP;
+                p2Def = opponentDef;
+            }
+            else if (p2character == "Bond")
+            {
+                p1hp = opponentHP;
+                p1Def = opponentDef;
             }
         }
 
@@ -660,41 +747,53 @@ namespace SuperCrashTchrs.Screens
 
         }
 
-        public double MadExperiment(double playerAtk, double opponentDef, double opponentHP)//Cayla is programming
+        public void MadExperiment()//Cayla is programming
         {
-            //local variables called
-            double damage;
-
-            //know if player's move continues out sucessfully
-            int accuracyHit = randNum.Next(1,101);
-
-            if (accuracyHit > 30)
+            int playerAtk = 1;
+            int opponentDef = 1;
+            int opponentHP = 0;
+            int damage = 0;
+            if (p1character == "Bond")
             {
-                //show animation
-                //play sound(s)
-                //calculate damage opponent takes
-                damage = (((42 * playerAtk * 100 / opponentDef) / 50) + 2)
-                * randNum.Next(1, 101) / 100;
-                //calculate amount of HP opponent has left
-                opponentHP = opponentHP - damage;
-               
-                //check if opponent has been defeated
-                if (opponentHP > 0)
-                {
-                    //display opponent's new HP
-                    return opponentHP;
+                playerAtk = p1Atk;
+                opponentDef = p2Def;
+                opponentHP = p2hp;
+            }
+            else if (p2character == "Bond")
+            {
+                playerAtk = p2Atk;
+                opponentDef = p1Def;
+                opponentHP = p1hp;
+            }
+            battleStatusOutput.Text = "Bond used Mad Experiment!";
+            Thread.Sleep(sleepTime);
 
-                    //set to opponent's turn
-                }
-                else
+            if (randNum.Next(1, 101) <= 70)
+            {
+                damage = (((42 * playerAtk * 100 / opponentDef) / 50) + 2)
+                    * randNum.Next(1, 101) / 100;
+                opponentHP -= damage;
+                if (opponentHP <= 0)
                 {
-                    //go to game over screen
+                    battleStatusOutput.Text = "The opponent fainted!";
+                    Thread.Sleep(sleepTime);
+
                     ScreenControl.changeScreen(this, "MultiEndScreen");
                 }
             }
             else
             {
-                //send move failed message 
+                battleStatusOutput.Text = "But the opponent avoided the attack!";
+                Thread.Sleep(sleepTime);
+            }
+
+            if (p1character == "Brad")
+            {
+                p2hp = opponentHP;
+            }
+            else if (p2character == "Brad")
+            {
+                p1hp = opponentHP;
             }
         }
 
@@ -931,10 +1030,10 @@ namespace SuperCrashTchrs.Screens
                         switch (p1character)
                         {
                             case "Bond":
-                                //Dissection
+                                Dissection();
                                 break;
                             case "Brad":
-                                //ComplainBout
+                                ComplainAbout();
                                 break;
                             case "Leitch":
                                 EssayQuestion();
@@ -960,10 +1059,10 @@ namespace SuperCrashTchrs.Screens
                         switch (p1character)
                         {
                             case "Bond":
-                                //MadExperiment
+                                MadExperiment();
                                 break;
                             case "Brad":
-                                //DefenderBot
+                                DefenderBot();
                                 break;
                             case "Leitch":
                                 //HistoricWar
@@ -1014,15 +1113,16 @@ namespace SuperCrashTchrs.Screens
                     #endregion
 
                     #region p2 Goes Second
+                    #region move 1
                     if (p2move1 == true)
                     {
                         switch (p2character)
                         {
                             case "Bond":
-                                //CriteraChart
+                                CriteriaChart();
                                 break;
                             case "Brad":
-                                //AttackBot
+                                AttackBot();
                                 break;
                             case "Leitch":
                                 //Documentary
@@ -1040,15 +1140,18 @@ namespace SuperCrashTchrs.Screens
                                 break;
                         }
                     }
+                    #endregion
+
+                    #region move 2
                     if (p2move2 == true)
                     {
                         switch (p2character)
                         {
                             case "Bond":
-                                //Dissection
+                                Dissection();
                                 break;
                             case "Brad":
-                                //ComplainBout
+                                ComplainAbout();
                                 break;
                             case "Leitch":
                                 //EssayQuestion
@@ -1066,15 +1169,18 @@ namespace SuperCrashTchrs.Screens
                                 break;
                         }
                     }
+                    #endregion
+
+                    #region move 3
                     if (p2move3 == true)
                     {
                         switch (p2character)
                         {
                             case "Bond":
-                                //MadExperiment
+                                MadExperiment();
                                 break;
                             case "Brad":
-                                //DefenderBot
+                                DefenderBot();
                                 break;
                             case "Leitch":
                                 //HistoricWar
@@ -1092,15 +1198,18 @@ namespace SuperCrashTchrs.Screens
                                 break;
                         }
                     }
+                    #endregion
+
+                    #region move 4
                     if (p2move4 == true)
                     {
                         switch (p2character)
                         {
                             case "Bond":
-                                //TalkBoutFamily
+                                TalkAboutFamily();
                                 break;
                             case "Brad":
-                                //VideoFriday
+                                VideoFriday();
                                 break;
                             case "Leitch":
                                 //MCQuestion
@@ -1118,6 +1227,7 @@ namespace SuperCrashTchrs.Screens
                                 break;
                         }
                     }
+                    #endregion
                     # endregion
                 }
                 else if (p1Spd < p2Spd)
