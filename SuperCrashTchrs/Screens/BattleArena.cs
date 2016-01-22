@@ -256,9 +256,51 @@ namespace SuperCrashTchrs.Screens
             }
         }
         
-        public double AttackBot() //Hannah has this one
+        public void AttackBot() //Hannah has this one
         {
+            int playerAtk = 1;
+            int opponentDef = 1;
+            int opponentHP = 0;
+            int opponentAtk = 0;
+            int damage = 0;
+            if (p1character == "Brad")
+            {
+                playerAtk = p1Atk;
+                opponentDef = p2Def;
+                opponentHP = p2hp;
+                opponentAtk = p2Atk;
+            }
+            else if (p2character == "Brad")
+            {
+                playerAtk = p2Atk;
+                opponentDef = p1Def;
+                opponentHP = p1hp;
+                opponentAtk = p1Atk;
+            }
+            battleStatusOutput.Text = "Bradshaw used Attack Bot!";
+            Thread.Sleep(sleepTime);
 
+            if (randNum.Next(1,101) <= 95)
+            {
+                damage = (((42 * playerAtk * 40 / opponentDef) / 50) + 2)
+                    * randNum.Next(1, 101) / 100;
+                opponentHP -= damage;
+
+                opponentAtk -= 25;
+                battleStatusOutput.Text = "The opponents Defence was lowered!";
+                Thread.Sleep(sleepTime);
+                if (opponentAtk <= 0)
+                {
+                    opponentAtk = 1;
+                    battleStatusOutput.Text = "The opponents Defence can't go any lower!";
+                    Thread.Sleep(sleepTime);
+                }
+            }
+            else
+            {
+                battleStatusOutput.Text = "But the opponent avoided the attack!";
+            }
+            
         }
 
         public void ClarinetSqueak() //Justin got this
@@ -730,47 +772,119 @@ namespace SuperCrashTchrs.Screens
 
         }
 
-        public int TalkAboutFamily(int bondDef)//Cayla is programming
+        public void TalkAboutFamily()//Cayla is programming
         {
-            //message displayed
-            //increase player's current defence by one stage
-            bondDef += 25;
-            
-            if(bondDef >250)
-                {
-                //set to max defence
-                bondDef = 250;
-                return bondDef;
-            }
-            else
+            int playerHP = 0;
+            int playerDef = 0;
+            if (p1character == "Bond")
             {
-                return bondDef;
+                playerHP = p1hp;
+                playerDef = p1Def;
+            }
+            if (p2character == "Bond")
+            {
+                playerHP = p2hp;
+                playerDef = p2Def;
+            }
+
+            battleStatusOutput.Text = "Bond used Critera Chart!";
+            Thread.Sleep(sleepTime);
+            playerHP += 38;
+            if (playerHP > 150)
+            {
+                playerHP = 150;
+            }
+            battleStatusOutput.Text = "Bond restored his HP!";
+            Thread.Sleep(sleepTime);
+
+            playerDef += 25;
+            battleStatusOutput.Text = "Bonds Defence increased!";
+            Thread.Sleep(sleepTime);
+            if(playerDef >250)
+            {                
+                bondDef = 250;
+                battleStatusOutput.Text = "Bonds Defence can't go any higher!";
+                Thread.Sleep(sleepTime);
+            }
+
+            if (p1character == "Bond")
+            {
+                p1hp = playerHP;
+                p1Def = playerDef;
+            }
+            if (p2character == "Bond")
+            {
+                p2hp = playerHP;
+                p2Def = playerDef;
             }
         }
 
-        public int TextbookBarricade()
+        public void TextbookBarricade()
         {
 
         }
 
-        public int Tuning(int playerHP) //Justin got this
+        public void Tuning() //Justin got this
         {
-            playerHP += 88;
+            int playerHP = 0;
+            if (p1character == "Ort")
+            {
+                playerHP = p1hp;
+            }
+            else if (p2character == "Ort")
+            {
+                playerHP = p2hp;
+            }
+            battleStatusOutput.Text = "Ortelli used Tuning!";
+            Thread.Sleep(sleepTime);
+            playerHP += 88;            
             if (playerHP < 175)
             {
                 playerHP = 175;
             }
-            return playerHP;    
+            battleStatusOutput.Text = "Ortelli restored her HP!";
+            Thread.Sleep(sleepTime);
+
+            if (p1character == "Ort")
+            {
+                p1hp = playerHP;
+            }
+            else if (p2character == "Ort")
+            {
+                p2hp = playerHP;
+            }    
         }
 
-        public int VideoFriday(int playerHP)//Cayla's programming
+        public void VideoFriday()//Cayla's programming
         {
+            int playerHP = 0;
+            if(p1character == "Brad")
+            {
+                playerHP = p1hp;
+            }
+            else if (p2character == "Brad")
+            {
+                playerHP = p2hp;
+            }
+
+            battleStatusOutput.Text = "Bradshaw used Video Friday!";
+            Thread.Sleep(sleepTime);
             playerHP += 75;
             if (playerHP > 150)
             {
                 playerHP = 150;
             }
-            return playerHP;
+            battleStatusOutput.Text = "Bradshaw restored his HP!";
+            Thread.Sleep(sleepTime);
+
+            if (p1character == "Brad")
+            {
+                p1hp = playerHP;
+            }
+            if (p2character == "Brad")
+            {
+                p2hp = playerHP;
+            }
         }
 
         private void moveSelectTimer_Tick(object sender, EventArgs e)
@@ -791,7 +905,7 @@ namespace SuperCrashTchrs.Screens
                                 CriteriaChart();
                                 break;
                             case "Brad":
-                                //AttackBot
+                                AttackBot();
                                 break;
                             case "Leitch":
                                 //Documentary
@@ -800,7 +914,7 @@ namespace SuperCrashTchrs.Screens
                                 Dodgeball(p1Atk, p1Def, p2Def, p2hp);
                                 break;
                             case "Ort":
-                                ClarinetSqueak(p2Def);
+                                ClarinetSqueak();
                                 break;
                             case "Steel":
                                 //EqualSign
@@ -874,21 +988,20 @@ namespace SuperCrashTchrs.Screens
                     {
                         switch (p1character)
                         {
-                            case "Bond":
-                                //TalkBoutFamily
-                                TalkAboutFamily(p1Def);
+                            case "Bond":                                
+                                TalkAboutFamily();
                                 break;
                             case "Brad":
-                                VideoFriday(p1hp);
+                                VideoFriday();
                                 break;
                             case "Leitch":
-                                MultiQuestion(p2Spd);
+                                MultiQuestion();
                                 break;
                             case "Cutch":
                                 //HealthClass
                                 break;
                             case "Ort":
-                                Tuning(p1hp);
+                                Tuning();
                                 break;
                             case "Steel":
                                 //TextbookBarricade
