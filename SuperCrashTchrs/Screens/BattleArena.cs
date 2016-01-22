@@ -524,7 +524,10 @@ namespace SuperCrashTchrs.Screens
 
         public double EqualSign() //Hannah ftw
         {
-            
+            if (p1character == "Steel")
+            {
+
+            }
 
         }
 
