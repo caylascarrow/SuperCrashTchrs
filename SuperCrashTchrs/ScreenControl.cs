@@ -14,7 +14,47 @@ namespace SuperCrashTchrs.Screens
         // high score values
         public static List<int> highScores = new List<int>();
 
-        //player selection and stats
+        #region Player Stats
+        //Should these be constants?
+        //Bond
+        int bondHP = 150;
+        int bondAtk = 125;
+        int bondDef = 75;
+        int bondSpd = 150;
+        string bondImg = "";
+        //Bradshaw
+        int bradHP = 150;
+        int bradAtk = 75;
+        int bradDef = 125;
+        int bradSpd = 125;
+        string bradImg = "";
+        //Leitch
+        int leitchHP = 200;
+        int leitchAtk = 75;
+        int leitchDef = 150;
+        int leitchSpd = 50;
+        int leitchSleep = 0;
+        string leitchImg = "";
+        //McCutcheon
+        int cutchHP = 100;
+        int cutchAtk = 150;
+        int cutchDef = 100;
+        int cutchSpd = 125;
+        string cutchImg = "";
+        //Ortelli
+        int ortHP = 175;
+        int ortAtk = 100;
+        int ortDef = 125;
+        int ortSpd = 75;
+        int ortSleep = 0;
+        string ortImg = "";
+        //Steel
+        int steelHP = 150;
+        int steelAtk = 75;
+        int steelDef = 175;
+        int steelSpd = 75;
+        string steelImg = "";
+        #endregion
 
         // screen and user control values
         public static int controlWidth = 800;
