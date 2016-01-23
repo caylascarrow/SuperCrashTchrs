@@ -50,7 +50,7 @@ namespace SuperCrashTchrs.Screens
                     p1Atk = (ScreenControl.bondAtk);
                     p1Def = (ScreenControl.bondDef);
                     p1Spd = (ScreenControl.bondSpd);
-                    p1Sprite.Image = /*add bond's image name here*/ ;
+                    p1Sprite.Image = /*add bond's image name here*/;
                     break;
                 case "Brad":
                     p1hp = (ScreenControl.bradHP);
