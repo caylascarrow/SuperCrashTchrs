@@ -15,12 +15,11 @@ namespace SuperCrashTchrs.Screens
         public MainScreen()
         {
             InitializeComponent();
-              
+
         }
 
-        private void playButton_Click(object sender, EventArgs e)
-        {
-            ScreenControl.changeScreen(this, "ModeSelection");
-        }
     }
+
+
 }
+

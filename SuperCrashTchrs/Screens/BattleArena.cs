@@ -18,6 +18,9 @@ namespace SuperCrashTchrs.Screens
     {
         #region Global Variables
 
+        bool p1moveSelect = false;
+        bool p2moveSelect = false;
+
         bool p1move1 = false;
         bool p1move2 = false;
         bool p1move3 = false;
@@ -201,28 +204,28 @@ namespace SuperCrashTchrs.Screens
             {
                 //player 1
                 case Keys.N:
-                      (ScreenControl.p1moveSelect) = true;
+                      p1moveSelect = true;
                       p1move1 = true;
                     p1move2 = false;
                     p1move3 = false;
                     p1move4 = false;
                     break;
                 case Keys.B:
-                      (ScreenControl.p1moveSelect) = true;
+                      p1moveSelect = true;
                     p1move1 = false;
                       p1move2 = true;
                     p1move3 = false;
                     p1move4 = false;
                     break;
                 case Keys.M:
-                      (ScreenControl.p1moveSelect) = true;
+                      p1moveSelect = true;
                     p1move1 = false;
                     p1move2 = false;
                       p1move3 = true;
                     p1move4 = false;
                     break;
                 case Keys.Space:
-                      (ScreenControl.p1moveSelect) = true;
+                      p1moveSelect = true;
                     p1move1 = false;
                     p1move2 = false;
                     p1move3 = false;
@@ -235,28 +238,28 @@ namespace SuperCrashTchrs.Screens
             {
                 //player 2
                 case Keys.V:
-                      (ScreenControl.p2moveSelect) = true;
+                    p2moveSelect = true;
                       p2move1 = true;
                     p2move2 = false;
                     p2move3 = false;
                     p2move4 = false;
                     break;
                 case Keys.C:
-                      (ScreenControl.p2moveSelect) = true;
+                    p2moveSelect = true;
                     p2move1 = false;
                       p2move2 = true;
                     p2move3 = false;
                     p2move4 = false;
                     break;
                 case Keys.X:
-                      (ScreenControl.p2moveSelect) = true;
+                    p2moveSelect = true;
                     p2move1 = false;
                     p2move2 = false;
                       p2move3 = true;
                     p2move4 = false;
                     break;
                 case Keys.Z:
-                    (ScreenControl.p2moveSelect) = true;
+                    p2moveSelect = true;
                     p2move1 = false;
                     p2move2 = false;
                     p2move3 = false;
@@ -1033,7 +1036,7 @@ namespace SuperCrashTchrs.Screens
 
         private void moveSelectTimer_Tick(object sender, EventArgs e)
         {
-            if ((ScreenControl.p1moveSelect) == true && (ScreenControl.p2moveSelect) == true)
+            if (p1moveSelect == true && p2moveSelect == true)
             {
                 moveSelectTimer.Enabled = false;
                 if (p1Spd > p2Spd)
