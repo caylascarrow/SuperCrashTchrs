@@ -187,9 +187,9 @@
             this.battleStatusOutput.Font = new System.Drawing.Font("Magneto", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.battleStatusOutput.Location = new System.Drawing.Point(194, 37);
             this.battleStatusOutput.Name = "battleStatusOutput";
-            this.battleStatusOutput.Size = new System.Drawing.Size(356, 32);
+            this.battleStatusOutput.Size = new System.Drawing.Size(345, 32);
             this.battleStatusOutput.TabIndex = 12;
-            this.battleStatusOutput.Text = "Pikachu used Thunder!";
+            this.battleStatusOutput.Text = "A Battle has Started!";
             // 
             // p1Sprite
             // 
