@@ -52,6 +52,10 @@ namespace SuperCrashTchrs.Screens
                     p1Atk = (ScreenControl.bondAtk);
                     p1Def = (ScreenControl.bondDef);
                     p1Spd = (ScreenControl.bondSpd);
+                    p1Yellow.Text = "Critera Chart";
+                    p1Blue.Text = "Dissection";
+                    p1Red.Text = "Mad Experiment";
+                    p1Green.Text = "Talk about Family";
                     p1Sprite.Image = SuperCrashTchrs.Properties.Resources.Bond_L;
                     break;
                 case "Brad":
@@ -59,6 +63,10 @@ namespace SuperCrashTchrs.Screens
                     p1Atk = (ScreenControl.bradAtk);
                     p1Def = (ScreenControl.bradDef);
                     p1Spd = (ScreenControl.bradSpd);
+                    p1Yellow.Text = "Attack Bot";
+                    p1Blue.Text = "Complain About Apple";
+                    p1Red.Text = "Defender Bot";
+                    p1Green.Text = "Video Friday";
                     p1Sprite.Image = SuperCrashTchrs.Properties.Resources.Bradshaw_L;
                     break;
                 case "Leitch":
@@ -66,6 +74,10 @@ namespace SuperCrashTchrs.Screens
                     p1Atk = (ScreenControl.leitchAtk);
                     p1Def = (ScreenControl.leitchDef);
                     p1Spd = (ScreenControl.leitchSpd);
+                    p1Yellow.Text = "Documentary";
+                    p1Blue.Text = "Essay Question";
+                    p1Red.Text = "Historic War";
+                    p1Green.Text = "Multiple Choice Question";
                     //p1Sprite.Image = /*add leitch's image name here*/;
                     break;
                 case "Cutch":
@@ -73,6 +85,10 @@ namespace SuperCrashTchrs.Screens
                     p1Atk = (ScreenControl.cutchAtk);
                     p1Def = (ScreenControl.cutchDef);
                     p1Spd = (ScreenControl.cutchSpd);
+                    p1Yellow.Text = "DODGEBALL";
+                    p1Blue.Text = "Dunk ON";
+                    p1Red.Text = "Push Ups";
+                    p1Green.Text = "Health Class";
                     //p1Sprite.Image = /*add cutch's image name here*/;
                     break;
                 case "Ort":
@@ -80,6 +96,10 @@ namespace SuperCrashTchrs.Screens
                     p1Atk = (ScreenControl.ortAtk);
                     p1Def = (ScreenControl.ortDef);
                     p1Spd = (ScreenControl.ortSpd);
+                    p1Yellow.Text = "Clairinet Squeak";
+                    p1Blue.Text = "Full Band Fortissimo";
+                    p1Red.Text = "Melodious Passage";
+                    p1Green.Text = "Tuning";
                     //p1Sprite.Image = /*add ortelli's image name here*/;
                     break;
                 case "Steel":
@@ -87,6 +107,10 @@ namespace SuperCrashTchrs.Screens
                     p1Atk = (ScreenControl.steelAtk);
                     p1Def = (ScreenControl.steelDef);
                     p1Spd = (ScreenControl.steelSpd);
+                    p1Yellow.Text = "=";
+                    p1Blue.Text = "Pink Paper";
+                    p1Red.Text = "Quadratic Attack";
+                    p1Green.Text = "Textbook Barricade";
                     //p1Sprite.Image = /*add steel's image name here*/;
                     break;
                 default:
@@ -99,6 +123,10 @@ namespace SuperCrashTchrs.Screens
                     p2Atk = (ScreenControl.bondAtk);
                     p2Def = (ScreenControl.bondDef);
                     p2Spd = (ScreenControl.bondSpd);
+                    p2Yellow.Text = "Critera Chart";
+                    p2Blue.Text = "Dissection";
+                    p2Red.Text = "Mad Experiment";
+                    p2Green.Text = "Talk about Family";
                     p2Sprite.Image = SuperCrashTchrs.Properties.Resources.Bond_R;
                     break;
                 case "Brad":
@@ -106,6 +134,10 @@ namespace SuperCrashTchrs.Screens
                     p2Atk = (ScreenControl.bradAtk);
                     p2Def = (ScreenControl.bradDef);
                     p2Spd = (ScreenControl.bradSpd);
+                    p2Yellow.Text = "Attack Bot";
+                    p2Blue.Text = "Complain About Apple";
+                    p2Red.Text = "Defender Bot";
+                    p2Green.Text = "Video Friday";
                     p2Sprite.Image = SuperCrashTchrs.Properties.Resources.Bradshaw_R;
                     break;
                 case "Leitch":
@@ -113,6 +145,10 @@ namespace SuperCrashTchrs.Screens
                     p2Atk = (ScreenControl.leitchAtk);
                     p2Def = (ScreenControl.leitchDef);
                     p2Spd = (ScreenControl.leitchSpd);
+                    p2Yellow.Text = "Documentary";
+                    p2Blue.Text = "Essay Question";
+                    p2Red.Text = "Historic War";
+                    p2Green.Text = "Multiple Choice Question";
                     //p2Sprite.Image = /*add leitch's image name here*/;
                     break;
                 case "Cutch":
@@ -120,6 +156,10 @@ namespace SuperCrashTchrs.Screens
                     p2Atk = (ScreenControl.cutchAtk);
                     p2Def = (ScreenControl.cutchDef);
                     p2Spd = (ScreenControl.cutchSpd);
+                    p2Yellow.Text = "DODGEBALL";
+                    p2Blue.Text = "Dunk ON";
+                    p2Red.Text = "Push Ups";
+                    p2Green.Text = "Health Class";
                     //p2Sprite.Image = /*add cutch's image name here*/;
                     break;
                 case "Ort":
@@ -127,6 +167,10 @@ namespace SuperCrashTchrs.Screens
                     p2Atk = (ScreenControl.ortAtk);
                     p2Def = (ScreenControl.ortDef);
                     p2Spd = (ScreenControl.ortSpd);
+                    p2Yellow.Text = "Clairinet Squeak";
+                    p2Blue.Text = "Full Band Fortissimo";
+                    p2Red.Text = "Melodious Passage";
+                    p2Green.Text = "Tuning";
                     //p2Sprite.Image = /*add ortelli's image name here*/;
                     break;
                 case "Steel":
@@ -134,6 +178,10 @@ namespace SuperCrashTchrs.Screens
                     p2Atk = (ScreenControl.steelAtk);
                     p2Def = (ScreenControl.steelDef);
                     p2Spd = (ScreenControl.steelSpd);
+                    p2Yellow.Text = "=";
+                    p2Blue.Text = "Pink Paper";
+                    p2Red.Text = "Quadratic Attack";
+                    p2Green.Text = "Textbook Barricade";
                     //p2Sprite.Image = /*add steel's image name here*/;
                     break;
                 default:
@@ -1886,5 +1934,7 @@ namespace SuperCrashTchrs.Screens
 
             }
         }
+
+     
     }
 }
