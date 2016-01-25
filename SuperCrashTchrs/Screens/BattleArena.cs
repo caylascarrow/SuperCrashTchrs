@@ -1992,8 +1992,6 @@ namespace SuperCrashTchrs.Screens
             {
 
             }
-        }
-
-     
+        }     
     }
 }
