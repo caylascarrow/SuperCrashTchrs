@@ -51,10 +51,11 @@
             // 
             // p1Blue
             // 
+            this.p1Blue.AutoSize = true;
             this.p1Blue.BackColor = System.Drawing.Color.Blue;
             this.p1Blue.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.p1Blue.ForeColor = System.Drawing.Color.White;
-            this.p1Blue.Location = new System.Drawing.Point(25, 695);
+            this.p1Blue.Location = new System.Drawing.Point(78, 652);
             this.p1Blue.Name = "p1Blue";
             this.p1Blue.Size = new System.Drawing.Size(75, 23);
             this.p1Blue.TabIndex = 0;
@@ -63,9 +64,10 @@
             // 
             // p1Yellow
             // 
+            this.p1Yellow.AutoSize = true;
             this.p1Yellow.BackColor = System.Drawing.Color.Yellow;
             this.p1Yellow.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.p1Yellow.Location = new System.Drawing.Point(137, 666);
+            this.p1Yellow.Location = new System.Drawing.Point(190, 623);
             this.p1Yellow.Name = "p1Yellow";
             this.p1Yellow.Size = new System.Drawing.Size(75, 23);
             this.p1Yellow.TabIndex = 1;
@@ -74,9 +76,10 @@
             // 
             // p1Red
             // 
+            this.p1Red.AutoSize = true;
             this.p1Red.BackColor = System.Drawing.Color.Red;
             this.p1Red.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.p1Red.Location = new System.Drawing.Point(200, 721);
+            this.p1Red.Location = new System.Drawing.Point(253, 678);
             this.p1Red.Name = "p1Red";
             this.p1Red.Size = new System.Drawing.Size(75, 23);
             this.p1Red.TabIndex = 2;
@@ -85,9 +88,10 @@
             // 
             // p1Green
             // 
+            this.p1Green.AutoSize = true;
             this.p1Green.BackColor = System.Drawing.Color.Lime;
             this.p1Green.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.p1Green.Location = new System.Drawing.Point(89, 752);
+            this.p1Green.Location = new System.Drawing.Point(142, 709);
             this.p1Green.Name = "p1Green";
             this.p1Green.Size = new System.Drawing.Size(75, 23);
             this.p1Green.TabIndex = 3;
@@ -96,9 +100,10 @@
             // 
             // p2Green
             // 
+            this.p2Green.AutoSize = true;
             this.p2Green.BackColor = System.Drawing.Color.Lime;
             this.p2Green.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.p2Green.Location = new System.Drawing.Point(527, 752);
+            this.p2Green.Location = new System.Drawing.Point(527, 709);
             this.p2Green.Name = "p2Green";
             this.p2Green.Size = new System.Drawing.Size(75, 23);
             this.p2Green.TabIndex = 7;
@@ -107,9 +112,10 @@
             // 
             // p2Red
             // 
+            this.p2Red.AutoSize = true;
             this.p2Red.BackColor = System.Drawing.Color.Red;
             this.p2Red.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.p2Red.Location = new System.Drawing.Point(639, 721);
+            this.p2Red.Location = new System.Drawing.Point(639, 678);
             this.p2Red.Name = "p2Red";
             this.p2Red.Size = new System.Drawing.Size(75, 23);
             this.p2Red.TabIndex = 6;
@@ -118,9 +124,10 @@
             // 
             // p2Yellow
             // 
+            this.p2Yellow.AutoSize = true;
             this.p2Yellow.BackColor = System.Drawing.Color.Yellow;
             this.p2Yellow.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.p2Yellow.Location = new System.Drawing.Point(558, 666);
+            this.p2Yellow.Location = new System.Drawing.Point(558, 623);
             this.p2Yellow.Name = "p2Yellow";
             this.p2Yellow.Size = new System.Drawing.Size(75, 23);
             this.p2Yellow.TabIndex = 5;
@@ -129,10 +136,11 @@
             // 
             // p2Blue
             // 
+            this.p2Blue.AutoSize = true;
             this.p2Blue.BackColor = System.Drawing.Color.Blue;
             this.p2Blue.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.p2Blue.ForeColor = System.Drawing.Color.White;
-            this.p2Blue.Location = new System.Drawing.Point(460, 695);
+            this.p2Blue.Location = new System.Drawing.Point(460, 652);
             this.p2Blue.Name = "p2Blue";
             this.p2Blue.Size = new System.Drawing.Size(75, 23);
             this.p2Blue.TabIndex = 4;
