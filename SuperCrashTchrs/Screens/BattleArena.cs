@@ -50,14 +50,14 @@ namespace SuperCrashTchrs.Screens
                     p1Atk = (ScreenControl.bondAtk);
                     p1Def = (ScreenControl.bondDef);
                     p1Spd = (ScreenControl.bondSpd);
-                    p1Sprite.Image = /*add bond's image name here*/;
+                    p1Sprite.Image = SuperCrashTchrs.Properties.Resources.Bond_L;
                     break;
                 case "Brad":
                     p1hp = (ScreenControl.bradHP);
                     p1Atk = (ScreenControl.bradAtk);
                     p1Def = (ScreenControl.bradDef);
                     p1Spd = (ScreenControl.bradSpd);
-                    p1Sprite.Image = /*add brad's image name here*/;
+                    p1Sprite.Image = SuperCrashTchrs.Properties.Resources.Bradshaw_L;
                     break;
                 case "Leitch":
                     p1hp = (ScreenControl.leitchHP);
@@ -97,14 +97,14 @@ namespace SuperCrashTchrs.Screens
                     p2Atk = (ScreenControl.bondAtk);
                     p2Def = (ScreenControl.bondDef);
                     p2Spd = (ScreenControl.bondSpd);
-                    p2Sprite.Image = /*add bond's image name here*/;
+                    p2Sprite.Image = SuperCrashTchrs.Properties.Resources.Bond_R;
                     break;
                 case "Brad":
                     p2hp = (ScreenControl.bradHP);
                     p2Atk = (ScreenControl.bradAtk);
                     p2Def = (ScreenControl.bradDef);
                     p2Spd = (ScreenControl.bradSpd);
-                    p2Sprite.Image = /*add brad's image name here*/;
+                    p2Sprite.Image = SuperCrashTchrs.Properties.Resources.Bradshaw_R;
                     break;
                 case "Leitch":
                     p2hp = (ScreenControl.leitchHP);
@@ -151,28 +151,28 @@ namespace SuperCrashTchrs.Screens
             {
                 //player 1
                 case Keys.N:
-                      p1moveSelect = true;
+                      (ScreenControl.p1moveSelect) = true;
                       p1move1 = true;
                     p1move2 = false;
                     p1move3 = false;
                     p1move4 = false;
                     break;
                 case Keys.B:
-                      p1moveSelect = true;
+                      (ScreenControl.p1moveSelect) = true;
                     p1move1 = false;
                       p1move2 = true;
                     p1move3 = false;
                     p1move4 = false;
                     break;
                 case Keys.M:
-                      p1moveSelect = true;
+                      (ScreenControl.p1moveSelect) = true;
                     p1move1 = false;
                     p1move2 = false;
                       p1move3 = true;
                     p1move4 = false;
                     break;
                 case Keys.Space:
-                      p1moveSelect = true;
+                      (ScreenControl.p1moveSelect) = true;
                     p1move1 = false;
                     p1move2 = false;
                     p1move3 = false;
@@ -185,28 +185,28 @@ namespace SuperCrashTchrs.Screens
             {
                 //player 2
                 case Keys.V:
-                      p2moveSelect = true;
+                      (ScreenControl.p2moveSelect) = true;
                       p2move1 = true;
                     p2move2 = false;
                     p2move3 = false;
                     p2move4 = false;
                     break;
                 case Keys.C:
-                      p2moveSelect = true;
+                      (ScreenControl.p2moveSelect) = true;
                     p2move1 = false;
                       p2move2 = true;
                     p2move3 = false;
                     p2move4 = false;
                     break;
                 case Keys.X:
-                      p2moveSelect = true;
+                      (ScreenControl.p2moveSelect) = true;
                     p2move1 = false;
                     p2move2 = false;
                       p2move3 = true;
                     p2move4 = false;
                     break;
                 case Keys.Z:
-                      p2moveSelect = true;
+                    (ScreenControl.p2moveSelect) = true;
                     p2move1 = false;
                     p2move2 = false;
                     p2move3 = false;
