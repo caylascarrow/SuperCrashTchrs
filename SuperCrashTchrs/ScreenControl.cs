@@ -15,8 +15,7 @@ namespace SuperCrashTchrs.Screens
         public static List<int> highScores = new List<int>();
 
         //global variables
-        public static bool p1moveSelect = false;
-        public static bool p2moveSelect = false;
+       
         public static string p1character;
         public static string p2character;
         #region Player Stats
