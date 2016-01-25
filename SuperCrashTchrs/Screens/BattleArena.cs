@@ -299,14 +299,22 @@ namespace SuperCrashTchrs.Screens
                 damage = (((42 * playerAtk * 30 / opponentDef) / 50) + 2)
                     * randNum.Next(1, 101) / 100;
                 opponentHP -= damage;
-                //if (p1character == "Brad")
-                //{
-                //    p1HPBar.Size = (opponentHP,10);
-                //}
-                //else if (p2character == "Brad")
-                //{
-                //    p2HPBar.Size = (opponentHP,10); 
-                //}
+                if (p1character == "Brad")
+                {
+                    for (int i = p2hp; i > opponentHP; i--) 
+                    {
+                        p2HPBar.Size = new Size(i, 10);
+                        Thread.Sleep(50);
+                    }                        
+                }
+                else if (p2character == "Brad")
+                {
+                    for (int i = p1hp; i > opponentHP; i--)
+                    {
+                        p1HPBar.Size = new Size(i, 10);
+                        Thread.Sleep(50);
+                    }
+                }
                 if (opponentHP <= 0)
                 {
                     battleStatusOutput.Text = "The opponent fainted!";
@@ -403,6 +411,22 @@ namespace SuperCrashTchrs.Screens
                 damage = (((42 * playerAtk * 75 / opponentDef) / 50) + 2)
                     * randNum.Next(1, 101) / 100;
                 opponentHP -= damage;
+                if (p1character == "Brad")
+                {
+                    for (int i = p2hp; i > opponentHP; i--)
+                    {
+                        p2HPBar.Size = new Size(i, 10);
+                        Thread.Sleep(50);
+                    }
+                }
+                else if (p2character == "Brad")
+                {
+                    for (int i = p1hp; i > opponentHP; i--)
+                    {
+                        p1HPBar.Size = new Size(i, 10);
+                        Thread.Sleep(50);
+                    }
+                }
                 if (opponentHP <= 0)
                 {
                     battleStatusOutput.Text = "The opponent fainted!";
@@ -535,6 +559,22 @@ namespace SuperCrashTchrs.Screens
                 damage = (((42 * playerAtk * 30 / opponentDef) / 50) + 2)
                     * randNum.Next(1, 101) / 100;
                 opponentHP -= damage;
+                if (p1character == "Bond")
+                {
+                    for (int i = p2hp; i > opponentHP; i--)
+                    {
+                        p2HPBar.Size = new Size(i, 10);
+                        Thread.Sleep(50);
+                    }
+                }
+                else if (p2character == "Bond")
+                {
+                    for (int i = p1hp; i > opponentHP; i--)
+                    {
+                        p1HPBar.Size = new Size(i, 10);
+                        Thread.Sleep(50);
+                    }
+                }
                 if (opponentHP <= 0)
                 {
                     battleStatusOutput.Text = "The opponent fainted!";
@@ -804,6 +844,22 @@ namespace SuperCrashTchrs.Screens
                 damage = (((42 * playerAtk * 100 / opponentDef) / 50) + 2)
                     * randNum.Next(1, 101) / 100;
                 opponentHP -= damage;
+                if (p1character == "Brad")
+                {
+                    for (int i = p2hp; i > opponentHP && i > 0; i--)
+                    {
+                        p2HPBar.Size = new Size(i, 10);
+                        Thread.Sleep(50);
+                    }
+                }
+                else if (p2character == "Brad")
+                {
+                    for (int i = p1hp; i > opponentHP && i > 0; i--)
+                    {
+                        p1HPBar.Size = new Size(i, 10);
+                        Thread.Sleep(50);
+                    }
+                }
                 if (opponentHP <= 0)
                 {
                     battleStatusOutput.Text = "The opponent fainted!";
