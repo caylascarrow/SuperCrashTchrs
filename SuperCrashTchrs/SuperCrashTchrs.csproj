@@ -135,10 +135,10 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="Teacher Sprites\Bond L.jpg" />
-    <Content Include="Teacher Sprites\Bond R.jpg" />
-    <Content Include="Teacher Sprites\Bradshaw L.jpg" />
-    <Content Include="Teacher Sprites\Bradshaw R.jpg" />
+    <Content Include="Teacher Sprites\Bond L.png" />
+    <Content Include="Teacher Sprites\Bond R.png" />
+    <Content Include="Teacher Sprites\Bradshaw L.png" />
+    <Content Include="Teacher Sprites\Bradshaw R.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
