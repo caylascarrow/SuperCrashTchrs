@@ -27,11 +27,13 @@ namespace SuperCrashTchrs.Screens
         bool p2move2 = false;
         bool p2move3 = false;
         bool p2move4 = false;
-
-
+    
         string p1character, p2character;
         int p1hp, p1Atk, p1Def, p1Spd, p2hp, p2Atk, p2Def, p2Spd;
         int sleepTime = 1000;
+
+        int leitchSleep = 0;
+        bool ortSleep = false;
 
         #endregion
 
@@ -64,28 +66,28 @@ namespace SuperCrashTchrs.Screens
                     p1Atk = (ScreenControl.leitchAtk);
                     p1Def = (ScreenControl.leitchDef);
                     p1Spd = (ScreenControl.leitchSpd);
-                    p1Sprite.Image = /*add leitch's image name here*/;
+                    //p1Sprite.Image = /*add leitch's image name here*/;
                     break;
                 case "Cutch":
                     p1hp = (ScreenControl.cutchHP);
                     p1Atk = (ScreenControl.cutchAtk);
                     p1Def = (ScreenControl.cutchDef);
                     p1Spd = (ScreenControl.cutchSpd);
-                    p1Sprite.Image = /*add cutch's image name here*/;
+                    //p1Sprite.Image = /*add cutch's image name here*/;
                     break;
                 case "Ort":
                     p1hp = (ScreenControl.ortHP);
                     p1Atk = (ScreenControl.ortAtk);
                     p1Def = (ScreenControl.ortDef);
                     p1Spd = (ScreenControl.ortSpd);
-                    p1Sprite.Image = /*add ortelli's image name here*/;
+                    //p1Sprite.Image = /*add ortelli's image name here*/;
                     break;
                 case "Steel":
                     p1hp = (ScreenControl.steelHP);
                     p1Atk = (ScreenControl.steelAtk);
                     p1Def = (ScreenControl.steelDef);
                     p1Spd = (ScreenControl.steelSpd);
-                    p1Sprite.Image = /*add steel's image name here*/;
+                    //p1Sprite.Image = /*add steel's image name here*/;
                     break;
                 default:
                     break;
@@ -111,28 +113,28 @@ namespace SuperCrashTchrs.Screens
                     p2Atk = (ScreenControl.leitchAtk);
                     p2Def = (ScreenControl.leitchDef);
                     p2Spd = (ScreenControl.leitchSpd);
-                    p2Sprite.Image = /*add leitch's image name here*/;
+                    //p2Sprite.Image = /*add leitch's image name here*/;
                     break;
                 case "Cutch":
                     p2hp = (ScreenControl.cutchHP);
                     p2Atk = (ScreenControl.cutchAtk);
                     p2Def = (ScreenControl.cutchDef);
                     p2Spd = (ScreenControl.cutchSpd);
-                    p2Sprite.Image = /*add cutch's image name here*/;
+                    //p2Sprite.Image = /*add cutch's image name here*/;
                     break;
                 case "Ort":
                     p2hp = (ScreenControl.ortHP);
                     p2Atk = (ScreenControl.ortAtk);
                     p2Def = (ScreenControl.ortDef);
                     p2Spd = (ScreenControl.ortSpd);
-                    p2Sprite.Image = /*add ortelli's image name here*/;
+                    //p2Sprite.Image = /*add ortelli's image name here*/;
                     break;
                 case "Steel":
                     p2hp = (ScreenControl.steelHP);
                     p2Atk = (ScreenControl.steelAtk);
                     p2Def = (ScreenControl.steelDef);
                     p2Spd = (ScreenControl.steelSpd);
-                    p2Sprite.Image = /*add steel's image name here*/;
+                    //p2Sprite.Image = /*add steel's image name here*/;
                     break;
                 default:
                     break;
@@ -246,6 +248,14 @@ namespace SuperCrashTchrs.Screens
                 damage = (((42 * playerAtk * 30 / opponentDef) / 50) + 2)
                     * randNum.Next(1, 101) / 100;
                 opponentHP -= damage;
+                //if (p1character == "Brad")
+                //{
+                //    p1HPBar.Size = (opponentHP,10);
+                //}
+                //else if (p2character == "Brad")
+                //{
+                //    p2HPBar.Size = (opponentHP,10); 
+                //}
                 if (opponentHP <= 0)
                 {
                     battleStatusOutput.Text = "The opponent fainted!";
@@ -282,7 +292,7 @@ namespace SuperCrashTchrs.Screens
             }
         }
 
-        public void ClarinetSqueak()//DONE
+        public void ClarinetSqueak()//kinda DONE
         {
             int opponentDef = 0;
             if (p1character == "Ort")
@@ -516,21 +526,28 @@ namespace SuperCrashTchrs.Screens
             {
                 //if asleep pass the turn
                 leitchSleep--;
-                return leitchSleep;
-                //display sleep message
+                battleStatusOutput.Text = "Leitch is fast asleep...";
+                Thread.Sleep(sleepTime);
             }
-            else //leitch is awake
+            else
             {
-                //little text message description
-                //restore leitch's HP to full
-                leitchHP = 200;
-                return leitchHP;
-                //display HP at full
+                int playerHP = 0;
+                if (p1character == "Leitch")
+                {
+                    playerHP = p1hp; 
+                } 
+                else if (p2character == "Leitch")
+                {
+                    playerHP = p2hp;
+                }
+                playerHP = 200;
+                
             }
         }
 
         public void Dodgeball()//not done
-        {     
+        {   
+            /*
             int accuracyHit = randNum.Next(1,101);
             double damage;
             //check accuracy
@@ -541,7 +558,7 @@ namespace SuperCrashTchrs.Screens
                 damage = (((42 * playerAtk * 100 / opponentDef) / 50) + 2) 
                     * randNum.Next(1,101) / 100;
                 opponentHP -= damage;
-                //for (int i = 100/*oponents HPbar length*/; i == opponentHP; i--)
+                //for (int i = 100oponents HPbar length; i == opponentHP; i--)
                 //{
                 //    p1HPBar.Size = (i, 10);
                 //}
@@ -573,11 +590,12 @@ namespace SuperCrashTchrs.Screens
             else
             {
                 //set to opponent's turn
-            }
+            }*/
         }
 
         public void DunkOn()//not done
         {
+            /*
             //local variables created
             double damage;
             //know if player's move continues out sucessfully
@@ -609,7 +627,7 @@ namespace SuperCrashTchrs.Screens
             else
             {
                 //send move failed message
-            }
+            }*/
         }
 
         public void EqualSign()//not done
@@ -665,6 +683,7 @@ namespace SuperCrashTchrs.Screens
 
         public void FullBandFF()//not done
         {
+            /*
             if (ortSleep == 0)
             {
                 //local variables called
@@ -700,7 +719,7 @@ namespace SuperCrashTchrs.Screens
             else
             {
                 //send ortelli is too tired message
-            }
+            }*/
         }
 
         public void HealthClass()//not done
@@ -770,6 +789,7 @@ namespace SuperCrashTchrs.Screens
 
         public void PinkPaper()//not done
         {
+            /*
             // local variables called
             double damage;
             double playerHpUp;
@@ -806,7 +826,7 @@ namespace SuperCrashTchrs.Screens
             else
             {
                 //send move failed message
-            }
+            }*/
         }
 
         public void PushUps()//not done
@@ -849,7 +869,7 @@ namespace SuperCrashTchrs.Screens
             Thread.Sleep(sleepTime);
             if(playerDef >250)
             {                
-                bondDef = 250;
+                playerDef = 250;
                 battleStatusOutput.Text = "Bonds Defence can't go any higher!";
                 Thread.Sleep(sleepTime);
             }
