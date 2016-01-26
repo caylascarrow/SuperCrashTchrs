@@ -55,7 +55,7 @@
             this.p1Blue.BackColor = System.Drawing.Color.Blue;
             this.p1Blue.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.p1Blue.ForeColor = System.Drawing.Color.White;
-            this.p1Blue.Location = new System.Drawing.Point(78, 652);
+            this.p1Blue.Location = new System.Drawing.Point(104, 652);
             this.p1Blue.Name = "p1Blue";
             this.p1Blue.Size = new System.Drawing.Size(75, 23);
             this.p1Blue.TabIndex = 0;
@@ -81,7 +81,7 @@
             this.p1Red.AutoSize = true;
             this.p1Red.BackColor = System.Drawing.Color.Red;
             this.p1Red.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.p1Red.Location = new System.Drawing.Point(253, 678);
+            this.p1Red.Location = new System.Drawing.Point(277, 652);
             this.p1Red.Name = "p1Red";
             this.p1Red.Size = new System.Drawing.Size(75, 23);
             this.p1Red.TabIndex = 2;
@@ -94,7 +94,7 @@
             this.p1Green.AutoSize = true;
             this.p1Green.BackColor = System.Drawing.Color.Lime;
             this.p1Green.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.p1Green.Location = new System.Drawing.Point(142, 709);
+            this.p1Green.Location = new System.Drawing.Point(190, 689);
             this.p1Green.Name = "p1Green";
             this.p1Green.Size = new System.Drawing.Size(75, 23);
             this.p1Green.TabIndex = 3;
@@ -107,7 +107,7 @@
             this.p2Green.AutoSize = true;
             this.p2Green.BackColor = System.Drawing.Color.Lime;
             this.p2Green.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.p2Green.Location = new System.Drawing.Point(527, 709);
+            this.p2Green.Location = new System.Drawing.Point(558, 689);
             this.p2Green.Name = "p2Green";
             this.p2Green.Size = new System.Drawing.Size(75, 23);
             this.p2Green.TabIndex = 7;
@@ -120,7 +120,7 @@
             this.p2Red.AutoSize = true;
             this.p2Red.BackColor = System.Drawing.Color.Red;
             this.p2Red.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.p2Red.Location = new System.Drawing.Point(639, 678);
+            this.p2Red.Location = new System.Drawing.Point(648, 652);
             this.p2Red.Name = "p2Red";
             this.p2Red.Size = new System.Drawing.Size(75, 23);
             this.p2Red.TabIndex = 6;
@@ -147,7 +147,7 @@
             this.p2Blue.BackColor = System.Drawing.Color.Blue;
             this.p2Blue.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.p2Blue.ForeColor = System.Drawing.Color.White;
-            this.p2Blue.Location = new System.Drawing.Point(460, 652);
+            this.p2Blue.Location = new System.Drawing.Point(469, 652);
             this.p2Blue.Name = "p2Blue";
             this.p2Blue.Size = new System.Drawing.Size(75, 23);
             this.p2Blue.TabIndex = 4;
@@ -191,17 +191,19 @@
             // 
             // battleStatusOutput
             // 
-            this.battleStatusOutput.AutoSize = true;
+            this.battleStatusOutput.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.battleStatusOutput.AutoEllipsis = true;
             this.battleStatusOutput.Font = new System.Drawing.Font("Magneto", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.battleStatusOutput.Location = new System.Drawing.Point(194, 37);
+            this.battleStatusOutput.Location = new System.Drawing.Point(3, 66);
             this.battleStatusOutput.Name = "battleStatusOutput";
-            this.battleStatusOutput.Size = new System.Drawing.Size(345, 32);
+            this.battleStatusOutput.Size = new System.Drawing.Size(794, 32);
             this.battleStatusOutput.TabIndex = 12;
             this.battleStatusOutput.Text = "A Battle has Started!";
+            this.battleStatusOutput.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // p1Sprite
             // 
-            this.p1Sprite.BackColor = System.Drawing.Color.Black;
+            this.p1Sprite.BackColor = System.Drawing.Color.Transparent;
             this.p1Sprite.Location = new System.Drawing.Point(89, 171);
             this.p1Sprite.Name = "p1Sprite";
             this.p1Sprite.Size = new System.Drawing.Size(236, 356);
@@ -210,7 +212,7 @@
             // 
             // p2Sprite
             // 
-            this.p2Sprite.BackColor = System.Drawing.Color.Black;
+            this.p2Sprite.BackColor = System.Drawing.Color.Transparent;
             this.p2Sprite.Location = new System.Drawing.Point(478, 171);
             this.p2Sprite.Name = "p2Sprite";
             this.p2Sprite.Size = new System.Drawing.Size(236, 356);

@@ -84,7 +84,7 @@ namespace SuperCrashTchrs.Screens
                     p1Blue.Text = "Essay Question";
                     p1Red.Text = "Historic War";
                     p1Green.Text = "Multiple Choice Question";
-                    //p1Sprite.Image = /*add leitch's image name here*/;
+                   // p1Sprite.Image = SuperCrashTchrs.Properties.Resources.Leitch_L;
                     break;
                 case "Cutch":
                     p1hp = (ScreenControl.cutchHP);
@@ -96,7 +96,7 @@ namespace SuperCrashTchrs.Screens
                     p1Blue.Text = "Dunk ON";
                     p1Red.Text = "Push Ups";
                     p1Green.Text = "Health Class";
-                    //p1Sprite.Image = /*add cutch's image name here*/;
+                    p1Sprite.Image = SuperCrashTchrs.Properties.Resources.Cutch_L;
                     break;
                 case "Ort":
                     p1hp = (ScreenControl.ortHP);
@@ -173,7 +173,7 @@ namespace SuperCrashTchrs.Screens
                     p2Blue.Text = "Dunk ON";
                     p2Red.Text = "Push Ups";
                     p2Green.Text = "Health Class";
-                    //p2Sprite.Image = /*add cutch's image name here*/;
+                    p2Sprite.Image = SuperCrashTchrs.Properties.Resources.Cutch_R;
                     break;
                 case "Ort":
                     p2hp = (ScreenControl.ortHP);

@@ -18,8 +18,7 @@ namespace SuperCrashTchrs.Screens
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {
-
+        { 
             ScreenControl.changeScreen(this, "MainScreen");
         }
     }
