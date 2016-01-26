@@ -313,6 +313,7 @@ namespace SuperCrashTchrs.Screens
                     {
                         p2HPBar.Size = new Size(i, 10);
                         Thread.Sleep(50);
+                        Refresh();
                     }                        
                 }
                 else if (p2character == "Brad")
@@ -321,6 +322,7 @@ namespace SuperCrashTchrs.Screens
                     {
                         p1HPBar.Size = new Size(i, 10);
                         Thread.Sleep(50);
+                        Refresh();
                     }
                 }
                 if (opponentHP <= 0)
@@ -429,6 +431,7 @@ namespace SuperCrashTchrs.Screens
                     {
                         p2HPBar.Size = new Size(i, 10);
                         Thread.Sleep(50);
+                        Refresh();
                     }
                 }
                 else if (p2character == "Brad")
@@ -437,6 +440,7 @@ namespace SuperCrashTchrs.Screens
                     {
                         p1HPBar.Size = new Size(i, 10);
                         Thread.Sleep(50);
+                        Refresh();
                     }
                 }
                 if (opponentHP <= 0)
@@ -589,6 +593,7 @@ namespace SuperCrashTchrs.Screens
                     {
                         p2HPBar.Size = new Size(i, 10);
                         Thread.Sleep(50);
+                        Refresh();
                     }
                 }
                 else if (p2character == "Bond")
@@ -597,6 +602,7 @@ namespace SuperCrashTchrs.Screens
                     {
                         p1HPBar.Size = new Size(i, 10);
                         Thread.Sleep(50);
+                        Refresh();
                     }
                 }
                 if (opponentHP <= 0)
@@ -617,6 +623,7 @@ namespace SuperCrashTchrs.Screens
                     opponentDef = 1;
                     battleStatusOutput.Text = "The opponents Defence can't go any lower!";
                     Thread.Sleep(sleepTime);
+                    Refresh();
                 }
             }
             else
@@ -978,7 +985,7 @@ namespace SuperCrashTchrs.Screens
 
         }
 
-        public void TalkAboutFamily()//DONE
+        public void TalkAboutFamily()//DONEgh
         {
             int playerHP = 0;
             int playerDef = 0;
@@ -1001,6 +1008,22 @@ namespace SuperCrashTchrs.Screens
             if (playerHP > 150)
             {
                 playerHP = 150;
+            }
+            if (p1character == "Bond")
+            {
+                for (int i = p1hp; i < playerHP; i++)
+                {
+                    p2HPBar.Size = new Size(i, 10);
+                    Thread.Sleep(50);
+                }
+            }
+            else if (p2character == "Bond")
+            {
+                for (int i = p2hp; i > playerHP; i++)
+                {
+                    p1HPBar.Size = new Size(i, 10);
+                    Thread.Sleep(50);
+                }
             }
             battleStatusOutput.Text = "Bond restored his HP!";
             Thread.Sleep(sleepTime);
@@ -1116,6 +1139,22 @@ namespace SuperCrashTchrs.Screens
             if (playerHP > 150)
             {
                 playerHP = 150;
+            }
+            if (p1character == "Brad")
+            {
+                for (int i = p1hp; i < playerHP; i++)
+                {
+                    p2HPBar.Size = new Size(i, 10);
+                    Thread.Sleep(50);
+                }
+            }
+            else if (p2character == "Brad")
+            {
+                for (int i = p2hp; i > playerHP; i++)
+                {
+                    p1HPBar.Size = new Size(i, 10);
+                    Thread.Sleep(50);
+                }
             }
             battleStatusOutput.Text = "Bradshaw restored his HP!";
             Thread.Sleep(sleepTime);
