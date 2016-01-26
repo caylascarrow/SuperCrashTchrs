@@ -139,6 +139,9 @@
     <Content Include="Teacher Sprites\Bond R.png" />
     <Content Include="Teacher Sprites\Bradshaw L.png" />
     <Content Include="Teacher Sprites\Bradshaw R.png" />
+    <Content Include="Teacher Sprites\Cutch L.png" />
+    <Content Include="Teacher Sprites\Cutch R.png" />
+    <Content Include="Teacher Sprites\logo t.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
