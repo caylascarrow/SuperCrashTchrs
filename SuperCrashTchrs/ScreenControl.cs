@@ -19,7 +19,6 @@ namespace SuperCrashTchrs.Screens
         public static string p1character;
         public static string p2character;
         #region Player Stats
-        //Should these be constants?
         //Bond
         public static int bondHP = 150;
         public static int bondAtk = 125;
