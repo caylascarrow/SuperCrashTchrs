@@ -194,41 +194,44 @@ namespace SuperCrashTchrs.Screens
         }
         
         public static Random randNum = new Random();
-
-        #region Character Moves
+               
         //Button Presses
-        private void BattleArena_KeyDown(object sender, KeyEventArgs e)
+        private void BattleArena_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
         {
             switch (e.KeyCode)
             {
                 //player 1
                 case Keys.N:
-                      p1moveSelect = true;
-                      p1move1 = true;
+                    p1moveSelect = true;
+                    p1move1 = true;
                     p1move2 = false;
                     p1move3 = false;
                     p1move4 = false;
+                    battleStatusOutput.Text = "Player 1 has decided";
                     break;
                 case Keys.B:
-                      p1moveSelect = true;
+                    p1moveSelect = true;
                     p1move1 = false;
-                      p1move2 = true;
+                    p1move2 = true;
                     p1move3 = false;
                     p1move4 = false;
+                    battleStatusOutput.Text = "Player 1 has decided";
                     break;
                 case Keys.M:
-                      p1moveSelect = true;
+                    p1moveSelect = true;
                     p1move1 = false;
                     p1move2 = false;
-                      p1move3 = true;
+                    p1move3 = true;
                     p1move4 = false;
+                    battleStatusOutput.Text = "Player 1 has decided";
                     break;
                 case Keys.Space:
-                      p1moveSelect = true;
+                    p1moveSelect = true;
                     p1move1 = false;
                     p1move2 = false;
                     p1move3 = false;
-                      p1move4 = true;
+                    p1move4 = true;
+                    battleStatusOutput.Text = "Player 1 has decided";
                     break;
                 default:
                     break;
@@ -238,37 +241,42 @@ namespace SuperCrashTchrs.Screens
                 //player 2
                 case Keys.V:
                     p2moveSelect = true;
-                      p2move1 = true;
+                    p2move1 = true;
                     p2move2 = false;
                     p2move3 = false;
                     p2move4 = false;
+                    battleStatusOutput.Text = "Player 2 has decided";
                     break;
                 case Keys.C:
                     p2moveSelect = true;
                     p2move1 = false;
-                      p2move2 = true;
+                    p2move2 = true;
                     p2move3 = false;
                     p2move4 = false;
+                    battleStatusOutput.Text = "Player 2 has decided";
                     break;
                 case Keys.X:
                     p2moveSelect = true;
                     p2move1 = false;
                     p2move2 = false;
-                      p2move3 = true;
+                    p2move3 = true;
                     p2move4 = false;
+                    battleStatusOutput.Text = "Player 2 has decided";
                     break;
                 case Keys.Z:
                     p2moveSelect = true;
                     p2move1 = false;
                     p2move2 = false;
                     p2move3 = false;
-                      p2move4 = true;
+                    p2move4 = true;
+                    battleStatusOutput.Text = "Player 2 has decided";
                     break;
                 default:
                     break;
             }
-        }
-        
+        }     
+
+        #region Character Moves
         public void AttackBot()//DONE
         {
             int playerAtk = 1;
@@ -292,6 +300,7 @@ namespace SuperCrashTchrs.Screens
             }
             battleStatusOutput.Text = "Bradshaw used Attack Bot!";
             Thread.Sleep(sleepTime);
+            Refresh();
 
             if (randNum.Next(1,101) <= 95)
             {
@@ -318,24 +327,27 @@ namespace SuperCrashTchrs.Screens
                 {
                     battleStatusOutput.Text = "The opponent fainted!";
                     Thread.Sleep(sleepTime);
-
+                    Refresh();
                     ScreenControl.changeScreen(this, "MultiEndScreen");
                 }
 
                 opponentAtk -= 25;
                 battleStatusOutput.Text = "The opponents Attack was lowered!";
                 Thread.Sleep(sleepTime);
+                Refresh();
                 if (opponentAtk <= 0)
                 {
                     opponentAtk = 1;
                     battleStatusOutput.Text = "The opponents Attack can't go any lower!";
                     Thread.Sleep(sleepTime);
+                    Refresh();
                 }
             }
             else
             {
                 battleStatusOutput.Text = "But the opponent avoided the attack!";
                 Thread.Sleep(sleepTime);
+                Refresh();
             }
 
             if (p1character == "Brad")
@@ -404,6 +416,7 @@ namespace SuperCrashTchrs.Screens
             }
             battleStatusOutput.Text = "Bradshaw used Complain About Apple!";
             Thread.Sleep(sleepTime);
+            Refresh();
 
             if (randNum.Next(1, 101) <= 90)
             {
@@ -430,6 +443,7 @@ namespace SuperCrashTchrs.Screens
                 {
                     battleStatusOutput.Text = "The opponent fainted!";
                     Thread.Sleep(sleepTime);
+                    Refresh();
 
                     ScreenControl.changeScreen(this, "MultiEndScreen");
                 }
@@ -438,6 +452,7 @@ namespace SuperCrashTchrs.Screens
             {
                 battleStatusOutput.Text = "But the opponent avoided the attack!";
                 Thread.Sleep(sleepTime);
+                Refresh();
             }
 
             if (p1character == "Brad")
@@ -466,25 +481,31 @@ namespace SuperCrashTchrs.Screens
             }            
             battleStatusOutput.Text = "Bond used Critera Chart!";
             Thread.Sleep(sleepTime);
+            Refresh();
 
             userAtk += 25;
             battleStatusOutput.Text = "Bonds Attack rose!";
             Thread.Sleep(sleepTime);
+            Refresh();
+
             if (userAtk > 250)
             {
                 userAtk = 250;
                 battleStatusOutput.Text = "Bonds Attack can't go any higher!";
                 Thread.Sleep(sleepTime);
+                Refresh();
             }
 
             userSpd += 25;
             battleStatusOutput.Text = "Bonds Speed rose!";
             Thread.Sleep(sleepTime);
+            Refresh();
             if (userSpd > 250)
             {
                 userSpd = 250;
                 battleStatusOutput.Text = "Bonds Speed can't go any higher!";
                 Thread.Sleep(sleepTime);
+                Refresh();
             }            
             if (p1character == "Bond")
             {
@@ -511,15 +532,18 @@ namespace SuperCrashTchrs.Screens
             }
             battleStatusOutput.Text = "Bradshaw used Defender Bot!";
             Thread.Sleep(sleepTime);
+            Refresh();
             playerDef -= 25;
             battleStatusOutput.Text = "Bradshaws Defence was raised!";
             Thread.Sleep(sleepTime);
+            Refresh();
 
             if (playerDef <= 0)
             {
                 playerDef = 1;
                 battleStatusOutput.Text = "Bradshaws Defence can't go any higher!";
                 Thread.Sleep(sleepTime);
+                Refresh();
             }
 
             if (p1character == "Brad")
@@ -552,6 +576,7 @@ namespace SuperCrashTchrs.Screens
             }
             battleStatusOutput.Text = "Bond used Discetion!";
             Thread.Sleep(sleepTime);
+            Refresh();
 
             if (randNum.Next(1, 101) <= 95)
             {
@@ -578,12 +603,15 @@ namespace SuperCrashTchrs.Screens
                 {
                     battleStatusOutput.Text = "The opponent fainted!";
                     Thread.Sleep(sleepTime);
+                    Refresh();
 
                     ScreenControl.changeScreen(this, "MultiEndScreen");
                 }
                 opponentDef -= 25;
                 battleStatusOutput.Text = "The opponents Defence was lowered!";
                 Thread.Sleep(sleepTime);
+                Refresh();
+
                 if (opponentDef <= 0)
                 {
                     opponentDef = 1;
@@ -595,6 +623,7 @@ namespace SuperCrashTchrs.Screens
             {
                 battleStatusOutput.Text = "But the opponent avoided the attack!";
                 Thread.Sleep(sleepTime);
+                Refresh();
             }
 
             if (p1character == "Bond")
@@ -838,6 +867,7 @@ namespace SuperCrashTchrs.Screens
             }
             battleStatusOutput.Text = "Bond used Mad Experiment!";
             Thread.Sleep(sleepTime);
+            Refresh();
 
             if (randNum.Next(1, 101) <= 70)
             {
@@ -864,6 +894,7 @@ namespace SuperCrashTchrs.Screens
                 {
                     battleStatusOutput.Text = "The opponent fainted!";
                     Thread.Sleep(sleepTime);
+                    Refresh();
 
                     ScreenControl.changeScreen(this, "MultiEndScreen");
                 }
@@ -872,6 +903,7 @@ namespace SuperCrashTchrs.Screens
             {
                 battleStatusOutput.Text = "But the opponent avoided the attack!";
                 Thread.Sleep(sleepTime);
+                Refresh();
             }
 
             if (p1character == "Brad")
@@ -961,8 +993,10 @@ namespace SuperCrashTchrs.Screens
                 playerDef = p2Def;
             }
 
-            battleStatusOutput.Text = "Bond used Critera Chart!";
+            battleStatusOutput.Text = "Bond used Talk About Family!";
             Thread.Sleep(sleepTime);
+            Refresh();
+
             playerHP += 38;
             if (playerHP > 150)
             {
@@ -970,15 +1004,19 @@ namespace SuperCrashTchrs.Screens
             }
             battleStatusOutput.Text = "Bond restored his HP!";
             Thread.Sleep(sleepTime);
+            Refresh();
 
             playerDef += 25;
             battleStatusOutput.Text = "Bonds Defence increased!";
             Thread.Sleep(sleepTime);
+            Refresh();
+
             if(playerDef >250)
             {                
                 playerDef = 250;
                 battleStatusOutput.Text = "Bonds Defence can't go any higher!";
                 Thread.Sleep(sleepTime);
+                Refresh();
             }
 
             if (p1character == "Bond")
@@ -1072,6 +1110,8 @@ namespace SuperCrashTchrs.Screens
 
             battleStatusOutput.Text = "Bradshaw used Video Friday!";
             Thread.Sleep(sleepTime);
+            Refresh();
+
             playerHP += 75;
             if (playerHP > 150)
             {
@@ -1079,6 +1119,7 @@ namespace SuperCrashTchrs.Screens
             }
             battleStatusOutput.Text = "Bradshaw restored his HP!";
             Thread.Sleep(sleepTime);
+            Refresh();
 
             if (p1character == "Brad")
             {
@@ -1095,7 +1136,7 @@ namespace SuperCrashTchrs.Screens
         {
             if (p1moveSelect == true && p2moveSelect == true)
             {
-                moveSelectTimer.Enabled = false;
+                //moveSelectTimer.Enabled = false;
                 p1moveSelect = false;
                 p2moveSelect = false;
                 if (p1Spd > p2Spd)
@@ -2033,12 +2074,92 @@ namespace SuperCrashTchrs.Screens
                         #endregion
                     }                    
                 }
-                moveSelectTimer.Enabled = true;
+                //moveSelectTimer.Enabled = true;
             }
             else
             {
 
             }
-        }     
+        }
+
+        private void p1Yellow_Click(object sender, EventArgs e)
+        {
+            p1moveSelect = true;
+            p1move1 = true;
+            p1move2 = false;
+            p1move3 = false;
+            p1move4 = false;
+            battleStatusOutput.Text = "Player 1 has decided";
+        }
+
+        private void p1Blue_Click(object sender, EventArgs e)
+        {
+            p1moveSelect = true;
+            p1move1 = false;
+            p1move2 = true;
+            p1move3 = false;
+            p1move4 = false;
+            battleStatusOutput.Text = "Player 1 has decided";
+        }
+
+        private void p1Red_Click(object sender, EventArgs e)
+        {
+            p1moveSelect = true;
+            p1move1 = false;
+            p1move2 = false;
+            p1move3 = true;
+            p1move4 = false;
+            battleStatusOutput.Text = "Player 1 has decided";
+        }
+
+        private void p1Green_Click(object sender, EventArgs e)
+        {
+            p1moveSelect = true;
+            p1move1 = false;
+            p1move2 = false;
+            p1move3 = false;
+            p1move4 = true;
+            battleStatusOutput.Text = "Player 1 has decided";
+        }
+
+        private void p2Yellow_Click(object sender, EventArgs e)
+        {
+            p2moveSelect = true;
+            p2move1 = true;
+            p2move2 = false;
+            p2move3 = false;
+            p2move4 = false;
+            battleStatusOutput.Text = "Player 2 has decided";
+        }
+
+        private void p2Blue_Click(object sender, EventArgs e)
+        {
+            p2moveSelect = true;
+            p2move1 = false;
+            p2move2 = true;
+            p2move3 = false;
+            p2move4 = false;
+            battleStatusOutput.Text = "Player 2 has decided";
+        }
+
+        private void p2Red_Click(object sender, EventArgs e)
+        {
+            p2moveSelect = true;
+            p2move1 = false;
+            p2move2 = false;
+            p2move3 = true;
+            p2move4 = false;
+            battleStatusOutput.Text = "Player 2 has decided";
+        }
+
+        private void p2Green_Click(object sender, EventArgs e)
+        {
+            p2moveSelect = true;
+            p2move1 = false;
+            p2move2 = false;
+            p2move3 = false;
+            p2move4 = true;
+            battleStatusOutput.Text = "Player 2 has decided";
+        }
     }
 }
