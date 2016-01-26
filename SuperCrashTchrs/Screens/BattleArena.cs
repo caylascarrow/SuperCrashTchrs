@@ -1,7 +1,6 @@
 ﻿///Super Crash Teachers Battle Arena
 ///By Cayla, Hannah, Justin
 /// 25 January 2016
-/// what is happening
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -56,6 +55,7 @@ namespace SuperCrashTchrs.Screens
                     p1Atk = (ScreenControl.bondAtk);
                     p1Def = (ScreenControl.bondDef);
                     p1Spd = (ScreenControl.bondSpd);
+                    p1HPBar.Size = new Size(ScreenControl.bondHP, 10);
                     p1Yellow.Text = "Critera Chart";
                     p1Blue.Text = "Dissection";
                     p1Red.Text = "Mad Experiment";
@@ -67,6 +67,7 @@ namespace SuperCrashTchrs.Screens
                     p1Atk = (ScreenControl.bradAtk);
                     p1Def = (ScreenControl.bradDef);
                     p1Spd = (ScreenControl.bradSpd);
+                    p1HPBar.Size = new Size(ScreenControl.bradHP, 10);
                     p1Yellow.Text = "Attack Bot";
                     p1Blue.Text = "Complain About Apple";
                     p1Red.Text = "Defender Bot";
@@ -78,6 +79,7 @@ namespace SuperCrashTchrs.Screens
                     p1Atk = (ScreenControl.leitchAtk);
                     p1Def = (ScreenControl.leitchDef);
                     p1Spd = (ScreenControl.leitchSpd);
+                    p1HPBar.Size = new Size(ScreenControl.leitchHP, 10);
                     p1Yellow.Text = "Documentary";
                     p1Blue.Text = "Essay Question";
                     p1Red.Text = "Historic War";
@@ -89,6 +91,7 @@ namespace SuperCrashTchrs.Screens
                     p1Atk = (ScreenControl.cutchAtk);
                     p1Def = (ScreenControl.cutchDef);
                     p1Spd = (ScreenControl.cutchSpd);
+                    p1HPBar.Size = new Size(ScreenControl.cutchHP, 10);
                     p1Yellow.Text = "DODGEBALL";
                     p1Blue.Text = "Dunk ON";
                     p1Red.Text = "Push Ups";
@@ -100,6 +103,7 @@ namespace SuperCrashTchrs.Screens
                     p1Atk = (ScreenControl.ortAtk);
                     p1Def = (ScreenControl.ortDef);
                     p1Spd = (ScreenControl.ortSpd);
+                    p1HPBar.Size = new Size(ScreenControl.ortHP, 10);
                     p1Yellow.Text = "Clairinet Squeak";
                     p1Blue.Text = "Full Band Fortissimo";
                     p1Red.Text = "Melodious Passage";
@@ -111,6 +115,7 @@ namespace SuperCrashTchrs.Screens
                     p1Atk = (ScreenControl.steelAtk);
                     p1Def = (ScreenControl.steelDef);
                     p1Spd = (ScreenControl.steelSpd);
+                    p1HPBar.Size = new Size(ScreenControl.steelHP, 10);
                     p1Yellow.Text = "=";
                     p1Blue.Text = "Pink Paper";
                     p1Red.Text = "Quadratic Attack";
@@ -127,6 +132,7 @@ namespace SuperCrashTchrs.Screens
                     p2Atk = (ScreenControl.bondAtk);
                     p2Def = (ScreenControl.bondDef);
                     p2Spd = (ScreenControl.bondSpd);
+                    p2HPBar.Size = new Size(ScreenControl.bondHP, 10);
                     p2Yellow.Text = "Critera Chart";
                     p2Blue.Text = "Dissection";
                     p2Red.Text = "Mad Experiment";
@@ -138,6 +144,7 @@ namespace SuperCrashTchrs.Screens
                     p2Atk = (ScreenControl.bradAtk);
                     p2Def = (ScreenControl.bradDef);
                     p2Spd = (ScreenControl.bradSpd);
+                    p2HPBar.Size = new Size(ScreenControl.bradHP, 10);
                     p2Yellow.Text = "Attack Bot";
                     p2Blue.Text = "Complain About Apple";
                     p2Red.Text = "Defender Bot";
@@ -149,6 +156,7 @@ namespace SuperCrashTchrs.Screens
                     p2Atk = (ScreenControl.leitchAtk);
                     p2Def = (ScreenControl.leitchDef);
                     p2Spd = (ScreenControl.leitchSpd);
+                    p2HPBar.Size = new Size(ScreenControl.leitchHP, 10);
                     p2Yellow.Text = "Documentary";
                     p2Blue.Text = "Essay Question";
                     p2Red.Text = "Historic War";
@@ -160,6 +168,7 @@ namespace SuperCrashTchrs.Screens
                     p2Atk = (ScreenControl.cutchAtk);
                     p2Def = (ScreenControl.cutchDef);
                     p2Spd = (ScreenControl.cutchSpd);
+                    p2HPBar.Size = new Size(ScreenControl.cutchHP, 10);
                     p2Yellow.Text = "DODGEBALL";
                     p2Blue.Text = "Dunk ON";
                     p2Red.Text = "Push Ups";
@@ -171,6 +180,7 @@ namespace SuperCrashTchrs.Screens
                     p2Atk = (ScreenControl.ortAtk);
                     p2Def = (ScreenControl.ortDef);
                     p2Spd = (ScreenControl.ortSpd);
+                    p2HPBar.Size = new Size(ScreenControl.ortHP, 10);
                     p2Yellow.Text = "Clairinet Squeak";
                     p2Blue.Text = "Full Band Fortissimo";
                     p2Red.Text = "Melodious Passage";
@@ -182,6 +192,7 @@ namespace SuperCrashTchrs.Screens
                     p2Atk = (ScreenControl.steelAtk);
                     p2Def = (ScreenControl.steelDef);
                     p2Spd = (ScreenControl.steelSpd);
+                    p2HPBar.Size = new Size(ScreenControl.steelHP, 10);
                     p2Yellow.Text = "=";
                     p2Blue.Text = "Pink Paper";
                     p2Red.Text = "Quadratic Attack";
@@ -857,10 +868,12 @@ namespace SuperCrashTchrs.Screens
 
         public void MadExperiment()//DONE
         {
+            //variables
             int playerAtk = 1;
             int opponentDef = 1;
             int opponentHP = 0;
             int damage = 0;
+            //Assigns variables to active player
             if (p1character == "Bond")
             {
                 playerAtk = p1Atk;
@@ -873,16 +886,19 @@ namespace SuperCrashTchrs.Screens
                 opponentDef = p1Def;
                 opponentHP = p1hp;
             }
+            //text to screen
             battleStatusOutput.Text = "Bond used Mad Experiment!";
             Thread.Sleep(sleepTime);
             Refresh();
-
+            //checks if misses
             if (randNum.Next(1, 101) <= 70)
             {
+                //damage calc
                 damage = (((42 * playerAtk * 100 / opponentDef) / 50) + 2)
                     * randNum.Next(1, 101) / 100;
                 opponentHP -= damage;
-                if (p1character == "Brad")
+                //slowly depletes HP bar
+                if (p1character == "Bond")
                 {
                     for (int i = p2hp; i > opponentHP && i > 0; i--)
                     {
@@ -890,7 +906,7 @@ namespace SuperCrashTchrs.Screens
                         Thread.Sleep(50);
                     }
                 }
-                else if (p2character == "Brad")
+                else if (p2character == "Bond")
                 {
                     for (int i = p1hp; i > opponentHP && i > 0; i--)
                     {
@@ -898,6 +914,7 @@ namespace SuperCrashTchrs.Screens
                         Thread.Sleep(50);
                     }
                 }
+                //checks if opponent dead
                 if (opponentHP <= 0)
                 {
                     battleStatusOutput.Text = "The opponent fainted!";
@@ -909,11 +926,12 @@ namespace SuperCrashTchrs.Screens
             }
             else
             {
+                //if attack misses
                 battleStatusOutput.Text = "But the opponent avoided the attack!";
                 Thread.Sleep(sleepTime);
                 Refresh();
             }
-
+            //returns changed stats to characters
             if (p1character == "Brad")
             {
                 p2hp = opponentHP;
@@ -986,10 +1004,12 @@ namespace SuperCrashTchrs.Screens
 
         }
 
-        public void TalkAboutFamily()//DONEgh
+        public void TalkAboutFamily()//DONE
         {
+            //intergers
             int playerHP = 0;
             int playerDef = 0;
+            //assigns stats to current players
             if (p1character == "Bond")
             {
                 playerHP = p1hp;
@@ -1000,11 +1020,11 @@ namespace SuperCrashTchrs.Screens
                 playerHP = p2hp;
                 playerDef = p2Def;
             }
-
+            
             battleStatusOutput.Text = "Bond used Talk About Family!";
             Thread.Sleep(sleepTime);
             Refresh();
-
+            //Health restoration
             playerHP += 38;
             if (playerHP > 150)
             {
@@ -1012,24 +1032,17 @@ namespace SuperCrashTchrs.Screens
             }
             if (p1character == "Bond")
             {
-                for (int i = p1hp; i < playerHP; i++)
-                {
-                    p2HPBar.Size = new Size(i, 10);
-                    Thread.Sleep(50);
-                }
+                p1HPBar.Size = new Size(playerHP, 10);
             }
             else if (p2character == "Bond")
             {
-                for (int i = p2hp; i > playerHP; i++)
-                {
-                    p1HPBar.Size = new Size(i, 10);
-                    Thread.Sleep(50);
-                }
+                p2HPBar.Size = new Size(playerHP, 10);
             }
             battleStatusOutput.Text = "Bond restored his HP!";
             Thread.Sleep(sleepTime);
             Refresh();
 
+            //defence increase
             playerDef += 25;
             battleStatusOutput.Text = "Bonds Defence increased!";
             Thread.Sleep(sleepTime);
@@ -1143,19 +1156,11 @@ namespace SuperCrashTchrs.Screens
             }
             if (p1character == "Brad")
             {
-                for (int i = p1hp; i < playerHP; i++)
-                {
-                    p2HPBar.Size = new Size(i, 10);
-                    Thread.Sleep(50);
-                }
+                p1HPBar.Size = new Size(playerHP, 10);
             }
             else if (p2character == "Brad")
             {
-                for (int i = p2hp; i > playerHP; i++)
-                {
-                    p1HPBar.Size = new Size(i, 10);
-                    Thread.Sleep(50);
-                }
+                p2HPBar.Size = new Size(playerHP, 10);
             }
             battleStatusOutput.Text = "Bradshaw restored his HP!";
             Thread.Sleep(sleepTime);
@@ -2122,6 +2127,7 @@ namespace SuperCrashTchrs.Screens
             }
         }
 
+        #region Button Clicks
         private void p1Yellow_Click(object sender, EventArgs e)
         {
             p1moveSelect = true;
@@ -2201,5 +2207,6 @@ namespace SuperCrashTchrs.Screens
             p2move4 = true;
             battleStatusOutput.Text = "Player 2 has decided";
         }
+        #endregion
     }
 }
