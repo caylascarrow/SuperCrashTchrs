@@ -55,6 +55,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="ScreenControl.cs" />
     <Compile Include="Screens\BattleArena.cs">
       <SubType>UserControl</SubType>
@@ -97,14 +102,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="Screens\BattleArena.resx">
       <DependentUpon>BattleArena.cs</DependentUpon>
     </EmbeddedResource>
@@ -135,10 +135,13 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="Teacher Sprites\Bond L.jpg" />
-    <Content Include="Teacher Sprites\Bond R.jpg" />
-    <Content Include="Teacher Sprites\Bradshaw L.jpg" />
-    <Content Include="Teacher Sprites\Bradshaw R.jpg" />
+    <Content Include="TeacherSprites\Bond L.png" />
+    <Content Include="TeacherSprites\Bond R.png" />
+    <Content Include="TeacherSprites\Bradshaw L.png" />
+    <Content Include="TeacherSprites\Bradshaw R.png" />
+    <Content Include="TeacherSprites\Cutch L.png" />
+    <Content Include="TeacherSprites\Cutch R.png" />
+    <Content Include="TeacherSprites\logo t.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
