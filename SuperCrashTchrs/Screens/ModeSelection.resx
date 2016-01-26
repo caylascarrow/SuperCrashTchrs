@@ -117,4 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="howToPlay.Text" xml:space="preserve">
+    <value>Press the button corresponding to the color of the move you wish to use. When both players decide on their move, the characters will fight! The game will end once one of the player's HP has been depleted. Good luck!</value>
+  </data>
 </root>

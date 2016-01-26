@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ModeSelection));
             this.playButton = new System.Windows.Forms.Button();
             this.howToPlay = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -47,12 +48,11 @@
             // 
             this.howToPlay.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.howToPlay.ForeColor = System.Drawing.Color.Red;
-            this.howToPlay.Location = new System.Drawing.Point(41, 38);
+            this.howToPlay.Location = new System.Drawing.Point(39, 37);
             this.howToPlay.Name = "howToPlay";
-            this.howToPlay.Size = new System.Drawing.Size(371, 247);
+            this.howToPlay.Size = new System.Drawing.Size(371, 285);
             this.howToPlay.TabIndex = 1;
-            this.howToPlay.Text = "Press the button corresponding to the color of the move you wish to use. When bot" +
-    "h players decide on their move, the characters will fight!";
+            this.howToPlay.Text = resources.GetString("howToPlay.Text");
             // 
             // ModeSelection
             // 
