@@ -15,54 +15,48 @@ namespace SuperCrashTchrs.Screens
         public static List<int> highScores = new List<int>();
 
         //global variables
-        public static bool p1moveSelect = false;
-       public static bool p2moveSelect = false;
+       
+        public static string p1character;
+        public static string p2character;
         #region Player Stats
-        //Should these be constants?
         //Bond
         public static int bondHP = 150;
         public static int bondAtk = 125;
         public static int bondDef = 75;
         public static int bondSpd = 150;
-         public static string bondImg1 = "";
-        public static string bondImg2 = "";
+
         //Bradshaw
         public static int bradHP = 150;
         public static int bradAtk = 75;
         public static int bradDef = 125;
         public static int bradSpd = 125;
-        public static string bradImg1 = "";
-        public static string bradImg2 = "";
+
         //Leitch
         public static int leitchHP = 200;
         public static int leitchAtk = 75;
         public static int leitchDef = 150;
         public static int leitchSpd = 50;
         public static int leitchSleep = 0;
-        public static string leitchImg1 = "";
-        public static string leitchImg2 = "";
+
         //McCutcheon
         public static int cutchHP = 100;
         public static int cutchAtk = 150;
         public static int cutchDef = 100;
         public static int cutchSpd = 125;
-        public static string cutchImg1 = "";
-        public static string cutchImg2 = "";
+
         //Ortelli
         public static int ortHP = 175;
         public static int ortAtk = 100;
         public static int ortDef = 125;
         public static int ortSpd = 75;
         public static int ortSleep = 0;
-        public static string ortImg1 = "";
-        public static string ortImg2 = "";
+
         //Steel
         public static int steelHP = 150;
         public static int steelAtk = 75;
         public static int steelDef = 175;
         public static int steelSpd = 75;
-        public static string steelImg1 = "";
-        public static string steelImg2 = "";
+
         #endregion
 
         // screen and user control values

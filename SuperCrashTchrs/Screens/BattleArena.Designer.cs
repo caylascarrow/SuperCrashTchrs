@@ -31,12 +31,12 @@
             this.components = new System.ComponentModel.Container();
             this.p1Blue = new System.Windows.Forms.Button();
             this.p1Yellow = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.p1Red = new System.Windows.Forms.Button();
+            this.p1Green = new System.Windows.Forms.Button();
+            this.p2Green = new System.Windows.Forms.Button();
+            this.p2Red = new System.Windows.Forms.Button();
+            this.p2Yellow = new System.Windows.Forms.Button();
+            this.p2Blue = new System.Windows.Forms.Button();
             this.p1HPBar = new System.Windows.Forms.Label();
             this.p2HPBar = new System.Windows.Forms.Label();
             this.HPlabel1 = new System.Windows.Forms.Label();
@@ -51,93 +51,109 @@
             // 
             // p1Blue
             // 
+            this.p1Blue.AutoSize = true;
             this.p1Blue.BackColor = System.Drawing.Color.Blue;
             this.p1Blue.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.p1Blue.ForeColor = System.Drawing.Color.White;
-            this.p1Blue.Location = new System.Drawing.Point(25, 695);
+            this.p1Blue.Location = new System.Drawing.Point(78, 652);
             this.p1Blue.Name = "p1Blue";
             this.p1Blue.Size = new System.Drawing.Size(75, 23);
             this.p1Blue.TabIndex = 0;
             this.p1Blue.Text = "move2";
             this.p1Blue.UseVisualStyleBackColor = false;
+            this.p1Blue.Click += new System.EventHandler(this.p1Blue_Click);
             // 
             // p1Yellow
             // 
+            this.p1Yellow.AutoSize = true;
             this.p1Yellow.BackColor = System.Drawing.Color.Yellow;
             this.p1Yellow.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.p1Yellow.Location = new System.Drawing.Point(137, 666);
+            this.p1Yellow.Location = new System.Drawing.Point(190, 623);
             this.p1Yellow.Name = "p1Yellow";
             this.p1Yellow.Size = new System.Drawing.Size(75, 23);
             this.p1Yellow.TabIndex = 1;
             this.p1Yellow.Text = "move1";
             this.p1Yellow.UseVisualStyleBackColor = false;
+            this.p1Yellow.Click += new System.EventHandler(this.p1Yellow_Click);
             // 
-            // button3
+            // p1Red
             // 
-            this.button3.BackColor = System.Drawing.Color.Red;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button3.Location = new System.Drawing.Point(200, 721);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "move3";
-            this.button3.UseVisualStyleBackColor = false;
+            this.p1Red.AutoSize = true;
+            this.p1Red.BackColor = System.Drawing.Color.Red;
+            this.p1Red.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.p1Red.Location = new System.Drawing.Point(253, 678);
+            this.p1Red.Name = "p1Red";
+            this.p1Red.Size = new System.Drawing.Size(75, 23);
+            this.p1Red.TabIndex = 2;
+            this.p1Red.Text = "move3";
+            this.p1Red.UseVisualStyleBackColor = false;
+            this.p1Red.Click += new System.EventHandler(this.p1Red_Click);
             // 
-            // button4
+            // p1Green
             // 
-            this.button4.BackColor = System.Drawing.Color.Lime;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button4.Location = new System.Drawing.Point(89, 752);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "move4";
-            this.button4.UseVisualStyleBackColor = false;
+            this.p1Green.AutoSize = true;
+            this.p1Green.BackColor = System.Drawing.Color.Lime;
+            this.p1Green.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.p1Green.Location = new System.Drawing.Point(142, 709);
+            this.p1Green.Name = "p1Green";
+            this.p1Green.Size = new System.Drawing.Size(75, 23);
+            this.p1Green.TabIndex = 3;
+            this.p1Green.Text = "move4";
+            this.p1Green.UseVisualStyleBackColor = false;
+            this.p1Green.Click += new System.EventHandler(this.p1Green_Click);
             // 
-            // button1
+            // p2Green
             // 
-            this.button1.BackColor = System.Drawing.Color.Lime;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Location = new System.Drawing.Point(568, 763);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "move4";
-            this.button1.UseVisualStyleBackColor = false;
+            this.p2Green.AutoSize = true;
+            this.p2Green.BackColor = System.Drawing.Color.Lime;
+            this.p2Green.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.p2Green.Location = new System.Drawing.Point(527, 709);
+            this.p2Green.Name = "p2Green";
+            this.p2Green.Size = new System.Drawing.Size(75, 23);
+            this.p2Green.TabIndex = 7;
+            this.p2Green.Text = "move4";
+            this.p2Green.UseVisualStyleBackColor = false;
+            this.p2Green.Click += new System.EventHandler(this.p2Green_Click);
             // 
-            // button2
+            // p2Red
             // 
-            this.button2.BackColor = System.Drawing.Color.Red;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Location = new System.Drawing.Point(639, 704);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "move3";
-            this.button2.UseVisualStyleBackColor = false;
+            this.p2Red.AutoSize = true;
+            this.p2Red.BackColor = System.Drawing.Color.Red;
+            this.p2Red.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.p2Red.Location = new System.Drawing.Point(639, 678);
+            this.p2Red.Name = "p2Red";
+            this.p2Red.Size = new System.Drawing.Size(75, 23);
+            this.p2Red.TabIndex = 6;
+            this.p2Red.Text = "move3";
+            this.p2Red.UseVisualStyleBackColor = false;
+            this.p2Red.Click += new System.EventHandler(this.p2Red_Click);
             // 
-            // button5
+            // p2Yellow
             // 
-            this.button5.BackColor = System.Drawing.Color.Yellow;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button5.Location = new System.Drawing.Point(540, 676);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 5;
-            this.button5.Text = "move1";
-            this.button5.UseVisualStyleBackColor = false;
+            this.p2Yellow.AutoSize = true;
+            this.p2Yellow.BackColor = System.Drawing.Color.Yellow;
+            this.p2Yellow.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.p2Yellow.Location = new System.Drawing.Point(558, 623);
+            this.p2Yellow.Name = "p2Yellow";
+            this.p2Yellow.Size = new System.Drawing.Size(75, 23);
+            this.p2Yellow.TabIndex = 5;
+            this.p2Yellow.Text = "move1";
+            this.p2Yellow.UseVisualStyleBackColor = false;
+            this.p2Yellow.Click += new System.EventHandler(this.p2Yellow_Click);
             // 
-            // button6
+            // p2Blue
             // 
-            this.button6.BackColor = System.Drawing.Color.Blue;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(464, 738);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 4;
-            this.button6.Text = "move2";
-            this.button6.UseVisualStyleBackColor = false;
+            this.p2Blue.AutoSize = true;
+            this.p2Blue.BackColor = System.Drawing.Color.Blue;
+            this.p2Blue.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.p2Blue.ForeColor = System.Drawing.Color.White;
+            this.p2Blue.Location = new System.Drawing.Point(460, 652);
+            this.p2Blue.Name = "p2Blue";
+            this.p2Blue.Size = new System.Drawing.Size(75, 23);
+            this.p2Blue.TabIndex = 4;
+            this.p2Blue.Text = "move2";
+            this.p2Blue.UseVisualStyleBackColor = false;
+            this.p2Blue.Click += new System.EventHandler(this.p2Blue_Click);
             // 
             // p1HPBar
             // 
@@ -179,9 +195,9 @@
             this.battleStatusOutput.Font = new System.Drawing.Font("Magneto", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.battleStatusOutput.Location = new System.Drawing.Point(194, 37);
             this.battleStatusOutput.Name = "battleStatusOutput";
-            this.battleStatusOutput.Size = new System.Drawing.Size(356, 32);
+            this.battleStatusOutput.Size = new System.Drawing.Size(345, 32);
             this.battleStatusOutput.TabIndex = 12;
-            this.battleStatusOutput.Text = "Pikachu used Thunder!";
+            this.battleStatusOutput.Text = "A Battle has Started!";
             // 
             // p1Sprite
             // 
@@ -203,7 +219,7 @@
             // 
             // moveSelectTimer
             // 
-            this.moveSelectTimer.Interval = 17;
+            this.moveSelectTimer.Interval = 1000;
             this.moveSelectTimer.Tick += new System.EventHandler(this.moveSelectTimer_Tick);
             // 
             // BattleArena
@@ -218,17 +234,17 @@
             this.Controls.Add(this.HPlabel1);
             this.Controls.Add(this.p2HPBar);
             this.Controls.Add(this.p1HPBar);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.p2Green);
+            this.Controls.Add(this.p2Red);
+            this.Controls.Add(this.p2Yellow);
+            this.Controls.Add(this.p2Blue);
+            this.Controls.Add(this.p1Green);
+            this.Controls.Add(this.p1Red);
             this.Controls.Add(this.p1Yellow);
             this.Controls.Add(this.p1Blue);
             this.Name = "BattleArena";
             this.Size = new System.Drawing.Size(800, 800);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.BattleArena_KeyDown);
+            this.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.BattleArena_PreviewKeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.p1Sprite)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.p2Sprite)).EndInit();
             this.ResumeLayout(false);
@@ -240,12 +256,12 @@
 
         private System.Windows.Forms.Button p1Blue;
         private System.Windows.Forms.Button p1Yellow;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button p1Red;
+        private System.Windows.Forms.Button p1Green;
+        private System.Windows.Forms.Button p2Green;
+        private System.Windows.Forms.Button p2Red;
+        private System.Windows.Forms.Button p2Yellow;
+        private System.Windows.Forms.Button p2Blue;
         private System.Windows.Forms.Label p1HPBar;
         private System.Windows.Forms.Label p2HPBar;
         private System.Windows.Forms.Label HPlabel1;

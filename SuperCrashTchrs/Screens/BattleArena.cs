@@ -18,6 +18,9 @@ namespace SuperCrashTchrs.Screens
     {
         #region Global Variables
 
+        bool p1moveSelect = false;
+        bool p2moveSelect = false;
+
         bool p1move1 = false;
         bool p1move2 = false;
         bool p1move3 = false;
@@ -27,11 +30,13 @@ namespace SuperCrashTchrs.Screens
         bool p2move2 = false;
         bool p2move3 = false;
         bool p2move4 = false;
-
-
+    
         string p1character, p2character;
         int p1hp, p1Atk, p1Def, p1Spd, p2hp, p2Atk, p2Def, p2Spd;
         int sleepTime = 1000;
+
+        //int leitchSleep = 0;
+        //bool ortSleep = false;
 
         #endregion
 
@@ -50,42 +55,72 @@ namespace SuperCrashTchrs.Screens
                     p1Atk = (ScreenControl.bondAtk);
                     p1Def = (ScreenControl.bondDef);
                     p1Spd = (ScreenControl.bondSpd);
-                    p1Sprite.Image = /*add bond's image name here*/ ;
+                    p1HPBar.Size = new Size(ScreenControl.bondHP, 10);
+                    p1Yellow.Text = "Critera Chart";
+                    p1Blue.Text = "Dissection";
+                    p1Red.Text = "Mad Experiment";
+                    p1Green.Text = "Talk about Family";
+                    p1Sprite.Image = SuperCrashTchrs.Properties.Resources.Bond_L;
                     break;
                 case "Brad":
                     p1hp = (ScreenControl.bradHP);
                     p1Atk = (ScreenControl.bradAtk);
                     p1Def = (ScreenControl.bradDef);
                     p1Spd = (ScreenControl.bradSpd);
-                    p1Sprite.Image = /*add brad's image name here*/;
+                    p1HPBar.Size = new Size(ScreenControl.bradHP, 10);
+                    p1Yellow.Text = "Attack Bot";
+                    p1Blue.Text = "Complain About Apple";
+                    p1Red.Text = "Defender Bot";
+                    p1Green.Text = "Video Friday";
+                    p1Sprite.Image = SuperCrashTchrs.Properties.Resources.Bradshaw_L;
                     break;
                 case "Leitch":
                     p1hp = (ScreenControl.leitchHP);
                     p1Atk = (ScreenControl.leitchAtk);
                     p1Def = (ScreenControl.leitchDef);
                     p1Spd = (ScreenControl.leitchSpd);
-                    p1Sprite.Image = /*add leitch's image name here*/;
+                    p1HPBar.Size = new Size(ScreenControl.leitchHP, 10);
+                    p1Yellow.Text = "Documentary";
+                    p1Blue.Text = "Essay Question";
+                    p1Red.Text = "Historic War";
+                    p1Green.Text = "Multiple Choice Question";
+                    //p1Sprite.Image = /*add leitch's image name here*/;
                     break;
                 case "Cutch":
                     p1hp = (ScreenControl.cutchHP);
                     p1Atk = (ScreenControl.cutchAtk);
                     p1Def = (ScreenControl.cutchDef);
                     p1Spd = (ScreenControl.cutchSpd);
-                    p1Sprite.Image = /*add cutch's image name here*/;
+                    p1HPBar.Size = new Size(ScreenControl.cutchHP, 10);
+                    p1Yellow.Text = "DODGEBALL";
+                    p1Blue.Text = "Dunk ON";
+                    p1Red.Text = "Push Ups";
+                    p1Green.Text = "Health Class";
+                    //p1Sprite.Image = /*add cutch's image name here*/;
                     break;
                 case "Ort":
                     p1hp = (ScreenControl.ortHP);
                     p1Atk = (ScreenControl.ortAtk);
                     p1Def = (ScreenControl.ortDef);
                     p1Spd = (ScreenControl.ortSpd);
-                    p1Sprite.Image = /*add ortelli's image name here*/;
+                    p1HPBar.Size = new Size(ScreenControl.ortHP, 10);
+                    p1Yellow.Text = "Clairinet Squeak";
+                    p1Blue.Text = "Full Band Fortissimo";
+                    p1Red.Text = "Melodious Passage";
+                    p1Green.Text = "Tuning";
+                    //p1Sprite.Image = /*add ortelli's image name here*/;
                     break;
                 case "Steel":
                     p1hp = (ScreenControl.steelHP);
                     p1Atk = (ScreenControl.steelAtk);
                     p1Def = (ScreenControl.steelDef);
                     p1Spd = (ScreenControl.steelSpd);
-                    p1Sprite.Image = /*add steel's image name here*/;
+                    p1HPBar.Size = new Size(ScreenControl.steelHP, 10);
+                    p1Yellow.Text = "=";
+                    p1Blue.Text = "Pink Paper";
+                    p1Red.Text = "Quadratic Attack";
+                    p1Green.Text = "Textbook Barricade";
+                    //p1Sprite.Image = /*add steel's image name here*/;
                     break;
                 default:
                     break;
@@ -97,42 +132,72 @@ namespace SuperCrashTchrs.Screens
                     p2Atk = (ScreenControl.bondAtk);
                     p2Def = (ScreenControl.bondDef);
                     p2Spd = (ScreenControl.bondSpd);
-                    p2Sprite.Image = /*add bond's image name here*/;
+                    p2HPBar.Size = new Size(ScreenControl.bondHP, 10);
+                    p2Yellow.Text = "Critera Chart";
+                    p2Blue.Text = "Dissection";
+                    p2Red.Text = "Mad Experiment";
+                    p2Green.Text = "Talk about Family";
+                    p2Sprite.Image = SuperCrashTchrs.Properties.Resources.Bond_R;
                     break;
                 case "Brad":
                     p2hp = (ScreenControl.bradHP);
                     p2Atk = (ScreenControl.bradAtk);
                     p2Def = (ScreenControl.bradDef);
                     p2Spd = (ScreenControl.bradSpd);
-                    p2Sprite.Image = /*add brad's image name here*/;
+                    p2HPBar.Size = new Size(ScreenControl.bradHP, 10);
+                    p2Yellow.Text = "Attack Bot";
+                    p2Blue.Text = "Complain About Apple";
+                    p2Red.Text = "Defender Bot";
+                    p2Green.Text = "Video Friday";
+                    p2Sprite.Image = SuperCrashTchrs.Properties.Resources.Bradshaw_R;
                     break;
                 case "Leitch":
                     p2hp = (ScreenControl.leitchHP);
                     p2Atk = (ScreenControl.leitchAtk);
                     p2Def = (ScreenControl.leitchDef);
                     p2Spd = (ScreenControl.leitchSpd);
-                    p2Sprite.Image = /*add leitch's image name here*/;
+                    p2HPBar.Size = new Size(ScreenControl.leitchHP, 10);
+                    p2Yellow.Text = "Documentary";
+                    p2Blue.Text = "Essay Question";
+                    p2Red.Text = "Historic War";
+                    p2Green.Text = "Multiple Choice Question";
+                    //p2Sprite.Image = /*add leitch's image name here*/;
                     break;
                 case "Cutch":
                     p2hp = (ScreenControl.cutchHP);
                     p2Atk = (ScreenControl.cutchAtk);
                     p2Def = (ScreenControl.cutchDef);
                     p2Spd = (ScreenControl.cutchSpd);
-                    p2Sprite.Image = /*add cutch's image name here*/;
+                    p2HPBar.Size = new Size(ScreenControl.cutchHP, 10);
+                    p2Yellow.Text = "DODGEBALL";
+                    p2Blue.Text = "Dunk ON";
+                    p2Red.Text = "Push Ups";
+                    p2Green.Text = "Health Class";
+                    //p2Sprite.Image = /*add cutch's image name here*/;
                     break;
                 case "Ort":
                     p2hp = (ScreenControl.ortHP);
                     p2Atk = (ScreenControl.ortAtk);
                     p2Def = (ScreenControl.ortDef);
                     p2Spd = (ScreenControl.ortSpd);
-                    p2Sprite.Image = /*add ortelli's image name here*/;
+                    p2HPBar.Size = new Size(ScreenControl.ortHP, 10);
+                    p2Yellow.Text = "Clairinet Squeak";
+                    p2Blue.Text = "Full Band Fortissimo";
+                    p2Red.Text = "Melodious Passage";
+                    p2Green.Text = "Tuning";
+                    //p2Sprite.Image = /*add ortelli's image name here*/;
                     break;
                 case "Steel":
                     p2hp = (ScreenControl.steelHP);
                     p2Atk = (ScreenControl.steelAtk);
                     p2Def = (ScreenControl.steelDef);
                     p2Spd = (ScreenControl.steelSpd);
-                    p2Sprite.Image = /*add steel's image name here*/;
+                    p2HPBar.Size = new Size(ScreenControl.steelHP, 10);
+                    p2Yellow.Text = "=";
+                    p2Blue.Text = "Pink Paper";
+                    p2Red.Text = "Quadratic Attack";
+                    p2Green.Text = "Textbook Barricade";
+                    //p2Sprite.Image = /*add steel's image name here*/;
                     break;
                 default:
                     break;
@@ -141,42 +206,44 @@ namespace SuperCrashTchrs.Screens
         }
         
         public static Random randNum = new Random();
-
-
-      
+               
         //Button Presses
-        private void BattleArena_KeyDown(object sender, KeyEventArgs e)
+        private void BattleArena_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
         {
             switch (e.KeyCode)
             {
                 //player 1
                 case Keys.N:
-                      p1moveSelect = true;
-                      p1move1 = true;
+                    p1moveSelect = true;
+                    p1move1 = true;
                     p1move2 = false;
                     p1move3 = false;
                     p1move4 = false;
+                    battleStatusOutput.Text = "Player 1 has decided";
                     break;
                 case Keys.B:
-                      p1moveSelect = true;
+                    p1moveSelect = true;
                     p1move1 = false;
-                      p1move2 = true;
+                    p1move2 = true;
                     p1move3 = false;
                     p1move4 = false;
+                    battleStatusOutput.Text = "Player 1 has decided";
                     break;
                 case Keys.M:
-                      p1moveSelect = true;
+                    p1moveSelect = true;
                     p1move1 = false;
                     p1move2 = false;
-                      p1move3 = true;
+                    p1move3 = true;
                     p1move4 = false;
+                    battleStatusOutput.Text = "Player 1 has decided";
                     break;
                 case Keys.Space:
-                      p1moveSelect = true;
+                    p1moveSelect = true;
                     p1move1 = false;
                     p1move2 = false;
                     p1move3 = false;
-                      p1move4 = true;
+                    p1move4 = true;
+                    battleStatusOutput.Text = "Player 1 has decided";
                     break;
                 default:
                     break;
@@ -185,38 +252,43 @@ namespace SuperCrashTchrs.Screens
             {
                 //player 2
                 case Keys.V:
-                      p2moveSelect = true;
-                      p2move1 = true;
+                    p2moveSelect = true;
+                    p2move1 = true;
                     p2move2 = false;
                     p2move3 = false;
                     p2move4 = false;
+                    battleStatusOutput.Text = "Player 2 has decided";
                     break;
                 case Keys.C:
-                      p2moveSelect = true;
+                    p2moveSelect = true;
                     p2move1 = false;
-                      p2move2 = true;
+                    p2move2 = true;
                     p2move3 = false;
                     p2move4 = false;
+                    battleStatusOutput.Text = "Player 2 has decided";
                     break;
                 case Keys.X:
-                      p2moveSelect = true;
+                    p2moveSelect = true;
                     p2move1 = false;
                     p2move2 = false;
-                      p2move3 = true;
+                    p2move3 = true;
                     p2move4 = false;
+                    battleStatusOutput.Text = "Player 2 has decided";
                     break;
                 case Keys.Z:
-                      p2moveSelect = true;
+                    p2moveSelect = true;
                     p2move1 = false;
                     p2move2 = false;
                     p2move3 = false;
-                      p2move4 = true;
+                    p2move4 = true;
+                    battleStatusOutput.Text = "Player 2 has decided";
                     break;
                 default:
                     break;
             }
-        }
-        
+        }     
+
+        #region Character Moves
         public void AttackBot()//DONE
         {
             int playerAtk = 1;
@@ -240,34 +312,56 @@ namespace SuperCrashTchrs.Screens
             }
             battleStatusOutput.Text = "Bradshaw used Attack Bot!";
             Thread.Sleep(sleepTime);
+            Refresh();
 
             if (randNum.Next(1,101) <= 95)
             {
                 damage = (((42 * playerAtk * 30 / opponentDef) / 50) + 2)
                     * randNum.Next(1, 101) / 100;
                 opponentHP -= damage;
+                if (p1character == "Brad")
+                {
+                    for (int i = p2hp; i > opponentHP; i--) 
+                    {
+                        p2HPBar.Size = new Size(i, 10);
+                        Thread.Sleep(50);
+                        Refresh();
+                    }                        
+                }
+                else if (p2character == "Brad")
+                {
+                    for (int i = p1hp; i > opponentHP; i--)
+                    {
+                        p1HPBar.Size = new Size(i, 10);
+                        Thread.Sleep(50);
+                        Refresh();
+                    }
+                }
                 if (opponentHP <= 0)
                 {
                     battleStatusOutput.Text = "The opponent fainted!";
                     Thread.Sleep(sleepTime);
-
+                    Refresh();
                     ScreenControl.changeScreen(this, "MultiEndScreen");
                 }
 
                 opponentAtk -= 25;
                 battleStatusOutput.Text = "The opponents Attack was lowered!";
                 Thread.Sleep(sleepTime);
+                Refresh();
                 if (opponentAtk <= 0)
                 {
                     opponentAtk = 1;
                     battleStatusOutput.Text = "The opponents Attack can't go any lower!";
                     Thread.Sleep(sleepTime);
+                    Refresh();
                 }
             }
             else
             {
                 battleStatusOutput.Text = "But the opponent avoided the attack!";
                 Thread.Sleep(sleepTime);
+                Refresh();
             }
 
             if (p1character == "Brad")
@@ -282,7 +376,7 @@ namespace SuperCrashTchrs.Screens
             }
         }
 
-        public void ClarinetSqueak()//DONE
+        public void ClarinetSqueak()//kinda DONE
         {
             int opponentDef = 0;
             if (p1character == "Ort")
@@ -336,16 +430,36 @@ namespace SuperCrashTchrs.Screens
             }
             battleStatusOutput.Text = "Bradshaw used Complain About Apple!";
             Thread.Sleep(sleepTime);
+            Refresh();
 
             if (randNum.Next(1, 101) <= 90)
             {
                 damage = (((42 * playerAtk * 75 / opponentDef) / 50) + 2)
                     * randNum.Next(1, 101) / 100;
                 opponentHP -= damage;
+                if (p1character == "Brad")
+                {
+                    for (int i = p2hp; i > opponentHP; i--)
+                    {
+                        p2HPBar.Size = new Size(i, 10);
+                        Thread.Sleep(50);
+                        Refresh();
+                    }
+                }
+                else if (p2character == "Brad")
+                {
+                    for (int i = p1hp; i > opponentHP; i--)
+                    {
+                        p1HPBar.Size = new Size(i, 10);
+                        Thread.Sleep(50);
+                        Refresh();
+                    }
+                }
                 if (opponentHP <= 0)
                 {
                     battleStatusOutput.Text = "The opponent fainted!";
                     Thread.Sleep(sleepTime);
+                    Refresh();
 
                     ScreenControl.changeScreen(this, "MultiEndScreen");
                 }
@@ -354,6 +468,7 @@ namespace SuperCrashTchrs.Screens
             {
                 battleStatusOutput.Text = "But the opponent avoided the attack!";
                 Thread.Sleep(sleepTime);
+                Refresh();
             }
 
             if (p1character == "Brad")
@@ -382,25 +497,31 @@ namespace SuperCrashTchrs.Screens
             }            
             battleStatusOutput.Text = "Bond used Critera Chart!";
             Thread.Sleep(sleepTime);
+            Refresh();
 
             userAtk += 25;
             battleStatusOutput.Text = "Bonds Attack rose!";
             Thread.Sleep(sleepTime);
+            Refresh();
+
             if (userAtk > 250)
             {
                 userAtk = 250;
                 battleStatusOutput.Text = "Bonds Attack can't go any higher!";
                 Thread.Sleep(sleepTime);
+                Refresh();
             }
 
             userSpd += 25;
             battleStatusOutput.Text = "Bonds Speed rose!";
             Thread.Sleep(sleepTime);
+            Refresh();
             if (userSpd > 250)
             {
                 userSpd = 250;
                 battleStatusOutput.Text = "Bonds Speed can't go any higher!";
                 Thread.Sleep(sleepTime);
+                Refresh();
             }            
             if (p1character == "Bond")
             {
@@ -427,15 +548,18 @@ namespace SuperCrashTchrs.Screens
             }
             battleStatusOutput.Text = "Bradshaw used Defender Bot!";
             Thread.Sleep(sleepTime);
+            Refresh();
             playerDef -= 25;
             battleStatusOutput.Text = "Bradshaws Defence was raised!";
             Thread.Sleep(sleepTime);
+            Refresh();
 
             if (playerDef <= 0)
             {
                 playerDef = 1;
                 battleStatusOutput.Text = "Bradshaws Defence can't go any higher!";
                 Thread.Sleep(sleepTime);
+                Refresh();
             }
 
             if (p1character == "Brad")
@@ -468,33 +592,57 @@ namespace SuperCrashTchrs.Screens
             }
             battleStatusOutput.Text = "Bond used Discetion!";
             Thread.Sleep(sleepTime);
+            Refresh();
 
             if (randNum.Next(1, 101) <= 95)
             {
                 damage = (((42 * playerAtk * 30 / opponentDef) / 50) + 2)
                     * randNum.Next(1, 101) / 100;
                 opponentHP -= damage;
+                if (p1character == "Bond")
+                {
+                    for (int i = p2hp; i > opponentHP; i--)
+                    {
+                        p2HPBar.Size = new Size(i, 10);
+                        Thread.Sleep(50);
+                        Refresh();
+                    }
+                }
+                else if (p2character == "Bond")
+                {
+                    for (int i = p1hp; i > opponentHP; i--)
+                    {
+                        p1HPBar.Size = new Size(i, 10);
+                        Thread.Sleep(50);
+                        Refresh();
+                    }
+                }
                 if (opponentHP <= 0)
                 {
                     battleStatusOutput.Text = "The opponent fainted!";
                     Thread.Sleep(sleepTime);
+                    Refresh();
 
                     ScreenControl.changeScreen(this, "MultiEndScreen");
                 }
                 opponentDef -= 25;
                 battleStatusOutput.Text = "The opponents Defence was lowered!";
                 Thread.Sleep(sleepTime);
+                Refresh();
+
                 if (opponentDef <= 0)
                 {
                     opponentDef = 1;
                     battleStatusOutput.Text = "The opponents Defence can't go any lower!";
                     Thread.Sleep(sleepTime);
+                    Refresh();
                 }
             }
             else
             {
                 battleStatusOutput.Text = "But the opponent avoided the attack!";
                 Thread.Sleep(sleepTime);
+                Refresh();
             }
 
             if (p1character == "Bond")
@@ -511,26 +659,34 @@ namespace SuperCrashTchrs.Screens
 
         public void Documentary()//not done
         {
+            /*
             //check if leitch is asleep
             if (leitchSleep != 0)
             {
                 //if asleep pass the turn
                 leitchSleep--;
-                return leitchSleep;
-                //display sleep message
+                battleStatusOutput.Text = "Leitch is fast asleep...";
+                Thread.Sleep(sleepTime);
             }
-            else //leitch is awake
+            else
             {
-                //little text message description
-                //restore leitch's HP to full
-                leitchHP = 200;
-                return leitchHP;
-                //display HP at full
-            }
+                int playerHP = 0;
+                if (p1character == "Leitch")
+                {
+                    playerHP = p1hp; 
+                } 
+                else if (p2character == "Leitch")
+                {
+                    playerHP = p2hp;
+                }
+                playerHP = 200;
+                
+            }*/
         }
 
         public void Dodgeball()//not done
-        {     
+        {   
+            /*
             int accuracyHit = randNum.Next(1,101);
             double damage;
             //check accuracy
@@ -541,7 +697,7 @@ namespace SuperCrashTchrs.Screens
                 damage = (((42 * playerAtk * 100 / opponentDef) / 50) + 2) 
                     * randNum.Next(1,101) / 100;
                 opponentHP -= damage;
-                //for (int i = 100/*oponents HPbar length*/; i == opponentHP; i--)
+                //for (int i = 100oponents HPbar length; i == opponentHP; i--)
                 //{
                 //    p1HPBar.Size = (i, 10);
                 //}
@@ -573,11 +729,12 @@ namespace SuperCrashTchrs.Screens
             else
             {
                 //set to opponent's turn
-            }
+            }*/
         }
 
         public void DunkOn()//not done
         {
+            /*
             //local variables created
             double damage;
             //know if player's move continues out sucessfully
@@ -609,7 +766,7 @@ namespace SuperCrashTchrs.Screens
             else
             {
                 //send move failed message
-            }
+            }*/
         }
 
         public void EqualSign()//not done
@@ -665,6 +822,7 @@ namespace SuperCrashTchrs.Screens
 
         public void FullBandFF()//not done
         {
+            /*
             if (ortSleep == 0)
             {
                 //local variables called
@@ -700,7 +858,7 @@ namespace SuperCrashTchrs.Screens
             else
             {
                 //send ortelli is too tired message
-            }
+            }*/
         }
 
         public void HealthClass()//not done
@@ -710,10 +868,12 @@ namespace SuperCrashTchrs.Screens
 
         public void MadExperiment()//DONE
         {
+            //variables
             int playerAtk = 1;
             int opponentDef = 1;
             int opponentHP = 0;
             int damage = 0;
+            //Assigns variables to active player
             if (p1character == "Bond")
             {
                 playerAtk = p1Atk;
@@ -726,28 +886,52 @@ namespace SuperCrashTchrs.Screens
                 opponentDef = p1Def;
                 opponentHP = p1hp;
             }
+            //text to screen
             battleStatusOutput.Text = "Bond used Mad Experiment!";
             Thread.Sleep(sleepTime);
-
+            Refresh();
+            //checks if misses
             if (randNum.Next(1, 101) <= 70)
             {
+                //damage calc
                 damage = (((42 * playerAtk * 100 / opponentDef) / 50) + 2)
                     * randNum.Next(1, 101) / 100;
                 opponentHP -= damage;
+                //slowly depletes HP bar
+                if (p1character == "Bond")
+                {
+                    for (int i = p2hp; i > opponentHP && i > 0; i--)
+                    {
+                        p2HPBar.Size = new Size(i, 10);
+                        Thread.Sleep(50);
+                    }
+                }
+                else if (p2character == "Bond")
+                {
+                    for (int i = p1hp; i > opponentHP && i > 0; i--)
+                    {
+                        p1HPBar.Size = new Size(i, 10);
+                        Thread.Sleep(50);
+                    }
+                }
+                //checks if opponent dead
                 if (opponentHP <= 0)
                 {
                     battleStatusOutput.Text = "The opponent fainted!";
                     Thread.Sleep(sleepTime);
+                    Refresh();
 
                     ScreenControl.changeScreen(this, "MultiEndScreen");
                 }
             }
             else
             {
+                //if attack misses
                 battleStatusOutput.Text = "But the opponent avoided the attack!";
                 Thread.Sleep(sleepTime);
+                Refresh();
             }
-
+            //returns changed stats to characters
             if (p1character == "Brad")
             {
                 p2hp = opponentHP;
@@ -770,6 +954,7 @@ namespace SuperCrashTchrs.Screens
 
         public void PinkPaper()//not done
         {
+            /*
             // local variables called
             double damage;
             double playerHpUp;
@@ -806,7 +991,7 @@ namespace SuperCrashTchrs.Screens
             else
             {
                 //send move failed message
-            }
+            }*/
         }
 
         public void PushUps()//not done
@@ -821,8 +1006,10 @@ namespace SuperCrashTchrs.Screens
 
         public void TalkAboutFamily()//DONE
         {
+            //intergers
             int playerHP = 0;
             int playerDef = 0;
+            //assigns stats to current players
             if (p1character == "Bond")
             {
                 playerHP = p1hp;
@@ -833,25 +1020,40 @@ namespace SuperCrashTchrs.Screens
                 playerHP = p2hp;
                 playerDef = p2Def;
             }
-
-            battleStatusOutput.Text = "Bond used Critera Chart!";
+            
+            battleStatusOutput.Text = "Bond used Talk About Family!";
             Thread.Sleep(sleepTime);
+            Refresh();
+            //Health restoration
             playerHP += 38;
             if (playerHP > 150)
             {
                 playerHP = 150;
             }
+            if (p1character == "Bond")
+            {
+                p1HPBar.Size = new Size(playerHP, 10);
+            }
+            else if (p2character == "Bond")
+            {
+                p2HPBar.Size = new Size(playerHP, 10);
+            }
             battleStatusOutput.Text = "Bond restored his HP!";
             Thread.Sleep(sleepTime);
+            Refresh();
 
+            //defence increase
             playerDef += 25;
             battleStatusOutput.Text = "Bonds Defence increased!";
             Thread.Sleep(sleepTime);
+            Refresh();
+
             if(playerDef >250)
             {                
-                bondDef = 250;
+                playerDef = 250;
                 battleStatusOutput.Text = "Bonds Defence can't go any higher!";
                 Thread.Sleep(sleepTime);
+                Refresh();
             }
 
             if (p1character == "Bond")
@@ -945,13 +1147,24 @@ namespace SuperCrashTchrs.Screens
 
             battleStatusOutput.Text = "Bradshaw used Video Friday!";
             Thread.Sleep(sleepTime);
+            Refresh();
+
             playerHP += 75;
             if (playerHP > 150)
             {
                 playerHP = 150;
             }
+            if (p1character == "Brad")
+            {
+                p1HPBar.Size = new Size(playerHP, 10);
+            }
+            else if (p2character == "Brad")
+            {
+                p2HPBar.Size = new Size(playerHP, 10);
+            }
             battleStatusOutput.Text = "Bradshaw restored his HP!";
             Thread.Sleep(sleepTime);
+            Refresh();
 
             if (p1character == "Brad")
             {
@@ -962,12 +1175,15 @@ namespace SuperCrashTchrs.Screens
                 p2hp = playerHP;
             }
         }
+        #endregion
 
         private void moveSelectTimer_Tick(object sender, EventArgs e)
         {
-            if ((ScreenControl.p1moveSelect) == true && (ScreenControl.p2moveSelect) == true)
+            if (p1moveSelect == true && p2moveSelect == true)
             {
-                moveSelectTimer.Enabled = false;
+                //moveSelectTimer.Enabled = false;
+                p1moveSelect = false;
+                p2moveSelect = false;
                 if (p1Spd > p2Spd)
                 {
                     ///make these the master copies
@@ -1205,20 +1421,21 @@ namespace SuperCrashTchrs.Screens
                         }
                     }
                     #endregion
-                    # endregion
+                    #endregion
                 }
                 else if (p1Spd < p2Spd)
                 {
                     #region p2 Goes First
+                    #region move 1
                     if (p2move1 == true)
                     {
                         switch (p2character)
                         {
                             case "Bond":
-                                //CriteraChart
+                                CriteriaChart();
                                 break;
                             case "Brad":
-                                //AttackBot
+                                AttackBot();
                                 break;
                             case "Leitch":
                                 //Documentary
@@ -1236,15 +1453,18 @@ namespace SuperCrashTchrs.Screens
                                 break;
                         }
                     }
+                    #endregion
+
+                    #region move 2
                     if (p2move2 == true)
                     {
                         switch (p2character)
                         {
                             case "Bond":
-                                //Dissection
+                                Dissection();
                                 break;
                             case "Brad":
-                                //ComplainBout
+                                ComplainAbout();
                                 break;
                             case "Leitch":
                                 //EssayQuestion
@@ -1262,15 +1482,18 @@ namespace SuperCrashTchrs.Screens
                                 break;
                         }
                     }
+                    #endregion
+
+                    #region move 3
                     if (p2move3 == true)
                     {
                         switch (p2character)
                         {
                             case "Bond":
-                                //MadExperiment
+                                MadExperiment();
                                 break;
                             case "Brad":
-                                //DefenderBot
+                                DefenderBot();
                                 break;
                             case "Leitch":
                                 //HistoricWar
@@ -1288,15 +1511,18 @@ namespace SuperCrashTchrs.Screens
                                 break;
                         }
                     }
+                    #endregion
+
+                    #region move 4
                     if (p2move4 == true)
                     {
                         switch (p2character)
                         {
                             case "Bond":
-                                //TalkBoutFamily
+                                TalkAboutFamily();
                                 break;
                             case "Brad":
-                                //VideoFriday
+                                VideoFriday();
                                 break;
                             case "Leitch":
                                 //MCQuestion
@@ -1314,27 +1540,29 @@ namespace SuperCrashTchrs.Screens
                                 break;
                         }
                     }
-                    # endregion
+                    #endregion
+                    #endregion
 
                     #region p1 Goes Second
+                    #region move 1
                     if (p1move1 == true)
                     {
                         switch (p1character)
                         {
                             case "Bond":
-                                //CriteraChart
+                                CriteriaChart();
                                 break;
                             case "Brad":
-                                //AttackBot
+                                AttackBot();
                                 break;
                             case "Leitch":
                                 //Documentary
                                 break;
                             case "Cutch":
-                                //DODGEBALL
+                                Dodgeball();
                                 break;
                             case "Ort":
-                                //ClairinetSqueak
+                                ClarinetSqueak();
                                 break;
                             case "Steel":
                                 //EqualSign
@@ -1343,18 +1571,21 @@ namespace SuperCrashTchrs.Screens
                                 break;
                         }
                     }
+                    #endregion
+
+                    #region move 2
                     if (p1move2 == true)
                     {
                         switch (p1character)
                         {
                             case "Bond":
-                                //Dissection
+                                Dissection();
                                 break;
                             case "Brad":
-                                //ComplainBout
+                                ComplainAbout();
                                 break;
                             case "Leitch":
-                                //EssayQuestion
+                                EssayQuestion();
                                 break;
                             case "Cutch":
                                 //DunkOn
@@ -1369,15 +1600,18 @@ namespace SuperCrashTchrs.Screens
                                 break;
                         }
                     }
+                    #endregion
+
+                    #region move 3
                     if (p1move3 == true)
                     {
                         switch (p1character)
                         {
                             case "Bond":
-                                //MadExperiment
+                                MadExperiment();
                                 break;
                             case "Brad":
-                                //DefenderBot
+                                DefenderBot();
                                 break;
                             case "Leitch":
                                 //HistoricWar
@@ -1395,24 +1629,27 @@ namespace SuperCrashTchrs.Screens
                                 break;
                         }
                     }
+                    #endregion
+
+                    #region move 4
                     if (p1move4 == true)
                     {
                         switch (p1character)
                         {
                             case "Bond":
-                                //TalkBoutFamily
+                                TalkAboutFamily();
                                 break;
                             case "Brad":
-                                //VideoFriday
+                                VideoFriday();
                                 break;
                             case "Leitch":
-                                //MCQuestion
+                                MultiQuestion();
                                 break;
                             case "Cutch":
                                 //HealthClass
                                 break;
                             case "Ort":
-                                //Tuning
+                                Tuning();
                                 break;
                             case "Steel":
                                 //TextbookBarricade
@@ -1421,31 +1658,33 @@ namespace SuperCrashTchrs.Screens
                                 break;
                         }
                     }
-                    # endregion
+                    #endregion
+                    #endregion                   
                 }
                 else if (p1Spd == p2Spd)
                 {
                     if (randNum.Next(1, 3) == 1)
                     {
                         #region p1 First Speed Tie
+                        #region move 1
                         if (p1move1 == true)
                         {
                             switch (p1character)
                             {
                                 case "Bond":
-                                    //CriteraChart
+                                    CriteriaChart();
                                     break;
                                 case "Brad":
-                                    //AttackBot
+                                    AttackBot();
                                     break;
                                 case "Leitch":
                                     //Documentary
                                     break;
                                 case "Cutch":
-                                    //DODGEBALL
+                                    Dodgeball();
                                     break;
                                 case "Ort":
-                                    //ClairinetSqueak
+                                    ClarinetSqueak();
                                     break;
                                 case "Steel":
                                     //EqualSign
@@ -1454,18 +1693,21 @@ namespace SuperCrashTchrs.Screens
                                     break;
                             }
                         }
+                        #endregion
+
+                        #region move 2
                         if (p1move2 == true)
                         {
                             switch (p1character)
                             {
                                 case "Bond":
-                                    //Dissection
+                                    Dissection();
                                     break;
                                 case "Brad":
-                                    //ComplainBout
+                                    ComplainAbout();
                                     break;
                                 case "Leitch":
-                                    //EssayQuestion
+                                    EssayQuestion();
                                     break;
                                 case "Cutch":
                                     //DunkOn
@@ -1480,15 +1722,18 @@ namespace SuperCrashTchrs.Screens
                                     break;
                             }
                         }
+                        #endregion
+
+                        #region move 3
                         if (p1move3 == true)
                         {
                             switch (p1character)
                             {
                                 case "Bond":
-                                    //MadExperiment
+                                    MadExperiment();
                                     break;
                                 case "Brad":
-                                    //DefenderBot
+                                    DefenderBot();
                                     break;
                                 case "Leitch":
                                     //HistoricWar
@@ -1506,15 +1751,136 @@ namespace SuperCrashTchrs.Screens
                                     break;
                             }
                         }
+                        #endregion
+
+                        #region move 4
                         if (p1move4 == true)
                         {
                             switch (p1character)
                             {
                                 case "Bond":
-                                    //TalkBoutFamily
+                                    TalkAboutFamily();
                                     break;
                                 case "Brad":
-                                    //VideoFriday
+                                    VideoFriday();
+                                    break;
+                                case "Leitch":
+                                    MultiQuestion();
+                                    break;
+                                case "Cutch":
+                                    //HealthClass
+                                    break;
+                                case "Ort":
+                                    Tuning();
+                                    break;
+                                case "Steel":
+                                    //TextbookBarricade
+                                    break;
+                                default:
+                                    break;
+                            }
+                        }
+                        #endregion
+                        #endregion
+
+                        #region p2 Second Speed tie
+                        #region move 1
+                        if (p2move1 == true)
+                        {
+                            switch (p2character)
+                            {
+                                case "Bond":
+                                    CriteriaChart();
+                                    break;
+                                case "Brad":
+                                    AttackBot();
+                                    break;
+                                case "Leitch":
+                                    //Documentary
+                                    break;
+                                case "Cutch":
+                                    //DODGEBALL
+                                    break;
+                                case "Ort":
+                                    //ClairinetSqueak
+                                    break;
+                                case "Steel":
+                                    //EqualSign
+                                    break;
+                                default:
+                                    break;
+                            }
+                        }
+                        #endregion
+
+                        #region move 2
+                        if (p2move2 == true)
+                        {
+                            switch (p2character)
+                            {
+                                case "Bond":
+                                    Dissection();
+                                    break;
+                                case "Brad":
+                                    ComplainAbout();
+                                    break;
+                                case "Leitch":
+                                    //EssayQuestion
+                                    break;
+                                case "Cutch":
+                                    //DunkOn
+                                    break;
+                                case "Ort":
+                                    //FullBandFF
+                                    break;
+                                case "Steel":
+                                    //PinkPaper
+                                    break;
+                                default:
+                                    break;
+                            }
+                        }
+                        #endregion
+
+                        #region move 3
+                        if (p2move3 == true)
+                        {
+                            switch (p2character)
+                            {
+                                case "Bond":
+                                    MadExperiment();
+                                    break;
+                                case "Brad":
+                                    DefenderBot();
+                                    break;
+                                case "Leitch":
+                                    //HistoricWar
+                                    break;
+                                case "Cutch":
+                                    //PushUps
+                                    break;
+                                case "Ort":
+                                    //MelodiousPassage
+                                    break;
+                                case "Steel":
+                                    //QuadraticAttack
+                                    break;
+                                default:
+                                    break;
+                            }
+                        }
+                        #endregion
+
+                        #region move 4
+                        if (p2move4 == true)
+                        {
+                            switch (p2character)
+                            {
+                                case "Bond":
+                                    TalkAboutFamily();
+                                    break;
+                                case "Brad":
+                                    VideoFriday();
                                     break;
                                 case "Leitch":
                                     //MCQuestion
@@ -1533,113 +1899,7 @@ namespace SuperCrashTchrs.Screens
                             }
                         }
                         #endregion
-
-                        #region p2 Second Speed Tie
-                        if (p2move1 == true)
-                        {
-                            switch (p2character)
-                            {
-                                case "Bond":
-                                    //CriteraChart
-                                    break;
-                                case "Brad":
-                                    //AttackBot
-                                    break;
-                                case "Leitch":
-                                    //Documentary
-                                    break;
-                                case "Cutch":
-                                    //DODGEBALL
-                                    break;
-                                case "Ort":
-                                    //ClairinetSqueak
-                                    break;
-                                case "Steel":
-                                    //EqualSign
-                                    break;
-                                default:
-                                    break;
-                            }
-                        }
-                        if (p2move2 == true)
-                        {
-                            switch (p2character)
-                            {
-                                case "Bond":
-                                    //Dissection
-                                    break;
-                                case "Brad":
-                                    //ComplainBout
-                                    break;
-                                case "Leitch":
-                                    //EssayQuestion
-                                    break;
-                                case "Cutch":
-                                    //DunkOn
-                                    break;
-                                case "Ort":
-                                    //FullBandFF
-                                    break;
-                                case "Steel":
-                                    //PinkPaper
-                                    break;
-                                default:
-                                    break;
-                            }
-                        }
-                        if (p2move3 == true)
-                        {
-                            switch (p2character)
-                            {
-                                case "Bond":
-                                    //MadExperiment
-                                    break;
-                                case "Brad":
-                                    //DefenderBot
-                                    break;
-                                case "Leitch":
-                                    //HistoricWar
-                                    break;
-                                case "Cutch":
-                                    //PushUps
-                                    break;
-                                case "Ort":
-                                    //MelodiousPassage
-                                    break;
-                                case "Steel":
-                                    //QuadraticAttack
-                                    break;
-                                default:
-                                    break;
-                            }
-                        }
-                        if (p2move4 == true)
-                        {
-                            switch (p2character)
-                            {
-                                case "Bond":
-                                    //TalkBoutFamily
-                                    break;
-                                case "Brad":
-                                    //VideoFriday
-                                    break;
-                                case "Leitch":
-                                    //MCQuestion
-                                    break;
-                                case "Cutch":
-                                    //HealthClass
-                                    break;
-                                case "Ort":
-                                    //Tuning
-                                    break;
-                                case "Steel":
-                                    //TextbookBarricade
-                                    break;
-                                default:
-                                    break;
-                            }
-                        }
-                        # endregion
+                        #endregion
                     }
                     else
                     {
@@ -1859,12 +2119,94 @@ namespace SuperCrashTchrs.Screens
                         #endregion
                     }                    
                 }
-                moveSelectTimer.Enabled = true;
+                //moveSelectTimer.Enabled = true;
             }
             else
             {
 
             }
         }
+
+        #region Button Clicks
+        private void p1Yellow_Click(object sender, EventArgs e)
+        {
+            p1moveSelect = true;
+            p1move1 = true;
+            p1move2 = false;
+            p1move3 = false;
+            p1move4 = false;
+            battleStatusOutput.Text = "Player 1 has decided";
+        }
+
+        private void p1Blue_Click(object sender, EventArgs e)
+        {
+            p1moveSelect = true;
+            p1move1 = false;
+            p1move2 = true;
+            p1move3 = false;
+            p1move4 = false;
+            battleStatusOutput.Text = "Player 1 has decided";
+        }
+
+        private void p1Red_Click(object sender, EventArgs e)
+        {
+            p1moveSelect = true;
+            p1move1 = false;
+            p1move2 = false;
+            p1move3 = true;
+            p1move4 = false;
+            battleStatusOutput.Text = "Player 1 has decided";
+        }
+
+        private void p1Green_Click(object sender, EventArgs e)
+        {
+            p1moveSelect = true;
+            p1move1 = false;
+            p1move2 = false;
+            p1move3 = false;
+            p1move4 = true;
+            battleStatusOutput.Text = "Player 1 has decided";
+        }
+
+        private void p2Yellow_Click(object sender, EventArgs e)
+        {
+            p2moveSelect = true;
+            p2move1 = true;
+            p2move2 = false;
+            p2move3 = false;
+            p2move4 = false;
+            battleStatusOutput.Text = "Player 2 has decided";
+        }
+
+        private void p2Blue_Click(object sender, EventArgs e)
+        {
+            p2moveSelect = true;
+            p2move1 = false;
+            p2move2 = true;
+            p2move3 = false;
+            p2move4 = false;
+            battleStatusOutput.Text = "Player 2 has decided";
+        }
+
+        private void p2Red_Click(object sender, EventArgs e)
+        {
+            p2moveSelect = true;
+            p2move1 = false;
+            p2move2 = false;
+            p2move3 = true;
+            p2move4 = false;
+            battleStatusOutput.Text = "Player 2 has decided";
+        }
+
+        private void p2Green_Click(object sender, EventArgs e)
+        {
+            p2moveSelect = true;
+            p2move1 = false;
+            p2move2 = false;
+            p2move3 = false;
+            p2move4 = true;
+            battleStatusOutput.Text = "Player 2 has decided";
+        }
+        #endregion
     }
 }

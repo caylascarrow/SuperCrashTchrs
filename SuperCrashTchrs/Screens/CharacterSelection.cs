@@ -15,6 +15,14 @@ namespace SuperCrashTchrs.Screens
         public CharacterSelection()
         {
             InitializeComponent();
+
+            //which character has each player chosen
+
+            //check to see if both players have selected a character
+            if ((ScreenControl.p1character) != "" & (ScreenControl.p2character) != "")
+            {
+                ScreenControl.changeScreen(this, "BattleArena");
+            }
         }
     }
 }
