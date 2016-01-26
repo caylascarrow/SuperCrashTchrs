@@ -44,8 +44,8 @@ namespace SuperCrashTchrs.Screens
         {
             InitializeComponent();
             moveSelectTimer.Enabled = true;
-            p1character = "Bond";
-            p2character = "Brad";
+            p1character = "Brad";
+            p2character = "Bond";
 
             #region Stat Switchs 
             switch (p1character)
@@ -289,13 +289,15 @@ namespace SuperCrashTchrs.Screens
         }     
 
         #region Character Moves
-        public void AttackBot()//DONE
+        public void AttackBot()//Brad DONE no bugs
         {
+            //intergers
             int playerAtk = 1;
             int opponentDef = 1;
             int opponentHP = 0;
             int opponentAtk = 0;
             int damage = 0;
+            //assign values
             if (p1character == "Brad")
             {
                 playerAtk = p1Atk;
@@ -310,18 +312,23 @@ namespace SuperCrashTchrs.Screens
                 opponentHP = p1hp;
                 opponentAtk = p1Atk;
             }
+
             battleStatusOutput.Text = "Bradshaw used Attack Bot!";
             Thread.Sleep(sleepTime);
             Refresh();
 
+            //check if hits
             if (randNum.Next(1,101) <= 95)
             {
+                //damage calc
                 damage = (((42 * playerAtk * 30 / opponentDef) / 50) + 2)
                     * randNum.Next(1, 101) / 100;
                 opponentHP -= damage;
+
+                //Change HPbar
                 if (p1character == "Brad")
                 {
-                    for (int i = p2hp; i > opponentHP; i--) 
+                    for (int i = p2hp; i > opponentHP && i > 0; i--) 
                     {
                         p2HPBar.Size = new Size(i, 10);
                         Thread.Sleep(50);
@@ -330,13 +337,14 @@ namespace SuperCrashTchrs.Screens
                 }
                 else if (p2character == "Brad")
                 {
-                    for (int i = p1hp; i > opponentHP; i--)
+                    for (int i = p1hp; i > opponentHP && i > 0; i--)
                     {
                         p1HPBar.Size = new Size(i, 10);
                         Thread.Sleep(50);
                         Refresh();
                     }
                 }
+                //check if opponent dead
                 if (opponentHP <= 0)
                 {
                     battleStatusOutput.Text = "The opponent fainted!";
@@ -345,6 +353,7 @@ namespace SuperCrashTchrs.Screens
                     ScreenControl.changeScreen(this, "MultiEndScreen");
                 }
 
+                //lower attack stat
                 opponentAtk -= 25;
                 battleStatusOutput.Text = "The opponents Attack was lowered!";
                 Thread.Sleep(sleepTime);
@@ -357,13 +366,14 @@ namespace SuperCrashTchrs.Screens
                     Refresh();
                 }
             }
+            //if attack misses    
             else
             {
                 battleStatusOutput.Text = "But the opponent avoided the attack!";
                 Thread.Sleep(sleepTime);
                 Refresh();
             }
-
+            //reassign stats to players
             if (p1character == "Brad")
             {
                 p2hp = opponentHP;
@@ -376,7 +386,7 @@ namespace SuperCrashTchrs.Screens
             }
         }
 
-        public void ClarinetSqueak()//kinda DONE
+        public void ClarinetSqueak()//Ort kinda DONE
         {
             int opponentDef = 0;
             if (p1character == "Ort")
@@ -410,12 +420,15 @@ namespace SuperCrashTchrs.Screens
             }
         }
 
-        public void ComplainAbout()//DONE
+        public void ComplainAbout()//Brad DONE
         {
+            //variables
             int playerAtk = 1;
             int opponentDef = 1;
             int opponentHP = 0;            
             int damage = 0;
+
+            //assign to current player
             if (p1character == "Brad")
             {
                 playerAtk = p1Atk;
@@ -428,18 +441,23 @@ namespace SuperCrashTchrs.Screens
                 opponentDef = p1Def;
                 opponentHP = p1hp; 
             }
+
             battleStatusOutput.Text = "Bradshaw used Complain About Apple!";
             Thread.Sleep(sleepTime);
             Refresh();
 
+            //check if attack hits
             if (randNum.Next(1, 101) <= 90)
             {
+                //damage calc
                 damage = (((42 * playerAtk * 75 / opponentDef) / 50) + 2)
                     * randNum.Next(1, 101) / 100;
                 opponentHP -= damage;
+                
+                //change HP bar
                 if (p1character == "Brad")
                 {
-                    for (int i = p2hp; i > opponentHP; i--)
+                    for (int i = p2hp; i > opponentHP && i > 0; i--)
                     {
                         p2HPBar.Size = new Size(i, 10);
                         Thread.Sleep(50);
@@ -448,13 +466,14 @@ namespace SuperCrashTchrs.Screens
                 }
                 else if (p2character == "Brad")
                 {
-                    for (int i = p1hp; i > opponentHP; i--)
+                    for (int i = p1hp; i > opponentHP && i > 0; i--)
                     {
                         p1HPBar.Size = new Size(i, 10);
                         Thread.Sleep(50);
                         Refresh();
                     }
                 }
+                //check if fainted
                 if (opponentHP <= 0)
                 {
                     battleStatusOutput.Text = "The opponent fainted!";
@@ -464,13 +483,14 @@ namespace SuperCrashTchrs.Screens
                     ScreenControl.changeScreen(this, "MultiEndScreen");
                 }
             }
+            //check if dead
             else
             {
                 battleStatusOutput.Text = "But the opponent avoided the attack!";
                 Thread.Sleep(sleepTime);
                 Refresh();
             }
-
+            //return stat changes
             if (p1character == "Brad")
             {
                 p2hp = opponentHP;                
@@ -481,7 +501,7 @@ namespace SuperCrashTchrs.Screens
             }
         }
 
-        public void CriteriaChart()//DONE
+        public void CriteriaChart()//Bond DONE
         {
             int userAtk = 0; 
             int userSpd = 0;
@@ -535,7 +555,7 @@ namespace SuperCrashTchrs.Screens
             }
         }
 
-        public void DefenderBot()//kinda done
+        public void DefenderBot()//Brad kinda done
         {
             int playerDef = 0;
             if (p1character == "Brad")
@@ -572,12 +592,15 @@ namespace SuperCrashTchrs.Screens
             }
         }
 
-        public void Dissection()//DONE
+        public void Dissection()//Bond DONE no bugs
         {
+            //variables
             int playerAtk = 1;
             int opponentDef = 1;
             int opponentHP = 0;
             int damage = 0;
+
+            //assign values
             if (p1character == "Bond")
             {
                 playerAtk = p1Atk;
@@ -590,18 +613,22 @@ namespace SuperCrashTchrs.Screens
                 opponentDef = p1Def;
                 opponentHP = p1hp;
             }
+
             battleStatusOutput.Text = "Bond used Discetion!";
             Thread.Sleep(sleepTime);
             Refresh();
 
+            //check if hits
             if (randNum.Next(1, 101) <= 95)
             {
+                //damage calc
                 damage = (((42 * playerAtk * 30 / opponentDef) / 50) + 2)
                     * randNum.Next(1, 101) / 100;
                 opponentHP -= damage;
+                //HPbar changes
                 if (p1character == "Bond")
                 {
-                    for (int i = p2hp; i > opponentHP; i--)
+                    for (int i = p2hp; i > opponentHP && i > 0; i--)
                     {
                         p2HPBar.Size = new Size(i, 10);
                         Thread.Sleep(50);
@@ -610,13 +637,14 @@ namespace SuperCrashTchrs.Screens
                 }
                 else if (p2character == "Bond")
                 {
-                    for (int i = p1hp; i > opponentHP; i--)
+                    for (int i = p1hp; i > opponentHP && i > 0; i--)
                     {
                         p1HPBar.Size = new Size(i, 10);
                         Thread.Sleep(50);
                         Refresh();
                     }
                 }
+                //check if dead
                 if (opponentHP <= 0)
                 {
                     battleStatusOutput.Text = "The opponent fainted!";
@@ -625,11 +653,13 @@ namespace SuperCrashTchrs.Screens
 
                     ScreenControl.changeScreen(this, "MultiEndScreen");
                 }
+
+                //lower opponent defence
                 opponentDef -= 25;
                 battleStatusOutput.Text = "The opponents Defence was lowered!";
                 Thread.Sleep(sleepTime);
                 Refresh();
-
+                                
                 if (opponentDef <= 0)
                 {
                     opponentDef = 1;
@@ -638,13 +668,14 @@ namespace SuperCrashTchrs.Screens
                     Refresh();
                 }
             }
+            //If misses
             else
             {
                 battleStatusOutput.Text = "But the opponent avoided the attack!";
                 Thread.Sleep(sleepTime);
                 Refresh();
             }
-
+            //return changes
             if (p1character == "Bond")
             {
                 p2hp = opponentHP;
@@ -657,7 +688,7 @@ namespace SuperCrashTchrs.Screens
             }
         }
 
-        public void Documentary()//not done
+        public void Documentary()//Leitch not done
         {
             /*
             //check if leitch is asleep
@@ -684,7 +715,7 @@ namespace SuperCrashTchrs.Screens
             }*/
         }
 
-        public void Dodgeball()//not done
+        public void Dodgeball()//Cutch not done
         {   
             /*
             int accuracyHit = randNum.Next(1,101);
@@ -732,7 +763,7 @@ namespace SuperCrashTchrs.Screens
             }*/
         }
 
-        public void DunkOn()//not done
+        public void DunkOn()//Cutchnot done
         {
             /*
             //local variables created
@@ -769,7 +800,7 @@ namespace SuperCrashTchrs.Screens
             }*/
         }
 
-        public void EqualSign()//not done
+        public void EqualSign()//Steel not done
         {
             if (p1character == "Steel")
             {
@@ -778,7 +809,7 @@ namespace SuperCrashTchrs.Screens
 
         }
 
-        public void EssayQuestion()//DONE
+        public void EssayQuestion()//Leitch DONE
         {
             int opponentSpd = 0;
             if (p1character == "Leitch")
@@ -820,7 +851,7 @@ namespace SuperCrashTchrs.Screens
             }
         }
 
-        public void FullBandFF()//not done
+        public void FullBandFF()//Ort not done
         {
             /*
             if (ortSleep == 0)
@@ -861,12 +892,12 @@ namespace SuperCrashTchrs.Screens
             }*/
         }
 
-        public void HealthClass()//not done
+        public void HealthClass()//Cutch not done
         {
 
         }
 
-        public void MadExperiment()//DONE
+        public void MadExperiment()//Bond DONE
         {
             //variables
             int playerAtk = 1;
@@ -942,17 +973,17 @@ namespace SuperCrashTchrs.Screens
             }
         }
 
-        public void MelodiousPassage()//not done
+        public void MelodiousPassage()//Ort not done
         {
 
         }
 
-        public void MultiQuestion()//not done
+        public void MultiQuestion()//Leitch not done
         {            
             
         }
 
-        public void PinkPaper()//not done
+        public void PinkPaper()//Steel not done
         {
             /*
             // local variables called
@@ -994,17 +1025,17 @@ namespace SuperCrashTchrs.Screens
             }*/
         }
 
-        public void PushUps()//not done
+        public void PushUps()//Cutch not done
         {
             
         }
 
-        public void QuadraticAttack()//not done
+        public void QuadraticAttack()//Steel not done
         {
 
         }
 
-        public void TalkAboutFamily()//DONE
+        public void TalkAboutFamily()//Bond DONE
         {
             //intergers
             int playerHP = 0;
@@ -1068,7 +1099,7 @@ namespace SuperCrashTchrs.Screens
             }
         }
 
-        public void TextbookBarricade()//DONE
+        public void TextbookBarricade()//Steel DONE
         {
             int playerDef = 0;
             if (p1character == "Steel")
@@ -1102,7 +1133,7 @@ namespace SuperCrashTchrs.Screens
             }
         }
 
-        public void Tuning()//DONE
+        public void Tuning()//Ort DONE
         {
             int playerHP = 0;
             if (p1character == "Ort")
@@ -1133,7 +1164,7 @@ namespace SuperCrashTchrs.Screens
             }    
         }
 
-        public void VideoFriday()//DONE
+        public void VideoFriday()//Brad DONE
         {
             int playerHP = 0;
             if(p1character == "Brad")
