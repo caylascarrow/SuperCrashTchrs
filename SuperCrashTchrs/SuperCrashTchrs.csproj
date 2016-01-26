@@ -141,6 +141,8 @@
     <Content Include="TeacherSprites\Bradshaw R.png" />
     <Content Include="TeacherSprites\Cutch L.png" />
     <Content Include="TeacherSprites\Cutch R.png" />
+    <Content Include="TeacherSprites\Leitch L.png" />
+    <Content Include="TeacherSprites\Letich R.png" />
     <Content Include="TeacherSprites\logo t.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
