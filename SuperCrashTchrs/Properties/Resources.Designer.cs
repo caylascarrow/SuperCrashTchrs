@@ -63,6 +63,16 @@ namespace SuperCrashTchrs.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BattleArena {
+            get {
+                object obj = ResourceManager.GetObject("BattleArena", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Bond_L {
             get {
                 object obj = ResourceManager.GetObject("Bond_L", resourceCulture);
