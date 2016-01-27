@@ -30,7 +30,7 @@ namespace SuperCrashTchrs.Screens
         bool p2move2 = false;
         bool p2move3 = false;
         bool p2move4 = false;
-    
+
         string p1character, p2character;
         int p1hp, p1Atk, p1Def, p1Spd, p2hp, p2Atk, p2Def, p2Spd;
         int sleepTime = 1000;
@@ -47,7 +47,7 @@ namespace SuperCrashTchrs.Screens
             p1character = "Brad";
             p2character = "Bond";
 
-            #region Stat Switchs 
+            #region Stat Switchs
             switch (p1character)
             {
                 case "Bond":
@@ -84,7 +84,7 @@ namespace SuperCrashTchrs.Screens
                     p1Blue.Text = "Essay Question";
                     p1Red.Text = "Historic War";
                     p1Green.Text = "Multiple Choice Question";
-                   // p1Sprite.Image = SuperCrashTchrs.Properties.Resources.Leitch_L;
+                    // p1Sprite.Image = SuperCrashTchrs.Properties.Resources.Leitch_L;
                     break;
                 case "Cutch":
                     p1hp = (ScreenControl.cutchHP);
@@ -204,9 +204,9 @@ namespace SuperCrashTchrs.Screens
             }
             #endregion
         }
-        
+
         public static Random randNum = new Random();
-               
+
         //Button Presses
         private void BattleArena_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
         {
@@ -286,7 +286,7 @@ namespace SuperCrashTchrs.Screens
                 default:
                     break;
             }
-        }     
+        }
 
         #region Character Moves
         public void AttackBot()//Brad DONE no bugs
@@ -318,7 +318,7 @@ namespace SuperCrashTchrs.Screens
             Refresh();
 
             //check if hits
-            if (randNum.Next(1,101) <= 95)
+            if (randNum.Next(1, 101) <= 95)
             {
                 //damage calc
                 damage = (((42 * playerAtk * 30 / opponentDef) / 50) + 2)
@@ -328,12 +328,12 @@ namespace SuperCrashTchrs.Screens
                 //Change HPbar
                 if (p1character == "Brad")
                 {
-                    for (int i = p2hp; i > opponentHP && i > 0; i--) 
+                    for (int i = p2hp; i > opponentHP && i > 0; i--)
                     {
                         p2HPBar.Size = new Size(i, 10);
                         Thread.Sleep(50);
                         Refresh();
-                    }                        
+                    }
                 }
                 else if (p2character == "Brad")
                 {
@@ -399,15 +399,19 @@ namespace SuperCrashTchrs.Screens
             }
             battleStatusOutput.Text = "Ortelli used Clairinet Squeak!";
             Thread.Sleep(sleepTime);
+            Refresh();
+
             opponentDef -= 25;
             battleStatusOutput.Text = "The opponents defence was lowered!";
             Thread.Sleep(sleepTime);
-            
+            Refresh();
+
             if (opponentDef <= 0)
             {
                 opponentDef = 1;
                 battleStatusOutput.Text = "The opponents defence cannot go any lower!";
                 Thread.Sleep(sleepTime);
+                Refresh();
             }
 
             if (p1character == "Ort")
@@ -425,7 +429,7 @@ namespace SuperCrashTchrs.Screens
             //variables
             int playerAtk = 1;
             int opponentDef = 1;
-            int opponentHP = 0;            
+            int opponentHP = 0;
             int damage = 0;
 
             //assign to current player
@@ -433,13 +437,13 @@ namespace SuperCrashTchrs.Screens
             {
                 playerAtk = p1Atk;
                 opponentDef = p2Def;
-                opponentHP = p2hp;                
+                opponentHP = p2hp;
             }
             else if (p2character == "Brad")
             {
                 playerAtk = p2Atk;
                 opponentDef = p1Def;
-                opponentHP = p1hp; 
+                opponentHP = p1hp;
             }
 
             battleStatusOutput.Text = "Bradshaw used Complain About Apple!";
@@ -453,7 +457,7 @@ namespace SuperCrashTchrs.Screens
                 damage = (((42 * playerAtk * 75 / opponentDef) / 50) + 2)
                     * randNum.Next(1, 101) / 100;
                 opponentHP -= damage;
-                
+
                 //change HP bar
                 if (p1character == "Brad")
                 {
@@ -493,17 +497,17 @@ namespace SuperCrashTchrs.Screens
             //return stat changes
             if (p1character == "Brad")
             {
-                p2hp = opponentHP;                
+                p2hp = opponentHP;
             }
             else if (p2character == "Brad")
             {
-                p1hp = opponentHP;                
+                p1hp = opponentHP;
             }
         }
 
         public void CriteriaChart()//Bond DONE
         {
-            int userAtk = 0; 
+            int userAtk = 0;
             int userSpd = 0;
             if (p1character == "Bond")
             {
@@ -514,7 +518,7 @@ namespace SuperCrashTchrs.Screens
             {
                 userAtk = p2Atk;
                 userSpd = p2Spd;
-            }            
+            }
             battleStatusOutput.Text = "Bond used Critera Chart!";
             Thread.Sleep(sleepTime);
             Refresh();
@@ -542,7 +546,7 @@ namespace SuperCrashTchrs.Screens
                 battleStatusOutput.Text = "Bonds Speed can't go any higher!";
                 Thread.Sleep(sleepTime);
                 Refresh();
-            }            
+            }
             if (p1character == "Bond")
             {
                 p1Atk = userAtk;
@@ -659,7 +663,7 @@ namespace SuperCrashTchrs.Screens
                 battleStatusOutput.Text = "The opponents Defence was lowered!";
                 Thread.Sleep(sleepTime);
                 Refresh();
-                                
+
                 if (opponentDef <= 0)
                 {
                     opponentDef = 1;
@@ -716,22 +720,55 @@ namespace SuperCrashTchrs.Screens
         }
 
         public void Dodgeball()//Cutch not done
-        {   
-            /*
+        {
+            int playerAtk = 0;
+            int playerDef = 0;
+            int opponentHP = 1;
+            int opponentDef = 0;
+            int damage = 0;
+
             int accuracyHit = randNum.Next(1,101);
-            double damage;
+            if (p1character == "Cutch")
+            {
+                playerAtk = p1Atk;
+                playerDef = p1Def;
+                opponentDef = p2Def;
+                opponentHP = p2Def;
+            }
+            if (p2character == "Cutch")
+            {
+                playerAtk = p2Atk;
+                playerDef = p2Def;
+                opponentDef = p1Def;
+                opponentHP = p1Def;
+            }
             //check accuracy
             if (accuracyHit <= 90)
             {
-                //show animation
+                
                 
                 damage = (((42 * playerAtk * 100 / opponentDef) / 50) + 2) 
                     * randNum.Next(1,101) / 100;
                 opponentHP -= damage;
-                //for (int i = 100oponents HPbar length; i == opponentHP; i--)
-                //{
-                //    p1HPBar.Size = (i, 10);
-                //}
+                //HPbar change
+                if (p1character == "Cutch")
+                {
+                    for (int i = p2hp; i > opponentHP && i > 0; i--)
+                    {
+                        p2HPBar.Size = new Size(i, 10);
+                        Thread.Sleep(50);
+                        Refresh();
+                    }
+                }
+                else if (p2character == "Cutch")
+                {
+                    for (int i = p1hp; i > opponentHP && i > 0; i--)
+                    {
+                        p1HPBar.Size = new Size(i, 10);
+                        Thread.Sleep(50);
+                        Refresh();
+                    }
+                }
                 //lower user atk
                 playerAtk -= 25;
                 if (playerAtk <= 0)
@@ -760,7 +797,7 @@ namespace SuperCrashTchrs.Screens
             else
             {
                 //set to opponent's turn
-            }*/
+            }
         }
 
         public void DunkOn()//Cutchnot done
@@ -979,8 +1016,8 @@ namespace SuperCrashTchrs.Screens
         }
 
         public void MultiQuestion()//Leitch not done
-        {            
-            
+        {
+
         }
 
         public void PinkPaper()//Steel not done
@@ -1027,7 +1064,7 @@ namespace SuperCrashTchrs.Screens
 
         public void PushUps()//Cutch not done
         {
-            
+
         }
 
         public void QuadraticAttack()//Steel not done
@@ -1051,7 +1088,7 @@ namespace SuperCrashTchrs.Screens
                 playerHP = p2hp;
                 playerDef = p2Def;
             }
-            
+
             battleStatusOutput.Text = "Bond used Talk About Family!";
             Thread.Sleep(sleepTime);
             Refresh();
@@ -1079,8 +1116,8 @@ namespace SuperCrashTchrs.Screens
             Thread.Sleep(sleepTime);
             Refresh();
 
-            if(playerDef >250)
-            {                
+            if (playerDef > 250)
+            {
                 playerDef = 250;
                 battleStatusOutput.Text = "Bonds Defence can't go any higher!";
                 Thread.Sleep(sleepTime);
@@ -1146,7 +1183,7 @@ namespace SuperCrashTchrs.Screens
             }
             battleStatusOutput.Text = "Ortelli used Tuning!";
             Thread.Sleep(sleepTime);
-            playerHP += 88;            
+            playerHP += 88;
             if (playerHP < 175)
             {
                 playerHP = 175;
@@ -1161,13 +1198,13 @@ namespace SuperCrashTchrs.Screens
             else if (p2character == "Ort")
             {
                 p2hp = playerHP;
-            }    
+            }
         }
 
         public void VideoFriday()//Brad DONE
         {
             int playerHP = 0;
-            if(p1character == "Brad")
+            if (p1character == "Brad")
             {
                 playerHP = p1hp;
             }
@@ -1311,7 +1348,7 @@ namespace SuperCrashTchrs.Screens
                     {
                         switch (p1character)
                         {
-                            case "Bond":                                
+                            case "Bond":
                                 TalkAboutFamily();
                                 break;
                             case "Brad":
@@ -1690,7 +1727,7 @@ namespace SuperCrashTchrs.Screens
                         }
                     }
                     #endregion
-                    #endregion                   
+                    #endregion
                 }
                 else if (p1Spd == p2Spd)
                 {
@@ -2148,7 +2185,7 @@ namespace SuperCrashTchrs.Screens
                             }
                         }
                         #endregion
-                    }                    
+                    }
                 }
                 //moveSelectTimer.Enabled = true;
             }
