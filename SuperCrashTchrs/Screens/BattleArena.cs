@@ -37,6 +37,7 @@ namespace SuperCrashTchrs.Screens
 
         int leitchSleep = 0;
         bool ortSleep = false;
+        bool melodiousSleep = false;
 
         #endregion
 
@@ -397,23 +398,33 @@ namespace SuperCrashTchrs.Screens
             {
                 opponentDef = p1Def;
             }
-            battleStatusOutput.Text = "Ortelli used Clairinet Squeak!";
-            Thread.Sleep(sleepTime);
-            Refresh();
-
-            opponentDef -= 25;
-            battleStatusOutput.Text = "The opponents defence was lowered!";
-            Thread.Sleep(sleepTime);
-            Refresh();
-
-            if (opponentDef <= 0)
+            if (ortSleep == false)
             {
-                opponentDef = 1;
-                battleStatusOutput.Text = "The opponents defence cannot go any lower!";
+                battleStatusOutput.Text = "Ortelli used Clairinet Squeak!";
+                Thread.Sleep(sleepTime);
+                Refresh();
+
+                opponentDef -= 25;
+                battleStatusOutput.Text = "The opponents defence was lowered!";
+                Thread.Sleep(sleepTime);
+                Refresh();
+
+                if (opponentDef <= 0)
+                {
+                    opponentDef = 1;
+                    battleStatusOutput.Text = "The opponents defence cannot go any lower!";
+                    Thread.Sleep(sleepTime);
+                    Refresh();
+                }
+            }
+
+            else if (ortSleep == true)
+            {
+                ortSleep = false;
+                battleStatusOutput.Text = "Ortelli needs to recover!";
                 Thread.Sleep(sleepTime);
                 Refresh();
             }
-
             if (p1character == "Ort")
             {
                 p2Def = opponentDef;
@@ -919,7 +930,7 @@ namespace SuperCrashTchrs.Screens
 
         public void EssayQuestion()//Leitch DONE
         {
-            int opponentSpd = 0;
+            int opponentSpd = 0;            
             if (p1character == "Leitch")
             {
                 opponentSpd = p2Spd;
@@ -928,25 +939,29 @@ namespace SuperCrashTchrs.Screens
             {
                 opponentSpd = p1Spd;
             }
-            battleStatusOutput.Text = "Leitch Used Multiple Choice Question!";
-            Thread.Sleep(sleepTime);
-            //accuracy
-            if (randNum.Next(1, 101) <= 80)
-            {
-                opponentSpd -= 50;
-                battleStatusOutput.Text = "The Opponents Speed was lowered!";
-                Thread.Sleep(sleepTime);
 
-                if (opponentSpd <= 0)
+            if (leitchSleep == 0)
+            {
+                battleStatusOutput.Text = "Leitch Used Multiple Choice Question!";
+                Thread.Sleep(sleepTime);
+                //accuracy
+                if (randNum.Next(1, 101) <= 80)
                 {
-                    opponentSpd = 1;
-                    battleStatusOutput.Text = "The Opponents Speed can't go any lower!";
+                    opponentSpd -= 50;
+                    battleStatusOutput.Text = "The Opponents Speed was lowered!";
                     Thread.Sleep(sleepTime);
-                }
-                else
-                {
-                    battleStatusOutput.Text = "But it missed!";
-                    Thread.Sleep(sleepTime);
+
+                    if (opponentSpd <= 0)
+                    {
+                        opponentSpd = 1;
+                        battleStatusOutput.Text = "The Opponents Speed can't go any lower!";
+                        Thread.Sleep(sleepTime);
+                    }
+                    else
+                    {
+                        battleStatusOutput.Text = "But it missed!";
+                        Thread.Sleep(sleepTime);
+                    }
                 }
             }
             if (p1character == "Leitch")
@@ -1071,11 +1086,11 @@ namespace SuperCrashTchrs.Screens
                 Refresh();
             }
             //returns changed stats to characters
-            if (p1character == "Brad")
+            if (p1character == "Bond")
             {
                 p2hp = opponentHP;
             }
-            else if (p2character == "Brad")
+            else if (p2character == "Bond")
             {
                 p1hp = opponentHP;
             }
@@ -1142,7 +1157,30 @@ namespace SuperCrashTchrs.Screens
             }
             else if (p2character == "Cutch")
             {
+                playerAtk = p2Atk;
+            }
+            battleStatusOutput.Text = "McCutcheon used PushUps!";
+            Thread.Sleep(sleepTime);
+            Refresh();
 
+            playerAtk += 25;
+            battleStatusOutput.Text = "McCutcheons Attack rose!";
+            Thread.Sleep(sleepTime);
+            Refresh();
+            if (playerAtk > 250)
+            {
+                playerAtk = 250;
+                battleStatusOutput.Text = "McCutcheons Attack can't go any higher!";
+                Thread.Sleep(sleepTime);
+                Refresh();
+            }
+            if (p1character == "Cutch")
+            {
+                p1Atk = playerAtk;
+            }
+            else if (p2character == "Cutch")
+            {
+                p1Atk = playerAtk;
             }
         }
 
