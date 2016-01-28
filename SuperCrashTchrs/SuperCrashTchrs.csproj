@@ -135,15 +135,26 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="TeacherSprites\BattleArena.png" />
     <Content Include="TeacherSprites\Bond L.png" />
     <Content Include="TeacherSprites\Bond R.png" />
+    <Content Include="TeacherSprites\Bond Select.png" />
     <Content Include="TeacherSprites\Bradshaw L.png" />
     <Content Include="TeacherSprites\Bradshaw R.png" />
+    <Content Include="TeacherSprites\Bradshaw Select.png" />
     <Content Include="TeacherSprites\Cutch L.png" />
     <Content Include="TeacherSprites\Cutch R.png" />
+    <Content Include="TeacherSprites\Cutch Select.png" />
     <Content Include="TeacherSprites\Leitch L.png" />
+    <Content Include="TeacherSprites\Leitch Select.png" />
     <Content Include="TeacherSprites\Letich R.png" />
     <Content Include="TeacherSprites\logo t.png" />
+    <Content Include="TeacherSprites\Ortelli L.png" />
+    <Content Include="TeacherSprites\Ortelli R.png" />
+    <Content Include="TeacherSprites\Ortelli Select.png" />
+    <Content Include="TeacherSprites\Steel L.png" />
+    <Content Include="TeacherSprites\Steel R.png" />
+    <Content Include="TeacherSprites\Steel Select.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

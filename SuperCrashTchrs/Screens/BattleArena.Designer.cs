@@ -192,7 +192,8 @@
             // battleStatusOutput
             // 
             this.battleStatusOutput.AutoEllipsis = true;
-            this.battleStatusOutput.Font = new System.Drawing.Font("Magneto", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.battleStatusOutput.BackColor = System.Drawing.Color.Transparent;
+            this.battleStatusOutput.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.battleStatusOutput.Location = new System.Drawing.Point(3, 66);
             this.battleStatusOutput.Name = "battleStatusOutput";
             this.battleStatusOutput.Size = new System.Drawing.Size(794, 32);
@@ -228,6 +229,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.BackgroundImage = global::SuperCrashTchrs.Properties.Resources.BattleArena;
             this.Controls.Add(this.p2Sprite);
             this.Controls.Add(this.p1Sprite);
             this.Controls.Add(this.battleStatusOutput);
