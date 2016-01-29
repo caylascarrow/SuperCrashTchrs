@@ -1231,6 +1231,128 @@ namespace SuperCrashTchrs.Screens
         public void HistoricWar()//Leitch not done
         {
 
+            //variables
+            int playerAtk = 1;
+            int playerHP = 1;
+            int opponentDef = 1;
+            int opponentHP = 0;
+            int damage = 0;
+            if (leitchSleep == 0)
+            {
+                //assign to current player
+                if (p1character == "Leitch")
+                {
+                    playerAtk = p1Atk;
+                    playerHP = p1hp;
+                    opponentDef = p2Def;
+                    opponentHP = p2hp;
+                }
+                else if (p2character == "Leitch")
+                {
+                    playerAtk = p2Atk;
+                    playerHP = p2hp;
+                    opponentDef = p1Def;
+                    opponentHP = p1hp;
+                }
+
+                battleStatusOutput.Text = "Leitch is teaching about a Historic War!";
+                Thread.Sleep(sleepTime);
+                Refresh();
+
+                //check if attack hits
+                if (randNum.Next(1, 101) <= 90)
+                {
+                    //damage calc
+                    damage = (((42 * playerAtk * 90 / opponentDef) / 50) + 2)
+                        * randNum.Next(1, 101) / 100;
+                    opponentHP -= damage;
+                    playerHP -= damage / 4;
+
+                    //change HP bar
+                    if (p1character == "Leitch")
+                    {
+                        for (int i = p2hp; i > opponentHP && i > 0; i--)
+                        {
+                            p2HPBar.Size = new Size(i, 10);
+                            Thread.Sleep(50);
+                            Refresh();
+                        }
+                    }
+                    else if (p2character == "Leitch")
+                    {
+                        for (int i = p1hp; i > opponentHP && i > 0; i--)
+                        {
+                            p1HPBar.Size = new Size(i, 10);
+                            Thread.Sleep(50);
+                            Refresh();
+                        }
+                    }
+                    //check if fainted opponent fainted
+                    if (opponentHP <= 0)
+                    {
+                        battleStatusOutput.Text = "The opponent fainted!";
+                        Thread.Sleep(sleepTime);
+                        Refresh();
+
+                        ScreenControl.changeScreen(this, "MultiEndScreen");
+                    }
+                    if (p1character == "Leitch")
+                    {
+                        for (int i = p1hp; i > playerHP && i > 0; i--)
+                        {
+                            p1HPBar.Size = new Size(i, 10);
+                            Thread.Sleep(50);
+                            Refresh();
+                        }
+                    }
+                    else if (p2character == "Leitch")
+                    {
+                        for (int i = p2hp; i > playerHP && i > 0; i--)
+                        {
+                            p2HPBar.Size = new Size(i, 10);
+                            Thread.Sleep(50);
+                            Refresh();
+                        }
+                    }
+                    battleStatusOutput.Text = "Leitch is hurt from recoil!";
+                    Thread.Sleep(sleepTime);
+                    Refresh();
+
+                    if (playerHP <= 0)
+                    {
+                        battleStatusOutput.Text = "Leitch fainted!";
+                        Thread.Sleep(sleepTime);
+                        Refresh();
+
+                        ScreenControl.changeScreen(this, "MultiEndScreen");
+                    }
+                }
+                //check if dead
+                else
+                {
+                    battleStatusOutput.Text = "But the opponent skipped this class!";
+                    Thread.Sleep(sleepTime);
+                    Refresh();
+                }
+                //return stat changes
+                if (p1character == "Leitch")
+                {
+                    p1hp = playerHP;
+                    p2hp = opponentHP;
+                }
+                else if (p2character == "Leitch")
+                {
+                    p2hp = playerHP;
+                    p1hp = opponentHP;
+                }
+            }
+            else
+            {
+                battleStatusOutput.Text = "The class is still asleep!";
+                Thread.Sleep(sleepTime);
+                Refresh();
+                leitchSleep--;
+            }
         }
 
         public void MadExperiment()//Bond DONE
@@ -1484,44 +1606,111 @@ namespace SuperCrashTchrs.Screens
 
         public void PinkPaper()//Steel not done
         {
-            /*
-            // local variables called
-            double damage;
-            double playerHpUp;
-            int accuracyHit = randNum.Next(1, 101);
+            //variables
+            int playerAtk = 1;
+            int playerHP = 1;
+            int opponentDef = 1;
+            int opponentHP = 0;
+            int damage = 0;
 
-            if (accuracyHit > 20)
+            //assign to current player
+            if (p1character == "Steel")
             {
-                //show animation/ slight difference in images
-                //play sound(s)
-                //calculate damage opponent takes
-                damage = (((42 * playerAtk * 50 / opponentDef) / 50) + 2)
-               * randNum.Next(1, 101) / 100;
+                playerAtk = p1Atk;
+                playerHP = p1hp;
+                opponentDef = p2Def;
+                opponentHP = p2hp;
+            }
+            else if (p2character == "Steel")
+            {
+                playerAtk = p2Atk;
+                playerHP = p2hp;
+                opponentDef = p1Def;
+                opponentHP = p1hp;
+            }
 
-                //multiply by 0.5
-                playerHpUp = damage * 0.5;
+            battleStatusOutput.Text = "Steel handed out a Pink Paper";
+            Thread.Sleep(sleepTime);
+            Refresh();
 
-                //use half the damage as addition to player's health
-                playerHP = playerHpUp + damage;
+            //check if attack hits
+            if (randNum.Next(1, 101) <= 90)
+            {
+                //damage calc
+                damage = (((42 * playerAtk * 65 / opponentDef) / 50) + 2)
+                    * randNum.Next(1, 101) / 100;
+                opponentHP -= damage;
+                playerHP += damage / 2;
 
-                //calculate amount of HP opponent has left
-                opponentHP = opponentHP - damage;
-
-                //display opponent's and player's new HP
-                if (opponentHP > 0)
+                //change HP bar
+                if (p1character == "Steel")
                 {
-                    return opponentHP;
+                    for (int i = p2hp; i > opponentHP && i > 0; i--)
+                    {
+                        p2HPBar.Size = new Size(i, 10);
+                        Thread.Sleep(50);
+                        Refresh();
+                    }
                 }
-                else
+                else if (p2character == "Steel")
                 {
-                    //go to game over screen
+                    for (int i = p1hp; i > opponentHP && i > 0; i--)
+                    {
+                        p1HPBar.Size = new Size(i, 10);
+                        Thread.Sleep(50);
+                        Refresh();
+                    }
+                }
+                //check if fainted opponent fainted
+                if (opponentHP <= 0)
+                {
+                    battleStatusOutput.Text = "The opponent fainted!";
+                    Thread.Sleep(sleepTime);
+                    Refresh();
+
                     ScreenControl.changeScreen(this, "MultiEndScreen");
                 }
+                if (p1character == "Steel")
+                {
+                    for (int i = p1hp; i < playerHP && i > 0; i++)
+                    {
+                        p1HPBar.Size = new Size(i, 10);
+                        Thread.Sleep(50);
+                        Refresh();
+                    }
+                }
+                else if (p2character == "Steel")
+                {
+                    for (int i = p2hp; i < playerHP && i > 0; i++)
+                    {
+                        p2HPBar.Size = new Size(i, 10);
+                        Thread.Sleep(50);
+                        Refresh();
+                    }
+                }
+                battleStatusOutput.Text = "Steel sapped life from his students!";
+                Thread.Sleep(sleepTime);
+                Refresh();
+                                
             }
+            //check if missed
             else
             {
-                //send move failed message
-            }*/
+                battleStatusOutput.Text = "But the opponent brought a $100 calculator!";
+                Thread.Sleep(sleepTime);
+                Refresh();
+            }
+            //return stat changes
+            if (p1character == "Steel")
+            {
+                p1hp = playerHP;
+                p2hp = opponentHP;
+            }
+            else if (p2character == "Steel")
+            {
+                p2hp = playerHP;
+                p1hp = opponentHP;
+            }
         }
 
         public void PushUps()//Cutch done
