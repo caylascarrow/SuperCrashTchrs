@@ -290,7 +290,11 @@ namespace SuperCrashTchrs.Screens
         }
 
         #region Character Moves
-        public void AttackBot()//Brad DONE no bugs
+        
+        ///Moves to be done still:
+        ///Pink Paper
+        ///Historic War
+        public void AttackBot()//Brad DONE
         {
             //intergers
             int playerAtk = 1;
@@ -704,7 +708,7 @@ namespace SuperCrashTchrs.Screens
             }
         }
 
-        public void Documentary()//Leitch not done
+        public void Documentary()//Leitch done
         {
             int playerHP = 1;
             if (leitchSleep == 0)
@@ -935,13 +939,43 @@ namespace SuperCrashTchrs.Screens
             }
         }
 
-        public void EqualSign()//Steel not done
+        public void EqualSign()//Steel done
         {
+            int playerHP = 1;
+            int opponentHP = 1;
             if (p1character == "Steel")
             {
-
+                playerHP = p1hp;
+                opponentHP = p2hp;
             }
+            else if (p2character == "Steel")
+            {
+                playerHP = p2hp;
+                opponentHP = p1hp;
+            }
+            battleStatusOutput.Text = "Steel added a '='!";
+            Thread.Sleep(sleepTime);
+            Refresh();
+            battleStatusOutput.Text = "Steel Balanced his HP with the opponent!";
+            Thread.Sleep(sleepTime);
+            Refresh();
+            playerHP = (playerHP + opponentHP) / 2;
+            opponentHP = playerHP;
 
+            if (p1character == "Steel")
+            {
+                p1HPBar.Size = new Size(playerHP, 10);
+                p2HPBar.Size = new Size(opponentHP, 10);
+                p1hp = playerHP;
+                p2hp = opponentHP;
+            }
+            else if (p2character == "Steel")
+            {
+                p2HPBar.Size = new Size(playerHP, 10);
+                p1HPBar.Size = new Size(opponentHP, 10);
+                p2hp = playerHP;
+                p1hp = opponentHP;
+            }
         }
 
         public void EssayQuestion()//Leitch DONE
@@ -990,48 +1024,211 @@ namespace SuperCrashTchrs.Screens
             }
         }
 
-        public void FullBandFF()//Ort not done
+        public void FullBandFF()//Ort done
         {
-            /*
-            if (ortSleep == 0)
-            {
-                //local variables called
-                double damage;
-                //know if player's move continues out sucessfully
-                int accuracyHit = randNum.Next(1, 101);
+            melodiousSleep = false;
 
-                if (accuracyHit > 10)
+            int playerAtk = 0;
+            int opponentDef = 0;
+            int opponentHP = 1;
+            if (ortSleep == false)
+            {
+                if (p1character == "Ort")
                 {
-                    //show animation
-                    //play sound(s)
-                    //calculate damage opponent takes
-                    damage = (((42 * playerAtk * 120 / opponentDef) / 50) + 2)
-                    * randNum.Next(1, 101) / 100;
-                    //calculate amount of HP opponent has left
-                    opponentHP = opponentHP - damage;
-                    //display opponent's new HP
-                    if (opponentHP > 0)
+                    playerAtk = p1Atk;
+                    opponentDef = p2Def;
+                    opponentHP = p2hp;
+                }
+                else if (p2character == "Ort")
+                {
+                    playerAtk = p2Atk;
+                    opponentDef = p1Def;
+                    opponentHP = p1hp;
+                }
+
+                battleStatusOutput.Text = "Ortelli allowed a Full Band Fortissimo!";
+                Thread.Sleep(sleepTime);
+                Refresh();
+                ortSleep = true;
+                //check if attack hits
+                if (randNum.Next(1, 101) <= 90)
+                {
+                    //damage calc
+                    opponentHP -= (((42 * playerAtk * 120 / opponentDef) / 50) + 2)
+                        * randNum.Next(1, 101) / 100;
+                    //change HP bar
+                    if (p1character == "Ort")
                     {
-                        return opponentHP;
+                        for (int i = p2hp; i > opponentHP && i > 0; i--)
+                        {
+                            p2HPBar.Size = new Size(i, 10);
+                            Thread.Sleep(50);
+                            Refresh();
+                        }
                     }
-                    else
+                    else if (p2character == "Ort")
                     {
-                        //go to game over screen
+                        for (int i = p1hp; i > opponentHP && i > 0; i--)
+                        {
+                            p1HPBar.Size = new Size(i, 10);
+                            Thread.Sleep(50);
+                            Refresh();
+                        }
+                    }
+                    //check if fainted
+                    if (opponentHP <= 0)
+                    {
+                        battleStatusOutput.Text = "The opponent fainted!";
+                        Thread.Sleep(sleepTime);
+                        Refresh();
+
                         ScreenControl.changeScreen(this, "MultiEndScreen");
                     }
                 }
+                //check if dead
                 else
                 {
-                    //send move failed message
+                    battleStatusOutput.Text = "But the opponent wasn't listening!";
+                    Thread.Sleep(sleepTime);
+                    Refresh();
+                }
+                //return stat changes
+                if (p1character == "Ort")
+                {
+                    p2hp = opponentHP;
+                }
+                else if (p2character == "Ort")
+                {
+                    p1hp = opponentHP;
                 }
             }
             else
             {
-                //send ortelli is too tired message
-            }*/
+                battleStatusOutput.Text = "The band needs to rest!";
+                Thread.Sleep(sleepTime);
+                Refresh();
+                ortSleep = false;
+            }
         }
 
-        public void HealthClass()//Cutch not done
+        public void HealthClass()//Cutch done
+        {
+            //variables
+            int playerAtk = 1;
+            int playerHP = 1;
+            int opponentDef = 1;
+            int opponentHP = 0;
+            int damage = 0;
+
+            //assign to current player
+            if (p1character == "Cutch")
+            {
+                playerAtk = p1Atk;
+                playerHP = p1hp;
+                opponentDef = p2Def;
+                opponentHP = p2hp;
+            }
+            else if (p2character == "Cutch")
+            {
+                playerAtk = p2Atk;
+                playerHP = p2hp;
+                opponentDef = p1Def;
+                opponentHP = p1hp;
+            }
+
+            battleStatusOutput.Text = "McCutcheon is teaching a Health Class!";
+            Thread.Sleep(sleepTime);
+            Refresh();
+
+            //check if attack hits
+            if (randNum.Next(1, 101) <= 90)
+            {
+                //damage calc
+                damage = (((42 * playerAtk * 90 / opponentDef) / 50) + 2)
+                    * randNum.Next(1, 101) / 100;
+                opponentHP -= damage;
+                playerHP -= damage / 4;
+
+                //change HP bar
+                if (p1character == "Cutch")
+                {
+                    for (int i = p2hp; i > opponentHP && i > 0; i--)
+                    {
+                        p2HPBar.Size = new Size(i, 10);
+                        Thread.Sleep(50);
+                        Refresh();
+                    }
+                }
+                else if (p2character == "Cutch")
+                {
+                    for (int i = p1hp; i > opponentHP && i > 0; i--)
+                    {
+                        p1HPBar.Size = new Size(i, 10);
+                        Thread.Sleep(50);
+                        Refresh();
+                    }
+                }
+                //check if fainted opponent fainted
+                if (opponentHP <= 0)
+                {
+                    battleStatusOutput.Text = "The opponent fainted!";
+                    Thread.Sleep(sleepTime);
+                    Refresh();
+
+                    ScreenControl.changeScreen(this, "MultiEndScreen");
+                }                
+                if (p1character == "Cutch")
+                {
+                    for (int i = p1hp; i > playerHP && i > 0; i--)
+                    {
+                        p1HPBar.Size = new Size(i, 10);
+                        Thread.Sleep(50);
+                        Refresh();
+                    }
+                }
+                else if (p2character == "Cutch")
+                {
+                    for (int i = p2hp; i > playerHP && i > 0; i--)
+                    {
+                        p2HPBar.Size = new Size(i, 10);
+                        Thread.Sleep(50);
+                        Refresh();
+                    }
+                }
+                battleStatusOutput.Text = "McCutcheon is hurt from recoil!";
+                Thread.Sleep(sleepTime);
+                Refresh();
+
+                if (playerHP <=0)
+                {
+                    battleStatusOutput.Text = "McCutcheon fainted!";
+                    Thread.Sleep(sleepTime);
+                    Refresh();
+
+                    ScreenControl.changeScreen(this, "MultiEndScreen");
+                }
+            }
+            //check if dead
+            else
+            {
+                battleStatusOutput.Text = "But the opponent skipped this class!";
+                Thread.Sleep(sleepTime);
+                Refresh();
+            }
+            //return stat changes
+            if (p1character == "Cutch")
+            {
+                p1hp = playerHP;
+                p2hp = opponentHP;
+            }
+            else if (p2character == "Cutch")
+            {
+                p2hp = playerHP;
+                p1hp = opponentHP;
+            }
+        }
+
+        public void HistoricWar()//Leitch not done
         {
 
         }
@@ -1112,9 +1309,97 @@ namespace SuperCrashTchrs.Screens
             }
         }
 
-        public void MelodiousPassage()//Ort not done
-        {
+        public void MelodiousPassage()//Ort done
+        {            
+            int playerAtk = 0;
+            int opponentDef = 0;
+            int opponentHP = 1;
+            if (ortSleep == false && melodiousSleep == false)
+            {
+                if (p1character == "Ort")
+                {
+                    playerAtk = p1Atk;
+                    opponentDef = p2Def;
+                    opponentHP = p2hp;
+                }
+                else if (p2character == "Ort")
+                {
+                    playerAtk = p2Atk;
+                    opponentDef = p1Def;
+                    opponentHP = p1hp;
+                }
 
+                battleStatusOutput.Text = "Ortelli conducted a Melodious Passage!";
+                Thread.Sleep(sleepTime);
+                Refresh();
+                ortSleep = true;
+                //check if attack hits
+                if (randNum.Next(1, 101) <= 95)
+                {
+                    //damage calc
+                    opponentHP -= (((42 * playerAtk * 75 / opponentDef) / 50) + 2)
+                        * randNum.Next(1, 101) / 100;
+                    melodiousSleep = true;
+                    //change HP bar
+                    if (p1character == "Ort")
+                    {
+                        for (int i = p2hp; i > opponentHP && i > 0; i--)
+                        {
+                            p2HPBar.Size = new Size(i, 10);
+                            Thread.Sleep(50);
+                            Refresh();
+                        }
+                    }
+                    else if (p2character == "Ort")
+                    {
+                        for (int i = p1hp; i > opponentHP && i > 0; i--)
+                        {
+                            p1HPBar.Size = new Size(i, 10);
+                            Thread.Sleep(50);
+                            Refresh();
+                        }
+                    }
+                    //check if fainted
+                    if (opponentHP <= 0)
+                    {
+                        battleStatusOutput.Text = "The opponent fainted!";
+                        Thread.Sleep(sleepTime);
+                        Refresh();
+
+                        ScreenControl.changeScreen(this, "MultiEndScreen");
+                    }
+                }
+                //check if dead
+                else
+                {
+                    battleStatusOutput.Text = "But the opponent wasn't listening!";
+                    Thread.Sleep(sleepTime);
+                    Refresh();
+                }
+                //return stat changes
+                if (p1character == "Ort")
+                {
+                    p2hp = opponentHP;
+                }
+                else if (p2character == "Ort")
+                {
+                    p1hp = opponentHP;
+                }
+            }
+            else if (ortSleep == true)
+            {
+                battleStatusOutput.Text = "The band needs to rest!";
+                Thread.Sleep(sleepTime);
+                Refresh();
+                ortSleep = false;
+            }
+            else if (melodiousSleep == true)
+            {
+                battleStatusOutput.Text = "The band just played that!";
+                Thread.Sleep(sleepTime);
+                Refresh();
+                melodiousSleep = false;
+            }
         }
 
         public void MultiQuestion()//Leitch done?
@@ -1456,6 +1741,8 @@ namespace SuperCrashTchrs.Screens
 
         public void Tuning()//Ort DONE
         {
+            melodiousSleep = false;
+
             int playerHP = 0;
             if (p1character == "Ort")
             {
