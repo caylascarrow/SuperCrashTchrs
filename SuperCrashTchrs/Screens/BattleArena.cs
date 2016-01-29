@@ -687,7 +687,7 @@ namespace SuperCrashTchrs.Screens
             //If misses
             else
             {
-                battleStatusOutput.Text = "But the opponent avoided the attack!";
+                battleStatusOutput.Text = "But the opponent wasn't grossed out!";
                 Thread.Sleep(sleepTime);
                 Refresh();
             }
