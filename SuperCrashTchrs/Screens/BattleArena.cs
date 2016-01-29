@@ -314,7 +314,7 @@ namespace SuperCrashTchrs.Screens
                 opponentAtk = p1Atk;
             }
 
-            battleStatusOutput.Text = "Bradshaw used Attack Bot!";
+            battleStatusOutput.Text = "Bradshaw created a robot to bother the opponent!";
             Thread.Sleep(sleepTime);
             Refresh();
 
@@ -370,7 +370,7 @@ namespace SuperCrashTchrs.Screens
             //if attack misses    
             else
             {
-                battleStatusOutput.Text = "But the opponent avoided the attack!";
+                battleStatusOutput.Text = "But the robot malfunctioned!";
                 Thread.Sleep(sleepTime);
                 Refresh();
             }
@@ -387,8 +387,9 @@ namespace SuperCrashTchrs.Screens
             }
         }
 
-        public void ClarinetSqueak()//Ort kinda DONE
+        public void ClarinetSqueak()//Ort DONE
         {
+            melodiousSleep = false;
             int opponentDef = 0;
             if (p1character == "Ort")
             {
@@ -400,7 +401,7 @@ namespace SuperCrashTchrs.Screens
             }
             if (ortSleep == false)
             {
-                battleStatusOutput.Text = "Ortelli used Clairinet Squeak!";
+                battleStatusOutput.Text = "A Clairinet in the Band (Ben F.) created an obnoxious squeak!";
                 Thread.Sleep(sleepTime);
                 Refresh();
 
@@ -457,7 +458,7 @@ namespace SuperCrashTchrs.Screens
                 opponentHP = p1hp;
             }
 
-            battleStatusOutput.Text = "Bradshaw used Complain About Apple!";
+            battleStatusOutput.Text = "Bradshaw started Complaining About Apple!";
             Thread.Sleep(sleepTime);
             Refresh();
 
@@ -501,7 +502,7 @@ namespace SuperCrashTchrs.Screens
             //check if dead
             else
             {
-                battleStatusOutput.Text = "But the opponent avoided the attack!";
+                battleStatusOutput.Text = "But the opponent never liked apple in the first place!";
                 Thread.Sleep(sleepTime);
                 Refresh();
             }
@@ -581,7 +582,7 @@ namespace SuperCrashTchrs.Screens
             {
                 playerDef = p2Def;
             }
-            battleStatusOutput.Text = "Bradshaw used Defender Bot!";
+            battleStatusOutput.Text = "Bradshaw created a robot to defend himself!";
             Thread.Sleep(sleepTime);
             Refresh();
             playerDef -= 25;
@@ -607,7 +608,7 @@ namespace SuperCrashTchrs.Screens
             }
         }
 
-        public void Dissection()//Bond DONE no bugs
+        public void Dissection()//Bond DONE
         {
             //variables
             int playerAtk = 1;
@@ -629,7 +630,7 @@ namespace SuperCrashTchrs.Screens
                 opponentHP = p1hp;
             }
 
-            battleStatusOutput.Text = "Bond used Discetion!";
+            battleStatusOutput.Text = "Bond did a Dissection in class!";
             Thread.Sleep(sleepTime);
             Refresh();
 
@@ -705,29 +706,44 @@ namespace SuperCrashTchrs.Screens
 
         public void Documentary()//Leitch not done
         {
-            /*
-            //check if leitch is asleep
-            if (leitchSleep != 0)
+            int playerHP = 1;
+            if (leitchSleep == 0)
             {
-                //if asleep pass the turn
-                leitchSleep--;
-                battleStatusOutput.Text = "Leitch is fast asleep...";
-                Thread.Sleep(sleepTime);
-            }
-            else
-            {
-                int playerHP = 0;
                 if (p1character == "Leitch")
                 {
-                    playerHP = p1hp; 
-                } 
+                    playerHP = p1hp;
+                }
                 else if (p2character == "Leitch")
                 {
                     playerHP = p2hp;
                 }
-                playerHP = 200;
-                
-            }*/
+                battleStatusOutput.Text = "Leitch put on a Documentary!";
+                Thread.Sleep(sleepTime);
+                Refresh();
+                playerHP = ScreenControl.leitchHP;
+                leitchSleep = 2;
+                battleStatusOutput.Text = "Leitch Restored his Health!";
+                Thread.Sleep(sleepTime);
+                Refresh();
+                battleStatusOutput.Text = "Leitch put the class to Sleep and needs to wait 2 turns!";
+                Thread.Sleep(sleepTime);
+                Refresh();
+                if (p1character == "Leitch")
+                {
+                    p1HPBar.Size = new Size(playerHP, 10);
+                }
+                else if (p2character == "Leitch")
+                {
+                    p2HPBar.Size = new Size(playerHP, 10);
+                }
+            }
+            else
+            {
+                battleStatusOutput.Text = "The class is still asleep!";
+                Thread.Sleep(sleepTime);
+                Refresh();
+                leitchSleep--;
+            }
         }
 
         public void Dodgeball()//Cutch done
@@ -753,7 +769,7 @@ namespace SuperCrashTchrs.Screens
                 opponentDef = p1Def;
                 opponentHP = p1Def;
             }
-            battleStatusOutput.Text = "McCutcheon used DODGEBALL!";
+            battleStatusOutput.Text = "McCutcheon started a game of DODGEBALL!";
             Thread.Sleep(sleepTime);
             Refresh();
 
@@ -860,7 +876,7 @@ namespace SuperCrashTchrs.Screens
                 opponentHP = p1hp;
             }
 
-            battleStatusOutput.Text = "McCutcheon used Dunk ON!";
+            battleStatusOutput.Text = "McCutcheon Slam Dunked on the opponent!";
             Thread.Sleep(sleepTime);
             Refresh();
 
@@ -901,10 +917,10 @@ namespace SuperCrashTchrs.Screens
                     ScreenControl.changeScreen(this, "MultiEndScreen");
                 }
             }
-            //check if dead
+            //if misses
             else
             {
-                battleStatusOutput.Text = "But the opponent avoided the attack!";
+                battleStatusOutput.Text = "But the opponent blocked the shot!";
                 Thread.Sleep(sleepTime);
                 Refresh();
             }
@@ -942,7 +958,7 @@ namespace SuperCrashTchrs.Screens
 
             if (leitchSleep == 0)
             {
-                battleStatusOutput.Text = "Leitch Used Multiple Choice Question!";
+                battleStatusOutput.Text = "Leitch made the opponent write an Essay question!";
                 Thread.Sleep(sleepTime);
                 //accuracy
                 if (randNum.Next(1, 101) <= 80)
@@ -1041,7 +1057,7 @@ namespace SuperCrashTchrs.Screens
                 opponentHP = p1hp;
             }
             //text to screen
-            battleStatusOutput.Text = "Bond used Mad Experiment!";
+            battleStatusOutput.Text = "Bond did a super cool experiment!";
             Thread.Sleep(sleepTime);
             Refresh();
             //checks if misses
@@ -1081,7 +1097,7 @@ namespace SuperCrashTchrs.Screens
             else
             {
                 //if attack misses
-                battleStatusOutput.Text = "But the opponent avoided the attack!";
+                battleStatusOutput.Text = "But it didnt work as planned!";
                 Thread.Sleep(sleepTime);
                 Refresh();
             }
@@ -1101,9 +1117,84 @@ namespace SuperCrashTchrs.Screens
 
         }
 
-        public void MultiQuestion()//Leitch not done
+        public void MultiQuestion()//Leitch done?
         {
+            int playerAtk = 0;
+            int opponentHP = 1;
+            int opponentDef = 0;
+            if (leitchSleep == 0)
+            {
+                if (p1character == "Leitch")
+                {
+                    playerAtk = p1Atk;
+                    opponentHP = p2hp;
+                    opponentDef = p2Def;
+                }
+                else if (p2character == "Leitch")
+                {
+                    playerAtk = p2Atk;
+                    opponentHP = p1hp;
+                    opponentDef = p1Def;
+                }
+                battleStatusOutput.Text = "Leitch gave out a Multiple Choice Question!";
+                Thread.Sleep(sleepTime);
+                Refresh();
+                if (randNum.Next(1, 101) < 75)
+                {
+                    //damage calc
+                    opponentHP -= (((42 * playerAtk * 90 / opponentDef) / 50) + 2)
+                        * randNum.Next(1, 101) / 100;
 
+                    //Change HPbar
+                    if (p1character == "Leitch")
+                    {
+                        for (int i = p2hp; i > opponentHP && i > 0; i--)
+                        {
+                            p2HPBar.Size = new Size(i, 10);
+                            Thread.Sleep(50);
+                            Refresh();
+                        }
+                    }
+                    else if (p2character == "Leitch")
+                    {
+                        for (int i = p1hp; i > opponentHP && i > 0; i--)
+                        {
+                            p1HPBar.Size = new Size(i, 10);
+                            Thread.Sleep(50);
+                            Refresh();
+                        }
+                    }
+                    //check if opponent dead
+                    if (opponentHP <= 0)
+                    {
+                        battleStatusOutput.Text = "The opponent fainted!";
+                        Thread.Sleep(sleepTime);
+                        Refresh();
+                        ScreenControl.changeScreen(this, "MultiEndScreen");
+                    }
+                }
+                else
+                {
+                    battleStatusOutput.Text = "But it was Answered correct!";
+                    Thread.Sleep(sleepTime);
+                    Refresh();
+                }
+                if (p1character == "Leitch")
+                {                    
+                    p2hp = opponentHP;
+                }
+                else if (p2character == "Leitch")
+                {
+                    p1hp = opponentHP;
+                }
+            }
+            else
+            {
+                battleStatusOutput.Text = "The class is still asleep!";
+                Thread.Sleep(sleepTime);
+                Refresh();
+                leitchSleep--;
+            }
         }
 
         public void PinkPaper()//Steel not done
@@ -1148,7 +1239,7 @@ namespace SuperCrashTchrs.Screens
             }*/
         }
 
-        public void PushUps()//Cutch not done
+        public void PushUps()//Cutch done
         {
             int playerAtk = 0;
             if (p1character == "Cutch")
@@ -1159,7 +1250,7 @@ namespace SuperCrashTchrs.Screens
             {
                 playerAtk = p2Atk;
             }
-            battleStatusOutput.Text = "McCutcheon used PushUps!";
+            battleStatusOutput.Text = "McCutcheon did some Pushups!";
             Thread.Sleep(sleepTime);
             Refresh();
 
@@ -1206,7 +1297,7 @@ namespace SuperCrashTchrs.Screens
                 opponentHP = p1hp;
             }
 
-            battleStatusOutput.Text = "Steel used Quadratic Attack!";
+            battleStatusOutput.Text = "Steel attacked using a quadratic expression!";
             Thread.Sleep(sleepTime);
             Refresh();
 
@@ -1250,7 +1341,7 @@ namespace SuperCrashTchrs.Screens
             //check if missed
             else
             {
-                battleStatusOutput.Text = "But the opponent avoided the attack!";
+                battleStatusOutput.Text = "But the opponent knew the solution!";
                 Thread.Sleep(sleepTime);
                 Refresh();
             }
@@ -1282,7 +1373,7 @@ namespace SuperCrashTchrs.Screens
                 playerDef = p2Def;
             }
 
-            battleStatusOutput.Text = "Bond used Talk About Family!";
+            battleStatusOutput.Text = "Bond told a long story about his family!";
             Thread.Sleep(sleepTime);
             Refresh();
             //Health restoration
@@ -1340,7 +1431,7 @@ namespace SuperCrashTchrs.Screens
             {
                 playerDef = p2Def;
             }
-            battleStatusOutput.Text = "Steel used Textbook Barricade!";
+            battleStatusOutput.Text = "Steel used his engineer skills to make a Textbook Barricade!";
             Thread.Sleep(sleepTime);
             playerDef -= 25;
             battleStatusOutput.Text = "Steels Defence was raised!";
@@ -1377,8 +1468,9 @@ namespace SuperCrashTchrs.Screens
 
             if (ortSleep == false)
             {                
-                battleStatusOutput.Text = "Ortelli used Tuning!";
+                battleStatusOutput.Text = "Ortelli allowed the flutes to tune!";
                 Thread.Sleep(sleepTime);
+                Refresh();
                 playerHP += 88;
                 if (playerHP < 175)
                 {
@@ -1386,10 +1478,22 @@ namespace SuperCrashTchrs.Screens
                 }
                 battleStatusOutput.Text = "Ortelli restored her HP!";
                 Thread.Sleep(sleepTime);
+                Refresh();
+                if (p1character == "Ort")
+                {
+                    p1HPBar.Size = new Size(playerHP, 10);
+                }
+                else if (p2character == "Ort")
+                {
+                    p2HPBar.Size = new Size(playerHP, 10);
+                }
             }
             else
             {
-                battleStatusOutput.Text = "Ortelli needs to recover!";
+                ortSleep = false;
+                battleStatusOutput.Text = "The band needs to rest!";
+                Thread.Sleep(sleepTime);
+                Refresh();
             }
             if (p1character == "Ort")
             {
@@ -1413,7 +1517,7 @@ namespace SuperCrashTchrs.Screens
                 playerHP = p2hp;
             }
 
-            battleStatusOutput.Text = "Bradshaw used Video Friday!";
+            battleStatusOutput.Text = "Bradshaw honored the Video Friday Tradition!";
             Thread.Sleep(sleepTime);
             Refresh();
 
