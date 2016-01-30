@@ -36,6 +36,10 @@ namespace SuperCrashTchrs.Screens
         int p1hp, p1Atk, p1Def, p1Spd, p2hp, p2Atk, p2Def, p2Spd;
         int sleepTime = 1000;
 
+        //attack and damage sound players
+        SoundPlayer attackPlayer = new SoundPlayer(Properties.Resources.Attack_Sound);
+        SoundPlayer damagePlaer = new SoundPlayer(Properties.Resources.Pain_Sound);
+
         //int leitchSleep = 0;
         //bool ortSleep = false;
 
