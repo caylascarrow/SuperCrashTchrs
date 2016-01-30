@@ -61,6 +61,15 @@ namespace SuperCrashTchrs.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream Attack_Sound {
+            get {
+                return ResourceManager.GetStream("Attack_Sound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap BattleArena {
@@ -137,6 +146,15 @@ namespace SuperCrashTchrs.Properties {
             get {
                 object obj = ResourceManager.GetObject("logo_t", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream Pain_Sound {
+            get {
+                return ResourceManager.GetStream("Pain_Sound", resourceCulture);
             }
         }
     }

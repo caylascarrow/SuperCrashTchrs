@@ -135,6 +135,8 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="Sounds\Attack Sound.wav" />
+    <Content Include="Sounds\Pain Sound.wav" />
     <Content Include="TeacherSprites\BattleArena.png" />
     <Content Include="TeacherSprites\Bond L.png" />
     <Content Include="TeacherSprites\Bond R.png" />

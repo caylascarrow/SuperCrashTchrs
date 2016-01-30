@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
+using System.Media;
 
 namespace SuperCrashTchrs.Screens
 {
@@ -34,6 +35,10 @@ namespace SuperCrashTchrs.Screens
         string p1character, p2character;
         int p1hp, p1Atk, p1Def, p1Spd, p2hp, p2Atk, p2Def, p2Spd;
         int sleepTime = 1000;
+
+        //sound players for battle
+        SoundPlayer attackPlayer = new SoundPlayer(Properties.Resources.Attack_Sound);
+        SoundPlayer damagePlayer = new SoundPlayer(Properties.Resources.Pain_Sound);
 
         //int leitchSleep = 0;
         //bool ortSleep = false;
@@ -289,7 +294,7 @@ namespace SuperCrashTchrs.Screens
         }
 
         #region Character Moves
-        public void AttackBot()//Brad DONE no bugs
+        public void AttackBot()//Brad DONE no bugs; sounds in
         {
             //intergers
             int playerAtk = 1;
@@ -313,19 +318,23 @@ namespace SuperCrashTchrs.Screens
                 opponentAtk = p1Atk;
             }
 
+            //play attacking sound, display text
+            attackPlayer.Play();
             battleStatusOutput.Text = "Bradshaw used Attack Bot!";
             Thread.Sleep(sleepTime);
             Refresh();
 
-            //check if hits
+            //check if move hits
             if (randNum.Next(1, 101) <= 95)
             {
-                //damage calc
+                //damage calculation
                 damage = (((42 * playerAtk * 30 / opponentDef) / 50) + 2)
                     * randNum.Next(1, 101) / 100;
                 opponentHP -= damage;
+                //play damage sound before changing hp
+                damagePlayer.Play();
 
-                //Change HPbar
+                //Change HPbar length
                 if (p1character == "Brad")
                 {
                     for (int i = p2hp; i > opponentHP && i > 0; i--)
@@ -344,7 +353,7 @@ namespace SuperCrashTchrs.Screens
                         Refresh();
                     }
                 }
-                //check if opponent dead
+                //check if opponent is KO
                 if (opponentHP <= 0)
                 {
                     battleStatusOutput.Text = "The opponent fainted!";
@@ -355,12 +364,14 @@ namespace SuperCrashTchrs.Screens
 
                 //lower attack stat
                 opponentAtk -= 25;
+                //display message
                 battleStatusOutput.Text = "The opponents Attack was lowered!";
                 Thread.Sleep(sleepTime);
                 Refresh();
                 if (opponentAtk <= 0)
                 {
                     opponentAtk = 1;
+                    //display message
                     battleStatusOutput.Text = "The opponents Attack can't go any lower!";
                     Thread.Sleep(sleepTime);
                     Refresh();
@@ -424,7 +435,7 @@ namespace SuperCrashTchrs.Screens
             }
         }
 
-        public void ComplainAbout()//Brad DONE
+        public void ComplainAbout()//Brad; with sound DONE
         {
             //variables
             int playerAtk = 1;
@@ -445,7 +456,8 @@ namespace SuperCrashTchrs.Screens
                 opponentDef = p1Def;
                 opponentHP = p1hp;
             }
-
+            //play sound, display text
+            attackPlayer.Play();
             battleStatusOutput.Text = "Bradshaw used Complain About Apple!";
             Thread.Sleep(sleepTime);
             Refresh();
@@ -457,6 +469,8 @@ namespace SuperCrashTchrs.Screens
                 damage = (((42 * playerAtk * 75 / opponentDef) / 50) + 2)
                     * randNum.Next(1, 101) / 100;
                 opponentHP -= damage;
+                //play damage sound
+                damagePlayer.Play();
 
                 //change HP bar
                 if (p1character == "Brad")
@@ -618,6 +632,8 @@ namespace SuperCrashTchrs.Screens
                 opponentHP = p1hp;
             }
 
+            //play sound, display text
+            attackPlayer.Play();
             battleStatusOutput.Text = "Bond used Discetion!";
             Thread.Sleep(sleepTime);
             Refresh();
@@ -629,6 +645,9 @@ namespace SuperCrashTchrs.Screens
                 damage = (((42 * playerAtk * 30 / opponentDef) / 50) + 2)
                     * randNum.Next(1, 101) / 100;
                 opponentHP -= damage;
+                //play damage sound
+                damagePlayer.Play();
+
                 //HPbar changes
                 if (p1character == "Bond")
                 {

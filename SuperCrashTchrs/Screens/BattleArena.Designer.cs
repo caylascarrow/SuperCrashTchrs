@@ -174,6 +174,7 @@
             // HPlabel1
             // 
             this.HPlabel1.AutoSize = true;
+            this.HPlabel1.BackColor = System.Drawing.Color.Transparent;
             this.HPlabel1.Location = new System.Drawing.Point(55, 588);
             this.HPlabel1.Name = "HPlabel1";
             this.HPlabel1.Size = new System.Drawing.Size(25, 13);
@@ -183,6 +184,7 @@
             // HPlabel2
             // 
             this.HPlabel2.AutoSize = true;
+            this.HPlabel2.BackColor = System.Drawing.Color.Transparent;
             this.HPlabel2.Location = new System.Drawing.Point(433, 588);
             this.HPlabel2.Name = "HPlabel2";
             this.HPlabel2.Size = new System.Drawing.Size(25, 13);
