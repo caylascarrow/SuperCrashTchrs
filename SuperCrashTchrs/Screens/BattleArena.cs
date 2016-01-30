@@ -38,11 +38,10 @@ namespace SuperCrashTchrs.Screens
 
         //attack and damage sound players
         SoundPlayer attackPlayer = new SoundPlayer(Properties.Resources.Attack_Sound);
-        SoundPlayer damagePlaer = new SoundPlayer(Properties.Resources.Pain_Sound);
+        SoundPlayer damagePlayer = new SoundPlayer(Properties.Resources.Pain_Sound);
 
         int leitchSleep = 0;
         bool ortSleep = false;
-        bool melodiousSleep = false;
 
         #endregion
 
@@ -295,7 +294,7 @@ namespace SuperCrashTchrs.Screens
         }
 
         #region Character Moves
-        public void AttackBot()//Brad DONE no bugs
+        public void AttackBot()//Brad DONE; sound in; no bugs
         {
             //intergers
             int playerAtk = 1;
@@ -319,6 +318,7 @@ namespace SuperCrashTchrs.Screens
                 opponentAtk = p1Atk;
             }
 
+            //display text
             battleStatusOutput.Text = "Bradshaw used Attack Bot!";
             Thread.Sleep(sleepTime);
             Refresh();
@@ -326,6 +326,8 @@ namespace SuperCrashTchrs.Screens
             //check if move hits
             if (randNum.Next(1, 101) <= 95)
             {
+                //attack sound
+                attackPlayer.Play();
                 //damage calculation
                 damage = (((42 * playerAtk * 30 / opponentDef) / 50) + 2)
                     * randNum.Next(1, 101) / 100;
@@ -396,7 +398,7 @@ namespace SuperCrashTchrs.Screens
             }
         }
 
-        public void ClarinetSqueak()//Ort DONE
+        public void ClarinetSqueak()//Ort; needs sound DONE
         {
             melodiousSleep = false;
             int opponentDef = 0;
@@ -445,7 +447,7 @@ namespace SuperCrashTchrs.Screens
             }
         }
 
-        public void ComplainAbout()//Brad; with sound DONE
+        public void ComplainAbout()//Brad; with sound; DONE
         {
             //variables
             int playerAtk = 1;
@@ -467,6 +469,7 @@ namespace SuperCrashTchrs.Screens
                 opponentHP = p1hp;
             }
 
+            //display text
             battleStatusOutput.Text = "Bradshaw used Complain About Apple!";
             Thread.Sleep(sleepTime);
             Refresh();
@@ -474,6 +477,8 @@ namespace SuperCrashTchrs.Screens
             //check if attack hits
             if (randNum.Next(1, 101) <= 90)
             {
+                //attack sound
+                attackPlayer.Play();
                 //damage calc
                 damage = (((42 * playerAtk * 75 / opponentDef) / 50) + 2)
                     * randNum.Next(1, 101) / 100;
@@ -528,7 +533,7 @@ namespace SuperCrashTchrs.Screens
             }
         }
 
-        public void CriteriaChart()//Bond DONE
+        public void CriteriaChart()//Bond; needs sound DONE
         {
             int userAtk = 0;
             int userSpd = 0;
@@ -582,7 +587,7 @@ namespace SuperCrashTchrs.Screens
             }
         }
 
-        public void DefenderBot()//Brad kinda done
+        public void DefenderBot()//Brad; needs sound kinda done
         {
             int playerDef = 0;
             if (p1character == "Brad")
@@ -619,7 +624,7 @@ namespace SuperCrashTchrs.Screens
             }
         }
 
-        public void Dissection()//Bond DONE
+        public void Dissection()//Bond; sound done DONE
         {
             //variables
             int playerAtk = 1;
@@ -641,6 +646,7 @@ namespace SuperCrashTchrs.Screens
                 opponentHP = p1hp;
             }
 
+            //display text
             battleStatusOutput.Text = "Bond used Discetion!";
             Thread.Sleep(sleepTime);
             Refresh();
@@ -648,6 +654,8 @@ namespace SuperCrashTchrs.Screens
             //check if hits
             if (randNum.Next(1, 101) <= 95)
             {
+                //attack sound
+                attackPlayer.Play();
                 //damage calc
                 damage = (((42 * playerAtk * 30 / opponentDef) / 50) + 2)
                     * randNum.Next(1, 101) / 100;
@@ -718,7 +726,7 @@ namespace SuperCrashTchrs.Screens
             }
         }
 
-        public void Documentary()//Leitch done
+        public void Documentary()//Leitch; needs sound done
         {
             int playerHP = 1;
             if (leitchSleep == 0)
@@ -760,7 +768,7 @@ namespace SuperCrashTchrs.Screens
             }
         }
 
-        public void Dodgeball()//Cutch done
+        public void Dodgeball()//Cutch; sound done; done
         {
             int playerAtk = 0;
             int playerDef = 0;
@@ -783,6 +791,8 @@ namespace SuperCrashTchrs.Screens
                 opponentDef = p1Def;
                 opponentHP = p1Def;
             }
+
+            //display text
             battleStatusOutput.Text = "McCutcheon started a game of DODGEBALL!";
             Thread.Sleep(sleepTime);
             Refresh();
@@ -790,9 +800,15 @@ namespace SuperCrashTchrs.Screens
             //check accuracy
             if (accuracyHit <= 90)
             {
+                //attack sound
+                attackPlayer.Play();
+                //damage calculation
                 damage = (((42 * playerAtk * 100 / opponentDef) / 50) + 2) 
                     * randNum.Next(1,101) / 100;
                 opponentHP -= damage;
+                //damage sound
+                damagePlayer.Play();
+
                 //HPbar change
                 if (p1character == "Cutch")
                 {
@@ -2058,7 +2074,7 @@ namespace SuperCrashTchrs.Screens
                                 AttackBot();
                                 break;
                             case "Leitch":
-                                Documentary();
+                                //Documentary
                                 break;
                             case "Cutch":
                                 Dodgeball();
@@ -2067,7 +2083,7 @@ namespace SuperCrashTchrs.Screens
                                 ClarinetSqueak();
                                 break;
                             case "Steel":
-                                EqualSign();
+                                //EqualSign
                                 break;
                             default:
                                 break;
@@ -2090,13 +2106,13 @@ namespace SuperCrashTchrs.Screens
                                 EssayQuestion();
                                 break;
                             case "Cutch":
-                                DunkOn();
+                                //DunkOn
                                 break;
                             case "Ort":
-                                FullBandFF();
+                                //FullBandFF
                                 break;
                             case "Steel":
-                                PinkPaper();
+                                //PinkPaper
                                 break;
                             default:
                                 break;
@@ -2116,16 +2132,16 @@ namespace SuperCrashTchrs.Screens
                                 DefenderBot();
                                 break;
                             case "Leitch":
-                                HistoricWar();
+                                //HistoricWar
                                 break;
                             case "Cutch":
-                                PushUps();
+                                //PushUps
                                 break;
                             case "Ort":
-                                MelodiousPassage();
+                                //MelodiousPassage
                                 break;
                             case "Steel":
-                                QuadraticAttack();
+                                //QuadraticAttack
                                 break;
                             default:
                                 break;
@@ -2148,13 +2164,13 @@ namespace SuperCrashTchrs.Screens
                                 MultiQuestion();
                                 break;
                             case "Cutch":
-                                HealthClass();
+                                //HealthClass
                                 break;
                             case "Ort":
                                 Tuning();
                                 break;
                             case "Steel":
-                                TextbookBarricade();
+                                //TextbookBarricade
                                 break;
                             default:
                                 break;
@@ -2176,16 +2192,16 @@ namespace SuperCrashTchrs.Screens
                                 AttackBot();
                                 break;
                             case "Leitch":
-                                Documentary();
+                                //Documentary
                                 break;
                             case "Cutch":
-                                Dodgeball();
+                                //DODGEBALL
                                 break;
                             case "Ort":
-                                ClarinetSqueak();
+                                //ClairinetSqueak
                                 break;
                             case "Steel":
-                                EqualSign();
+                                //EqualSign
                                 break;
                             default:
                                 break;
@@ -2205,16 +2221,16 @@ namespace SuperCrashTchrs.Screens
                                 ComplainAbout();
                                 break;
                             case "Leitch":
-                                EssayQuestion();
+                                //EssayQuestion
                                 break;
                             case "Cutch":
-                                DunkOn();
+                                //DunkOn
                                 break;
                             case "Ort":
-                                FullBandFF();
+                                //FullBandFF
                                 break;
                             case "Steel":
-                                PinkPaper();
+                                //PinkPaper
                                 break;
                             default:
                                 break;
@@ -2234,16 +2250,16 @@ namespace SuperCrashTchrs.Screens
                                 DefenderBot();
                                 break;
                             case "Leitch":
-                                HistoricWar();
+                                //HistoricWar
                                 break;
                             case "Cutch":
-                                PushUps();
+                                //PushUps
                                 break;
                             case "Ort":
-                                MelodiousPassage();
+                                //MelodiousPassage
                                 break;
                             case "Steel":
-                                QuadraticAttack();
+                                //QuadraticAttack
                                 break;
                             default:
                                 break;
@@ -2263,16 +2279,16 @@ namespace SuperCrashTchrs.Screens
                                 VideoFriday();
                                 break;
                             case "Leitch":
-                                MultiQuestion();
+                                //MCQuestion
                                 break;
                             case "Cutch":
-                                HealthClass();
+                                //HealthClass
                                 break;
                             case "Ort":
-                                Tuning();
+                                //Tuning
                                 break;
                             case "Steel":
-                                TextbookBarricade();
+                                //TextbookBarricade
                                 break;
                             default:
                                 break;
@@ -2296,16 +2312,16 @@ namespace SuperCrashTchrs.Screens
                                 AttackBot();
                                 break;
                             case "Leitch":
-                                Documentary();
+                                //Documentary
                                 break;
                             case "Cutch":
-                                Dodgeball();
+                                //DODGEBALL
                                 break;
                             case "Ort":
-                                ClarinetSqueak();
+                                //ClairinetSqueak
                                 break;
                             case "Steel":
-                                EqualSign();
+                                //EqualSign
                                 break;
                             default:
                                 break;
@@ -2325,16 +2341,16 @@ namespace SuperCrashTchrs.Screens
                                 ComplainAbout();
                                 break;
                             case "Leitch":
-                                EssayQuestion();
+                                //EssayQuestion
                                 break;
                             case "Cutch":
-                                DunkOn();
+                                //DunkOn
                                 break;
                             case "Ort":
-                                FullBandFF();
+                                //FullBandFF
                                 break;
                             case "Steel":
-                                PinkPaper();
+                                //PinkPaper
                                 break;
                             default:
                                 break;
@@ -2354,16 +2370,16 @@ namespace SuperCrashTchrs.Screens
                                 DefenderBot();
                                 break;
                             case "Leitch":
-                                HistoricWar();
+                                //HistoricWar
                                 break;
                             case "Cutch":
-                                PushUps();
+                                //PushUps
                                 break;
                             case "Ort":
-                                MelodiousPassage();
+                                //MelodiousPassage
                                 break;
                             case "Steel":
-                                QuadraticAttack();
+                                //QuadraticAttack
                                 break;
                             default:
                                 break;
@@ -2383,16 +2399,16 @@ namespace SuperCrashTchrs.Screens
                                 VideoFriday();
                                 break;
                             case "Leitch":
-                                MultiQuestion();
+                                //MCQuestion
                                 break;
                             case "Cutch":
-                                HealthClass();
+                                //HealthClass
                                 break;
                             case "Ort":
-                                Tuning();
+                                //Tuning
                                 break;
                             case "Steel":
-                                TextbookBarricade();
+                                //TextbookBarricade
                                 break;
                             default:
                                 break;
@@ -2641,7 +2657,7 @@ namespace SuperCrashTchrs.Screens
                         #endregion
                         #endregion
 
-                        #region p2 Second Speed Tie
+                        #region p2 Second Speed tie
                         #region move 1
                         if (p2move1 == true)
                         {
@@ -2654,16 +2670,16 @@ namespace SuperCrashTchrs.Screens
                                     AttackBot();
                                     break;
                                 case "Leitch":
-                                    Documentary();
+                                    //Documentary
                                     break;
                                 case "Cutch":
-                                    Dodgeball();
+                                    //DODGEBALL
                                     break;
                                 case "Ort":
                                     ClarinetSqueak();
                                     break;
                                 case "Steel":
-                                    EqualSign();
+                                    //EqualSign
                                     break;
                                 default:
                                     break;
@@ -2683,16 +2699,16 @@ namespace SuperCrashTchrs.Screens
                                     ComplainAbout();
                                     break;
                                 case "Leitch":
-                                    EssayQuestion();
+                                    //EssayQuestion
                                     break;
                                 case "Cutch":
-                                    DunkOn();
+                                    //DunkOn
                                     break;
                                 case "Ort":
-                                    FullBandFF();
+                                    //FullBandFF
                                     break;
                                 case "Steel":
-                                    PinkPaper();
+                                    //PinkPaper
                                     break;
                                 default:
                                     break;
@@ -2712,16 +2728,16 @@ namespace SuperCrashTchrs.Screens
                                     DefenderBot();
                                     break;
                                 case "Leitch":
-                                    HistoricWar();
+                                    //HistoricWar
                                     break;
                                 case "Cutch":
-                                    PushUps();
+                                    //PushUps
                                     break;
                                 case "Ort":
-                                    MelodiousPassage();
+                                    //MelodiousPassage
                                     break;
                                 case "Steel":
-                                    QuadraticAttack();
+                                    //QuadraticAttack
                                     break;
                                 default:
                                     break;
@@ -2741,16 +2757,16 @@ namespace SuperCrashTchrs.Screens
                                     VideoFriday();
                                     break;
                                 case "Leitch":
-                                    MultiQuestion();
+                                    //MCQuestion
                                     break;
                                 case "Cutch":
-                                    HealthClass();
+                                    //HealthClass
                                     break;
                                 case "Ort":
-                                    Tuning();
+                                    //Tuning
                                     break;
                                 case "Steel":
-                                    TextbookBarricade();
+                                    //TextbookBarricade
                                     break;
                                 default:
                                     break;
@@ -2762,122 +2778,111 @@ namespace SuperCrashTchrs.Screens
                     else
                     {
                         #region p2 First Speed Tie
-                        #region move 1
                         if (p2move1 == true)
                         {
                             switch (p2character)
                             {
                                 case "Bond":
-                                    CriteriaChart();
+                                    //CriteraChart
                                     break;
                                 case "Brad":
-                                    AttackBot();
+                                    //AttackBot
                                     break;
                                 case "Leitch":
-                                    Documentary();
+                                    //Documentary
                                     break;
                                 case "Cutch":
-                                    Dodgeball();
+                                    //DODGEBALL
                                     break;
                                 case "Ort":
                                     ClarinetSqueak();
                                     break;
                                 case "Steel":
-                                    EqualSign();
+                                    //EqualSign
                                     break;
                                 default:
                                     break;
                             }
                         }
-                        #endregion
-
-                        #region move 2
                         if (p2move2 == true)
                         {
                             switch (p2character)
                             {
                                 case "Bond":
-                                    Dissection();
+                                    //Dissection
                                     break;
                                 case "Brad":
-                                    ComplainAbout();
+                                    //ComplainBout
                                     break;
                                 case "Leitch":
-                                    EssayQuestion();
+                                    //EssayQuestion
                                     break;
                                 case "Cutch":
-                                    DunkOn();
+                                    //DunkOn
                                     break;
                                 case "Ort":
-                                    FullBandFF();
+                                    //FullBandFF
                                     break;
                                 case "Steel":
-                                    PinkPaper();
+                                    //PinkPaper
                                     break;
                                 default:
                                     break;
                             }
                         }
-                        #endregion
-
-                        #region move 3
                         if (p2move3 == true)
                         {
                             switch (p2character)
                             {
                                 case "Bond":
-                                    MadExperiment();
+                                    //MadExperiment
                                     break;
                                 case "Brad":
-                                    DefenderBot();
+                                    //DefenderBot
                                     break;
                                 case "Leitch":
-                                    HistoricWar();
+                                    //HistoricWar
                                     break;
                                 case "Cutch":
-                                    PushUps();
+                                    //PushUps
                                     break;
                                 case "Ort":
-                                    MelodiousPassage();
+                                    //MelodiousPassage
                                     break;
                                 case "Steel":
-                                    QuadraticAttack();
+                                    //QuadraticAttack
                                     break;
                                 default:
                                     break;
                             }
                         }
-                        #endregion
-
-                        #region move 4
                         if (p2move4 == true)
                         {
                             switch (p2character)
                             {
                                 case "Bond":
-                                    TalkAboutFamily();
+                                    //TalkBoutFamily
                                     break;
                                 case "Brad":
-                                    VideoFriday();
+                                    //VideoFriday
                                     break;
                                 case "Leitch":
-                                    MultiQuestion();
+                                    //MCQuestion
                                     break;
                                 case "Cutch":
-                                    HealthClass();
+                                    //HealthClass
                                     break;
                                 case "Ort":
-                                    Tuning();
+                                    //Tuning
                                     break;
                                 case "Steel":
-                                    TextbookBarricade();
+                                    //TextbookBarricade
                                     break;
                                 default:
                                     break;
                             }
                         }
-                        #endregion
-                        #endregion
+                        # endregion
 
                         #region p1 Second Speed Tie
                         #region move 1
