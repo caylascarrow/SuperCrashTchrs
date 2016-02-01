@@ -33,7 +33,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(57, 110);
+            this.button1.Location = new System.Drawing.Point(383, 316);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
@@ -45,8 +45,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::SuperCrashTchrs.Properties.Resources.EndScreen;
             this.Controls.Add(this.button1);
             this.Name = "MultiEndScreen";
+            this.Size = new System.Drawing.Size(800, 800);
             this.ResumeLayout(false);
 
         }

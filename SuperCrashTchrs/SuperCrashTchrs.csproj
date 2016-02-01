@@ -147,6 +147,7 @@
     <Content Include="TeacherSprites\Cutch L.png" />
     <Content Include="TeacherSprites\Cutch R.png" />
     <Content Include="TeacherSprites\Cutch Select.png" />
+    <Content Include="TeacherSprites\EndScreen.png" />
     <Content Include="TeacherSprites\Leitch L.png" />
     <Content Include="TeacherSprites\Leitch Select.png" />
     <Content Include="TeacherSprites\Letich R.png" />
