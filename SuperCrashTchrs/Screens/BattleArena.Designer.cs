@@ -247,6 +247,7 @@
             this.Controls.Add(this.p1Red);
             this.Controls.Add(this.p1Yellow);
             this.Controls.Add(this.p1Blue);
+            this.DoubleBuffered = true;
             this.Name = "BattleArena";
             this.Size = new System.Drawing.Size(800, 800);
             this.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.BattleArena_PreviewKeyDown);
