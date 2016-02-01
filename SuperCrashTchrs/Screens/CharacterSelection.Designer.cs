@@ -34,6 +34,12 @@
             this.leitchSprite = new System.Windows.Forms.PictureBox();
             this.bradSprite = new System.Windows.Forms.PictureBox();
             this.bondSprite = new System.Windows.Forms.PictureBox();
+            this.bradSelect = new System.Windows.Forms.Button();
+            this.bondSelect = new System.Windows.Forms.Button();
+            this.leitchSelect = new System.Windows.Forms.Button();
+            this.cutchSelect = new System.Windows.Forms.Button();
+            this.ortSelect = new System.Windows.Forms.Button();
+            this.steelSelect = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.steelSprite)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ortSprite)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cutchSprite)).BeginInit();
@@ -44,7 +50,7 @@
             // 
             // steelSprite
             // 
-            this.steelSprite.Location = new System.Drawing.Point(618, 271);
+            this.steelSprite.Location = new System.Drawing.Point(618, 307);
             this.steelSprite.Name = "steelSprite";
             this.steelSprite.Size = new System.Drawing.Size(159, 217);
             this.steelSprite.TabIndex = 5;
@@ -52,7 +58,7 @@
             // 
             // ortSprite
             // 
-            this.ortSprite.Location = new System.Drawing.Point(320, 271);
+            this.ortSprite.Location = new System.Drawing.Point(320, 307);
             this.ortSprite.Name = "ortSprite";
             this.ortSprite.Size = new System.Drawing.Size(165, 217);
             this.ortSprite.TabIndex = 4;
@@ -60,7 +66,7 @@
             // 
             // cutchSprite
             // 
-            this.cutchSprite.Location = new System.Drawing.Point(19, 271);
+            this.cutchSprite.Location = new System.Drawing.Point(19, 307);
             this.cutchSprite.Name = "cutchSprite";
             this.cutchSprite.Size = new System.Drawing.Size(159, 217);
             this.cutchSprite.TabIndex = 3;
@@ -95,10 +101,71 @@
             this.bondSprite.TabIndex = 0;
             this.bondSprite.TabStop = false;
             // 
+            // bradSelect
+            // 
+            this.bradSelect.Location = new System.Drawing.Point(57, 245);
+            this.bradSelect.Name = "bradSelect";
+            this.bradSelect.Size = new System.Drawing.Size(83, 23);
+            this.bradSelect.TabIndex = 6;
+            this.bradSelect.Text = "BRADSHAW";
+            this.bradSelect.UseVisualStyleBackColor = true;
+            this.bradSelect.Click += new System.EventHandler(this.bradSelect_Click);
+            // 
+            // bondSelect
+            // 
+            this.bondSelect.Location = new System.Drawing.Point(360, 245);
+            this.bondSelect.Name = "bondSelect";
+            this.bondSelect.Size = new System.Drawing.Size(75, 23);
+            this.bondSelect.TabIndex = 7;
+            this.bondSelect.Text = "BOND";
+            this.bondSelect.UseVisualStyleBackColor = true;
+            // 
+            // leitchSelect
+            // 
+            this.leitchSelect.Location = new System.Drawing.Point(667, 245);
+            this.leitchSelect.Name = "leitchSelect";
+            this.leitchSelect.Size = new System.Drawing.Size(75, 23);
+            this.leitchSelect.TabIndex = 8;
+            this.leitchSelect.Text = "LEITCH";
+            this.leitchSelect.UseVisualStyleBackColor = true;
+            // 
+            // cutchSelect
+            // 
+            this.cutchSelect.Location = new System.Drawing.Point(48, 530);
+            this.cutchSelect.Name = "cutchSelect";
+            this.cutchSelect.Size = new System.Drawing.Size(92, 23);
+            this.cutchSelect.TabIndex = 9;
+            this.cutchSelect.Text = "MCCUTCHEON";
+            this.cutchSelect.UseVisualStyleBackColor = true;
+            // 
+            // ortSelect
+            // 
+            this.ortSelect.Location = new System.Drawing.Point(360, 530);
+            this.ortSelect.Name = "ortSelect";
+            this.ortSelect.Size = new System.Drawing.Size(75, 23);
+            this.ortSelect.TabIndex = 10;
+            this.ortSelect.Text = "ORTELLI";
+            this.ortSelect.UseVisualStyleBackColor = true;
+            // 
+            // steelSelect
+            // 
+            this.steelSelect.Location = new System.Drawing.Point(667, 530);
+            this.steelSelect.Name = "steelSelect";
+            this.steelSelect.Size = new System.Drawing.Size(75, 23);
+            this.steelSelect.TabIndex = 11;
+            this.steelSelect.Text = "STEEL";
+            this.steelSelect.UseVisualStyleBackColor = true;
+            // 
             // CharacterSelection
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.steelSelect);
+            this.Controls.Add(this.ortSelect);
+            this.Controls.Add(this.cutchSelect);
+            this.Controls.Add(this.leitchSelect);
+            this.Controls.Add(this.bondSelect);
+            this.Controls.Add(this.bradSelect);
             this.Controls.Add(this.steelSprite);
             this.Controls.Add(this.ortSprite);
             this.Controls.Add(this.cutchSprite);
@@ -125,5 +192,11 @@
         private System.Windows.Forms.PictureBox cutchSprite;
         private System.Windows.Forms.PictureBox ortSprite;
         private System.Windows.Forms.PictureBox steelSprite;
+        private System.Windows.Forms.Button bradSelect;
+        private System.Windows.Forms.Button bondSelect;
+        private System.Windows.Forms.Button leitchSelect;
+        private System.Windows.Forms.Button cutchSelect;
+        private System.Windows.Forms.Button ortSelect;
+        private System.Windows.Forms.Button steelSelect;
     }
 }

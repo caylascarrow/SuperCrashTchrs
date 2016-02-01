@@ -355,13 +355,13 @@ namespace SuperCrashTchrs.Screens
                     }
                 }
                 //check if opponent is KO
-                if (opponentHP <= 0)
-                {
-                    battleStatusOutput.Text = "The opponent fainted!";
-                    Thread.Sleep(sleepTime);
-                    Refresh();
-                    ScreenControl.changeScreen(this, "MultiEndScreen");
-                }
+                //if (opponentHP <= 0)
+                //{
+                //    battleStatusOutput.Text = "The opponent fainted!";
+                //    Thread.Sleep(sleepTime);
+                //    Refresh();
+                //    ScreenControl.changeScreen(this, "MultiEndScreen");
+                //}
 
                 //lower attack stat
                 opponentAtk -= 25;
@@ -506,14 +506,14 @@ namespace SuperCrashTchrs.Screens
                     }
                 }
                 //check if fainted
-                if (opponentHP <= 0)
-                {
-                    battleStatusOutput.Text = "The opponent fainted!";
-                    Thread.Sleep(sleepTime);
-                    Refresh();
+                //if (opponentHP <= 0)
+                //{
+                //    battleStatusOutput.Text = "The opponent fainted!";
+                //    Thread.Sleep(sleepTime);
+                //    Refresh();
 
-                    ScreenControl.changeScreen(this, "MultiEndScreen");
-                }
+                //    ScreenControl.changeScreen(this, "MultiEndScreen");
+                //}
             }
             //check if dead
             else
@@ -683,14 +683,14 @@ namespace SuperCrashTchrs.Screens
                     }
                 }
                 //check if dead
-                if (opponentHP <= 0)
-                {
-                    battleStatusOutput.Text = "The opponent fainted!";
-                    Thread.Sleep(sleepTime);
-                    Refresh();
+                //if (opponentHP <= 0)
+                //{
+                //    battleStatusOutput.Text = "The opponent fainted!";
+                //    Thread.Sleep(sleepTime);
+                //    Refresh();
 
-                    ScreenControl.changeScreen(this, "MultiEndScreen");
-                }
+                //    ScreenControl.changeScreen(this, "MultiEndScreen");
+                //}
 
                 //lower opponent defence
                 opponentDef -= 25;
@@ -855,14 +855,14 @@ namespace SuperCrashTchrs.Screens
                     playerDef = 1;
                 }
                 //check if dead
-                if (opponentHP <= 0)
-                {
-                    battleStatusOutput.Text = "The opponent fainted!";
-                    Thread.Sleep(sleepTime);
-                    Refresh();
-                    //go to game over screen
-                    ScreenControl.changeScreen(this, "MultiEndScreen");
-                }
+                //if (opponentHP <= 0)
+                //{
+                //    battleStatusOutput.Text = "The opponent fainted!";
+                //    Thread.Sleep(sleepTime);
+                //    Refresh();
+                //    //go to game over screen
+                //    ScreenControl.changeScreen(this, "MultiEndScreen");
+                //}
             }
                 else
                 {
@@ -937,15 +937,15 @@ namespace SuperCrashTchrs.Screens
                         Refresh();
                     }
                 }
-                //check if fainted
-                if (opponentHP <= 0)
-                {
-                    battleStatusOutput.Text = "The opponent fainted!";
-                    Thread.Sleep(sleepTime);
-                    Refresh();
+                ////check if fainted
+                //if (opponentHP <= 0)
+                //{
+                //    battleStatusOutput.Text = "The opponent fainted!";
+                //    Thread.Sleep(sleepTime);
+                //    Refresh();
 
-                    ScreenControl.changeScreen(this, "MultiEndScreen");
-                }
+                //    ScreenControl.changeScreen(this, "MultiEndScreen");
+                //}
             }
             //if misses
             else
@@ -1102,14 +1102,14 @@ namespace SuperCrashTchrs.Screens
                         }
                     }
                     //check if fainted
-                    if (opponentHP <= 0)
-                    {
-                        battleStatusOutput.Text = "The opponent fainted!";
-                        Thread.Sleep(sleepTime);
-                        Refresh();
+                    //if (opponentHP <= 0)
+                    //{
+                    //    battleStatusOutput.Text = "The opponent fainted!";
+                    //    Thread.Sleep(sleepTime);
+                    //    Refresh();
 
-                        ScreenControl.changeScreen(this, "MultiEndScreen");
-                    }
+                    //    ScreenControl.changeScreen(this, "MultiEndScreen");
+                    //}
                 }
                 //check if dead
                 else
@@ -1194,15 +1194,15 @@ namespace SuperCrashTchrs.Screens
                         Refresh();
                     }
                 }
-                //check if fainted opponent fainted
-                if (opponentHP <= 0)
-                {
-                    battleStatusOutput.Text = "The opponent fainted!";
-                    Thread.Sleep(sleepTime);
-                    Refresh();
+                ////check if fainted opponent fainted
+                //if (opponentHP <= 0)
+                //{
+                //    battleStatusOutput.Text = "The opponent fainted!";
+                //    Thread.Sleep(sleepTime);
+                //    Refresh();
 
-                    ScreenControl.changeScreen(this, "MultiEndScreen");
-                }                
+                //    ScreenControl.changeScreen(this, "MultiEndScreen");
+                //}                
                 if (p1character == "Cutch")
                 {
                     for (int i = p1hp; i > playerHP && i > 0; i--)
@@ -1235,12 +1235,12 @@ namespace SuperCrashTchrs.Screens
                     }
                 }
             //check if dead
-                else
-                {
-                battleStatusOutput.Text = "But the opponent skipped this class!";
-                Thread.Sleep(sleepTime);
-                Refresh();
-            }
+            //    else
+            //    {
+            //    battleStatusOutput.Text = "But the opponent skipped this class!";
+            //    Thread.Sleep(sleepTime);
+            //    Refresh();
+            //}
             //return stat changes
             if (p1character == "Cutch")
             {
@@ -1313,15 +1313,15 @@ namespace SuperCrashTchrs.Screens
                             Refresh();
         }
                     }
-                    //check if fainted opponent fainted
-                    if (opponentHP <= 0)
-                    {
-                        battleStatusOutput.Text = "The opponent fainted!";
-                        Thread.Sleep(sleepTime);
-                        Refresh();
+                    ////check if fainted opponent fainted
+                    //if (opponentHP <= 0)
+                    //{
+                    //    battleStatusOutput.Text = "The opponent fainted!";
+                    //    Thread.Sleep(sleepTime);
+                    //    Refresh();
 
-                        ScreenControl.changeScreen(this, "MultiEndScreen");
-                    }
+                    //    ScreenControl.changeScreen(this, "MultiEndScreen");
+                    //}
                     if (p1character == "Leitch")
         {
                         for (int i = p1hp; i > playerHP && i > 0; i--)
@@ -1429,15 +1429,15 @@ namespace SuperCrashTchrs.Screens
                         Thread.Sleep(50);
                     }
                 }
-                //checks if opponent dead
-                if (opponentHP <= 0)
-                {
-                    battleStatusOutput.Text = "The opponent fainted!";
-                    Thread.Sleep(sleepTime);
-                    Refresh();
+                ////checks if opponent dead
+                //if (opponentHP <= 0)
+                //{
+                //    battleStatusOutput.Text = "The opponent fainted!";
+                //    Thread.Sleep(sleepTime);
+                //    Refresh();
 
-                    ScreenControl.changeScreen(this, "MultiEndScreen");
-                }
+                //    ScreenControl.changeScreen(this, "MultiEndScreen");
+                //}
             }
             else
             {
@@ -1507,15 +1507,15 @@ namespace SuperCrashTchrs.Screens
                             Refresh();
                         }
                     }
-                    //check if fainted
-                    if (opponentHP <= 0)
-                    {
-                        battleStatusOutput.Text = "The opponent fainted!";
-                        Thread.Sleep(sleepTime);
-                        Refresh();
+                    ////check if fainted
+                    //if (opponentHP <= 0)
+                    //{
+                    //    battleStatusOutput.Text = "The opponent fainted!";
+                    //    Thread.Sleep(sleepTime);
+                    //    Refresh();
 
-                        ScreenControl.changeScreen(this, "MultiEndScreen");
-                    }
+                    //    ScreenControl.changeScreen(this, "MultiEndScreen");
+                    //}
                 }
                 //check if dead
                 else
@@ -1598,13 +1598,13 @@ namespace SuperCrashTchrs.Screens
                         }
                     }
                     //check if opponent dead
-                    if (opponentHP <= 0)
-                    {
-                        battleStatusOutput.Text = "The opponent fainted!";
-                        Thread.Sleep(sleepTime);
-                        Refresh();
-                        ScreenControl.changeScreen(this, "MultiEndScreen");
-                    }
+                    //if (opponentHP <= 0)
+                    //{
+                    //    battleStatusOutput.Text = "The opponent fainted!";
+                    //    Thread.Sleep(sleepTime);
+                    //    Refresh();
+                    //    ScreenControl.changeScreen(this, "MultiEndScreen");
+                    //}
                 }
                 else
                 {
@@ -1688,14 +1688,14 @@ namespace SuperCrashTchrs.Screens
                     }
                 }
                 //check if fainted opponent fainted
-                if (opponentHP <= 0)
-                {
-                    battleStatusOutput.Text = "The opponent fainted!";
-                    Thread.Sleep(sleepTime);
-                    Refresh();
+                //if (opponentHP <= 0)
+                //{
+                //    battleStatusOutput.Text = "The opponent fainted!";
+                //    Thread.Sleep(sleepTime);
+                //    Refresh();
 
-                    ScreenControl.changeScreen(this, "MultiEndScreen");
-                }
+                //    ScreenControl.changeScreen(this, "MultiEndScreen");
+                //}
                 if (p1character == "Steel")
                 {
                     for (int i = p1hp; i < playerHP && i > 0; i++)
@@ -1829,14 +1829,14 @@ namespace SuperCrashTchrs.Screens
                     }
                 }
                 //check if fainted
-                if (opponentHP <= 0)
-        {
-                    battleStatusOutput.Text = "The opponent fainted!";
-                    Thread.Sleep(sleepTime);
-                    Refresh();
+        //        if (opponentHP <= 0)
+        //{
+        //            battleStatusOutput.Text = "The opponent fainted!";
+        //            Thread.Sleep(sleepTime);
+        //            Refresh();
 
-                    ScreenControl.changeScreen(this, "MultiEndScreen");
-                }
+        //            ScreenControl.changeScreen(this, "MultiEndScreen");
+        //        }
             }
             //check if missed
             else
@@ -2063,7 +2063,7 @@ namespace SuperCrashTchrs.Screens
                     ///make these the master copies
                     #region p1 Goes First
                     #region move 1
-                    if (p1move1 == true)
+                    if (p1move1 == true && p1hp > 0)
                     {
                         switch (p1character)
                         {
@@ -2092,7 +2092,7 @@ namespace SuperCrashTchrs.Screens
                     #endregion
 
                     #region move 2
-                    if (p1move2 == true)
+                    if (p1move2 == true && p1hp > 0)
                     {
                         switch (p1character)
                         {
@@ -2121,7 +2121,7 @@ namespace SuperCrashTchrs.Screens
                     #endregion
 
                     #region move 3
-                    if (p1move3 == true)
+                    if (p1move3 == true && p1hp > 0)
                     {
                         switch (p1character)
                         {
@@ -2150,7 +2150,7 @@ namespace SuperCrashTchrs.Screens
                     #endregion
 
                     #region move 4
-                    if (p1move4 == true)
+                    if (p1move4 == true && p1hp > 0)
                     {
                         switch (p1character)
                         {
@@ -2181,7 +2181,7 @@ namespace SuperCrashTchrs.Screens
 
                     #region p2 Goes Second
                     #region move 1
-                    if (p2move1 == true)
+                    if (p2move1 == true && p2hp > 0 )
                     {
                         switch (p2character)
                         {
@@ -2210,7 +2210,7 @@ namespace SuperCrashTchrs.Screens
                     #endregion
 
                     #region move 2
-                    if (p2move2 == true)
+                    if (p2move2 == true && p2hp > 0)
                     {
                         switch (p2character)
                         {
@@ -2239,7 +2239,7 @@ namespace SuperCrashTchrs.Screens
                     #endregion
 
                     #region move 3
-                    if (p2move3 == true)
+                    if (p2move3 == true && p2hp > 0)
                     {
                         switch (p2character)
                         {
@@ -2268,7 +2268,7 @@ namespace SuperCrashTchrs.Screens
                     #endregion
 
                     #region move 4
-                    if (p2move4 == true)
+                    if (p2move4 == true && p2hp > 0)
                     {
                         switch (p2character)
                         {
@@ -3008,6 +3008,20 @@ namespace SuperCrashTchrs.Screens
             else
             {
 
+            }
+            if (p1hp < 0)
+            {
+                battleStatusOutput.Text = "Player 1 has fainted!";
+                Thread.Sleep(sleepTime);
+                Refresh();
+               ScreenControl.changeScreen(this, "MultiEndScreen");
+            }
+            else if (p2hp < 0)
+            {
+                battleStatusOutput.Text = "Player 2 has fainted!";
+                Thread.Sleep(sleepTime);
+                Refresh();
+                ScreenControl.changeScreen(this, "MultiEndScreen");
             }
         }
 

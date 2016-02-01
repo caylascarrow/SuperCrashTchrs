@@ -18,15 +18,16 @@ namespace SuperCrashTchrs.Screens
        
         public static string p1character;
         public static string p2character;
+
         #region Player Stats
         //Bond
-        public static int bondHP = 150;
+        public static int bondHP = 1;
         public static int bondAtk = 125;
         public static int bondDef = 75;
         public static int bondSpd = 150;
 
         //Bradshaw
-        public static int bradHP = 150;
+        public static int bradHP = 1;
         public static int bradAtk = 75;
         public static int bradDef = 125;
         public static int bradSpd = 125;

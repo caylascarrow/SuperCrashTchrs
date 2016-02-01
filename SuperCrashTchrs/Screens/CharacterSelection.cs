@@ -19,10 +19,16 @@ namespace SuperCrashTchrs.Screens
             //which character has each player chosen
 
             //check to see if both players have selected a character
-            if ((ScreenControl.p1character) != "" & (ScreenControl.p2character) != "")
+            if ((ScreenControl.p1character) != "" && (ScreenControl.p2character) != "")
             {
                 ScreenControl.changeScreen(this, "BattleArena");
             }
+
+        }
+
+        private void bradSelect_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
