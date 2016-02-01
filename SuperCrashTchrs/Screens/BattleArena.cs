@@ -42,7 +42,7 @@ namespace SuperCrashTchrs.Screens
 
         int leitchSleep = 0;
         bool ortSleep = false;
-
+        bool melodiousSleep = false;
         #endregion
 
         public BattleArena()
