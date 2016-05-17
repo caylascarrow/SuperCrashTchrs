@@ -97,6 +97,7 @@
     <Compile Include="Screens\TallyScreen.Designer.cs">
       <DependentUpon>TallyScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="Teachers.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

@@ -52,161 +52,161 @@ namespace SuperCrashTchrs.Screens
             p1character = "Brad";
             p2character = "Bond";
 
-            #region Stat Switchs
-            switch (p1character)
-            {
-                case "Bond":
-                    p1hp = (ScreenControl.bondHP);
-                    p1Atk = (ScreenControl.bondAtk);
-                    p1Def = (ScreenControl.bondDef);
-                    p1Spd = (ScreenControl.bondSpd);
-                    p1HPBar.Size = new Size(ScreenControl.bondHP, 10);
-                    p1Yellow.Text = "Critera Chart";
-                    p1Blue.Text = "Dissection";
-                    p1Red.Text = "Mad Experiment";
-                    p1Green.Text = "Talk about Family";
-                    p1Sprite.Image = SuperCrashTchrs.Properties.Resources.Bond_L;
-                    break;
-                case "Brad":
-                    p1hp = (ScreenControl.bradHP);
-                    p1Atk = (ScreenControl.bradAtk);
-                    p1Def = (ScreenControl.bradDef);
-                    p1Spd = (ScreenControl.bradSpd);
-                    p1HPBar.Size = new Size(ScreenControl.bradHP, 10);
-                    p1Yellow.Text = "Attack Bot";
-                    p1Blue.Text = "Complain About Apple";
-                    p1Red.Text = "Defender Bot";
-                    p1Green.Text = "Video Friday";
-                    p1Sprite.Image = SuperCrashTchrs.Properties.Resources.Bradshaw_L;
-                    break;
-                case "Leitch":
-                    p1hp = (ScreenControl.leitchHP);
-                    p1Atk = (ScreenControl.leitchAtk);
-                    p1Def = (ScreenControl.leitchDef);
-                    p1Spd = (ScreenControl.leitchSpd);
-                    p1HPBar.Size = new Size(ScreenControl.leitchHP, 10);
-                    p1Yellow.Text = "Documentary";
-                    p1Blue.Text = "Essay Question";
-                    p1Red.Text = "Historic War";
-                    p1Green.Text = "Multiple Choice Question";
-                    // p1Sprite.Image = SuperCrashTchrs.Properties.Resources.Leitch_L;
-                    break;
-                case "Cutch":
-                    p1hp = (ScreenControl.cutchHP);
-                    p1Atk = (ScreenControl.cutchAtk);
-                    p1Def = (ScreenControl.cutchDef);
-                    p1Spd = (ScreenControl.cutchSpd);
-                    p1HPBar.Size = new Size(ScreenControl.cutchHP, 10);
-                    p1Yellow.Text = "DODGEBALL";
-                    p1Blue.Text = "Dunk ON";
-                    p1Red.Text = "Push Ups";
-                    p1Green.Text = "Health Class";
-                    p1Sprite.Image = SuperCrashTchrs.Properties.Resources.Cutch_L;
-                    break;
-                case "Ort":
-                    p1hp = (ScreenControl.ortHP);
-                    p1Atk = (ScreenControl.ortAtk);
-                    p1Def = (ScreenControl.ortDef);
-                    p1Spd = (ScreenControl.ortSpd);
-                    p1HPBar.Size = new Size(ScreenControl.ortHP, 10);
-                    p1Yellow.Text = "Clairinet Squeak";
-                    p1Blue.Text = "Full Band Fortissimo";
-                    p1Red.Text = "Melodious Passage";
-                    p1Green.Text = "Tuning";
-                    //p1Sprite.Image = /*add ortelli's image name here*/;
-                    break;
-                case "Steel":
-                    p1hp = (ScreenControl.steelHP);
-                    p1Atk = (ScreenControl.steelAtk);
-                    p1Def = (ScreenControl.steelDef);
-                    p1Spd = (ScreenControl.steelSpd);
-                    p1HPBar.Size = new Size(ScreenControl.steelHP, 10);
-                    p1Yellow.Text = "=";
-                    p1Blue.Text = "Pink Paper";
-                    p1Red.Text = "Quadratic Attack";
-                    p1Green.Text = "Textbook Barricade";
-                    //p1Sprite.Image = /*add steel's image name here*/;
-                    break;
-                default:
-                    break;
-            }
-            switch (p2character)
-            {
-                case "Bond":
-                    p2hp = (ScreenControl.bondHP);
-                    p2Atk = (ScreenControl.bondAtk);
-                    p2Def = (ScreenControl.bondDef);
-                    p2Spd = (ScreenControl.bondSpd);
-                    p2HPBar.Size = new Size(ScreenControl.bondHP, 10);
-                    p2Yellow.Text = "Critera Chart";
-                    p2Blue.Text = "Dissection";
-                    p2Red.Text = "Mad Experiment";
-                    p2Green.Text = "Talk about Family";
-                    p2Sprite.Image = SuperCrashTchrs.Properties.Resources.Bond_R;
-                    break;
-                case "Brad":
-                    p2hp = (ScreenControl.bradHP);
-                    p2Atk = (ScreenControl.bradAtk);
-                    p2Def = (ScreenControl.bradDef);
-                    p2Spd = (ScreenControl.bradSpd);
-                    p2HPBar.Size = new Size(ScreenControl.bradHP, 10);
-                    p2Yellow.Text = "Attack Bot";
-                    p2Blue.Text = "Complain About Apple";
-                    p2Red.Text = "Defender Bot";
-                    p2Green.Text = "Video Friday";
-                    p2Sprite.Image = SuperCrashTchrs.Properties.Resources.Bradshaw_R;
-                    break;
-                case "Leitch":
-                    p2hp = (ScreenControl.leitchHP);
-                    p2Atk = (ScreenControl.leitchAtk);
-                    p2Def = (ScreenControl.leitchDef);
-                    p2Spd = (ScreenControl.leitchSpd);
-                    p2HPBar.Size = new Size(ScreenControl.leitchHP, 10);
-                    p2Yellow.Text = "Documentary";
-                    p2Blue.Text = "Essay Question";
-                    p2Red.Text = "Historic War";
-                    p2Green.Text = "Multiple Choice Question";
-                    //p2Sprite.Image = /*add leitch's image name here*/;
-                    break;
-                case "Cutch":
-                    p2hp = (ScreenControl.cutchHP);
-                    p2Atk = (ScreenControl.cutchAtk);
-                    p2Def = (ScreenControl.cutchDef);
-                    p2Spd = (ScreenControl.cutchSpd);
-                    p2HPBar.Size = new Size(ScreenControl.cutchHP, 10);
-                    p2Yellow.Text = "DODGEBALL";
-                    p2Blue.Text = "Dunk ON";
-                    p2Red.Text = "Push Ups";
-                    p2Green.Text = "Health Class";
-                    p2Sprite.Image = SuperCrashTchrs.Properties.Resources.Cutch_R;
-                    break;
-                case "Ort":
-                    p2hp = (ScreenControl.ortHP);
-                    p2Atk = (ScreenControl.ortAtk);
-                    p2Def = (ScreenControl.ortDef);
-                    p2Spd = (ScreenControl.ortSpd);
-                    p2HPBar.Size = new Size(ScreenControl.ortHP, 10);
-                    p2Yellow.Text = "Clairinet Squeak";
-                    p2Blue.Text = "Full Band Fortissimo";
-                    p2Red.Text = "Melodious Passage";
-                    p2Green.Text = "Tuning";
-                    //p2Sprite.Image = /*add ortelli's image name here*/;
-                    break;
-                case "Steel":
-                    p2hp = (ScreenControl.steelHP);
-                    p2Atk = (ScreenControl.steelAtk);
-                    p2Def = (ScreenControl.steelDef);
-                    p2Spd = (ScreenControl.steelSpd);
-                    p2HPBar.Size = new Size(ScreenControl.steelHP, 10);
-                    p2Yellow.Text = "=";
-                    p2Blue.Text = "Pink Paper";
-                    p2Red.Text = "Quadratic Attack";
-                    p2Green.Text = "Textbook Barricade";
-                    //p2Sprite.Image = /*add steel's image name here*/;
-                    break;
-                default:
-                    break;
-            }
+        #region Stat Switchs
+        //    switch (p1character)
+        //    {
+        //        case "Bond":
+        //            p1hp = (Form1.bondHP);
+        //            p1Atk = (Form1.bondAtk);
+        //            p1Def = (Form1.bondDef);
+        //            p1Spd = (Form1.bondSpd);
+        //            p1HPBar.Size = new Size(Form1.bondHP, 10);
+        //            p1Yellow.Text = "Critera Chart";
+        //            p1Blue.Text = "Dissection";
+        //            p1Red.Text = "Mad Experiment";
+        //            p1Green.Text = "Talk about Family";
+        //            p1Sprite.Image = SuperCrashTchrs.Properties.Resources.Bond_L;
+        //            break;
+        //        case "Brad":
+        //            p1hp = (Form1.bradHP);
+        //            p1Atk = (Form1.bradAtk);
+        //            p1Def = (Form1.bradDef);
+        //            p1Spd = (Form1.bradSpd);
+        //            p1HPBar.Size = new Size(Form1.bradHP, 10);
+        //            p1Yellow.Text = "Attack Bot";
+        //            p1Blue.Text = "Complain About Apple";
+        //            p1Red.Text = "Defender Bot";
+        //            p1Green.Text = "Video Friday";
+        //            p1Sprite.Image = SuperCrashTchrs.Properties.Resources.Bradshaw_L;
+        //            break;
+        //        case "Leitch":
+        //            p1hp = (Form1.leitchHP);
+        //            p1Atk = (Form1.leitchAtk);
+        //            p1Def = (Form1.leitchDef);
+        //            p1Spd = (Form1.leitchSpd);
+        //            p1HPBar.Size = new Size(Form1.leitchHP, 10);
+        //            p1Yellow.Text = "Documentary";
+        //            p1Blue.Text = "Essay Question";
+        //            p1Red.Text = "Historic War";
+        //            p1Green.Text = "Multiple Choice Question";
+        //            // p1Sprite.Image = SuperCrashTchrs.Properties.Resources.Leitch_L;
+        //            break;
+        //        case "Cutch":
+        //            p1hp = (Form1.cutchHP);
+        //            p1Atk = (Form1.cutchAtk);
+        //            p1Def = (Form1.cutchDef);
+        //            p1Spd = (Form1.cutchSpd);
+        //            p1HPBar.Size = new Size(Form1.cutchHP, 10);
+        //            p1Yellow.Text = "DODGEBALL";
+        //            p1Blue.Text = "Dunk ON";
+        //            p1Red.Text = "Push Ups";
+        //            p1Green.Text = "Health Class";
+        //            p1Sprite.Image = SuperCrashTchrs.Properties.Resources.Cutch_L;
+        //            break;
+        //        case "Ort":
+        //            p1hp = (Form1.ortHP);
+        //            p1Atk = (Form1.ortAtk);
+        //            p1Def = (Form1.ortDef);
+        //            p1Spd = (Form1.ortSpd);
+        //            p1HPBar.Size = new Size(Form1.ortHP, 10);
+        //            p1Yellow.Text = "Clairinet Squeak";
+        //            p1Blue.Text = "Full Band Fortissimo";
+        //            p1Red.Text = "Melodious Passage";
+        //            p1Green.Text = "Tuning";
+        //            //p1Sprite.Image = /*add ortelli's image name here*/;
+        //            break;
+        //        case "Steel":
+        //            p1hp = (Form1.steelHP);
+        //            p1Atk = (Form1.steelAtk);
+        //            p1Def = (Form1.steelDef);
+        //            p1Spd = (Form1.steelSpd);
+        //            p1HPBar.Size = new Size(Form1.steelHP, 10);
+        //            p1Yellow.Text = "=";
+        //            p1Blue.Text = "Pink Paper";
+        //            p1Red.Text = "Quadratic Attack";
+        //            p1Green.Text = "Textbook Barricade";
+        //            //p1Sprite.Image = /*add steel's image name here*/;
+        //            break;
+        //        default:
+        //            break;
+        //    }
+        //    switch (p2character)
+        //    {
+        //        case "Bond":
+        //            p2hp = (Form1.bondHP);
+        //            p2Atk = (Form1.bondAtk);
+        //            p2Def = (Form1.bondDef);
+        //            p2Spd = (Form1.bondSpd);
+        //            p2HPBar.Size = new Size(Form1.bondHP, 10);
+        //            p2Yellow.Text = "Critera Chart";
+        //            p2Blue.Text = "Dissection";
+        //            p2Red.Text = "Mad Experiment";
+        //            p2Green.Text = "Talk about Family";
+        //            p2Sprite.Image = SuperCrashTchrs.Properties.Resources.Bond_R;
+        //            break;
+        //        case "Brad":
+        //            p2hp = (Form1.bradHP);
+        //            p2Atk = (Form1.bradAtk);
+        //            p2Def = (Form1.bradDef);
+        //            p2Spd = (Form1.bradSpd);
+        //            p2HPBar.Size = new Size(Form1.bradHP, 10);
+        //            p2Yellow.Text = "Attack Bot";
+        //            p2Blue.Text = "Complain About Apple";
+        //            p2Red.Text = "Defender Bot";
+        //            p2Green.Text = "Video Friday";
+        //            p2Sprite.Image = SuperCrashTchrs.Properties.Resources.Bradshaw_R;
+        //            break;
+        //        case "Leitch":
+        //            p2hp = (Form1.leitchHP);
+        //            p2Atk = (Form1.leitchAtk);
+        //            p2Def = (Form1.leitchDef);
+        //            p2Spd = (Form1.leitchSpd);
+        //            p2HPBar.Size = new Size(Form1.leitchHP, 10);
+        //            p2Yellow.Text = "Documentary";
+        //            p2Blue.Text = "Essay Question";
+        //            p2Red.Text = "Historic War";
+        //            p2Green.Text = "Multiple Choice Question";
+        //            //p2Sprite.Image = /*add leitch's image name here*/;
+        //            break;
+        //        case "Cutch":
+        //            p2hp = (Form1.cutchHP);
+        //            p2Atk = (Form1.cutchAtk);
+        //            p2Def = (Form1.cutchDef);
+        //            p2Spd = (Form1.cutchSpd);
+        //            p2HPBar.Size = new Size(Form1.cutchHP, 10);
+        //            p2Yellow.Text = "DODGEBALL";
+        //            p2Blue.Text = "Dunk ON";
+        //            p2Red.Text = "Push Ups";
+        //            p2Green.Text = "Health Class";
+        //            p2Sprite.Image = SuperCrashTchrs.Properties.Resources.Cutch_R;
+        //            break;
+        //        case "Ort":
+        //            p2hp = (ScreenControl.ortHP);
+        //            p2Atk = (ScreenControl.ortAtk);
+        //            p2Def = (ScreenControl.ortDef);
+        //            p2Spd = (ScreenControl.ortSpd);
+        //            p2HPBar.Size = new Size(ScreenControl.ortHP, 10);
+        //            p2Yellow.Text = "Clairinet Squeak";
+        //            p2Blue.Text = "Full Band Fortissimo";
+        //            p2Red.Text = "Melodious Passage";
+        //            p2Green.Text = "Tuning";
+        //            //p2Sprite.Image = /*add ortelli's image name here*/;
+        //            break;
+        //        case "Steel":
+        //            p2hp = (ScreenControl.steelHP);
+        //            p2Atk = (ScreenControl.steelAtk);
+        //            p2Def = (ScreenControl.steelDef);
+        //            p2Spd = (ScreenControl.steelSpd);
+        //            p2HPBar.Size = new Size(ScreenControl.steelHP, 10);
+        //            p2Yellow.Text = "=";
+        //            p2Blue.Text = "Pink Paper";
+        //            p2Red.Text = "Quadratic Attack";
+        //            p2Green.Text = "Textbook Barricade";
+        //            //p2Sprite.Image = /*add steel's image name here*/;
+        //            break;
+        //        default:
+        //            break;
+        //    }
             #endregion
         }
 
@@ -742,7 +742,7 @@ namespace SuperCrashTchrs.Screens
                 battleStatusOutput.Text = "Leitch put on a Documentary!";
                 Thread.Sleep(sleepTime);
                 Refresh();
-                playerHP = ScreenControl.leitchHP;
+                playerHP = Form1.leitchHP;
                 leitchSleep = 2;
                 battleStatusOutput.Text = "Leitch Restored his Health!";
                 Thread.Sleep(sleepTime);
@@ -3009,12 +3009,19 @@ namespace SuperCrashTchrs.Screens
             {
 
             }
-            if (p1hp < 0)
+            if (p1hp < 0 && p2hp < 1)
+            {
+                battleStatusOutput.Text = "Player 1 and player 2 has fainted!";
+                Thread.Sleep(sleepTime);
+                Refresh();
+                ScreenControl.changeScreen(this, "MultiEndScreen");
+            }
+            else if (p1hp < 1)
             {
                 battleStatusOutput.Text = "Player 1 has fainted!";
                 Thread.Sleep(sleepTime);
                 Refresh();
-               ScreenControl.changeScreen(this, "MultiEndScreen");
+                ScreenControl.changeScreen(this, "MultiEndScreen");
             }
             else if (p2hp < 0)
             {

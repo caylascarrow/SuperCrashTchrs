@@ -40,6 +40,7 @@
             this.cutchSelect = new System.Windows.Forms.Button();
             this.ortSelect = new System.Windows.Forms.Button();
             this.steelSelect = new System.Windows.Forms.Button();
+            this.playerSelectStatus = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.steelSprite)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ortSprite)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cutchSprite)).BeginInit();
@@ -109,7 +110,6 @@
             this.bradSelect.TabIndex = 6;
             this.bradSelect.Text = "BRADSHAW";
             this.bradSelect.UseVisualStyleBackColor = true;
-            this.bradSelect.Click += new System.EventHandler(this.bradSelect_Click);
             // 
             // bondSelect
             // 
@@ -156,10 +156,20 @@
             this.steelSelect.Text = "STEEL";
             this.steelSelect.UseVisualStyleBackColor = true;
             // 
+            // playerSelectStatus
+            // 
+            this.playerSelectStatus.AutoSize = true;
+            this.playerSelectStatus.Location = new System.Drawing.Point(298, 611);
+            this.playerSelectStatus.Name = "playerSelectStatus";
+            this.playerSelectStatus.Size = new System.Drawing.Size(222, 13);
+            this.playerSelectStatus.TabIndex = 12;
+            this.playerSelectStatus.Text = "PLAYER ONE SELECT YOUR CHARACTER";
+            // 
             // CharacterSelection
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.playerSelectStatus);
             this.Controls.Add(this.steelSelect);
             this.Controls.Add(this.ortSelect);
             this.Controls.Add(this.cutchSelect);
@@ -174,6 +184,7 @@
             this.Controls.Add(this.bondSprite);
             this.Name = "CharacterSelection";
             this.Size = new System.Drawing.Size(800, 800);
+            this.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.CharacterSelection_PreviewKeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.steelSprite)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ortSprite)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cutchSprite)).EndInit();
@@ -181,6 +192,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bradSprite)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bondSprite)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -198,5 +210,6 @@
         private System.Windows.Forms.Button cutchSelect;
         private System.Windows.Forms.Button ortSelect;
         private System.Windows.Forms.Button steelSelect;
+        private System.Windows.Forms.Label playerSelectStatus;
     }
 }
