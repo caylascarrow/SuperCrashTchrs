@@ -184,6 +184,7 @@
             this.Controls.Add(this.bondSprite);
             this.Name = "CharacterSelection";
             this.Size = new System.Drawing.Size(800, 800);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.CharacterSelection_KeyUp);
             this.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.CharacterSelection_PreviewKeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.steelSprite)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ortSprite)).EndInit();

@@ -33,20 +33,21 @@
             // 
             // goToMain
             // 
-            this.goToMain.Location = new System.Drawing.Point(13, 97);
-            this.goToMain.Name = "goToMain";
-            this.goToMain.Size = new System.Drawing.Size(123, 23);
-            this.goToMain.TabIndex = 0;
-            this.goToMain.Text = "Go To Main Screen";
-            this.goToMain.UseVisualStyleBackColor = true;
-            this.goToMain.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Location = new System.Drawing.Point(57, 110);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // MultiEndScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.goToMain);
+            this.Controls.Add(this.button1);
             this.Name = "MultiEndScreen";
+            this.Size = new System.Drawing.Size(800, 800);
             this.ResumeLayout(false);
 
         }

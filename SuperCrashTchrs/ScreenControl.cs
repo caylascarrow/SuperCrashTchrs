@@ -19,7 +19,7 @@ namespace SuperCrashTchrs.Screens
         public static string p1character;
         public static string p2character;
 
-       
+
 
         // screen and user control values
         public static int controlWidth = 800;
