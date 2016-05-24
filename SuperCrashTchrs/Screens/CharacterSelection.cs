@@ -13,6 +13,7 @@ namespace SuperCrashTchrs.Screens
     public partial class CharacterSelection : UserControl
     {
         bool leftDown, rightDown, upDown, downDown;
+        int lCount, rCount, uCount, dCount;
 
         public CharacterSelection()
         {
@@ -33,15 +34,19 @@ namespace SuperCrashTchrs.Screens
             {
                 case Keys.Left:
                     leftDown = true;
+                    lCount++;
                     break;
                 case Keys.Right:
                     rightDown = true;
+                    rCount++;
                     break;
                 case Keys.Up:
                     upDown = true;
+                    uCount++;
                     break;
                 case Keys.Down:
                     downDown = true;
+                    dCount++;
                     break;
             }
         }

@@ -147,7 +147,7 @@
         AAEAAAD/////AQAAAAAAAAAEAQAAABZTeXN0ZW0uSU8uTWVtb3J5U3RyZWFtCgAAAAdfYnVmZmVyB19v
         cmlnaW4JX3Bvc2l0aW9uB19sZW5ndGgJX2NhcGFjaXR5C19leHBhbmRhYmxlCV93cml0YWJsZQpfZXhw
         b3NhYmxlB19pc09wZW4dTWFyc2hhbEJ5UmVmT2JqZWN0K19faWRlbnRpdHkHAAAAAAAAAAACAggICAgB
-        AQEBCQIAAAAAAAAAAAAAALwOAQC8DgEAAAEAAQoPAgAAALwOAQACUklGRrQOAQBXQVZFZm10IBAAAAAB
+        AQEBCQIAAAAAAAAAvA4BALwOAQC8DgEAAAEAAQoPAgAAALwOAQACUklGRrQOAQBXQVZFZm10IBAAAAAB
         AAIARKwAABCxAgAEABAAZGF0YawNAQD1//z/9P/8//T//P/0//z/8//8//L//P/y//z/8v/7//D/+//w
         //n/8P/5//D/+f/w//n/8P/5//D/+f/x//n/8f/7//H/+//x//v/8//6//P/+v/z//z/8//8//P//P/z
         //z/8//8//P//P/x//r/7//6/+//+v/v//n/7f/5/+3/+f/t//n/7f/3/+3/9//r//X/6//z/+v/8//r
@@ -1310,7 +1310,7 @@
         AAEAAAD/////AQAAAAAAAAAEAQAAABZTeXN0ZW0uSU8uTWVtb3J5U3RyZWFtCgAAAAdfYnVmZmVyB19v
         cmlnaW4JX3Bvc2l0aW9uB19sZW5ndGgJX2NhcGFjaXR5C19leHBhbmRhYmxlCV93cml0YWJsZQpfZXhw
         b3NhYmxlB19pc09wZW4dTWFyc2hhbEJ5UmVmT2JqZWN0K19faWRlbnRpdHkHAAAAAAAAAAACAggICAgB
-        AQEBCQIAAAAAAAAAAAAAAHCWAABwlgAAAAEAAQoPAgAAAHCWAAACUklGRmiWAABXQVZFZm10IBAAAAAB
+        AQEBCQIAAAAAAAAAcJYAAHCWAABwlgAAAAEAAQoPAgAAAHCWAAACUklGRmiWAABXQVZFZm10IBAAAAAB
         AAEARKwAAIhYAQACABAAZGF0YUSWAAAAfQB9AH0AfQB9AH0AfQB9AH0AfQB9AH0AfQB9AH0AfQB9AH0A
         fQB9AH0AfQB9AH0AfQB9AH0AfQB9AH0AfQB9AH0AfQB9AH0AfQB9AH0AfcJeFzMSMw0zBzMCM/wy9zLy
         Muwy5zLiMtwy1zLRMswyxzLBMrwytzKxMqwypjKhMpwyljKRMowyhjKBMnsydjJxMmsyZjJhMlsyVjJR
@@ -1957,5 +1957,23 @@
   </data>
   <data name="EndScreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\TeacherSprites\EndScreen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Bond_Select" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\TeacherSprites\Bond Select.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Bradshaw_Select" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\TeacherSprites\Bradshaw Select.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Cutch_Select" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\TeacherSprites\Cutch Select.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Leitch_Select" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\TeacherSprites\Leitch Select.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Ortelli_Select" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\TeacherSprites\Ortelli Select.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Steel_Select" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\TeacherSprites\Steel Select.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

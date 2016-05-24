@@ -102,6 +102,16 @@ namespace SuperCrashTchrs.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Bond_Select {
+            get {
+                object obj = ResourceManager.GetObject("Bond_Select", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Bradshaw_L {
             get {
                 object obj = ResourceManager.GetObject("Bradshaw_L", resourceCulture);
@@ -115,6 +125,16 @@ namespace SuperCrashTchrs.Properties {
         internal static System.Drawing.Bitmap Bradshaw_R {
             get {
                 object obj = ResourceManager.GetObject("Bradshaw_R", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Bradshaw_Select {
+            get {
+                object obj = ResourceManager.GetObject("Bradshaw_Select", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -142,9 +162,29 @@ namespace SuperCrashTchrs.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Cutch_Select {
+            get {
+                object obj = ResourceManager.GetObject("Cutch_Select", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap EndScreen {
             get {
                 object obj = ResourceManager.GetObject("EndScreen", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Leitch_Select {
+            get {
+                object obj = ResourceManager.GetObject("Leitch_Select", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -160,11 +200,31 @@ namespace SuperCrashTchrs.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Ortelli_Select {
+            get {
+                object obj = ResourceManager.GetObject("Ortelli_Select", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
         internal static System.IO.UnmanagedMemoryStream Pain_Sound {
             get {
                 return ResourceManager.GetStream("Pain_Sound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Steel_Select {
+            get {
+                object obj = ResourceManager.GetObject("Steel_Select", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }
