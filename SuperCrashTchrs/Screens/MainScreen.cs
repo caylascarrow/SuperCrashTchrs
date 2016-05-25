@@ -17,9 +17,14 @@ namespace SuperCrashTchrs.Screens
             InitializeComponent();
         }
 
-        private void playButton_Click(object sender, EventArgs e)
+        private void playButton_Click_1(object sender, EventArgs e)
         {
-            ScreenControl.changeScreen(this, "ModeSelection");
+            Form f = this.FindForm();
+            f.Controls.Remove(this);
+
+            CharacterSelection cs = new CharacterSelection();
+
+            f.Controls.Add(cs);
         }
     }
 }

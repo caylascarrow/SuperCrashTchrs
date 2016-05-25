@@ -51,6 +51,7 @@
             // bondSelect
             // 
             this.bondSelect.AutoSize = true;
+            this.bondSelect.Checked = true;
             this.bondSelect.Location = new System.Drawing.Point(30, 18);
             this.bondSelect.Name = "bondSelect";
             this.bondSelect.Size = new System.Drawing.Size(49, 17);
@@ -66,7 +67,6 @@
             this.bradSelect.Name = "bradSelect";
             this.bradSelect.Size = new System.Drawing.Size(46, 17);
             this.bradSelect.TabIndex = 14;
-            this.bradSelect.TabStop = true;
             this.bradSelect.Text = "brad";
             this.bradSelect.UseVisualStyleBackColor = true;
             // 
@@ -77,7 +77,6 @@
             this.leitchSelect.Name = "leitchSelect";
             this.leitchSelect.Size = new System.Drawing.Size(50, 17);
             this.leitchSelect.TabIndex = 15;
-            this.leitchSelect.TabStop = true;
             this.leitchSelect.Text = "leitch";
             this.leitchSelect.UseVisualStyleBackColor = true;
             // 
@@ -88,7 +87,6 @@
             this.cutchSelect.Name = "cutchSelect";
             this.cutchSelect.Size = new System.Drawing.Size(52, 17);
             this.cutchSelect.TabIndex = 16;
-            this.cutchSelect.TabStop = true;
             this.cutchSelect.Text = "cutch";
             this.cutchSelect.UseVisualStyleBackColor = true;
             // 
@@ -99,7 +97,6 @@
             this.ortelliSelect.Name = "ortelliSelect";
             this.ortelliSelect.Size = new System.Drawing.Size(49, 17);
             this.ortelliSelect.TabIndex = 17;
-            this.ortelliSelect.TabStop = true;
             this.ortelliSelect.Text = "ortelli";
             this.ortelliSelect.UseVisualStyleBackColor = true;
             // 
@@ -110,7 +107,6 @@
             this.steelSelect.Name = "steelSelect";
             this.steelSelect.Size = new System.Drawing.Size(47, 17);
             this.steelSelect.TabIndex = 18;
-            this.steelSelect.TabStop = true;
             this.steelSelect.Text = "steel";
             this.steelSelect.UseVisualStyleBackColor = true;
             // 
@@ -136,6 +132,7 @@
             this.Controls.Add(this.playerSelectStatus);
             this.Name = "CharacterSelection";
             this.Size = new System.Drawing.Size(800, 800);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.CharacterSelection_Paint);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.CharacterSelection_KeyUp);
             this.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.CharacterSelection_PreviewKeyDown);
             this.teachSelect.ResumeLayout(false);

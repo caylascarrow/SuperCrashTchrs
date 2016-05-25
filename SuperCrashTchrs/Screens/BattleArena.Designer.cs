@@ -61,7 +61,6 @@
             this.p1Blue.TabIndex = 0;
             this.p1Blue.Text = "move2";
             this.p1Blue.UseVisualStyleBackColor = false;
-            this.p1Blue.Click += new System.EventHandler(this.p1Blue_Click);
             // 
             // p1Yellow
             // 
@@ -74,7 +73,6 @@
             this.p1Yellow.TabIndex = 1;
             this.p1Yellow.Text = "move1";
             this.p1Yellow.UseVisualStyleBackColor = false;
-            this.p1Yellow.Click += new System.EventHandler(this.p1Yellow_Click);
             // 
             // p1Red
             // 
@@ -87,7 +85,6 @@
             this.p1Red.TabIndex = 2;
             this.p1Red.Text = "move3";
             this.p1Red.UseVisualStyleBackColor = false;
-            this.p1Red.Click += new System.EventHandler(this.p1Red_Click);
             // 
             // p1Green
             // 
@@ -100,7 +97,6 @@
             this.p1Green.TabIndex = 3;
             this.p1Green.Text = "move4";
             this.p1Green.UseVisualStyleBackColor = false;
-            this.p1Green.Click += new System.EventHandler(this.p1Green_Click);
             // 
             // p2Green
             // 
@@ -113,7 +109,6 @@
             this.p2Green.TabIndex = 7;
             this.p2Green.Text = "move4";
             this.p2Green.UseVisualStyleBackColor = false;
-            this.p2Green.Click += new System.EventHandler(this.p2Green_Click);
             // 
             // p2Red
             // 
@@ -126,7 +121,6 @@
             this.p2Red.TabIndex = 6;
             this.p2Red.Text = "move3";
             this.p2Red.UseVisualStyleBackColor = false;
-            this.p2Red.Click += new System.EventHandler(this.p2Red_Click);
             // 
             // p2Yellow
             // 
@@ -139,7 +133,6 @@
             this.p2Yellow.TabIndex = 5;
             this.p2Yellow.Text = "move1";
             this.p2Yellow.UseVisualStyleBackColor = false;
-            this.p2Yellow.Click += new System.EventHandler(this.p2Yellow_Click);
             // 
             // p2Blue
             // 
@@ -153,8 +146,7 @@
             this.p2Blue.TabIndex = 4;
             this.p2Blue.Text = "move2";
             this.p2Blue.UseVisualStyleBackColor = false;
-            this.p2Blue.Click += new System.EventHandler(this.p2Blue_Click);
-            // 
+            //
             // p1HPBar
             // 
             this.p1HPBar.BackColor = System.Drawing.Color.Lime;

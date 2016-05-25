@@ -45,7 +45,7 @@
             this.playButton.TabIndex = 0;
             this.playButton.Text = "PLAY!";
             this.playButton.UseVisualStyleBackColor = false;
-            this.playButton.Click += new System.EventHandler(this.playButton_Click);
+            this.playButton.Click += new System.EventHandler(this.playButton_Click_1);
             // 
             // pictureBox1
             // 

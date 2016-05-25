@@ -13,18 +13,28 @@ namespace SuperCrashTchrs.Screens
     public partial class CharacterSelection : UserControl
     {
         bool leftDown, rightDown, upDown, downDown;
-        int lCount, rCount, uCount, dCount;
+        int teachX = 10;
+        int teachY = 10;
+        int teachCount = 0;
+
+        Image[] teachImage = {Properties.Resources.Bond_Select, Properties.Resources.Bradshaw_Select,
+            Properties.Resources.Leitch_Select, Properties.Resources.Cutch_Select, Properties.Resources.Ortelli_Select,
+            Properties.Resources.Steel_Select};
 
         public CharacterSelection()
         {
             InitializeComponent();
 
 
-
             //check to see if both players have selected a character
             if (Form1.teacher.Count == 1)
             {
-                ScreenControl.changeScreen(this, "BattleArena");
+                Form f = this.FindForm();
+                f.Controls.Remove(this);
+
+                BattleArena bs = new BattleArena();
+
+                f.Controls.Add(bs);
             }
         }
 
@@ -34,19 +44,15 @@ namespace SuperCrashTchrs.Screens
             {
                 case Keys.Left:
                     leftDown = true;
-                    lCount++;
                     break;
                 case Keys.Right:
                     rightDown = true;
-                    rCount++;
                     break;
                 case Keys.Up:
                     upDown = true;
-                    uCount++;
                     break;
                 case Keys.Down:
                     downDown = true;
-                    dCount++;
                     break;
             }
         }
@@ -67,6 +73,23 @@ namespace SuperCrashTchrs.Screens
                 case Keys.Right:
                     rightDown = false;
                     break;
+            }
+        }
+
+        private void CharacterSelection_Paint(object sender, PaintEventArgs e)
+        {
+            foreach (Image teachImage in teachImage)
+            {
+                e.Graphics.DrawImage(teachImage, teachX, teachY);
+
+                teachX = teachX + 250;
+
+                if(teachCount > 3 && teachCount < 4)
+                {
+                    teachY = teachY + 200;
+                }
+
+                teachCount++;
             }
         }
     }
