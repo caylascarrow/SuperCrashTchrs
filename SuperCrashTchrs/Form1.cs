@@ -56,7 +56,7 @@ namespace SuperCrashTchrs
 
         public static List<Teachers> teacher = new List<Teachers>();
 
-        List<Teachers> temp = new List<Teachers>();
+        List<Teachers> temp = new List<Teachers>();
 
         public Form1()
         {

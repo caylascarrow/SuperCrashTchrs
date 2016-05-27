@@ -19,7 +19,7 @@ namespace SuperCrashTchrs.Screens
 
         Image[] teachImage = {Properties.Resources.Bond_Select, Properties.Resources.Bradshaw_Select,
             Properties.Resources.Leitch_Select, Properties.Resources.Cutch_Select, Properties.Resources.Ortelli_Select,
-            Properties.Resources.Steel_Select};
+            Properties.Resources.Steel_Select};
 
         public CharacterSelection()
         {
@@ -36,6 +36,38 @@ namespace SuperCrashTchrs.Screens
 
                 f.Controls.Add(bs);
             }
+
+
+            Graphics g = this.CreateGraphics();
+
+            Pen selectPen = new Pen(Color.DarkGoldenrod, 25);
+
+            #region character selection
+            if (bondSelect.Checked == true)
+            {
+                g.DrawRectangle(selectPen, teachX, teachY, 156, 217);
+            }
+            else if(bradSelect.Checked == true)
+            {
+                g.DrawRectangle(selectPen, teachX, teachY, 156, 217);
+            }
+            else if(leitchSelect.Checked == true)
+            {
+                g.DrawRectangle(selectPen, teachX, teachY, 156, 217);
+            }
+            else if(cutchSelect.Checked == true)
+            {
+                g.DrawRectangle(selectPen, teachX, teachY, 156, 217);
+            }
+            else if(ortelliSelect.Checked == true)
+            {
+                g.DrawRectangle(selectPen, teachX, teachY, 156, 217);
+            }
+            else if (steelSelect.Checked == true)
+            {
+                g.DrawRectangle(selectPen, teachX, teachY, 156, 217);
+            }
+            #endregion
         }
 
         private void CharacterSelection_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
