@@ -15,13 +15,13 @@ namespace SuperCrashTchrs
     {
         #region Player Stats
         //Bond
-        public static int bondHP = 1;
+        public static int bondHP = 138;
         public static int bondAtk = 125;
         public static int bondDef = 75;
         public static int bondSpd = 150;
 
         //Bradshaw
-        public static int bradHP = 1;
+        public static int bradHP = 150;
         public static int bradAtk = 75;
         public static int bradDef = 125;
         public static int bradSpd = 125;
@@ -55,8 +55,6 @@ namespace SuperCrashTchrs
         #endregion
 
         public static List<Teachers> teacher = new List<Teachers>();
-
-        List<Teachers> temp = new List<Teachers>();
 
         public Form1()
         {
