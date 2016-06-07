@@ -53,8 +53,8 @@ namespace SuperCrashTchrs.Screens
             {
                 g.DrawRectangle(selectPen, teachX, teachY, 156, 217);
 
-                Teachers t = new Teachers(138, 125, 75, 150, "Criteria Chart", "Dissection", 
-                    "Mad Experiment", "Talk About Family", "Bond");
+                Teachers t = new Teachers(138, 125, 75, 150, "CriteriaChart", "Dissection", 
+                    "MadExperiment", "TalkAboutFamily", "Bond");
                 Form1.teacher.Add(t);
             }
             else if (bondSelect.Checked == true)
@@ -67,8 +67,8 @@ namespace SuperCrashTchrs.Screens
             {
                 g.DrawRectangle(selectPen, teachX, teachY, 156, 217);
 
-                Teachers t = new Teachers(150, 75, 125, 125, "Attack Bot", "Complain About Apple", 
-                    "Defender Bot", "Video Friday", "Bradshaw");
+                Teachers t = new Teachers(150, 75, 125, 125, "AttackBot", "ComplainAboutApple", 
+                    "DefenderBot", "VideoFriday", "Bradshaw");
                 Form1.teacher.Add(t);
             }
             else if (bradSelect.Checked == true)
@@ -81,8 +81,8 @@ namespace SuperCrashTchrs.Screens
             {
                 g.DrawRectangle(selectPen, teachX, teachY, 156, 217);
 
-                Teachers t = new Teachers(200, 75, 150, 50, "Documentary", "Essay Question", 
-                    "Historic War", "Muliple Choice Question", "Leitch");
+                Teachers t = new Teachers(200, 75, 150, 50, "Documentary", "EssayQuestion", 
+                    "HistoricWar", "MulipleChoiceQuestion", "Leitch");
                 Form1.teacher.Add(t);
             }
             else if (leitchSelect.Checked == true)
@@ -95,7 +95,7 @@ namespace SuperCrashTchrs.Screens
             {
                 g.DrawRectangle(selectPen, teachX, teachY, 156, 217);
 
-                Teachers t = new Teachers(100, 150, 100, 125, "DODGEBALL", "Dunk-On", "Push Ups", "Health Class", "McCutcheon");
+                Teachers t = new Teachers(100, 150, 100, 125, "DODGEBALL", "Dunk-On", "PushUps", "HealthClass", "McCutcheon");
                 Form1.teacher.Add(t);
             }
             else if (cutchSelect.Checked == true)
@@ -108,8 +108,8 @@ namespace SuperCrashTchrs.Screens
             {
                 g.DrawRectangle(selectPen, teachX, teachY, 156, 217);
 
-                Teachers t = new Teachers(175, 100, 125, 75, "Clarinet Squeak", "Full Band Fortissimo",
-                    "Melodious Passage", "Tuning", "Ortelli");
+                Teachers t = new Teachers(175, 100, 125, 75, "ClarinetSqueak", "FullBandFortissimo",
+                    "MelodiousPassage", "Tuning", "Ortelli");
                 Form1.teacher.Add(t);
             }
             else if (ortelliSelect.Checked == true)
@@ -122,7 +122,7 @@ namespace SuperCrashTchrs.Screens
             {
                 g.DrawRectangle(selectPen, teachX, teachY, 156, 217);
 
-                Teachers t = new Teachers(150, 75, 175, 75, "=", "Pink Paper", "Quadratic Attack", "Textbook Barricade", "Steel");
+                Teachers t = new Teachers(150, 75, 175, 75, "=", "PinkPaper", "QuadraticAttack", "TextbookBarricade", "Steel");
                 Form1.teacher.Add(t);
             }
             else if (steelSelect.Checked == true)
