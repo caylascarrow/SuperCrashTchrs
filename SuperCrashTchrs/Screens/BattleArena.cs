@@ -92,29 +92,8 @@ namespace SuperCrashTchrs.Screens
         }
 
         #region Character Moves
-        public void AttackBot()//Brad DONE; sound in; no bugs
+        public int AttackBot(int OPhP, int bradAtk, int OPDef, int OPAtk)//Brad DONE; sound in; no bugs
         {
-            //intergers
-            int playerAtk = 1;
-            int opponentDef = 1;
-            int opponentHP = 0;
-            int opponentAtk = 0;
-            int damage = 0;
-            //assign values
-            if (p1character == "Brad")
-            {
-                playerAtk = p1Atk;
-                opponentDef = p2Def;
-                opponentHP = p2hp;
-                opponentAtk = p2Atk;
-            }
-            else if (p2character == "Brad")
-            {
-                playerAtk = p2Atk;
-                opponentDef = p1Def;
-                opponentHP = p1hp;
-                opponentAtk = p1Atk;
-            }
 
             //display text
             battleStatusOutput.Text = "Bradshaw used Attack Bot!";
@@ -124,58 +103,34 @@ namespace SuperCrashTchrs.Screens
             //check if move hits
             if (randNum.Next(1, 101) <= 95)
             {
-                //attack sound
-                attackPlayer.Play();
-                //damage calculation
-                damage = (((42 * playerAtk * 30 / opponentDef) / 50) + 2)
-                    * randNum.Next(1, 101) / 100;
-                opponentHP -= damage;
-                //play damage sound before changing hp
-                damagePlayer.Play();
-
-                //Change HPbar length
-                if (p1character == "Brad")
+                //choose which teacher to use
+                if (Form1.teacher[0].name == "Brad")
                 {
-                    for (int i = p2hp; i > opponentHP && i > 0; i--)
-                    {
-                        p2HPBar.Size = new Size(i, 10);
-                        Thread.Sleep(50);
-                        Refresh();
-                    }
-                }
-                else if (p2character == "Brad")
-                {
-                    for (int i = p1hp; i > opponentHP && i > 0; i--)
-                    {
-                        p1HPBar.Size = new Size(i, 10);
-                        Thread.Sleep(50);
-                        Refresh();
-                    }
-                }
-                //check if opponent is KO
-                //if (opponentHP <= 0)
-                //{
-                //    battleStatusOutput.Text = "The opponent fainted!";
-                //    Thread.Sleep(sleepTime);
-                //    Refresh();
-                //    ScreenControl.changeScreen(this, "MultiEndScreen");
-                //}
-
-                //lower attack stat
-                opponentAtk -= 25;
-                //display message
-                battleStatusOutput.Text = "The opponents Attack was lowered!";
-                Thread.Sleep(sleepTime);
-                Refresh();
-                if (opponentAtk <= 0)
-                {
-                    opponentAtk = 1;
+                    //attack sound
+                    attackPlayer.Play();
+                    //damage calculation
+                    OPhP = OPhP - (((42 * bradAtk * 30 / OPDef) / 50) + 2) * randNum.Next(1, 101) / 100;
+                    //play damage sound before changing hp
+                    damagePlayer.Play();
+                    //lower attack
+                    OPAtk -= 25;
                     //display message
-                    battleStatusOutput.Text = "The opponents Attack can't go any lower!";
+                    battleStatusOutput.Text = "The opponents Attack was lowered!";
                     Thread.Sleep(sleepTime);
                     Refresh();
+                    if (OPAtk <= 0)
+                    {
+                        OPAtk = 1;
+                        //display message
+                        battleStatusOutput.Text = "The opponents Attack can't go any lower!";
+                        Thread.Sleep(sleepTime);
+                        Refresh();
+                    }
+                    return OPhP;
+                    return OPAtk;
                 }
             }
+
             //if attack misses    
             else
             {
@@ -183,51 +138,51 @@ namespace SuperCrashTchrs.Screens
                 Thread.Sleep(sleepTime);
                 Refresh();
             }
-            //reassign stats to players
-            if (p1character == "Brad")
-            {
-                p2hp = opponentHP;
-                p2Atk = opponentAtk;
-            }
-            else if (p2character == "Brad")
-            {
-                p1hp = opponentHP;
-                p1Atk = opponentAtk;
-            }
         }
 
         public void ClarinetSqueak()//Ort; needs sound DONE
         {
+            //set sleep for melodious passage off
             melodiousSleep = false;
-            int opponentDef = 0;
-            if (p1character == "Ort")
+            //check which teacher to use
+            if (Form1.teacher[0].name == "Ortelli")
             {
-                opponentDef = p2Def;
+                //remove 25 points from opponent's defence
+                Form1.teacher[1].def -= 25;
+                battleStatusOutput.Text = "The opponents defence was lowered!";
+                Thread.Sleep(sleepTime);
+                Refresh();
+                //make sure opponent's defence isn't lower than 1
+                if (Form1.teacher[1].def <= 0)
+                {
+                    Form1.teacher[1].def = 1;
+                    battleStatusOutput.Text = "The opponents defence cannot go any lower!";
+                    Thread.Sleep(sleepTime);
+                    Refresh();
+                }
             }
-            else if (p2character == "Ort")
+            else if (Form1.teacher[1].name == "Ortelli")
             {
-                opponentDef = p1Def;
+                //remove 25 points from opponent's defence
+                Form1.teacher[0].def -= 25;
+                battleStatusOutput.Text = "The opponents defence was lowered!";
+                Thread.Sleep(sleepTime);
+                Refresh();
+                //make sure opponent's defence isn't lower than 1
+                if (Form1.teacher[0].def <= 0)
+                {
+                    Form1.teacher[0].def = 1;
+                    battleStatusOutput.Text = "The opponents defence cannot go any lower!";
+                    Thread.Sleep(sleepTime);
+                    Refresh();
+                }
             }
             if (ortSleep == false)
             {
                 battleStatusOutput.Text = "A Clairinet in the Band (Ben F.) created an obnoxious squeak!";
                 Thread.Sleep(sleepTime);
                 Refresh();
-
-                opponentDef -= 25;
-                battleStatusOutput.Text = "The opponents defence was lowered!";
-                Thread.Sleep(sleepTime);
-                Refresh();
-
-                if (opponentDef <= 0)
-                {
-                    opponentDef = 1;
-                    battleStatusOutput.Text = "The opponents defence cannot go any lower!";
-                    Thread.Sleep(sleepTime);
-                    Refresh();
-                }
             }
-
             else if (ortSleep == true)
             {
                 ortSleep = false;
@@ -235,38 +190,10 @@ namespace SuperCrashTchrs.Screens
                 Thread.Sleep(sleepTime);
                 Refresh();
             }
-            if (p1character == "Ort")
-            {
-                p2Def = opponentDef;
-            }
-            else if (p2character == "Ort")
-            {
-                p1Def = opponentDef;
-            }
         }
 
         public void ComplainAbout()//Brad; with sound; DONE
         {
-            //variables
-            int playerAtk = 1;
-            int opponentDef = 1;
-            int opponentHP = 0;
-            int damage = 0;
-
-            //assign to current player
-            if (p1character == "Brad")
-            {
-                playerAtk = p1Atk;
-                opponentDef = p2Def;
-                opponentHP = p2hp;
-            }
-            else if (p2character == "Brad")
-            {
-                playerAtk = p2Atk;
-                opponentDef = p1Def;
-                opponentHP = p1hp;
-            }
-
             //display text
             battleStatusOutput.Text = "Bradshaw used Complain About Apple!";
             Thread.Sleep(sleepTime);
@@ -275,150 +202,138 @@ namespace SuperCrashTchrs.Screens
             //check if attack hits
             if (randNum.Next(1, 101) <= 90)
             {
-                //attack sound
-                attackPlayer.Play();
-                //damage calc
-                damage = (((42 * playerAtk * 75 / opponentDef) / 50) + 2)
-                    * randNum.Next(1, 101) / 100;
-                opponentHP -= damage;
-                //play damage sound
-                damagePlayer.Play();
-
-                //change HP bar
-                if (p1character == "Brad")
+                if (Form1.teacher[0].name == "Brad")
                 {
-                    for (int i = p2hp; i > opponentHP && i > 0; i--)
-                    {
-                        p2HPBar.Size = new Size(i, 10);
-                        Thread.Sleep(50);
-                        Refresh();
-                    }
+                    //attack sound
+                    attackPlayer.Play();
+                    //damage calc
+                    Form1.teacher[1].hP = Form1.teacher[1].hP - (((42 * Form1.teacher[0].atk * 75 /
+                        Form1.teacher[1].def) / 50) + 2) * randNum.Next(1, 101) / 100;
+                    //play damage sound
+                    damagePlayer.Play();
                 }
-                else if (p2character == "Brad")
+                else if (Form1.teacher[1].name == "Brad")
                 {
-                    for (int i = p1hp; i > opponentHP && i > 0; i--)
-                    {
-                        p1HPBar.Size = new Size(i, 10);
-                        Thread.Sleep(50);
-                        Refresh();
-                    }
+                    //attack sound
+                    attackPlayer.Play();
+                    //damage calc
+                    Form1.teacher[0].hP = Form1.teacher[0].hP - (((42 * Form1.teacher[1].atk * 75 /
+                        Form1.teacher[0].def) / 50) + 2) * randNum.Next(1, 101) / 100;
+                    //play damage sound
+                    damagePlayer.Play();
                 }
-                //check if fainted
-                //if (opponentHP <= 0)
-                //{
-                //    battleStatusOutput.Text = "The opponent fainted!";
-                //    Thread.Sleep(sleepTime);
-                //    Refresh();
-
-                //    ScreenControl.changeScreen(this, "MultiEndScreen");
-                //}
             }
-            //check if dead
             else
             {
                 battleStatusOutput.Text = "But the opponent never liked apple in the first place!";
                 Thread.Sleep(sleepTime);
                 Refresh();
             }
-            //return stat changes
-            if (p1character == "Brad")
-            {
-                p2hp = opponentHP;
-            }
-            else if (p2character == "Brad")
-            {
-                p1hp = opponentHP;
-            }
         }
 
         public void CriteriaChart()//Bond; needs sound DONE
         {
-            int userAtk = 0;
-            int userSpd = 0;
-            if (p1character == "Bond")
-            {
-                userAtk = p1Atk;
-                userSpd = p1Spd;
-            }
-            else if (p2character == "Bond")
-            {
-                userAtk = p2Atk;
-                userSpd = p2Spd;
-            }
             battleStatusOutput.Text = "Bond used Critera Chart!";
             Thread.Sleep(sleepTime);
             Refresh();
-
-            userAtk += 25;
-            battleStatusOutput.Text = "Bonds Attack rose!";
-            Thread.Sleep(sleepTime);
-            Refresh();
-
-            if (userAtk > 250)
+            //use proper teacher stats
+            if (Form1.teacher[0].name == "Bond")
             {
-                userAtk = 250;
-                battleStatusOutput.Text = "Bonds Attack can't go any higher!";
+                Form1.teacher[0].atk += 25;
+                battleStatusOutput.Text = "Bonds Attack rose!";
                 Thread.Sleep(sleepTime);
                 Refresh();
-            }
-
-            userSpd += 25;
-            battleStatusOutput.Text = "Bonds Speed rose!";
-            Thread.Sleep(sleepTime);
-            Refresh();
-            if (userSpd > 250)
-            {
-                userSpd = 250;
-                battleStatusOutput.Text = "Bonds Speed can't go any higher!";
+                //make sure bond's attack doesn't go above limit
+                if (Form1.teacher[0].atk > 250)
+                {
+                    Form1.teacher[0].atk = 250;
+                    battleStatusOutput.Text = "Bonds Attack can't go any higher!";
+                    Thread.Sleep(sleepTime);
+                    Refresh();
+                }
+                //increase bond's speed
+                Form1.teacher[0].spd += 25;
+                battleStatusOutput.Text = "Bonds Speed rose!";
                 Thread.Sleep(sleepTime);
                 Refresh();
-            }
-            if (p1character == "Bond")
-            {
-                p1Atk = userAtk;
-                p1Spd = userSpd;
+                // make sure speed doesn't go over limit
+                if (Form1.teacher[0].spd > 250)
+                {
+                    Form1.teacher[0].spd = 250;
+                    battleStatusOutput.Text = "Bonds Speed can't go any higher!";
+                    Thread.Sleep(sleepTime);
+                    Refresh();
+                }
             }
             else if (p2character == "Bond")
             {
-                userAtk = p2Atk;
-                userSpd = p2Spd;
+                //increase Bond's attack
+                Form1.teacher[0].atk += 25;
+                battleStatusOutput.Text = "Bonds Attack rose!";
+                Thread.Sleep(sleepTime);
+                Refresh();
+                //make sure Bond's attack doesn't go above limit
+                if (Form1.teacher[0].atk > 250)
+                {
+                    Form1.teacher[0].atk = 250;
+                    battleStatusOutput.Text = "Bonds Attack can't go any higher!";
+                    Thread.Sleep(sleepTime);
+                    Refresh();
+                }
+                //increase Bond's speed
+                Form1.teacher[0].spd += 25;
+                battleStatusOutput.Text = "Bonds Speed rose!";
+                Thread.Sleep(sleepTime);
+                Refresh();
+                // make sure speed doesn't go over limit
+                if (Form1.teacher[0].spd > 250)
+                {
+                    Form1.teacher[0].spd = 250;
+                    battleStatusOutput.Text = "Bonds Speed can't go any higher!";
+                    Thread.Sleep(sleepTime);
+                    Refresh();
+                }
             }
         }
 
         public void DefenderBot()//Brad; needs sound kinda done
         {
-            int playerDef = 0;
-            if (p1character == "Brad")
-            {
-                playerDef = p1Def;
-            }
-            else if (p2character == "Brad")
-            {
-                playerDef = p2Def;
-            }
+            //Send message
             battleStatusOutput.Text = "Bradshaw created a robot to defend himself!";
             Thread.Sleep(sleepTime);
             Refresh();
-            playerDef -= 25;
-            battleStatusOutput.Text = "Bradshaws Defence was raised!";
-            Thread.Sleep(sleepTime);
-            Refresh();
-
-            if (playerDef <= 0)
+            //check which stats to use
+            if (Form1.teacher[0].name == "Brad")
             {
-                playerDef = 1;
-                battleStatusOutput.Text = "Bradshaws Defence can't go any higher!";
+                //raise Bradshaw's defence
+                Form1.teacher[0].def += 25;
+                battleStatusOutput.Text = "Bradshaws Defence was raised!";
                 Thread.Sleep(sleepTime);
                 Refresh();
+                //Make sure defence doesn't go over limit
+                if (Form1.teacher[0].def > 225)
+                {
+                    Form1.teacher[0].def = 225;
+                    battleStatusOutput.Text = "Bradshaws Defence can't go any higher!";
+                    Thread.Sleep(sleepTime);
+                    Refresh();
+                }
             }
-
-            if (p1character == "Brad")
+            else if (Form1.teacher[1].name == "Brad")
             {
-                p1Def = playerDef;
-            }
-            else if (p2character == "Brad")
-            {
-                p2Def = playerDef;
+                //raise Bradshaw's defence
+                Form1.teacher[1].def += 25;
+                battleStatusOutput.Text = "Bradshaws Defence was raised!";
+                Thread.Sleep(sleepTime);
+                Refresh();
+                //make sure defence doesn't go over limit
+                if (Form1.teacher[1].def > 225)
+                {
+                    Form1.teacher[1].def = 225;
+                    battleStatusOutput.Text = "Bradshaws Defence can't go any higher!";
+                    Thread.Sleep(sleepTime);
+                    Refresh();
+                }
             }
         }
 
@@ -480,16 +395,6 @@ namespace SuperCrashTchrs.Screens
                         Refresh();
                     }
                 }
-                //check if dead
-                //if (opponentHP <= 0)
-                //{
-                //    battleStatusOutput.Text = "The opponent fainted!";
-                //    Thread.Sleep(sleepTime);
-                //    Refresh();
-
-                //    ScreenControl.changeScreen(this, "MultiEndScreen");
-                //}
-
                 //lower opponent defence
                 opponentDef -= 25;
                 battleStatusOutput.Text = "The opponents Defence was lowered!";
@@ -510,17 +415,6 @@ namespace SuperCrashTchrs.Screens
                 battleStatusOutput.Text = "But the opponent wasn't grossed out!";
                 Thread.Sleep(sleepTime);
                 Refresh();
-            }
-            //return changes
-            if (p1character == "Bond")
-            {
-                p2hp = opponentHP;
-                p2Def = opponentDef;
-            }
-            else if (p2character == "Bond")
-            {
-                p1hp = opponentHP;
-                p1Def = opponentDef;
             }
         }
 
@@ -1899,7 +1793,8 @@ namespace SuperCrashTchrs.Screens
                     CriteriaChart();
                     break;
                 case "AttackBot":
-                    AttackBot();
+                    AttackBot(Form1.teacher[1].hP, Form1.teacher[0].atk, Form1.teacher[1].def, Form1.teacher[1].atk);
+                    Form1.teacher[1].hP =
                     break;
                 case "Documentary":
                     //Documentary
@@ -2009,7 +1904,7 @@ namespace SuperCrashTchrs.Screens
                     CriteriaChart();
                     break;
                 case "AttackBot":
-                    AttackBot();
+                    AttackBot(Form1.teacher[0].hP, Form1.teacher[1].atk, Form1.teacher[0].def, Form1.teacher[0].atk);
                     break;
                 case "Documentary":
                     //Documentary
