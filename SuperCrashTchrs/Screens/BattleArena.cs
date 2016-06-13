@@ -33,6 +33,10 @@ namespace SuperCrashTchrs.Screens
         int leitchSleep = 0;
         bool ortSleep = false;
         bool melodiousSleep = false;
+
+        int atkLimit = 250;
+        int defLimit = 275;
+        int spdLimit = 250;
         #endregion
 
         public BattleArena()
@@ -92,54 +96,6 @@ namespace SuperCrashTchrs.Screens
         }
 
         #region Character Moves
-        public int AttackBot(int OPhP, int bradAtk, int OPDef, int OPAtk)//Brad DONE; sound in; no bugs
-        {
-
-            //display text
-            battleStatusOutput.Text = "Bradshaw used Attack Bot!";
-            Thread.Sleep(sleepTime);
-            Refresh();
-
-            //check if move hits
-            if (randNum.Next(1, 101) <= 95)
-            {
-                //choose which teacher to use
-                if (Form1.teacher[0].name == "Brad")
-                {
-                    //attack sound
-                    attackPlayer.Play();
-                    //damage calculation
-                    OPhP = OPhP - (((42 * bradAtk * 30 / OPDef) / 50) + 2) * randNum.Next(1, 101) / 100;
-                    //play damage sound before changing hp
-                    damagePlayer.Play();
-                    //lower attack
-                    OPAtk -= 25;
-                    //display message
-                    battleStatusOutput.Text = "The opponents Attack was lowered!";
-                    Thread.Sleep(sleepTime);
-                    Refresh();
-                    if (OPAtk <= 0)
-                    {
-                        OPAtk = 1;
-                        //display message
-                        battleStatusOutput.Text = "The opponents Attack can't go any lower!";
-                        Thread.Sleep(sleepTime);
-                        Refresh();
-                    }
-                    return OPhP;
-                    return OPAtk;
-                }
-            }
-
-            //if attack misses    
-            else
-            {
-                battleStatusOutput.Text = "But the robot malfunctioned!";
-                Thread.Sleep(sleepTime);
-                Refresh();
-            }
-        }
-
         public void ClarinetSqueak()//Ort; needs sound DONE
         {
             //set sleep for melodious passage off
@@ -228,71 +184,6 @@ namespace SuperCrashTchrs.Screens
                 battleStatusOutput.Text = "But the opponent never liked apple in the first place!";
                 Thread.Sleep(sleepTime);
                 Refresh();
-            }
-        }
-
-        public void CriteriaChart()//Bond; needs sound DONE
-        {
-            battleStatusOutput.Text = "Bond used Critera Chart!";
-            Thread.Sleep(sleepTime);
-            Refresh();
-            //use proper teacher stats
-            if (Form1.teacher[0].name == "Bond")
-            {
-                Form1.teacher[0].atk += 25;
-                battleStatusOutput.Text = "Bonds Attack rose!";
-                Thread.Sleep(sleepTime);
-                Refresh();
-                //make sure bond's attack doesn't go above limit
-                if (Form1.teacher[0].atk > 250)
-                {
-                    Form1.teacher[0].atk = 250;
-                    battleStatusOutput.Text = "Bonds Attack can't go any higher!";
-                    Thread.Sleep(sleepTime);
-                    Refresh();
-                }
-                //increase bond's speed
-                Form1.teacher[0].spd += 25;
-                battleStatusOutput.Text = "Bonds Speed rose!";
-                Thread.Sleep(sleepTime);
-                Refresh();
-                // make sure speed doesn't go over limit
-                if (Form1.teacher[0].spd > 250)
-                {
-                    Form1.teacher[0].spd = 250;
-                    battleStatusOutput.Text = "Bonds Speed can't go any higher!";
-                    Thread.Sleep(sleepTime);
-                    Refresh();
-                }
-            }
-            else if (p2character == "Bond")
-            {
-                //increase Bond's attack
-                Form1.teacher[0].atk += 25;
-                battleStatusOutput.Text = "Bonds Attack rose!";
-                Thread.Sleep(sleepTime);
-                Refresh();
-                //make sure Bond's attack doesn't go above limit
-                if (Form1.teacher[0].atk > 250)
-                {
-                    Form1.teacher[0].atk = 250;
-                    battleStatusOutput.Text = "Bonds Attack can't go any higher!";
-                    Thread.Sleep(sleepTime);
-                    Refresh();
-                }
-                //increase Bond's speed
-                Form1.teacher[0].spd += 25;
-                battleStatusOutput.Text = "Bonds Speed rose!";
-                Thread.Sleep(sleepTime);
-                Refresh();
-                // make sure speed doesn't go over limit
-                if (Form1.teacher[0].spd > 250)
-                {
-                    Form1.teacher[0].spd = 250;
-                    battleStatusOutput.Text = "Bonds Speed can't go any higher!";
-                    Thread.Sleep(sleepTime);
-                    Refresh();
-                }
             }
         }
 
@@ -1786,28 +1677,46 @@ namespace SuperCrashTchrs.Screens
 
         public void p1MoveSelect()
         {
+            //order of moves is always Bond, Bradshaw, Leitch, Cutch, Ortelli, Steel
             #region move 1
             switch (Form1.teacher[0].move1)
             {
                 case "CriteriaChart":
-                    CriteriaChart();
+                    //raise speed and attack of Bond
+                    Form1.teacher[0].atk = StatRaise(Form1.teacher[0].atk, atkLimit, "Attack");
+                    Form1.teacher[0].spd = StatRaise(Form1.teacher[0].spd, spdLimit, "Speed");
                     break;
+
                 case "AttackBot":
-                    AttackBot(Form1.teacher[1].hP, Form1.teacher[0].atk, Form1.teacher[1].def, Form1.teacher[1].atk);
-                    Form1.teacher[1].hP =
+                    //calculate damage (power of 30)
+                    Form1.teacher[1].hP = HitCalc(Form1.teacher[1].hP, Form1.teacher[1].def, Form1.teacher[0].atk, 30);
+
+                    //lower attack of opponent
+                    Form1.teacher[1].atk = StatLower(Form1.teacher[1].atk, "Attack");
                     break;
+
                 case "Documentary":
-                    //Documentary
+                    //Documentary (HP raise and miss 2 turns)
                     break;
+
                 case "Dodgeball":
-                    Dodgeball();
+                    //calculate opponent's HP
+                    Form1.teacher[1].hP = HitCalc(Form1.teacher[1].hP, Form1.teacher[1].def, Form1.teacher[0].atk, 100);
+
+                    //lower Cutch's attack and defence
+                    Form1.teacher[0].atk = StatLower(Form1.teacher[0].atk, "Attack");
+                    Form1.teacher[0].def = StatLower(Form1.teacher[0].def, "Defence");
                     break;
+
                 case "ClarinetSpeak":
-                    ClarinetSqueak();
+                    //lower opponent's defence stat
+                    Form1.teacher[1].def = StatLower(Form1.teacher[1].def, "Defence");
                     break;
+
                 case "EqualSign":
-                    //EqualSign
+                    //EqualSign (combine HP of players, split in half, custom method)
                     break;
+
                 default:
                     break;
             }
@@ -1819,21 +1728,28 @@ namespace SuperCrashTchrs.Screens
                 case "Dissection":
                     Dissection();
                     break;
+
                 case "ComplainAboutApple":
-                    ComplainAbout();
+                    //calculate opponent's HP (power of 75)
+                    Form1.teacher[1].hP = HitCalc(Form1.teacher[1].hP, Form1.teacher[1].def, Form1.teacher[0].atk, 75);
                     break;
+
                 case "EssayQuestion":
                     EssayQuestion();
                     break;
+
                 case "Dunk-On":
                     //DunkOn
                     break;
+
                 case "FullBandFortissimo":
                     //FullBandFF
                     break;
+
                 case "PinkPaper":
                     //PinkPaper
                     break;
+
                 default:
                     break;
             }
@@ -2000,6 +1916,61 @@ namespace SuperCrashTchrs.Screens
                     break;
             }
             #endregion
+        }
+
+        public int HitCalc(int oppHP, int oppDef, int plrAtk, int movePower)
+        {
+            //attack sound
+            attackPlayer.Play();
+            //damage calculation
+            oppHP = oppHP - (((42 * plrAtk * movePower / oppDef) / 50) + 2) * randNum.Next(1, 101) / 100;
+            //play damage sound before changing hp
+            damagePlayer.Play();
+
+            return oppHP;
+        }
+
+        public int StatLower(int stat, string statType)
+        {
+            //lower stat
+            stat -= 25;
+            //display message
+            battleStatusOutput.Text = "The opponent's " + statType + " was lowered!";
+            Thread.Sleep(sleepTime);
+            Refresh();
+            //make sure stat doesn't go below 0
+            if (stat <= 0)
+            {
+                stat = 1;
+                //display message
+                battleStatusOutput.Text = "The opponent's" + statType + " can't go any lower!";
+                Thread.Sleep(sleepTime);
+                Refresh();
+            }
+            return stat;
+        }
+
+        public int StatRaise(int stat, int statLimit, string statName)
+        {
+            // increase stat
+            stat += 25;
+            battleStatusOutput.Text = statName + " has been raised!";
+            Thread.Sleep(sleepTime);
+            Refresh();
+            //make sure stat doesn't go above limit
+            if (stat > statLimit)
+            {
+                stat = statLimit;
+                battleStatusOutput.Text = statName + " can't go any higher!";
+                Thread.Sleep(sleepTime);
+                Refresh();
+            }
+            return stat;
+        }
+
+        public int HPRaise()
+        {
+
         }
     }
 }
