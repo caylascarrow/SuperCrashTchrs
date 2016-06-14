@@ -37,6 +37,9 @@ namespace SuperCrashTchrs.Screens
         int atkLimit = 250;
         int defLimit = 275;
         int spdLimit = 250;
+
+        int p1InitialHP = Form1.teacher[0].hP;
+        int p2InitialHP = Form1.teacher[1].hP;
         #endregion
 
         public BattleArena()
@@ -96,57 +99,6 @@ namespace SuperCrashTchrs.Screens
         }
 
         #region Character Moves
-        public void ClarinetSqueak()//Ort; needs sound DONE
-        {
-            //set sleep for melodious passage off
-            melodiousSleep = false;
-            //check which teacher to use
-            if (Form1.teacher[0].name == "Ortelli")
-            {
-                //remove 25 points from opponent's defence
-                Form1.teacher[1].def -= 25;
-                battleStatusOutput.Text = "The opponents defence was lowered!";
-                Thread.Sleep(sleepTime);
-                Refresh();
-                //make sure opponent's defence isn't lower than 1
-                if (Form1.teacher[1].def <= 0)
-                {
-                    Form1.teacher[1].def = 1;
-                    battleStatusOutput.Text = "The opponents defence cannot go any lower!";
-                    Thread.Sleep(sleepTime);
-                    Refresh();
-                }
-            }
-            else if (Form1.teacher[1].name == "Ortelli")
-            {
-                //remove 25 points from opponent's defence
-                Form1.teacher[0].def -= 25;
-                battleStatusOutput.Text = "The opponents defence was lowered!";
-                Thread.Sleep(sleepTime);
-                Refresh();
-                //make sure opponent's defence isn't lower than 1
-                if (Form1.teacher[0].def <= 0)
-                {
-                    Form1.teacher[0].def = 1;
-                    battleStatusOutput.Text = "The opponents defence cannot go any lower!";
-                    Thread.Sleep(sleepTime);
-                    Refresh();
-                }
-            }
-            if (ortSleep == false)
-            {
-                battleStatusOutput.Text = "A Clairinet in the Band (Ben F.) created an obnoxious squeak!";
-                Thread.Sleep(sleepTime);
-                Refresh();
-            }
-            else if (ortSleep == true)
-            {
-                ortSleep = false;
-                battleStatusOutput.Text = "Ortelli needs to recover!";
-                Thread.Sleep(sleepTime);
-                Refresh();
-            }
-        }
 
         public void ComplainAbout()//Brad; with sound; DONE
         {
@@ -1133,86 +1085,6 @@ namespace SuperCrashTchrs.Screens
             }
         }
 
-        public void MultiQuestion()//Leitch done?
-        {
-            int playerAtk = 0;
-            int opponentHP = 1;
-            int opponentDef = 0;
-            if (leitchSleep == 0)
-            {
-                if (p1character == "Leitch")
-                {
-                    playerAtk = p1Atk;
-                    opponentHP = p2hp;
-                    opponentDef = p2Def;
-                }
-                else if (p2character == "Leitch")
-                {
-                    playerAtk = p2Atk;
-                    opponentHP = p1hp;
-                    opponentDef = p1Def;
-                }
-                battleStatusOutput.Text = "Leitch gave out a Multiple Choice Question!";
-                Thread.Sleep(sleepTime);
-                Refresh();
-                if (randNum.Next(1, 101) < 75)
-                {
-                    //damage calc
-                    opponentHP -= (((42 * playerAtk * 90 / opponentDef) / 50) + 2)
-                        * randNum.Next(1, 101) / 100;
-
-                    //Change HPbar
-                    if (p1character == "Leitch")
-                    {
-                        for (int i = p2hp; i > opponentHP && i > 0; i--)
-                        {
-                            p2HPBar.Size = new Size(i, 10);
-                            Thread.Sleep(50);
-                            Refresh();
-                        }
-                    }
-                    else if (p2character == "Leitch")
-                    {
-                        for (int i = p1hp; i > opponentHP && i > 0; i--)
-                        {
-                            p1HPBar.Size = new Size(i, 10);
-                            Thread.Sleep(50);
-                            Refresh();
-                        }
-                    }
-                    //check if opponent dead
-                    //if (opponentHP <= 0)
-                    //{
-                    //    battleStatusOutput.Text = "The opponent fainted!";
-                    //    Thread.Sleep(sleepTime);
-                    //    Refresh();
-                    //    ScreenControl.changeScreen(this, "MultiEndScreen");
-                    //}
-                }
-                else
-                {
-                    battleStatusOutput.Text = "But it was Answered correct!";
-                    Thread.Sleep(sleepTime);
-                    Refresh();
-                }
-                if (p1character == "Leitch")
-                {
-                    p2hp = opponentHP;
-                }
-                else if (p2character == "Leitch")
-                {
-                    p1hp = opponentHP;
-                }
-            }
-            else
-            {
-                battleStatusOutput.Text = "The class is still asleep!";
-                Thread.Sleep(sleepTime);
-                Refresh();
-                leitchSleep--;
-            }
-        }
-
         public void PinkPaper()//Steel not done
         {
             //variables
@@ -1503,40 +1375,6 @@ namespace SuperCrashTchrs.Screens
             }
         }
 
-        public void TextbookBarricade()//Steel DONE
-        {
-            int playerDef = 0;
-            if (p1character == "Steel")
-            {
-                playerDef = p1Def;
-            }
-            else if (p2character == "Steel")
-            {
-                playerDef = p2Def;
-            }
-            battleStatusOutput.Text = "Steel used his engineer skills to make a Textbook Barricade!";
-            Thread.Sleep(sleepTime);
-            playerDef -= 25;
-            battleStatusOutput.Text = "Steels Defence was raised!";
-            Thread.Sleep(sleepTime);
-
-            if (playerDef <= 0)
-            {
-                playerDef = 1;
-                battleStatusOutput.Text = "Steels Defence can't go any higher!";
-                Thread.Sleep(sleepTime);
-            }
-
-            if (p1character == "Steel")
-            {
-                p1Def = playerDef;
-            }
-            else if (p2character == "Steel")
-            {
-                p2Def = playerDef;
-            }
-        }
-
         public void Tuning()//Ort DONE
         {
             melodiousSleep = false;
@@ -1691,8 +1529,8 @@ namespace SuperCrashTchrs.Screens
                     //calculate damage (power of 30)
                     Form1.teacher[1].hP = HitCalc(Form1.teacher[1].hP, Form1.teacher[1].def, Form1.teacher[0].atk, 30);
 
-                    //lower attack of opponent
-                    Form1.teacher[1].atk = StatLower(Form1.teacher[1].atk, "Attack");
+                    //lower attack of opponent by one stage (25)
+                    Form1.teacher[1].atk = StatLower(Form1.teacher[1].atk, 25, "Attack");
                     break;
 
                 case "Documentary":
@@ -1703,14 +1541,14 @@ namespace SuperCrashTchrs.Screens
                     //calculate opponent's HP
                     Form1.teacher[1].hP = HitCalc(Form1.teacher[1].hP, Form1.teacher[1].def, Form1.teacher[0].atk, 100);
 
-                    //lower Cutch's attack and defence
-                    Form1.teacher[0].atk = StatLower(Form1.teacher[0].atk, "Attack");
-                    Form1.teacher[0].def = StatLower(Form1.teacher[0].def, "Defence");
+                    //lower Cutch's attack and defence by one stage (25)
+                    Form1.teacher[0].atk = StatLower(Form1.teacher[0].atk, 25, "Attack");
+                    Form1.teacher[0].def = StatLower(Form1.teacher[0].def, 25, "Defence");
                     break;
 
                 case "ClarinetSpeak":
-                    //lower opponent's defence stat
-                    Form1.teacher[1].def = StatLower(Form1.teacher[1].def, "Defence");
+                    //lower opponent's defence stat by one stage (25)
+                    Form1.teacher[1].def = StatLower(Form1.teacher[1].def, 25, "Defence");
                     break;
 
                 case "EqualSign":
@@ -1726,7 +1564,10 @@ namespace SuperCrashTchrs.Screens
             switch (Form1.teacher[0].move2)
             {
                 case "Dissection":
-                    Dissection();
+                    //calculate opponent's HP (move power of 30)
+                    Form1.teacher[1].hP = HitCalc(Form1.teacher[1].hP, Form1.teacher[1].def, Form1.teacher[0].atk, 30);
+                    //lower defence of opponent by 2 stages (50)
+                    Form1.teacher[1].def = StatLower(Form1.teacher[1].def, 50, "Defence");
                     break;
 
                 case "ComplainAboutApple":
@@ -1735,19 +1576,23 @@ namespace SuperCrashTchrs.Screens
                     break;
 
                 case "EssayQuestion":
-                    EssayQuestion();
+                    //lower speed of opponent by 2 stages (50)
+                    Form1.teacher[1].spd = StatLower(Form1.teacher[1].spd, 50, "Speed");
                     break;
 
                 case "Dunk-On":
-                    //DunkOn
+                    //calculate opponent's HP (power of 90)
+                    Form1.teacher[1].hP = HitCalc(Form1.teacher[1].hP, Form1.teacher[1].def, Form1.teacher[0].atk, 90);
                     break;
 
                 case "FullBandFortissimo":
-                    //FullBandFF
+                    //calculate opponent's HP (power of 120)
+                    Form1.teacher[1].hP = HitCalc(Form1.teacher[1].hP, Form1.teacher[1].def, Form1.teacher[0].atk, 120);
+                    //need sleep timer
                     break;
 
                 case "PinkPaper":
-                    //PinkPaper
+                    //custom method (hard to get damage and HP out of damage calc)
                     break;
 
                 default:
@@ -1759,22 +1604,27 @@ namespace SuperCrashTchrs.Screens
             switch (Form1.teacher[0].move3)
             {
                 case "MadExperiment":
-                    MadExperiment();
+                    Form1.teacher[1].hP = HitCalc(Form1.teacher[1].hP, Form1.teacher[1].def, Form1.teacher[0].atk, 100);
                     break;
                 case "DefenderBot":
-                    DefenderBot();
+                    //custom method needed
                     break;
                 case "HistoricWar":
-                    //HistoricWar
+                    //custom method needed
                     break;
                 case "PushUps":
-                    //PushUps
+                    //Raise attack by one stage (25)
+                    Form1.teacher[0].atk = StatRaise(Form1.teacher[0].atk, atkLimit, "Attack");
                     break;
                 case "MelodiousPassage":
-                    //MelodiousPassage
+                    //calclate opponent's new HP (move power of 70)
+                    Form1.teacher[1].hP = HitCalc(Form1.teacher[1].hP, Form1.teacher[1].def, Form1.teacher[0].atk, 70);
                     break;
                 case "QuadraticAttack":
-                    //QuadraticAttack
+                    //calculate power
+                    int power = (randNum.Next() * 10) + 40;
+                    //calculate new HP of opponent
+                    Form1.teacher[1].hP = HitCalc(Form1.teacher[1].hP, Form1.teacher[1].def, Form1.teacher[0].atk, power);
                     break;
                 default:
                     break;
@@ -1787,22 +1637,26 @@ namespace SuperCrashTchrs.Screens
             switch (Form1.teacher[0].move4)
             {
                 case "TalkAboutFamily":
-                    TalkAboutFamily();
+                    //defence raise by one stage (25)
+                    Form1.teacher[0].def = StatRaise(Form1.teacher[0].def, defLimit, "Defence");
+                    //calculate Bond's new HP (restores 1/4)
                     break;
                 case "VideoFriday":
-                    VideoFriday();
+                    //calculate Bradshaw's new HP (restores 1/2)
                     break;
                 case "MultipleChoiceQuestion":
-                    MultiQuestion();
+                    //calculate opponent's new HP (move power of 75)
+                    Form1.teacher[1].hP = HitCalc(Form1.teacher[1].hP, Form1.teacher[1].def, Form1.teacher[0].atk, 75);
                     break;
                 case "HealthClass":
-                    //HealthClass
+                    //custom method needed
                     break;
                 case "Tuning":
-                    Tuning();
+                    //add 1/4 of initial HP to recent HP
+                    Form1.teacher[0].hP = HPRaise(Form1.teacher[0].hP, p1InitialHP, 4);
                     break;
                 case "TextbookBarricade":
-                    //TextbookBarricade
+                    Form1.teacher[0].def = StatRaise(Form1.teacher[0].def, defLimit, "Defence");
                     break;
                 default:
                     break;
@@ -1930,10 +1784,10 @@ namespace SuperCrashTchrs.Screens
             return oppHP;
         }
 
-        public int StatLower(int stat, string statType)
+        public int StatLower(int stat, int lower, string statType)
         {
             //lower stat
-            stat -= 25;
+            stat -= lower;
             //display message
             battleStatusOutput.Text = "The opponent's " + statType + " was lowered!";
             Thread.Sleep(sleepTime);
@@ -1968,9 +1822,17 @@ namespace SuperCrashTchrs.Screens
             return stat;
         }
 
-        public int HPRaise()
+        public int HPRaise(int hP, double initialHP, double restore)
         {
-
+            Convert.ToDouble(hP);
+            //add amount of new HP to old HP
+            hP += Math.Round((initialHP/restore));
+            //make sure it doesn't go above max
+            if (hP < initialHP)
+            {
+                hP = initialHP;
+            }
+            return hP;
         }
     }
 }
