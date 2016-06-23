@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Screens\EndScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\EndScreen.Designer.cs">
+      <DependentUpon>EndScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,8 +105,14 @@
     <EmbeddedResource Include="Screens\CharacterSelection.resx">
       <DependentUpon>CharacterSelection.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Screens\EndScreen.resx">
+      <DependentUpon>EndScreen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Screens\MainScreen.resx">
       <DependentUpon>MainScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\TallyScreen.resx">
+      <DependentUpon>TallyScreen.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -117,6 +129,8 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="Resources\bondCharacterSelect.png" />
+    <None Include="Resources\bradCharacterSelect.png" />
     <Content Include="Sounds\Attack Sound.wav" />
     <Content Include="Sounds\Pain Sound.wav" />
     <Content Include="TeacherSprites\BattleArena.png" />

@@ -1976,4 +1976,28 @@
   <data name="Steel_Select" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\TeacherSprites\Steel Select.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Leitch_L" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\TeacherSprites\Leitch L.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Letich_R" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\TeacherSprites\Letich R.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Ortelli_L" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\TeacherSprites\Ortelli L.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Ortelli_R" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\TeacherSprites\Ortelli R.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Steel_L" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\TeacherSprites\Steel L.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Steel_R" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\TeacherSprites\Steel R.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bondCharacterSelect" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bondCharacterSelect.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bradCharacterSelect" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bradCharacterSelect.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace SuperCrashTchrs.Screens
 {
@@ -15,6 +16,11 @@ namespace SuperCrashTchrs.Screens
         public TallyScreen()
         {
             InitializeComponent();
+        }
+
+        private void TallyScreen_Load(object sender, EventArgs e)
+        {
+            XmlTextReader reader = new XmlTextReader("");
         }
     }
 }

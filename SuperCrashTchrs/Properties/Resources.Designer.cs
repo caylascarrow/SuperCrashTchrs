@@ -112,6 +112,26 @@ namespace SuperCrashTchrs.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bondCharacterSelect {
+            get {
+                object obj = ResourceManager.GetObject("bondCharacterSelect", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bradCharacterSelect {
+            get {
+                object obj = ResourceManager.GetObject("bradCharacterSelect", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Bradshaw_L {
             get {
                 object obj = ResourceManager.GetObject("Bradshaw_L", resourceCulture);
@@ -182,6 +202,16 @@ namespace SuperCrashTchrs.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Leitch_L {
+            get {
+                object obj = ResourceManager.GetObject("Leitch_L", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Leitch_Select {
             get {
                 object obj = ResourceManager.GetObject("Leitch_Select", resourceCulture);
@@ -192,9 +222,39 @@ namespace SuperCrashTchrs.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Letich_R {
+            get {
+                object obj = ResourceManager.GetObject("Letich_R", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logo_t {
             get {
                 object obj = ResourceManager.GetObject("logo_t", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Ortelli_L {
+            get {
+                object obj = ResourceManager.GetObject("Ortelli_L", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Ortelli_R {
+            get {
+                object obj = ResourceManager.GetObject("Ortelli_R", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -215,6 +275,26 @@ namespace SuperCrashTchrs.Properties {
         internal static System.IO.UnmanagedMemoryStream Pain_Sound {
             get {
                 return ResourceManager.GetStream("Pain_Sound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Steel_L {
+            get {
+                object obj = ResourceManager.GetObject("Steel_L", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Steel_R {
+            get {
+                object obj = ResourceManager.GetObject("Steel_R", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         

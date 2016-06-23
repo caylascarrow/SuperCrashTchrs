@@ -13,21 +13,21 @@ namespace SuperCrashTchrs.Screens
     public partial class CharacterSelection : UserControl
     {
         #region variables and such
-        bool leftDown, rightDown, upDown, downDown, eDown;
-        int teachX = 10;
-        int teachY = 10;
-        int teachCount = 0;
-        string teachName = "";
+        bool leftDown, rightDown;
+        int teachNum = 0;
 
-        Image[] teachImage = {Properties.Resources.Bond_Select, Properties.Resources.Bradshaw_Select,
-            Properties.Resources.Leitch_Select, Properties.Resources.Cutch_Select, Properties.Resources.Ortelli_Select,
-            Properties.Resources.Steel_Select};
-        #endregion
+        int teachX = 10;
+        int teachY = 180;
+
+        Image[] teachImage = {Properties.Resources.bondCharacterSelect, Properties.Resources.bradCharacterSelect,
+            Properties.Resources.Leitch_Select,Properties.Resources.Cutch_L, Properties.Resources.Ortelli_L,
+            Properties.Resources.Steel_L};
+
+        #endregion
 
         public CharacterSelection()
         {
             InitializeComponent();
-
 
             //check to see if both players have selected a character
             if (Form1.teacher.Count == 1)
@@ -39,97 +39,19 @@ namespace SuperCrashTchrs.Screens
 
                 f.Controls.Add(bs);
             }
+        }
 
-
-            Graphics g = this.CreateGraphics();
-
-            Pen selectPen = new Pen(Color.DarkGoldenrod, 25);
-
-
-            #region character selection
-
-            //Bond select
-            if (bondSelect.Checked == true && eDown == true)
+        private void selectTime_Tick(object sender, EventArgs e)
+        {
+            //skim through cards
+            if (leftDown == true && teachNum > 0)
             {
-                g.DrawRectangle(selectPen, teachX, teachY, 156, 217);
-
-                Teachers t = new Teachers(138, 125, 75, 150, "CriteriaChart", "Dissection", 
-                    "MadExperiment", "TalkAboutFamily", "Bond");
-                Form1.teacher.Add(t);
+                teachNum--;
             }
-            else if (bondSelect.Checked == true)
+            if (rightDown == true && teachNum < 5)
             {
-                g.DrawRectangle(selectPen, teachX, teachY, 156, 217);
+                teachNum++;
             }
-
-            //Brad select
-            if (bradSelect.Checked == true && eDown == true)
-            {
-                g.DrawRectangle(selectPen, teachX, teachY, 156, 217);
-
-                Teachers t = new Teachers(150, 75, 125, 125, "AttackBot", "ComplainAboutApple", 
-                    "DefenderBot", "VideoFriday", "Bradshaw");
-                Form1.teacher.Add(t);
-            }
-            else if (bradSelect.Checked == true)
-            {
-                g.DrawRectangle(selectPen, teachX, teachY, 156, 217);
-            }
-
-            //Leitch select
-            if (leitchSelect.Checked == true && eDown == true)
-            {
-                g.DrawRectangle(selectPen, teachX, teachY, 156, 217);
-
-                Teachers t = new Teachers(200, 75, 150, 50, "Documentary", "EssayQuestion", 
-                    "HistoricWar", "MulipleChoiceQuestion", "Leitch");
-                Form1.teacher.Add(t);
-            }
-            else if (leitchSelect.Checked == true)
-            {
-                g.DrawRectangle(selectPen, teachX, teachY, 156, 217);
-            }
-
-            //Cutch select
-            if (cutchSelect.Checked == true && eDown == true)
-            {
-                g.DrawRectangle(selectPen, teachX, teachY, 156, 217);
-
-                Teachers t = new Teachers(100, 150, 100, 125, "DODGEBALL", "Dunk-On", "PushUps", "HealthClass", "McCutcheon");
-                Form1.teacher.Add(t);
-            }
-            else if (cutchSelect.Checked == true)
-            {
-                g.DrawRectangle(selectPen, teachX, teachY, 156, 217);
-            }
-
-            //Ortelli select
-            if (ortelliSelect.Checked == true && eDown == true)
-            {
-                g.DrawRectangle(selectPen, teachX, teachY, 156, 217);
-
-                Teachers t = new Teachers(175, 100, 125, 75, "ClarinetSqueak", "FullBandFortissimo",
-                    "MelodiousPassage", "Tuning", "Ortelli");
-                Form1.teacher.Add(t);
-            }
-            else if (ortelliSelect.Checked == true)
-            {
-                g.DrawRectangle(selectPen, teachX, teachY, 156, 217);
-            }
-
-            //Steel select
-            if (steelSelect.Checked == true && eDown == true)
-            {
-                g.DrawRectangle(selectPen, teachX, teachY, 156, 217);
-
-                Teachers t = new Teachers(150, 75, 175, 75, "=", "PinkPaper", "QuadraticAttack", "TextbookBarricade", "Steel");
-                Form1.teacher.Add(t);
-            }
-            else if (steelSelect.Checked == true)
-            {
-                g.DrawRectangle(selectPen, teachX, teachY, 156, 217);
-            }
-            #endregion
         }
 
         private void CharacterSelection_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
@@ -142,15 +64,6 @@ namespace SuperCrashTchrs.Screens
                 case Keys.Right:
                     rightDown = true;
                     break;
-                case Keys.Up:
-                    upDown = true;
-                    break;
-                case Keys.Down:
-                    downDown = true;
-                    break;
-                case Keys.E:
-                    eDown = true;
-                    break;
             }
         }
 
@@ -158,40 +71,19 @@ namespace SuperCrashTchrs.Screens
         {
             switch(e.KeyCode)
             {
-                case Keys.Up:
-                    upDown = false;
-                    break;
-                case Keys.Down:
-                    downDown = false;
-                    break;
                 case Keys.Left:
                     leftDown = false;
                     break;
                 case Keys.Right:
                     rightDown = false;
                     break;
-                case Keys.E:
-                    eDown = false;
-                    break;
             }
         }
 
         private void CharacterSelection_Paint(object sender, PaintEventArgs e)
         {
-            foreach (Image teachImage in teachImage)
-            {
-                e.Graphics.DrawImage(teachImage, teachX, teachY);
-
-                teachX = teachX + 250;
-
-                if(teachCount > 3 && teachCount < 4)
-                {
-                    teachY = teachY + 200;
-                    teachX = 10;
-                }
-
-                teachCount++;
-            }
+            //draw teacher card
+            e.Graphics.DrawImage(teachImage[teachNum], teachX, teachY);
         }
     }
 }
