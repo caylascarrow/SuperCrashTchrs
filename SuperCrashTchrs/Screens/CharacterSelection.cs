@@ -13,7 +13,6 @@ namespace SuperCrashTchrs.Screens
     public partial class CharacterSelection : UserControl
     {
         #region variables and such
-        bool leftDown, rightDown;
         int teachNum = 0;
 
         int teachX = 10;
@@ -28,6 +27,74 @@ namespace SuperCrashTchrs.Screens
         public CharacterSelection()
         {
             InitializeComponent();
+        }
+
+        private void prevButton_Click(object sender, EventArgs e)
+        {
+            if (teachNum > 0)
+            {
+                teachNum--;
+            }
+        }
+
+        private void enterBttn_Click(object sender, EventArgs e)
+        {
+            //add in info for player select
+            switch (teachNum)
+            {
+                case 0:
+                    Teachers bond = new Teachers(Form1.bondHP, Form1.bondAtk, Form1.bondDef, Form1.bondSpd, "CriteriaChart", 
+                        "Dissection", "MadExperiment", "TalkAboutFamily", "Bond");
+                    Form1.teacher.Add(bond);
+                    break;
+                case 1:
+                    Teachers brad = new Teachers(Form1.bradHP, Form1.bradAtk, Form1.bradDef, Form1.bradSpd, "AttackBot",
+                        "ComplainAboutApple", "DefenderBot", "VideoFriday", "Bradshaw");
+                    Form1.teacher.Add(brad);
+                    break;
+                case 2:
+                    Teachers leitch = new Teachers(Form1.leitchHP, Form1.leitchAtk, Form1.leitchDef, Form1.leitchSpd, "Documentary",
+                        "EssayQuestion", "HistoricWar", "MultipleChoice", "Leitch");
+                    Form1.teacher.Add(leitch);
+                    break;
+                case 3:
+                    Teachers cutch = new Teachers(Form1.cutchHP, Form1.cutchAtk, Form1.cutchDef, Form1.cutchSpd, "Dodgeball",
+                        "DunkOn", "PushUps", "HealthClass", "McCutcheon");
+                    Form1.teacher.Add(cutch);
+                    break;
+                case 4:
+                    Teachers ort = new Teachers(Form1.ortHP, Form1.ortAtk, Form1.ortDef, Form1.ortSpd, "ClarinetSqueak",
+                        "FullBandFortissimo", "MelodiousPassage", "Tuning", "Ortelli");
+                    Form1.teacher.Add(ort);
+                    break;
+                case 5:
+                    Teachers steel = new Teachers(Form1.steelHP, Form1.steelAtk, Form1.steelDef, Form1.steelSpd, "EqualSign",
+                        "PinkPaper", "QuadraticAttack", "TextbookBarricade", "Steel");
+                    Form1.teacher.Add(steel);
+                    break;
+
+            }
+        }
+
+        private void nextBttn_Click(object sender, EventArgs e)
+        {
+            if (teachNum < 5)
+            {
+                teachNum++;
+            }
+        }
+
+        private void selectTime_Tick(object sender, EventArgs e)
+        {
+            //make sure buttons disappear so player can't go above or below a number
+            if (teachNum == 0)
+            {
+                prevButton.Visible = false;
+            }
+            if (teachNum == 5)
+            {
+                nextBttn.Visible = false;
+            }
 
             //check to see if both players have selected a character
             if (Form1.teacher.Count == 1)
@@ -41,50 +108,13 @@ namespace SuperCrashTchrs.Screens
             }
         }
 
-        private void selectTime_Tick(object sender, EventArgs e)
-        {
-            //skim through cards
-            if (leftDown == true && teachNum > 0)
-            {
-                teachNum--;
-            }
-            if (rightDown == true && teachNum < 5)
-            {
-                teachNum++;
-            }
-        }
-
-        private void CharacterSelection_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
-        {
-            switch (e.KeyCode)
-            {
-                case Keys.Left:
-                    leftDown = true;
-                    break;
-                case Keys.Right:
-                    rightDown = true;
-                    break;
-            }
-        }
-
-        private void CharacterSelection_KeyUp(object sender, KeyEventArgs e)
-        {
-            switch(e.KeyCode)
-            {
-                case Keys.Left:
-                    leftDown = false;
-                    break;
-                case Keys.Right:
-                    rightDown = false;
-                    break;
-            }
-        }
-
         private void CharacterSelection_Paint(object sender, PaintEventArgs e)
         {
             //draw teacher card
             e.Graphics.DrawImage(teachImage[teachNum], teachX, teachY);
         }
+
+
     }
 }
 

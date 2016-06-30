@@ -1,4 +1,8 @@
-﻿using System;
+﻿///Super Crash Teachers Battle Arena
+///By Cayla, Hannah, Justin
+/// Alterations by Cayla
+/// 27 June 2016
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
